@@ -1,0 +1,26 @@
+.navbar-nav {
+    li:hover {
+        .dropdown-menu {
+            display: block;
+        }
+    }
+}
+
+::placeholder {
+    font-size: 13px
+}
+
+.dropdown-menu {
+    /* display: block */
+}
+
+.footer {
+    .row {
+        .footer--content {
+            a {
+                font-size: 13px;
+                color: #252525;
+            }
+        }
+    }
+}

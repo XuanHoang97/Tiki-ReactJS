@@ -1,0 +1,30 @@
+@import "./variable.scss";
+img {
+    max-width: 100%;
+}
+
+.slide {
+    #carousel-example-1z {
+        .control {}
+        .list_slide {
+            .carousel-item {
+                @include phone {
+                    height: 150px;
+                }
+            }
+        }
+        .carousel-control-prev {
+            @include phone {
+                top: 55px !important;
+            }
+        }
+        .carousel-control-next {
+            @extend .carousel-control-prev
+        }
+    }
+    .banner {
+        @include phone {
+            display: none;
+        }
+    }
+}

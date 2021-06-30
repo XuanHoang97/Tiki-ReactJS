@@ -1,0 +1,448 @@
+{
+    "courses": [{
+            "id": 1,
+            "image": "Assets/img/it.png",
+            "name": "HTML, CSS từ Zero đên Hero",
+            "description": "Kiến thức cơ bản dành cho dân IT, không phân biệt bạn theo Front-end, Back-end hay Devops"
+        },
+        {
+            "image": "Assets/img/it.png",
+            "name": "Kiến thức cơ bản, cốt lõi dân IT cần học trước",
+            "description": "Kiến thức cơ bản dành cho dân IT, không phân biệt bạn theo Front-end, Back-end hay Devops",
+            "id": 10
+        },
+        {
+            "image": "Assets/img/it.png",
+            "name": "Lập trình Javascript cơ bản (bản đầy đủ)",
+            "description": "Khóa học Javascript cơ bản dành cho mọi đối tượng bắt đầu học lập trình với nội dung ngắn gọn, dễ hiểu và hệ thống làm bài tập phong phú",
+            "id": 11
+        },
+        {
+            "name": "",
+            "description": "",
+            "id": 12
+        },
+        {
+            "name": "",
+            "description": "",
+            "id": 13
+        },
+        {
+            "name": "Test",
+            "description": "Hoang",
+            "id": 14
+        }
+    ],
+
+    "category_menu": [{
+            "id": 1,
+            "item": "Điện thoại - máy tính bảng",
+            "icon": "fas fa-mobile-alt mr-3"
+        },
+
+        {
+            "id": 2,
+            "item": "Điện tử - điện lạnh",
+            "icon": "fas fa-tv mr-3"
+        },
+
+        {
+            "id": 3,
+            "item": "Phụ kiện - Thiết bị số",
+            "icon": "fas fa-headphones-alt mr-3"
+        },
+
+        {
+            "id": 4,
+            "item": "Laptop - Thiết bị IT",
+            "icon": "fas fa-laptop mr-3"
+        },
+
+        {
+            "id": 5,
+            "item": "Máy ảnh - quay phim",
+            "icon": "fas fa-camera mr-3"
+        },
+
+        {
+            "id": 6,
+            "item": "Điện dân dụng",
+            "icon": "fas fa-microscope mr-3"
+        },
+        {
+            "id": 7,
+            "item": "Nhà cửa - Đời sống",
+            "icon": "fas fa-concierge-bell mr-3"
+        },
+
+        {
+            "id": 8,
+            "item": "Hàng tiêu dùng - Thực phẩm",
+            "icon": "fas fa-concierge-bell mr-3"
+        },
+
+        {
+            "id": 9,
+            "item": "Đồ chơi Mẹ & Bé",
+            "icon": "fas fa-mobile-alt mr-3"
+        },
+
+        {
+            "id": 10,
+            "item": "Sức khoẻ - Làm đẹp",
+            "icon": "fas fa-mobile-alt mr-3"
+        },
+
+        {
+            "id": 11,
+            "item": "Thời trang - Phụ kiện",
+            "icon": "fas fa-concierge-bell mr-3"
+        },
+
+        {
+            "id": 12,
+            "item": "Thể thao - Dã ngoại",
+            "icon": "fas fa-mobile-alt mr-3"
+        },
+
+        {
+            "id": 13,
+            "item": "Xe máy, ô tô, Xe đạp",
+            "icon": "fas fa-mobile-alt mr-3"
+        },
+
+        {
+            "id": 14,
+            "item": "Hàng quốc tế",
+            "icon": "fas fa-concierge-bell mr-3"
+        },
+
+        {
+            "id": 15,
+            "item": "Sách, VPP & Quà tặng",
+            "icon": "fas fa-mobile-alt mr-3"
+        },
+
+        {
+            "id": 16,
+            "item": "Voucher - Dịch vụ - Thẻ cào",
+            "icon": "fas fa-mobile-alt mr-3"
+        }
+    ],
+
+    "slide": [{
+            "id": 1,
+            "img": "https://salt.tikicdn.com/cache/w824/ts/banner/53/f6/0a/51962a6a40702cd6b73af5b1c5931c00.png.jpg",
+            "active": "active"
+        },
+
+        {
+            "id": 2,
+            "img": "https://salt.tikicdn.com/cache/w824/ts/banner/90/80/ae/55fe5c9ec7125f0a3ec91e7c405c4854.png.jpg",
+            "active": "active"
+        },
+
+        {
+            "id": 3,
+            "img": "https://salt.tikicdn.com/cache/w824/ts/banner/1d/a7/c4/d803875892c793f6c879bd1d0486e419.png.jpg",
+            "active": "active"
+        }
+    ],
+
+    "category_special": [{
+            "id": 1,
+            "img": "https://salt.tikicdn.com/cache/280x280/ts/product/55/df/99/b3cdfe54c46ce8612e86b6b32403d24a.jpg",
+            "content": "Áo khoác nam"
+        },
+
+        {
+            "id": 2,
+            "img": "https://salt.tikicdn.com/cache/280x280/ts/product/ae/81/e2/c7497b51886bb68819b7b5dd98f0f8ca.jpg",
+            "content": "Bộ trang sức"
+        },
+
+        {
+            "id": 3,
+            "img": "https://salt.tikicdn.com/cache/280x280/ts/product/c3/36/7d/cfc8cf443e624a056976a00ffaf70d8b.jpg",
+            "content": "Áo sơ mi nữ"
+        },
+
+        {
+            "id": 4,
+            "img": "https://salt.tikicdn.com/cache/280x280/ts/product/bc/ad/94/e79a572ba4d57c07aa5ec1c323e2c22a.jpg",
+            "content": "Tiểu sử - Hồi ký"
+        },
+
+        {
+            "id": 5,
+            "img": "https://salt.tikicdn.com/cache/280x280/ts/product/3e/6d/af/716b044e9580b7bb939e7a0b658fd087.jpg",
+            "content": "Sách kỹ năng làm việc"
+        },
+        {
+            "id": 6,
+            "img": "https://salt.tikicdn.com/cache/280x280/ts/product/0c/c5/09/fbb96c0b26aab13a5083b31bb3b9b0d4.jpg",
+            "content": "Balo - nữ"
+        }
+    ],
+
+    "preferent": [{
+            "id": 1,
+            "img": "https://salt.tikicdn.com/ts/upload/73/50/e1/83afc85db37c472de60ebef6eceb41a7.png",
+            "content": "Mã giảm giá"
+        },
+
+        {
+            "id": 2,
+            "img": "https://salt.tikicdn.com/ts/upload/51/34/7a/f0e1104c14349c93721da0d93ab05981.png",
+            "content": "Không giới hạn"
+        },
+
+        {
+            "id": 3,
+            "img": "https://salt.tikicdn.com/ts/upload/e4/74/3d/aafbdc961842e88bdc8cfbb08debe4fa.png",
+            "content": "Giảm đến 50%"
+        },
+
+        {
+            "id": 4,
+            "img": "https://salt.tikicdn.com/ts/upload/73/e0/7d/af993bdbf150763f3352ffa79e6a7117.png",
+            "content": "Dịch vụ & Tiện ích"
+        },
+
+        {
+            "id": 5,
+            "img": "https://salt.tikicdn.com/ts/upload/a0/0d/90/bab67b6da67117f40538fc54fb2dcb5e.png",
+            "content": "Đi chợ online"
+        },
+        {
+            "id": 6,
+            "img": "https://salt.tikicdn.com/ts/upload/c2/da/13/638cc2dc09b1be2e148c0571a107281a.png",
+            "content": "Freeship"
+        },
+        {
+            "id": 7,
+            "img": "https://salt.tikicdn.com/ts/upload/52/50/73/0788d5207ec8b82e05859dfe953a4327.png",
+            "content": "Hoàn tiền 15%"
+        },
+
+        {
+            "id": 8,
+            "img": "https://salt.tikicdn.com/ts/upload/ce/ee/fe/a8a350727b38a1e20ce1610c5162fcb7.png",
+            "content": "Gói hội viên"
+        },
+
+        {
+            "id": 9,
+            "img": "https://salt.tikicdn.com/ts/upload/a9/58/39/872e4acbdb3576be53b57c05a386860b.png",
+            "content": "Hẹn giao & Lắp đặt"
+        },
+
+        {
+            "id": 10,
+            "img": "https://salt.tikicdn.com/ts/upload/46/7e/06/64c9e7975b58b8953a74fe77dd4cb4b5.png",
+            "content": "Coupon 50%"
+        },
+
+        {
+            "id": 11,
+            "img": "https://salt.tikicdn.com/ts/upload/4a/b2/c5/b388ee0e511889c83fab1217608fe82f.png",
+            "content": "Ưu đãi đối tác"
+        },
+        {
+            "id": 12,
+            "img": "https://salt.tikicdn.com/ts/upload/73/e0/7d/af993bdbf150763f3352ffa79e6a7117.png",
+            "content": "Freeship"
+        },
+        {
+            "id": 13,
+            "img": "https://salt.tikicdn.com/ts/upload/73/e0/7d/af993bdbf150763f3352ffa79e6a7117.png",
+            "content": "Freeship"
+        }
+    ],
+
+    "product_mobile": [{
+            "id": 1,
+            "img": "https://phoneaqua.com/products/apple-iphone-12.jpg",
+            "name": "Apple iphone 12 Price",
+            "price": 21499000,
+            "sale_off": 20,
+            "price_old": 24499000,
+            "chip": "Snapdragon 720",
+            "screen": 6.7,
+            "ram": 8,
+            "rom": 256,
+            "origin": "Việt nam",
+            "pin_capacity": 4500
+        },
+
+        {
+            "id": 2,
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewLCELqmdHXdDSpFpHlKQPplJlYLdZD7XFp2XGEJDV_S5U-XkdQ5hxFzTJ0or27LvDAU&usqp=CAU",
+            "name": "Apple iphone 11 Price",
+            "price": 21499000,
+            "sale_off": 20,
+            "price_old": 24499000,
+            "chip": "Snapdragon 720",
+            "screen": 6.7,
+            "ram": 8,
+            "rom": 256,
+            "origin": "Việt nam",
+            "pin_capacity": 4500
+        },
+
+        {
+            "id": 3,
+            "img": "https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%2Fxiaomi-mi11.png?alt=media&token=a5adb1d0-cf92-4223-bb45-57e86c830719",
+            "name": "Xiaomi Price",
+            "price": 21499000,
+            "sale_off": 20,
+            "price_old": 24499000,
+            "chip": "Snapdragon 720",
+            "screen": 6.7,
+            "ram": 8,
+            "rom": 256,
+            "origin": "Việt nam",
+            "pin_capacity": 4500
+        },
+
+        {
+            "id": 4,
+            "img": "https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%2Fss-galaxy-a51.png?alt=media&token=a656955e-05de-4aeb-b0b1-ec0530d2ae4c",
+            "name": "Xiaomi Redmi Note 10",
+            "price": 21499000,
+            "sale_off": 20,
+            "price_old": 24499000,
+            "chip": "Snapdragon 720",
+            "screen": 6.7,
+            "ram": 8,
+            "rom": 256,
+            "origin": "Việt nam",
+            "pin_capacity": 4500
+        },
+        {
+            "id": 5,
+            "img": "https://phoneaqua.com/products/apple-iphone-12.jpg",
+            "name": "Apple iphone 12 Price",
+            "price": 21499000,
+            "sale_off": 20,
+            "price_old": 24499000,
+            "chip": "Snapdragon 720",
+            "screen": 6.7,
+            "ram": 8,
+            "rom": 256,
+            "origin": "Việt nam",
+            "pin_capacity": 4500
+        },
+
+        {
+            "id": 6,
+            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewLCELqmdHXdDSpFpHlKQPplJlYLdZD7XFp2XGEJDV_S5U-XkdQ5hxFzTJ0or27LvDAU&usqp=CAU",
+            "name": "Apple iphone 11 Price",
+            "price": 21499000,
+            "sale_off": 20,
+            "price_old": 24499000,
+            "chip": "Snapdragon 720",
+            "screen": 6.7,
+            "ram": 8,
+            "rom": 256,
+            "origin": "Việt nam",
+            "pin_capacity": 4500
+        },
+
+        {
+            "id": 7,
+            "img": "https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%2Fxiaomi-mi11.png?alt=media&token=a5adb1d0-cf92-4223-bb45-57e86c830719",
+            "name": "Xiaomi Price",
+            "price": 21499000,
+            "sale_off": 20,
+            "price_old": 24499000,
+            "chip": "Snapdragon 720",
+            "screen": 6.7,
+            "ram": 8,
+            "rom": 256,
+            "origin": "Việt nam",
+            "pin_capacity": 4500
+        },
+
+        {
+            "id": 8,
+            "img": "https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%2Fss-galaxy-a51.png?alt=media&token=a656955e-05de-4aeb-b0b1-ec0530d2ae4c",
+            "name": "Xiaomi Redmi Note 10",
+            "price": 21499000,
+            "sale_off": 20,
+            "price_old": 24499000,
+            "chip": "Snapdragon 720",
+            "screen": 6.7,
+            "ram": 8,
+            "rom": 256,
+            "origin": "Việt nam",
+            "pin_capacity": 4500
+        }
+    ],
+
+    "new_event": [{
+            "id": 1,
+            "img": "https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%20New%20Image%2Fss-galaxy-zFold-new04.png?alt=media&token=19053c30-7a46-4cdb-9851-c97da0ff5276",
+            "content": "Samsung đang đưa một số tính năng của Galaxy S21 lên các thiết bị cũ hơn"
+        },
+
+        {
+            "id": 2,
+            "img": "https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%20New%20Image%2Fss-galaxy-zFold-new04.png?alt=media&token=19053c30-7a46-4cdb-9851-c97da0ff5276",
+            "content": "Samsung đang đưa một số tính năng của Galaxy S21 lên các thiết bị cũ hơn"
+        },
+
+        {
+            "id": 3,
+            "img": "https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%20New%20Image%2Fss-galaxy-zFold-new04.png?alt=media&token=19053c30-7a46-4cdb-9851-c97da0ff5276",
+            "content": "Samsung đang đưa một số tính năng của Galaxy S21 lên các thiết bị cũ hơn"
+        },
+
+        {
+            "id": 4,
+            "img": "https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%20New%20Image%2Fss-galaxy-zFold-new04.png?alt=media&token=19053c30-7a46-4cdb-9851-c97da0ff5276",
+            "content": "Samsung đang đưa một số tính năng của Galaxy S21 lên các thiết bị cũ hơn"
+        }
+    ],
+
+    "search_special": [{
+            "id": 1,
+            "img1": "https://salt.tikicdn.com/cache/280x280/ts/product/3b/5b/ee/e37d0135aa0d314ac8af2afb4eb739bc.jpg",
+            "img2": "https://salt.tikicdn.com/cache/280x280/ts/product/51/1e/85/7793d19ae470e25f1ab0cf3455ed8d62.jpg",
+            "img3": "https://salt.tikicdn.com/cache/280x280/ts/product/51/1e/85/7793d19ae470e25f1ab0cf3455ed8d62.jpg",
+            "content": "Ielts Writting",
+            "number": 963,
+            "bg": "rgb(255, 241, 241)"
+        },
+
+        {
+            "id": 2,
+            "img1": "https://salt.tikicdn.com/cache/280x280/ts/product/22/a9/48/c55f8c043e5ff5842aa15dc1f3b6c20f.jpg",
+            "img2": "https://salt.tikicdn.com/cache/280x280/ts/product/22/a9/48/c55f8c043e5ff5842aa15dc1f3b6c20f.jpg",
+            "img3": "https://salt.tikicdn.com/cache/280x280/ts/product/a4/f1/32/b496f7a3511264153e3995bbd34ab642.jpg",
+            "content": "Khéo ăn nói sẽ có được thiên hạ",
+            "number": 141,
+            "bg": "rgb(231, 248, 241)"
+        },
+
+        {
+            "id": 3,
+            "img1": "https://salt.tikicdn.com/cache/280x280/ts/product/82/07/35/7ef0b4cdb6985eeaa9c012e2239e766b.png",
+            "img2": "https://salt.tikicdn.com/cache/280x280/ts/product/ea/75/1e/81d4788cc180b8970148ef76a5621106.png",
+            "img3": "https://salt.tikicdn.com/cache/280x280/ts/product/e4/dc/97/c88e00466f7b6abc50d592bf64b4e32c.jpg",
+            "content": "Nước hoa Foellie",
+            "number": 100,
+            "bg": "rgb(255, 241, 241)"
+        },
+
+        {
+            "id": 4,
+            "img1": "https://salt.tikicdn.com/cache/280x280/ts/product/b6/f7/2e/2d306aa5a1bfb526e78bd0457e3d3ab2.jpg",
+            "img2": "https://salt.tikicdn.com/cache/280x280/ts/product/7d/0a/f9/5e3bed5ac02d10eb3591d86e5e13abf7.jpg",
+            "img3": "https://salt.tikicdn.com/cache/280x280/ts/product/23/d6/f7/73a31a01ee3d88940c16635e36741fec.jpg",
+            "content": "Một lít nước mắt",
+            "number": 71,
+            "bg": "rgb(231, 248, 241)"
+        }
+    ]
+}

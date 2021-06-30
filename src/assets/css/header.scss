@@ -1,0 +1,120 @@
+@import "./variable.scss";
+img {
+    max-width: 100%;
+}
+
+.header {
+    @include phone {
+        padding: 5px 0;
+    }
+    .container {
+        .row {
+            @include phone {
+                margin: 0;
+                padding-right: 0;
+            }
+            .navbar {
+                @include phone {
+                    padding: 0 !important;
+                }
+                .menu_ctg {
+                    @include phone {
+                        width: 100%;
+                    }
+                    .category {
+                        i {}
+                        small {}
+                        br {
+                            @include phone {
+                                display: none;
+                            }
+                        }
+                        span {
+                            @include phone {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .navbar-brand {}
+                .navbar-toggler {
+                    @include phone {
+                        color: white;
+                        border: none;
+                    }
+                }
+                .navbar-collapse {
+                    @include phone {}
+                    .navbar-nav {
+                        @include phone {
+                            display: flex;
+                            align-items: normal;
+                            position: relative;
+                            flex-direction: column-reverse;
+                            padding: 5px 15px;
+                        }
+                        .login_resg {
+                            .info {}
+                        }
+                        .search {
+                            input {
+                                @include phone {
+                                    height: 30px;
+                                }
+                            }
+                            .btn_search {
+                                @include phone {
+                                    height: 30px !important;
+                                }
+                                button {
+                                    @include phone {
+                                        display: flex;
+                                        align-items: center;
+                                    }
+                                    small {
+                                        @include phone {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .account {
+                            @include phone {
+                                position: absolute;
+                                top: -2.2rem;
+                                right: 5rem;
+                            }
+                            a {
+                                i {
+                                    @include phone {
+                                        font-size: 15px !important;
+                                        margin-right: 0 !important;
+                                    }
+                                }
+                                span {
+                                    @include phone {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                        .cart {
+                            @include phone {
+                                position: absolute;
+                                top: -2.2rem;
+                                right: 2.5rem;
+                            }
+                            @extend .account;
+                        }
+                    }
+                }
+            }
+        }
+        .menu--suggest {
+            @include phone {
+                display: none;
+            }
+        }
+    }
+}

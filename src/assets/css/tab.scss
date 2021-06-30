@@ -1,0 +1,13 @@
+.react-tabs {
+    .react-tabs__tab-list {
+        border-bottom: none !important;
+        .react-tabs__tab--selected {
+            padding: 2px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            border-bottom: 1px solid #ccc;
+            border: 1px solid rgb(1, 119, 119);
+        }
+        .react-tabs__tab {}
+    }
+}

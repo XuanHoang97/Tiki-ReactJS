@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Ecommerce</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .navbar-nav li:hover .dropdown-menu {
+            display: block;
+        }
+        
+         ::placeholder {
+            font-size: 13px
+        }
+        
+        .dropdown-menu {
+            /* display: block */
+        }
+        
+        .footer .row .footer--content a {
+            font-size: 13px;
+            color: #252525;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-color: rgb(1, 127, 255);">
+        <div class="container p-0">
+            <div class="row pt-2 pl-3 justify-content-between">
+                <div class="col-md-5 row">
+                    <div class="col-md-3" style="font-size:13px">
+                        <a href="" style="color: white">Điều khoản </a>
+                    </div>
+
+                    <div class="col-md-3 pl-1" style="font-size:13px">
+                        <a href="" style="color: white">Chính sách </a>
+                    </div>
+                </div>
+                <div class="col-md-3 row"></div>
+                <div class="col-md-4 row justify-content-end">
+                    <div class="col-md-4" style="font-size:13px">
+                        <a href="" style="color: white">
+                            <i class="far fa-bell"></i> Thông báo
+                            <span class="badge badge-pill badge-warning position-absolute" style="right: 0.7rem;top: -0.2rem;">4</span>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4" style="font-size:13px">
+                        <a href="" style="color: white"><i class="far fa-question-circle"></i> Trợ giúp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <nav class="navbar navbar-expand-sm navbar-dark col-12 pt-0">
+                    <a class="navbar-brand pt-0 col-1" href="#">
+                        <img style="max-width:85%" src="https://salt.tikicdn.com/ts/upload/ae/f5/15/2228f38cf84d1b8451bb49e2c4537081.png" alt="logo">
+                        <!-- <img style="max-width:28%" src="https://salt.tikicdn.com/ts/upload/23/97/dd/2d66c7c7cd54895f698aae24dce13b90.png" alt=""> -->
+                    </a>
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse col-md-11 p-0" id="collapsibleNavId">
+                        <ul class="navbar-nav align-items-center col-md-12">
+                            <li class="nav-item dropdown mr-2 active">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-bars"></i>
+
+                                    <small>Danh mục</small><br>
+                                    <span class="">Sản phẩm</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                    <a class="dropdown-item" href="#"><i class="fas fa-mobile-alt mr-3"></i><small>Điện thoại - Máy tính bảng</small> </a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-tv mr-3"></i><small>Điện tử - Điện lạnh</small> </a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-headphones-alt mr-3"></i><small> Phụ kiện - Thiết bị số</small></a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-laptop mr-3"></i><small>Laptop - Thiết bị IT</small></a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-camera mr-3"></i><small>Máy ảnh - Quay phim</small></a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-microscope mr-3"></i><small>Điện gia dụng</small></a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-concierge-bell mr-3"></i><small>Nhà cửa đời sống</small></a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-concierge-bell mr-3"></i><small>Hàng tiêu dùng - Thực phẩm</small></a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-concierge-bell mr-3"></i><small>Đồ chơi mẹ & bé</small></a>
+                                    <a class="dropdown-item" href="#"><i class="fas fa-concierge-bell mr-3"></i><small>Sức khoẻ - Làm đẹp</small></a>
+                                </div>
+                            </li>
+
+                            <div class="input-group align-items-center">
+                                <input type="text" class="form-control" placeholder="Tìm sản phẩm, danh mục hay thương hiệu mong muốn ..." id="demo" name="email" style="border-radius: 0px; background-clip: unset; ">
+                                <div class="input-group-append" style="height:38px">
+                                    <button type="button" class="btn btn-primary" style="background: rgb(13, 92, 182);">
+                                        <i class="fas fa-search small"></i> 
+                                        <!-- <img src="https://salt.tikicdn.com/ts/upload/ed/5e/b8/8538366274240326978318348ea8af7c.png" style="width: 15%;" alt=""> -->
+                                        <small>Tìm kiếm</small> 
+                                    </button>
+                                </div>
+                            </div>
+
+                            <li class="nav-item dropdown ml-3 mr-2 active" style="font-size:14px">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-user-circle"></i>
+                                    <!-- <small style="font-size:13px">Đăng nhập | Đăng ký</small><br>  -->
+                                    Tài khoản
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                    <a class="dropdown-item" href="#">
+                                        <button type="button" class="btn btn-warning btn-sm btn-block" data-toggle="modal" data-target="#myModal">
+                                            Đăng nhập
+                                        </button>
+                                    </a>
+
+                                    <a class="dropdown-item" href="#">
+                                        <button type="button" class="btn btn-warning btn-sm btn-block" data-toggle="modal" data-target="#myModal">
+                                            Tạo tài khoản
+                                        </button>
+                                    </a>
+
+
+                                    <a class="dropdown-item" href="#">
+                                        <button type="button" name="" id="" class="btn btn-primary btn-sm btn-block">
+                                            <i class="fab fa-facebook-f mr-4"></i> <span>Đăng nhập bằng Facebook</span>
+                                        </button>
+                                    </a>
+
+                                    <a class="dropdown-item" href="#">
+                                        <button type="button" name="" id="" class="btn btn-danger btn-sm btn-block">
+                                            <i class="fab fa-google-plus-g mr-3"></i> <span>Đăng nhập bằng Google</span>
+                                        </button>
+                                    </a>
+
+                                    <a class="dropdown-item" href="#">
+                                        <button type="button" name="" id="" class="btn btn-info btn-sm btn-block">
+                                            <i class="far fa-comment-dots mr-4"></i> <span>Đăng nhập bằng Zalo</span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </li>
+
+                            <!-- The Modal Register-->
+                            <div class="modal" id="myModal">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <button type="button" class="close text-end" data-dismiss="modal" style="text-align: end;
+                                        position: absolute;
+                                        right: -15px;
+                                        z-index: 10;
+                                        background: white;
+                                        top: -15px;
+                                        border: 1px solid;
+                                        border-radius: 50%;
+                                        width: 30px;
+                                        height: 30px;
+                                        display: flex;
+                                        justify-content: center;">&times;</button>
+                                        <div class="row m-0 p-0">
+                                            <div class="col-md-8 p-3">
+                                                <h4>Xin chào,</h4>
+                                                <div class="form-group">
+                                                    <label for="">Đăng nhập hoặc tạo tài khoản</label>
+                                                    <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Số điện thoại">
+                                                    <button type="button" name="" id="" class="btn btn-danger mt-3 btn-smd btn-block">Tiếp tục</button>
+                                                    <div class="text-center small mt-3 mb-5"><a href="" class="text-center">Đăng nhập bằng email</a></div>
+                                                    <div class="text-center mb-3 small">Hoặc Tiếp tục bằng</div>
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-md-2">
+                                                            <a href=""><img class="w-100" src="https://salt.tikicdn.com/ts/upload/3a/22/45/0f04dc6e4ed55fa62dcb305fd337db6c.png" alt=""></a>
+                                                        </div>
+
+                                                        <div class="col-md-2">
+                                                            <a href=""><img class="w-100" src="https://salt.tikicdn.com/ts/upload/1c/ac/e8/141c68302262747f5988df2aae7eb161.png" alt=""></a>
+                                                        </div>
+
+                                                        <div class="col-md-2">
+                                                            <a href=""><img class="w-100" src="https://salt.tikicdn.com/ts/upload/98/37/86/517cfc05f04466b3118357a1fb4182c8.png" alt=""></a>
+                                                        </div>
+                                                        <div class="small mt-2 m-3">Bằng việc tiếp tục, bạn đã chấp nhận <a href="">điều khoản sử dụng</a> </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 pt-5 text-center" style="background: linear-gradient(136deg, rgb(240, 248, 255) -1%, rgb(219, 238, 255) 85%)">
+                                                <img class="w-75" src="https://salt.tikicdn.com/ts/upload/eb/f3/a3/25b2ccba8f33a5157f161b6a50f64a60.png" alt="">
+                                                <h6 class="mt-4 ">Mua sắm tại Tiki</h6>
+                                                <p class="small">Siêu ưu đãi mỗi ngày</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <li class="nav-item dropdown active" style="font-size:14px">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-shopping-cart mr-1">
+                                        <span class="badge badge-pill badge-warning position-absolute" style="top: 0; left: 1.2rem">0</span>
+                                    </i> Giỏ hàng
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                    <a class="dropdown-item" href="#">Action 1</a>
+                                    <a class="dropdown-item" href="#">Action 2</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="main bg-light pt-3 pb-3">
+        <div class="container">
+            <!-- Header  -->
+            <div class="row">
+                <!--Carousel Wrapper-->
+                <div id="carousel-example-1z" class="carousel slide carousel-fade col-md-8 pr-0" data-ride="carousel">
+                    <!--Indicators-->
+                    <ol class="carousel-indicators">
+                        <li style="width: 10px;height: 10px;border-radius: 50%;" data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+                        <li style="width: 10px;height: 10px;border-radius: 50%;" data-target="#carousel-example-1z" data-slide-to="1"></li>
+                        <li style="width: 10px;height: 10px;border-radius: 50%;" data-target="#carousel-example-1z" data-slide-to="2"></li>
+                    </ol>
+
+                    <!--Slides-->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" style="height:240px" src="https://salt.tikicdn.com/cache/w824/ts/banner/53/f6/0a/51962a6a40702cd6b73af5b1c5931c00.png.jpg" alt="First slide">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" style="height:240px" src="https://salt.tikicdn.com/cache/w824/ts/banner/90/80/ae/55fe5c9ec7125f0a3ec91e7c405c4854.png.jpg" alt="Second slide">
+                        </div>
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" style="height:240px" src="https://salt.tikicdn.com/cache/w824/ts/banner/1d/a7/c4/d803875892c793f6c879bd1d0486e419.png.jpg" alt="Third slide">
+                        </div>
+                    </div>
+
+                    <!--Controls-->
+                    <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev" style="left: 15px; background: #c7c7c7;border-bottom-right-radius: 5px; border-top-right-radius: 5px; width: 5%;top: 100px;height: 40px">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next" style="right: 15px; background: #c7c7c7; border-bottom-right-radius: 5px; border-top-right-radius: 5px; width: 5%;top: 100px;height: 40px">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+
+                <div class="col-md-4 pl-2">
+                    <a href="http://">
+                        <img src="https://salt.tikicdn.com/cache/w408/ts/banner/69/9a/36/dcff148edf2a3918a8ac974d4b75cb20.png" alt="" style="height:240px">
+                    </a>
+                </div>
+            </div>
+
+            <!-- // category--hightlight -->
+            <div class="category__hightlight mt-3 p-3 bg-white">
+                <h5>
+                    <span class="text-danger">DANH MỤC NỔI BẬT</span>
+                </h5>
+                <div class="list__category pt-4 pb-4 row">
+                    <div class="col-md-2 text-center">
+                        <img class="w-50" src="https://salt.tikicdn.com/cache/280x280/ts/product/3e/6d/af/716b044e9580b7bb939e7a0b658fd087.jpg" alt="">
+                        <h6 class="small pt-2" style="font-size:12px">Sách kỹ năng làm việc</h6>
+                    </div>
+
+                    <div class="col-md-2 text-center">
+                        <img class="w-50" src="https://salt.tikicdn.com/cache/280x280/ts/product/bc/ad/94/e79a572ba4d57c07aa5ec1c323e2c22a.jpg" alt="">
+                        <h6 class="small pt-2" style="font-size:12px">Tiểu sử - Hồi ký</h6>
+                    </div>
+
+                    <div class="col-md-2 text-center">
+                        <img class="w-50" src="https://salt.tikicdn.com/cache/280x280/ts/product/37/59/f1/1101788da61ed1ad411251aff1927a29.jpg" alt="">
+                        <h6 class="small pt-2" style="font-size:12px">Sách học tiếng anh</h6>
+                    </div>
+
+                    <div class="col-md-2 text-center">
+                        <img class="w-50" src="https://salt.tikicdn.com/cache/280x280/ts/product/b1/80/77/256a28f588c20782d1eeecb949c0be1a.jpg" alt="">
+                        <h6 class="small pt-2" style="font-size:12px">How to - Self help</h6>
+                    </div>
+
+                    <div class="col-md-2 text-center">
+                        <img class="w-50" src="https://salt.tikicdn.com/cache/280x280/ts/product/51/ce/e1/0b075dee2ed24db065394a43dbf1df31.jpg" alt="">
+                        <h6 class="small pt-2" style="font-size:12px">Truyện ngắn</h6>
+                    </div>
+
+                    <div class="col-md-2 text-center">
+                        <img class="w-50" src="https://salt.tikicdn.com/cache/280x280/ts/product/7e/59/43/73124eb5381b75f554d75e5c30cbef0d.png" alt="">
+                        <h6 class="small pt-2" style="font-size:12px">Nước hoa nữ</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row bg-white mt-3 p-3 m-0">
+                <div class="col-md-1">
+                    <img class="w-75" src="https://salt.tikicdn.com/ts/upload/73/50/e1/83afc85db37c472de60ebef6eceb41a7.png" alt="">
+                    <p class="small mt-2">Mã giảm giá</p>
+                </div>
+
+                <div class="col-md-1">
+                    <img class="w-75" src="https://salt.tikicdn.com/ts/upload/51/34/7a/f0e1104c14349c93721da0d93ab05981.png" alt="">
+                    <p class="small mt-2">Không giới hạn</p>
+                </div>
+
+                <div class="col-md-1">
+                    <img class="w-75" src="https://salt.tikicdn.com/ts/upload/e4/74/3d/aafbdc961842e88bdc8cfbb08debe4fa.png" alt="">
+                    <p class="small mt-2">Giảm đến 50%</p>
+                </div>
+
+                <div class="col-md-1">
+                    <img class="w-75" src="https://salt.tikicdn.com/ts/upload/73/e0/7d/af993bdbf150763f3352ffa79e6a7117.png" alt="">
+                    <p class="small mt-2">Dịch vụ & tiện ích</p>
+                </div>
+
+                <div class="col-md-1">
+                    <img class="w-75" src="https://salt.tikicdn.com/ts/upload/a0/0d/90/bab67b6da67117f40538fc54fb2dcb5e.png" alt="">
+                    <p class="small mt-2">Đi chợ online</p>
+                </div>
+
+                <div class="col-md-1">
+                    <img class="w-75" src="https://salt.tikicdn.com/ts/upload/c2/da/13/638cc2dc09b1be2e148c0571a107281a.png" alt="">
+                    <p class="small mt-2">Freeship</p>
+                </div>
+
+                <div class="col-md-1">
+                    <img class="w-75" src="https://salt.tikicdn.com/ts/upload/52/50/73/0788d5207ec8b82e05859dfe953a4327.png" alt="">
+                    <p class="small mt-2">Hoàn tiền 15%</p>
+                </div>
+
+                <div class="col-md-1">
+                    <img class="w-75" src="https://salt.tikicdn.com/ts/upload/ce/ee/fe/a8a350727b38a1e20ce1610c5162fcb7.png" alt="">
+                    <p class="small mt-2">Gói hội viên</p>
+                </div>
+
+                <div class="col-md-1">
+                    <img class="w-75" src="https://salt.tikicdn.com/ts/upload/a9/58/39/872e4acbdb3576be53b57c05a386860b.png" alt="">
+                    <p class="small mt-2">Hẹn giao & Lắp đặt</p>
+                </div>
+
+
+                <div class="col-md-1">
+                    <img class="w-75" src="https://salt.tikicdn.com/ts/upload/46/7e/06/64c9e7975b58b8953a74fe77dd4cb4b5.png" alt="">
+                    <p class="small mt-2">Coupon 50%</p>
+                </div>
+
+                <div class="col-md-1">
+                    <img class="w-75" src="https://salt.tikicdn.com/ts/upload/4a/b2/c5/b388ee0e511889c83fab1217608fe82f.png" alt="">
+                    <p class="small mt-2">Ưu đãi đối tác</p>
+                </div>
+
+                <div class="col-md-1">
+                    <img class="w-75" src="https://salt.tikicdn.com/ts/upload/73/e0/7d/af993bdbf150763f3352ffa79e6a7117.png" alt="">
+                    <p class="small mt-2">Freeship</p>
+                </div>
+
+            </div>
+
+            <!-- search--hightlight  -->
+            <div class="search__hightlight mt-3 p-3 bg-white">
+                <div class="row justify-content-between pl-3 pr-3">
+                    <div>
+                        <h5 class="text-danger">
+                            <img src="https://salt.tikicdn.com/ts/upload/c5/0e/02/23066556738e7f5df8b8fde5d0d1dfd6.png" style="width: 10%;" alt=""> TÌM KIẾM NỔI BẬT
+                        </h5>
+                    </div>
+
+                    <div class="view--more text-primary">
+                        <i class="fas fa-sync-alt mr-1"></i>
+                        <span>XEM THÊM</span>
+                    </div>
+                </div>
+
+                <div class="list__search pt-4 pb-2 pl-3 pr-3 row">
+                    <div class="card col-md-3 border-grey p-0">
+                        <div class="card-body pl-0 pr-0 pt-2 pb-0">
+                            <div class="illutrator row m-1">
+                                <img class="col-md-4 p-0" src="https://salt.tikicdn.com/cache/280x280/ts/product/3b/5b/ee/e37d0135aa0d314ac8af2afb4eb739bc.jpg" alt="">
+                                <img class="col-md-4 p-0" src="https://salt.tikicdn.com/cache/280x280/ts/product/51/1e/85/7793d19ae470e25f1ab0cf3455ed8d62.jpg" alt="">
+                                <img class="col-md-4 p-0" src="https://salt.tikicdn.com/cache/280x280/ts/product/51/1e/85/7793d19ae470e25f1ab0cf3455ed8d62.jpg" alt="">
+                            </div>
+
+                            <div class="info mt-2 pt-2 pl-3 pb-2" style="background:rgb(255, 241, 241)">
+                                <h5 class="card-text small font-weight-bold">Ielts Writting</h5>
+                                <span class="small text-secondary">963 Sản phẩm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card col-md-3 border-grey p-0">
+                        <div class="card-body pl-0 pr-0 pt-2 pb-0">
+                            <div class="illutrator row m-1">
+                                <img class="col-md-4 p-0" src="https://salt.tikicdn.com/cache/280x280/ts/product/22/a9/48/c55f8c043e5ff5842aa15dc1f3b6c20f.jpg" alt="">
+                                <img class="col-md-4 p-0" src="https://salt.tikicdn.com/cache/280x280/ts/product/22/a9/48/c55f8c043e5ff5842aa15dc1f3b6c20f.jpg" alt="">
+                                <img class="col-md-4 p-0" src="https://salt.tikicdn.com/cache/280x280/ts/product/a4/f1/32/b496f7a3511264153e3995bbd34ab642.jpg" alt="">
+                            </div>
+
+                            <div class="info mt-2 pt-2 pl-3 pb-2" style="background: rgb(231, 248, 241)">
+                                <h5 class="card-text small font-weight-bold">Khéo ăn nói sẽ có được thiên hạ</h5>
+                                <span class="small text-secondary">141 Sản phẩm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card col-md-3 border-grey p-0">
+                        <div class="card-body pl-0 pr-0 pt-2 pb-0">
+                            <div class="illutrator row m-1">
+                                <img class="col-md-4 p-0" src="https://salt.tikicdn.com/cache/280x280/ts/product/82/07/35/7ef0b4cdb6985eeaa9c012e2239e766b.png" alt="">
+                                <img class="col-md-4 p-0" src="https://salt.tikicdn.com/cache/280x280/ts/product/ea/75/1e/81d4788cc180b8970148ef76a5621106.png" alt="">
+                                <img class="col-md-4 p-0" src="https://salt.tikicdn.com/cache/280x280/ts/product/e4/dc/97/c88e00466f7b6abc50d592bf64b4e32c.jpg" alt="">
+                            </div>
+
+                            <div class="info mt-2 pt-2 pl-3 pb-2" style="background: rgb(255, 241, 241)">
+                                <h5 class="card-text small font-weight-bold">Nước hoa Foellie</h5>
+                                <span class="small text-secondary">100 Sản phẩm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card col-md-3 border-grey p-0">
+                        <div class="card-body pl-0 pr-0 pt-2 pb-0">
+                            <div class="illutrator row m-1">
+                                <img class="col-md-4 p-0" src="https://salt.tikicdn.com/cache/280x280/ts/product/b6/f7/2e/2d306aa5a1bfb526e78bd0457e3d3ab2.jpg" alt="">
+                                <img class="col-md-4 p-0" src="https://salt.tikicdn.com/cache/280x280/ts/product/7d/0a/f9/5e3bed5ac02d10eb3591d86e5e13abf7.jpg" alt="">
+                                <img class="col-md-4 p-0" src="https://salt.tikicdn.com/cache/280x280/ts/product/23/d6/f7/73a31a01ee3d88940c16635e36741fec.jpg" alt="">
+                            </div>
+
+                            <div class="info mt-2 pt-2 pl-3 pb-2" style="background: rgb(231, 248, 241)">
+                                <h5 class="card-text small font-weight-bold">Một lít nước mắt</h5>
+                                <span class="small text-secondary">71 Sản phẩm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile--category   -->
+            <div class="product mt-4 ml-0 mr-0 p-3 bg-white">
+                <h5>
+                    <i class="fas fa-mobile-alt mr-1 text-danger"></i>
+                    <span class="text-danger">ĐIỆN THOẠI NỔI BẬT</span>
+                </h5>
+                <div class="product__detail row mt-5">
+                    <div class="product--item col-md-3 mb-4">
+                        <img src="https://phoneaqua.com/products/apple-iphone-12.jpg" alt="">
+
+                        <h6 class="mt-4 mb-1 text-darkgrey">Apple Iphone 12 price </h6>
+                        <div class="rate mb-3">
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                        </div>
+                        <span class="badge badge-pill badge-danger pt-2 pb-2 pl-3 pr-3">21.499.000 <u>đ</u></span>
+                        <span class="badge badge-pill badge-warning p-2">-20%</span>
+                        <strike class="small" style="color: #8a8a8a;">24.999.999 <u>đ</u></strike>
+
+                        <div class="config bg-light rounded mt-3 ml-1 mr-1 mb-3 pt-2 pb-2 pl-2 pr-2 row">
+                            <div class="chip border border-default mb-1 mr-1 rounded col-md-8">
+                                <small> Snapdragon 720G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>6.7"</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>8G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>256G</small>
+                            </div>
+                        </div>
+
+                        <!-- <button type="button" name="" id="" class="btn btn-success float-right  btn-sm">
+                            <i class="fas fa-cart-plus mr-2"></i> Buy
+                        </button> -->
+                    </div>
+
+                    <div class="product--item col-md-3 ">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewLCELqmdHXdDSpFpHlKQPplJlYLdZD7XFp2XGEJDV_S5U-XkdQ5hxFzTJ0or27LvDAU&usqp=CAU " alt=" ">
+                        <h6 class="mt-4 mb-1 text-darkgrey">Apple Iphone 11 price </h6>
+                        <div class="rate mb-3">
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                        </div>
+                        <span class="badge badge-pill badge-danger pt-2 pb-2 pl-3 pr-3">21.499.000 <u>đ</u></span>
+                        <span class="badge badge-pill badge-warning p-2">-20%</span>
+                        <strike class="small" style="color: #8a8a8a;">24.999.999 <u>đ</u></strike>
+
+                        <div class="config bg-light rounded mt-3 ml-1 mr-1 mb-3 pt-2 pb-2 pl-2 pr-2 row">
+                            <div class="chip border border-default mb-1 mr-1 rounded col-md-8">
+                                <small> Snapdragon 720G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>6.7"</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>8G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>256G</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product--item col-md-3 ">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%2Fxiaomi-mi11.png?alt=media&token=a5adb1d0-cf92-4223-bb45-57e86c830719 " alt=" ">
+                        <h6 class="mt-4 mb-1 text-darkgrey">XiaoMi price </h6>
+                        <div class="rate mb-3">
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                        </div>
+                        <span class="badge badge-pill badge-danger pt-2 pb-2 pl-3 pr-3">21.499.000 <u>đ</u></span>
+                        <span class="badge badge-pill badge-warning p-2">-20%</span>
+                        <strike class="small" style="color: #8a8a8a;">24.999.999 <u>đ</u></strike>
+
+                        <div class="config bg-light rounded mt-3 ml-1 mr-1 mb-3 pt-2 pb-2 pl-2 pr-2 row">
+                            <div class="chip border border-default mb-1 mr-1 rounded col-md-8">
+                                <small> Snapdragon 720G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>6.7"</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>8G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>256G</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product--item col-md-3 ">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%2Fss-galaxy-a51.png?alt=media&token=a656955e-05de-4aeb-b0b1-ec0530d2ae4c " alt=" ">
+                        <h6 class="mt-4 mb-1 text-darkgrey">xiaomi redmi note 10 </h6>
+                        <div class="rate mb-3">
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                        </div>
+                        <span class="badge badge-pill badge-danger pt-2 pb-2 pl-3 pr-3">21.499.000 <u>đ</u></span>
+                        <span class="badge badge-pill badge-warning p-2">-20%</span>
+                        <strike class="small" style="color: #8a8a8a;">24.999.999 <u>đ</u></strike>
+
+                        <div class="config bg-light rounded mt-3 ml-1 mr-1 mb-3 pt-2 pb-2 pl-2 pr-2 row">
+                            <div class="chip border border-default mb-1 mr-1 rounded col-md-8">
+                                <small> Snapdragon 720G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>6.7"</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>8G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>256G</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product--item col-md-3 mb-4">
+                        <img src="https://phoneaqua.com/products/apple-iphone-12.jpg" alt="">
+                        <h6 class="mt-4 mb-1 text-darkgrey">Apple Iphone 12 price </h6>
+                        <div class="rate mb-3">
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                        </div>
+                        <span class="badge badge-pill badge-danger pt-2 pb-2 pl-3 pr-3">21.499.000 <u>đ</u></span>
+                        <span class="badge badge-pill badge-warning p-2">-20%</span>
+                        <strike class="small" style="color: #8a8a8a;">24.999.999 <u>đ</u></strike>
+
+                        <div class="config bg-light rounded mt-3 ml-1 mr-1 mb-3 pt-2 pb-2 pl-2 pr-2 row">
+                            <div class="chip border border-default mb-1 mr-1 rounded col-md-8">
+                                <small> Snapdragon 720G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>6.7"</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>8G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>256G</small>
+                            </div>
+                        </div>
+
+                        <!-- <button type="button" name="" id="" class="btn btn-success float-right  btn-sm">
+                            <i class="fas fa-cart-plus mr-2"></i> Buy
+                        </button> -->
+                    </div>
+
+                    <div class="product--item col-md-3 ">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewLCELqmdHXdDSpFpHlKQPplJlYLdZD7XFp2XGEJDV_S5U-XkdQ5hxFzTJ0or27LvDAU&usqp=CAU " alt=" ">
+                        <h6 class="mt-4 mb-1 text-darkgrey">Apple Iphone 11 price </h6>
+                        <div class="rate mb-3">
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                        </div>
+                        <span class="badge badge-pill badge-danger pt-2 pb-2 pl-3 pr-3">21.499.000 <u>đ</u></span>
+                        <span class="badge badge-pill badge-warning p-2">-20%</span>
+                        <strike class="small" style="color: #8a8a8a;">24.999.999 <u>đ</u></strike>
+
+                        <div class="config bg-light rounded mt-3 ml-1 mr-1 mb-3 pt-2 pb-2 pl-2 pr-2 row">
+                            <div class="chip border border-default mb-1 mr-1 rounded col-md-8">
+                                <small> Snapdragon 720G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>6.7"</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>8G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>256G</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product--item col-md-3 ">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%2Fxiaomi-mi11.png?alt=media&token=a5adb1d0-cf92-4223-bb45-57e86c830719 " alt=" ">
+                        <h6 class="mt-4 mb-1 text-darkgrey">XiaoMi price </h6>
+                        <div class="rate mb-3">
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                        </div>
+                        <span class="badge badge-pill badge-danger pt-2 pb-2 pl-3 pr-3">21.499.000 <u>đ</u></span>
+                        <span class="badge badge-pill badge-warning p-2">-20%</span>
+                        <strike class="small" style="color: #8a8a8a;">24.999.999 <u>đ</u></strike>
+
+                        <div class="config bg-light rounded mt-3 ml-1 mr-1 mb-3 pt-2 pb-2 pl-2 pr-2 row">
+                            <div class="chip border border-default mb-1 mr-1 rounded col-md-8">
+                                <small> Snapdragon 720G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>6.7"</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>8G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>256G</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product--item col-md-3 ">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%2Fss-galaxy-a51.png?alt=media&token=a656955e-05de-4aeb-b0b1-ec0530d2ae4c " alt=" ">
+                        <h6 class="mt-4 mb-1 text-darkgrey">xiaomi redmi note 10 </h6>
+                        <div class="rate mb-3">
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star checked text-warning small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                            <span class="fa fa-star text-secondary small"></span>
+                        </div>
+                        <span class="badge badge-pill badge-danger pt-2 pb-2 pl-3 pr-3">21.499.000 <u>đ</u></span>
+                        <span class="badge badge-pill badge-warning p-2">-20%</span>
+                        <strike class="small" style="color: #8a8a8a;">24.999.999 <u>đ</u></strike>
+
+                        <div class="config bg-light rounded mt-3 ml-1 mr-1 mb-3 pt-2 pb-2 pl-2 pr-2 row">
+                            <div class="chip border border-default mb-1 mr-1 rounded col-md-8">
+                                <small> Snapdragon 720G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>6.7"</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>8G</small>
+                            </div>
+                            <div class="chip border border-default rounded col-md-3">
+                                <small>256G</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row col-md-12 justify-content-center">
+                        <button class="btn btn-primary" disabled>
+                            <span class="spinner-border spinner-border-sm"></span>
+                                Đang tải thêm sản phẩm  ....
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Receive Mail   -->
+            <div class="row p-3 mt-3 align-items-center">
+                <div class="col-md-6 row">
+                    <div class="col-md-3">
+                        <img class="w-100" src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/newsletter.png" alt="">
+                    </div>
+
+                    <div class="info--mail col-md-9">
+                        <h6>Đăng ký nhận bản tin Tiki</h6>
+                        <p class="small">Đừng bỏ lỡ hàng ngàn sản phẩm và chương trình siêu hấp dẫn</p>
+                    </div>
+                </div>
+
+                <div class="input-group col-md-6">
+                    <input type="text" class="form-control" placeholder="Địa chỉ Email của bạn">
+
+                    <button class="btn btn-success" type="submit" style="height: 38px;
+                    border-radius: 0;">Đăng ký</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer  -->
+    <div class="footer container pt-4 pb-3">
+        <div class="row ">
+            <div class="col-md-3 footer--content ">
+                <p style="color: rgb(51, 51, 51);font-size: 13px;font-weight: 500; " class="mb-3">HỖ TRỢ KHÁCH HÀNG</p>
+                <small class="text-danger font-weight-bold">Hotline chăm sóc khách hàng: 1900-6035</small>
+                <small>(1000đ/phút , 8-21h kể cả T7, CN)</small><br>
+                <a href=" ">Các câu hỏi thường gặp</a><br>
+                <a href=" ">Hướng dẫn đặt hàng</a><br>
+                <a href=" ">Phương thức vận chuyển</a><br>
+                <a href=" ">chính sách đổi trả</a><br>
+                <a href=" ">Hướng dẫn trả góp</a><br>
+                <a href=" ">Báo lỗi bảo mật: xuanhoang997@gmail.com</a><br>
+            </div>
+            <div class="col-md-2 footer--content ">
+                <p style="color: rgb(51, 51, 51);font-size: 13px;font-weight: 500; ">VỀ TIKI</p>
+                <a href=" ">Giới thiệu về Tiki</a><br>
+                <a href=" ">Tuyển dụng</a><br>
+                <a href=" ">chính sách bảo mật thanh toán</a><br>
+                <a href=" ">Điều khoản sử dụng</a><br>
+                <a href=" ">Giưới thiệu Tiki xu</a><br>
+                <a href=" ">Bản hành doanh nghiệp</a><br>
+            </div>
+            <div class="col-md-2 footer--content ">
+                <p style="color: rgb(51, 51, 51);font-size: 13px;font-weight: 500; ">HỢP TÁC VÀ LIÊN KẾT</p>
+                <a href=" ">Quy chế hoạt động sàn GDTMĐT</a><br>
+                <a href=" ">Bán hàng cùng Tiki</a><br>
+            </div>
+            <div class="col-md-3 pl-0 ">
+                <p style="color: rgb(51, 51, 51);font-size: 13px;font-weight: 500; ">PHƯƠNG THỨC THANH TOÁN</p>
+                <div class="payment row ">
+                    <div class="col-md-4 mb-2 ">
+                        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/visa.svg " alt=" ">
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/mastercard.svg " alt=" ">
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/jcb.svg " alt=" ">
+                    </div>
+
+
+                    <div class="col-md-4 ">
+                        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/cash.svg " alt=" ">
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/internet-banking.svg " alt=" ">
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/installment.svg " alt=" ">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 ">
+                <p style="color: rgb(51, 51, 51);font-size: 13px;font-weight: 500; ">KẾT NỐI VỚI CHÚNG TÔI</p>
+                <div class="connect row ">
+                    <div class="col-md-2 ">
+                        <a href=" ">
+                            <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/fb.svg " alt=" ">
+                        </a>
+                    </div>
+
+                    <div class="col-md-3 ">
+                        <a href=" ">
+                            <img src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/youtube.svg " alt=" ">
+                        </a>
+                    </div>
+
+                    <div class="col-md-3 ">
+                        <a href=" ">
+                            <img src="https://chanhtuoi.vn1.vdrive.vn/uploads/2020/10/logo-zalo.jpg " class="w-100 " alt=" ">
+                        </a>
+                    </div>
+                </div>
+
+                <p style="color: rgb(51, 51, 51);font-size: 13px;font-weight: 500; " class="mt-3 ">TẢI ỨNG DỤNG</p>
+                <div class="app ">
+                    <a href=" ">
+                        <img class="w-50 mb-2 " src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/appstore.png " alt=" ">
+                        <img class="w-50 " src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/playstore.png " alt=" ">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 ">
+            <div class="author col-md-8 ">
+                <h6 class="font-weight-bold small">© 2021 - <span class="text-success">Website Is Created By  LeHoang97</span> </h6>
+                <p class="text-danger">Start project: 21.06.2021</p>
+                <small>Giấy chứng nhận Đăng ký Kinh doanh số 0309532909 do Sở Kế hoạch và Đầu tư Thành phố Hồ Chí Minh cấp ngày 06/01/2010</small>
+            </div>
+
+            <div class="authent col-md-4 row align-items-center justify-content-end ">
+                <div class="col-md-2 ">
+                    <a href=" ">
+                        <img class="w-100 " src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/bo-cong-thuong-2.png " alt=" ">
+                    </a>
+                </div>
+
+                <div class="col-md-4 ">
+                    <a href=" ">
+                        <img class="w-100 " src="https://frontend.tikicdn.com/_desktop-next/static/img/footer/bo-cong-thuong.svg " alt=" ">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CDN BS  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+</body>
+
+</html>
