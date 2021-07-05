@@ -20,6 +20,7 @@ const Product_detail=({ match })=> {
         fetchOptionProd();
     }, []);
 
+    // Call api
     const fetchProduct = () => {
         axios.get(`https://y6896.sse.codesandbox.io/product_mobile/?id=${match.params.id}`)
         .then((res) => { setData(res.data); console.log(res.data); })
