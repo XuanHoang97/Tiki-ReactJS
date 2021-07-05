@@ -11,17 +11,23 @@ import Redirect from './../router/Redirect';
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import { Button,Modal} from 'react-bootstrap';
 import ScrollToTop from '../router/scrollToTop';
-import { tikiData } from '../APIs/firebaseConnect';
 
 import axios from 'axios';
 function App() {
-  console.log(tikiData)
   return (
     <Router >
       <div className="">
         <ScrollToTop />
         <Header />
-        <Redirect />
+        {/* <Redirect /> */}
+        <Switch>
+            <Route exact path="/"><Body /></Route>
+            <Route exact path='/chi-tiet-san-pham/:slug.:id.html' component={Product_detail} />
+            <Route exact path="/gio-hang-0"><Cart /></Route>
+            <Route exact path="/gio-hang-1"><Cart1 /></Route>
+            <Route exact path="/thanh-toan"><Payment /></Route>
+            <Route exact path="/dat-hang-thanh-cong"><Order_success /></Route>
+        </Switch>
         <Footer />
       </div>
     </Router>

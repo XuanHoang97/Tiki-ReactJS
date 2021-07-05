@@ -7,35 +7,37 @@ import NumberFormat from 'react-number-format';
 const Mobile_ctg = () => {
     var NumberFormat = require('react-number-format');
 
-    const [listMobile, setListMobile] = useState([]);
+    const [products, setProducts] = useState([]);
     useEffect(() => {
-        axios.get('https://y6896.sse.codesandbox.io/product_mobile')
-        .then( res  => {setListMobile(res.data)})
-        .catch( err => { console.log(err); alert("Lỗi không load được sản phẩm từ Api");})
-    }, [])
+        fetchProducts();
+        }, []);
+
+    const fetchProducts = () => {
+        axios
+        .get('https://y6896.sse.codesandbox.io/product_mobile/')
+        .then(res => { setProducts(res.data); })
+        
+        .catch((err) => { console.log(err); });
+    };
 
     return (
         <div className="product mt-3 ml-0 mr-0 p-3 bg-white text-center">
-                <h5 className="text-left">
-                    <i className="fas fa-mobile-alt mr-1 text-danger mr-3" />
-                    <span className="text-danger ">ĐIỆN THOẠI NỔI BẬT</span>
-                </h5>
+            <h5 className="text-left">
+                <i className="fas fa-mobile-alt mr-1 text-danger mr-3" />
+                <span className="text-danger ">ĐIỆN THOẠI NỔI BẬT</span>
+            </h5>
 
-                <div className="product__detail row mt-5">
+            <div className="product__detail row mt-5">
 
-                { listMobile.map( (mobile,key) => {
+                {products.map( (mobile,key) => {
                     return (
                     <React.Fragment key={mobile.id} mobileId={mobile.id}>
                         <div className="product--item col-md-3 col-6 mb-4">
-                            <Link to={"/chi-tiet-san-pham/" + mobile.name}>
+                            <Link to={`/chi-tiet-san-pham/${mobile.id}` + mobile.name +"." + mobile.id + ".html"}>
                                 <img src={mobile.img} alt="mobile" />
                                 <h6 className="mt-4 mb-1 text-darkgrey">{mobile.name}</h6>
                             </Link>
 
-                            {/* <Link to={"/chi-tiet-san-pham/" + mobile.name + "." + mobile.id +".html"}>
-                                <img src={mobile.img} alt="mobile" />
-                                <h6 className="mt-4 mb-1 text-darkgrey">{mobile.name}</h6>
-                            </Link> */}
 
                             <div className="rate mb-3">
                                 <span className="fa fa-star checked text-warning small" />
@@ -64,7 +66,7 @@ const Mobile_ctg = () => {
                             </strike>
                             <div className="config bg-light rounded mt-3 ml-1 mr-1 mb-3 pt-2 pb-2 pl-2 pr-2 row">
                             <div className="chip border border-default mb-1 mr-1 rounded col-md-8">
-                                <small> {mobile.chip} G</small>
+                                <small> {mobile.chip}</small>
                             </div>
                     
                             <div className="chip border border-default rounded col-md-4">
@@ -88,8 +90,8 @@ const Mobile_ctg = () => {
                     Đang tải thêm sản phẩm . . .
                     </button>
                 </div>
-                </div>
             </div>
+        </div>
     );
 }
 

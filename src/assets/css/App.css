@@ -23,6 +23,10 @@ a.dropdown-item:hover {
     color: #252525;
 }
 
+.footer .row .footer--content a:hover {
+    color: blue;
+}
+
 a {
     text-decoration: none !important;
 }

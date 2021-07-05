@@ -37,96 +37,96 @@
     "category_menu": [{
             "id": 1,
             "item": "Điện thoại - máy tính bảng",
-            "icon": "fas fa-mobile-alt mr-3"
+            "icon": "fas fa-mobile-alt mr-2 col-md-1 col-1"
         },
 
         {
             "id": 2,
             "item": "Điện tử - điện lạnh",
-            "icon": "fas fa-tv mr-3"
+            "icon": "fas fa-tv mr-2 col-md-1 col-1"
         },
 
         {
             "id": 3,
             "item": "Phụ kiện - Thiết bị số",
-            "icon": "fas fa-headphones-alt mr-3"
+            "icon": "fas fa-headphones-alt mr-2 col-md-1 col-1"
         },
 
         {
             "id": 4,
             "item": "Laptop - Thiết bị IT",
-            "icon": "fas fa-laptop mr-3"
+            "icon": "fas fa-laptop mr-2 col-md-1 col-1"
         },
 
         {
             "id": 5,
             "item": "Máy ảnh - quay phim",
-            "icon": "fas fa-camera mr-3"
+            "icon": "fas fa-camera mr-2 col-md-1 col-1"
         },
 
         {
             "id": 6,
             "item": "Điện dân dụng",
-            "icon": "fas fa-microscope mr-3"
+            "icon": "fas fa-microscope mr-2 col-md-1 col-1"
         },
         {
             "id": 7,
             "item": "Nhà cửa - Đời sống",
-            "icon": "fas fa-concierge-bell mr-3"
+            "icon": "fas fa-concierge-bell mr-2 col-md-1 col-1"
         },
 
         {
             "id": 8,
             "item": "Hàng tiêu dùng - Thực phẩm",
-            "icon": "fas fa-concierge-bell mr-3"
+            "icon": "fas fa-concierge-bell mr-2 col-md-1 col-1"
         },
 
         {
             "id": 9,
             "item": "Đồ chơi Mẹ & Bé",
-            "icon": "fas fa-mobile-alt mr-3"
+            "icon": "fas fa-mobile-alt mr-2 col-md-1 col-1"
         },
 
         {
             "id": 10,
             "item": "Sức khoẻ - Làm đẹp",
-            "icon": "fas fa-mobile-alt mr-3"
+            "icon": "fas fa-mobile-alt mr-2 col-md-1 col-1"
         },
 
         {
             "id": 11,
             "item": "Thời trang - Phụ kiện",
-            "icon": "fas fa-concierge-bell mr-3"
+            "icon": "fas fa-concierge-bell mr-2 col-md-1 col-1"
         },
 
         {
             "id": 12,
             "item": "Thể thao - Dã ngoại",
-            "icon": "fas fa-mobile-alt mr-3"
+            "icon": "fas fa-mobile-alt mr-2 col-md-1 col-1"
         },
 
         {
             "id": 13,
             "item": "Xe máy, ô tô, Xe đạp",
-            "icon": "fas fa-mobile-alt mr-3"
+            "icon": "fas fa-mobile-alt mr-2 col-md-1 col-1"
         },
 
         {
             "id": 14,
             "item": "Hàng quốc tế",
-            "icon": "fas fa-concierge-bell mr-3"
+            "icon": "fas fa-globe-americas mr-2 col-md-1 col-1"
         },
 
         {
             "id": 15,
             "item": "Sách, VPP & Quà tặng",
-            "icon": "fas fa-mobile-alt mr-3"
+            "icon": "fas fa-mobile-alt mr-2 col-md-1 col-1"
         },
 
         {
             "id": 16,
             "item": "Voucher - Dịch vụ - Thẻ cào",
-            "icon": "fas fa-mobile-alt mr-3"
+            "icon": "fas fa-mobile-alt mr-2 col-md-1 col-1"
         }
     ],
 
@@ -152,7 +152,7 @@
     "category_special": [{
             "id": 1,
             "img": "https://salt.tikicdn.com/cache/280x280/ts/product/55/df/99/b3cdfe54c46ce8612e86b6b32403d24a.jpg",
-            "content": "Áo khoác nam"
+            "content": "Vớ, tất nam nữ"
         },
 
         {
@@ -182,6 +182,41 @@
             "id": 6,
             "img": "https://salt.tikicdn.com/cache/280x280/ts/product/0c/c5/09/fbb96c0b26aab13a5083b31bb3b9b0d4.jpg",
             "content": "Balo - nữ"
+        },
+
+        {
+            "id": 7,
+            "img": "https://salt.tikicdn.com/cache/280x280/ts/product/a6/c4/16/4cc66789aef458fe08cf7731d03793b8.jpg",
+            "content": "Nón chống nắng nữ"
+        },
+
+        {
+            "id": 8,
+            "img": "https://salt.tikicdn.com/cache/280x280/ts/product/41/02/47/4dcb26cd71d6bab8ca6c3dccc1063ead.jpg",
+            "content": "Giày cao gót nhọn"
+        },
+
+        {
+            "id": 9,
+            "img": "https://salt.tikicdn.com/cache/280x280/ts/product/29/81/c2/e510cce7f267fd06f7d2dd6aea21a997.jpg",
+            "content": "Áo Hoodie nam vải nỉ"
+        },
+
+        {
+            "id": 10,
+            "img": "https://salt.tikicdn.com/cache/280x280/ts/product/df/07/35/e687899e591091c48760c6bc32d525de.jpg",
+            "content": "Clutch da"
+        },
+
+        {
+            "id": 11,
+            "img": "https://salt.tikicdn.com/cache/280x280/ts/product/41/78/c4/d7d132c36d76ec51e81368664b405ae6.png",
+            "content": "Áo phông nữ đẹp"
+        },
+        {
+            "id": 12,
+            "img": "https://salt.tikicdn.com/cache/280x280/ts/product/8a/8b/48/be6f2482fb356faa7ee9bde8adb08cde.jpg",
+            "content": "Giày thể thao nam cao cổ"
         }
     ],
 
@@ -260,19 +295,55 @@
         }
     ],
 
+    "feature_special": [{
+            "id": 1,
+            "content": "Hai màn hình HD+ mở rộng tối đa không gian trải nghiệm hình ảnh"
+        },
+
+        {
+            "id": 2,
+            "content": "Thân máy hoàn thiện đường gập tối ưu"
+        },
+
+        {
+            "id": 3,
+            "content": "Sạc nhanh siêu tốc 15W giúp nạp đầy năng lượng nhanh chóng"
+        },
+
+        {
+            "id": 4,
+            "content": "Dung lượng pin lớn 4500mAh thoải mái trải nghiệm cả ngày dài"
+        },
+
+        {
+            "id": 5,
+            "content": "3 camera sau 12MP + 12MP + 12MP hỗ trợ chụp ảnh đa tính năng"
+        }
+    ],
+
     "product_mobile": [{
             "id": 1,
             "img": "https://phoneaqua.com/products/apple-iphone-12.jpg",
             "name": "Apple iphone 12 Price",
-            "price": 21499000,
+            "price": 25499000,
             "sale_off": 20,
-            "price_old": 24499000,
-            "chip": "Snapdragon 720",
-            "screen": 6.7,
-            "ram": 8,
-            "rom": 256,
+            "price_old": 29499000,
+            "config": [{
+                "chip": "Apple Bionic13",
+                "screen": 6.5,
+                "ram": 8,
+                "rom": 240
+            }],
             "origin": "Việt nam",
-            "pin_capacity": 4500
+            "pin_capacity": 4500,
+            "accessories": [{
+                "charging": 1,
+                "charging cable": 2,
+                "sim": 2,
+                "headphone": 1,
+                "introBook": 1,
+                "bumper": 2
+            }]
         },
 
         {
@@ -280,29 +351,33 @@
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewLCELqmdHXdDSpFpHlKQPplJlYLdZD7XFp2XGEJDV_S5U-XkdQ5hxFzTJ0or27LvDAU&usqp=CAU",
             "name": "Apple iphone 11 Price",
             "price": 21499000,
-            "sale_off": 20,
+            "sale_off": 17,
             "price_old": 24499000,
-            "chip": "Snapdragon 720",
-            "screen": 6.7,
-            "ram": 8,
-            "rom": 256,
+            "config": [{
+                "chip": "chip A11 Bionic",
+                "screen": 6.7,
+                "ram": 8,
+                "rom": 256
+            }],
             "origin": "Việt nam",
-            "pin_capacity": 4500
+            "pin_capacity": 4700
         },
 
         {
             "id": 3,
             "img": "https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%2Fxiaomi-mi11.png?alt=media&token=a5adb1d0-cf92-4223-bb45-57e86c830719",
             "name": "Xiaomi Price",
-            "price": 21499000,
-            "sale_off": 20,
-            "price_old": 24499000,
-            "chip": "Snapdragon 720",
-            "screen": 6.7,
-            "ram": 8,
-            "rom": 256,
+            "price": 12499000,
+            "sale_off": 15,
+            "price_old": 15499000,
+            "config": [{
+                "chip": "Exynos 9820",
+                "screen": 6.2,
+                "ram": 6,
+                "rom": 240
+            }],
             "origin": "Việt nam",
-            "pin_capacity": 4500
+            "pin_capacity": 4800
         },
 
         {
@@ -312,10 +387,12 @@
             "price": 21499000,
             "sale_off": 20,
             "price_old": 24499000,
-            "chip": "Snapdragon 720",
-            "screen": 6.7,
-            "ram": 8,
-            "rom": 256,
+            "config": [{
+                "chip": "Snapdragon 720",
+                "screen": 6.7,
+                "ram": 8,
+                "rom": 256
+            }],
             "origin": "Việt nam",
             "pin_capacity": 4500
         },
@@ -323,13 +400,15 @@
             "id": 5,
             "img": "https://phoneaqua.com/products/apple-iphone-12.jpg",
             "name": "Apple iphone 12 Price",
-            "price": 21499000,
-            "sale_off": 20,
+            "price": 21999000,
+            "sale_off": 13,
             "price_old": 24499000,
-            "chip": "Snapdragon 720",
-            "screen": 6.7,
-            "ram": 8,
-            "rom": 256,
+            "config": [{
+                "chip": "MediaTek Helio",
+                "screen": 6.7,
+                "ram": 8,
+                "rom": 256
+            }],
             "origin": "Việt nam",
             "pin_capacity": 4500
         },
@@ -338,45 +417,51 @@
             "id": 6,
             "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSewLCELqmdHXdDSpFpHlKQPplJlYLdZD7XFp2XGEJDV_S5U-XkdQ5hxFzTJ0or27LvDAU&usqp=CAU",
             "name": "Apple iphone 11 Price",
-            "price": 21499000,
-            "sale_off": 20,
-            "price_old": 24499000,
-            "chip": "Snapdragon 720",
-            "screen": 6.7,
-            "ram": 8,
-            "rom": 256,
+            "price": 15499000,
+            "sale_off": 16,
+            "price_old": 18499000,
+            "config": [{
+                "chip": "Snapdragon 720",
+                "screen": 6.4,
+                "ram": 6,
+                "rom": 256
+            }],
             "origin": "Việt nam",
-            "pin_capacity": 4500
+            "pin_capacity": 4800
         },
 
         {
             "id": 7,
             "img": "https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%2Fxiaomi-mi11.png?alt=media&token=a5adb1d0-cf92-4223-bb45-57e86c830719",
             "name": "Xiaomi Price",
-            "price": 21499000,
-            "sale_off": 20,
-            "price_old": 24499000,
-            "chip": "Snapdragon 720",
-            "screen": 6.7,
-            "ram": 8,
-            "rom": 256,
+            "price": 8499000,
+            "sale_off": 15,
+            "price_old": 12499000,
+            "config": [{
+                "chip": "MediaTek Helio",
+                "screen": 6.1,
+                "ram": 8,
+                "rom": 128
+            }],
             "origin": "Việt nam",
-            "pin_capacity": 4500
+            "pin_capacity": 5000
         },
 
         {
             "id": 8,
             "img": "https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%2Fss-galaxy-a51.png?alt=media&token=a656955e-05de-4aeb-b0b1-ec0530d2ae4c",
             "name": "Xiaomi Redmi Note 10",
-            "price": 21499000,
+            "price": 7499000,
             "sale_off": 20,
-            "price_old": 24499000,
-            "chip": "Snapdragon 720",
-            "screen": 6.7,
-            "ram": 8,
-            "rom": 256,
+            "price_old": 10499000,
+            "config": [{
+                "chip": "Hisilicon Kirin",
+                "screen": 5.7,
+                "ram": 6,
+                "rom": 240
+            }],
             "origin": "Việt nam",
-            "pin_capacity": 4500
+            "pin_capacity": 4600
         }
     ],
 
@@ -410,7 +495,7 @@
             "img1": "https://salt.tikicdn.com/cache/280x280/ts/product/3b/5b/ee/e37d0135aa0d314ac8af2afb4eb739bc.jpg",
             "img2": "https://salt.tikicdn.com/cache/280x280/ts/product/51/1e/85/7793d19ae470e25f1ab0cf3455ed8d62.jpg",
             "img3": "https://salt.tikicdn.com/cache/280x280/ts/product/51/1e/85/7793d19ae470e25f1ab0cf3455ed8d62.jpg",
-            "content": "Ielts Writting",
+            "content": "IELTS Writting",
             "number": 963,
             "bg": "rgb(255, 241, 241)"
         },

@@ -1,10 +1,10 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import React, {useState, useEffect} from 'react';
+import { BrowserRouter as Router, Switch, Route, Link, useParams} from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import axios from "axios";
 
-function Prod_buy(props) {
+function Prod_buy(props,{match}) {
     const [count, setCount] = useState(0);
     const [error, setError] = useState(null);
     const Qty = props.qty;
@@ -34,10 +34,25 @@ function Prod_buy(props) {
         console.log(x);
     }
 
+    // const [ProdDetail, setProdDetail] = useState([]);
+    // useEffect(() => {
+    //     fetchDetail();
+    // }, []);
+
+    // const fetchDetail = () => {
+    //     axios.get(`https://y6896.sse.codesandbox.io/product_mobile/?id=${match.params.id}`)
+    //     .then((res) => { setProdDetail(res.data); console.log(res.data); })
+    //     .catch((err) => console.log(err));
+    // };
+
 
     return (
         <div className="col-md-6 pl-4 pr-2 text-left">
+            {/* {ProdDetail.map((item, key) => {
+                        return ( */}
             <h5>Samsung galaxy ZFold2</h5>
+            {/* );
+                    })} */}
             <div className="rate row m-1 mt-3 mb-2 align-items-center">
                 <span className="fa fa-star checked text-warning small" />
                 <span className="fa fa-star checked text-warning small" />

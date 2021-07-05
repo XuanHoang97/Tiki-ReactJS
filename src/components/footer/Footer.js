@@ -79,8 +79,8 @@ class Footer extends Component {
                     <p style={{color: 'rgb(51, 51, 51)', fontSize: '13px', fontWeight: 500}} className="mt-3 ">TẢI ỨNG DỤNG</p>
                     <div className="app ">
                     <a href=" ">
-                        <img className="w-50 col-4 mb-2 " src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/appstore.png " alt=" " /> <br/>
-                        <img className="w-50 col-4 " src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/playstore.png " alt=" " />
+                        <img className="w-75 col-md-10 col-4 mb-2 " src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/appstore.png " alt=" " /> <br/>
+                        <img className="w-75 col-md-10 col-4 " src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/playstore.png " alt=" " />
                     </a>
                     </div>
                 </div>

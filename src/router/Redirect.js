@@ -14,7 +14,7 @@ class Redirect extends Component {
                 <Switch>
                     <Route exact path="/"><Body /></Route>
                     {/* <Route exact path="/chi-tiet-san-pham/:slug.:id.html"><Product_detail /></Route> */}
-                    <Route exact path="/chi-tiet-san-pham/:id"><Product_detail /></Route>
+                    <Route exact path="/chi-tiet-san-pham/:id" ><Product_detail /></Route>
                     <Route exact path="/gio-hang-0"><Cart /></Route>
                     <Route exact path="/gio-hang-1"><Cart1 /></Route>
                     <Route exact path="/thanh-toan"><Payment /></Route>

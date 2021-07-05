@@ -9,7 +9,7 @@ const allReducer = (state = tikiInitialState, action) => {
     switch (action.type) {
         case "SHOW_MORE":
             console.log('load tahnh cong');
-            return {...state, viewMore:!state.viewMore}
+            return {...state, viewMore: !state.viewMore }
 
 
         default:
