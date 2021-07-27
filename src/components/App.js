@@ -1,4 +1,4 @@
-import './../assets/css/App.css';
+import './../assets/css/App.scss';
 import Header from './header/Header';
 import Body from './body/Body';
 import Product_detail from '../pages/product/Product_detail';

@@ -3,7 +3,7 @@ import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import NumberFormat from 'react-number-format';
 
-
+// Call api 
 const Mobile_ctg = () => {
     var NumberFormat = require('react-number-format');
 

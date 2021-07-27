@@ -35,6 +35,35 @@ img {
                             }
                         }
                     }
+                    .dropdown-menu::before {
+                        content: "";
+                        border-bottom: 0.35rem solid #fff;
+                        border-right: 0.35rem solid transparent;
+                        border-left: 0.35rem solid transparent;
+                        position: absolute;
+                        top: -0.3rem;
+                        right: 7rem;
+                        z-index: 10;
+                        .menu__item {}
+                    }
+                }
+                .menu_ctg:after {
+                    content: '';
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    transition: opacity .35s ease-in-out;
+                    opacity: 0;
+                    visibility: hidden;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    pointer-events: none;
+                }
+                .menu_ctg:hover:after {
+                    z-index: 10;
+                    opacity: 1;
+                    visibility: visible;
+                    position: fixed;
                 }
                 .navbar-brand {}
                 .navbar-toggler {
@@ -98,6 +127,16 @@ img {
                                     }
                                 }
                             }
+                            div::before {
+                                content: "";
+                                border-bottom: 0.35rem solid #fff;
+                                border-right: 0.35rem solid transparent;
+                                border-left: 0.35rem solid transparent;
+                                position: absolute;
+                                top: -0.35rem;
+                                right: 12rem;
+                                z-index: 10;
+                            }
                         }
                         .cart {
                             @include phone {
@@ -106,6 +145,16 @@ img {
                                 right: 2.5rem;
                             }
                             @extend .account;
+                            div::before {
+                                content: "";
+                                border-bottom: 0.35rem solid #fff;
+                                border-right: 0.35rem solid transparent;
+                                border-left: 0.35rem solid transparent;
+                                position: absolute;
+                                top: -0.35rem;
+                                right: 5.3rem;
+                                z-index: 10;
+                            }
                         }
                     }
                 }

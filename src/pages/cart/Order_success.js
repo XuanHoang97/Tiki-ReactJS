@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 class Order_success extends Component {
     render() {
         return (
@@ -7,9 +7,9 @@ class Order_success extends Component {
                 <div className="pt-3 pb-3 container">
                     <div className="row bg-white p-0 pt-3 pb-3">
                         <div className="col-md-3">
-                            
-                                <img className="mb-2 w-100" src="http://shopeeplus.com//upload/images/1tiki.jpg" style={{width: '12%'}} alt="" />
-                           
+
+                            <img className="mb-2 w-100" src="http://shopeeplus.com//upload/images/1tiki.jpg" style={{ width: '12%' }} alt="" />
+
                         </div>
 
                         <div className="col-md-9">
@@ -22,19 +22,21 @@ class Order_success extends Component {
                                     <a className="text-primary"> Đơn hàng của tôi</a>
                                 </h6>
 
-                                <div style={{fontSize:'13px'}}>
-                                    <img className="" style={{width: '10%'}} src="https://www.clipartmax.com/png/middle/468-4680080_traffic-transport-lead-time-icon-png.png" alt="" />
+                                <div style={{ fontSize: '13px' }}>
+                                    <img className="" style={{ width: '10%' }} src="https://www.clipartmax.com/png/middle/468-4680080_traffic-transport-lead-time-icon-png.png" alt="" />
                                     <span>Thời gian giao hàng dự kiến từ 2-3 ngày làm việc, không kể Thứ 7 - Chủ nhật</span>
                                     <p>Thông tin về đơn hàng đã được gửi đến email
                                         <i className="text-success"> xuanhoang997@gmail.com</i>.
-                                        <span> Nếu không tìm thấy vui lòng kiểm tra trong hộp thư 
+                                        <span> Nếu không tìm thấy vui lòng kiểm tra trong hộp thư
                                             <strong> Spam</strong> hoặc <strong>Junk folder</strong>
                                         </span>
                                     </p>
                                 </div>
 
                                 <div className="order_next text-primary text-right">
-                                    Tiếp tục mua hàng
+                                    <Link to="/" className="">
+                                        Tiếp tục mua hàng
+                                    </Link>
                                 </div>
                             </div>
                             <hr />

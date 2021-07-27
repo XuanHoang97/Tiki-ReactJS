@@ -14,10 +14,13 @@ const Product_detail=({ match })=> {
     const [data, setData] = useState([]);
     const [feature, setFeature] = useState([]);
     const [product, setProduct] = useState([]);
+    const [offerBonus, setOffer] = useState([]);
+
     useEffect(() => {
         fetchProduct();
         fetchFeature();
         fetchOptionProd();
+        fetchOffer();
     }, []);
 
     // Call api
@@ -38,7 +41,14 @@ const Product_detail=({ match })=> {
         .then((res) => { setProduct(res.data); })
         .catch((err) => console.log(err));
     };
+
+    const fetchOffer = () => {
+        axios.get(`https://y6896.sse.codesandbox.io/product_mobile/?id=${match.params.id}`)
+        .then((res) => { setOffer(res.data.product_mobile.accessories); })
+        .catch((err) => console.log(err));
+    };
    
+    // Option number product
     const [count, setCount] = useState(0);
     const [error, setError] = useState(null);
     // const Qty = props.qty;
@@ -217,7 +227,7 @@ const Product_detail=({ match })=> {
 
             {/* Similar product  */}
             <h6 className="mt-4 mb-2 m-0">SẢN PHẨM TƯƠNG TỰ</h6>
-            <Product_similar/>
+            <Product_similar bonus={offerBonus} />
 
             {/* Receive Mail   */}
             <Mail/>
