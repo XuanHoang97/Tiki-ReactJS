@@ -84,7 +84,7 @@ export default function Category(props) {
           </div>
 
           <div className="col-md-3">
-          {
+            {
               detailMenu.map((item) => {
                 return(
                   <React.Fragment key={item.id}> 

@@ -22,6 +22,10 @@
     display: flex !important;
 }
 
+.menu__item {
+    z-index: 9;
+}
+
 .dropdown-item:after {
     display: none;
     content: "";
