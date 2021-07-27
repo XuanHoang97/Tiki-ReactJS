@@ -44,7 +44,7 @@ const Product_detail=({ match })=> {
 
     const fetchOffer = () => {
         axios.get(`https://y6896.sse.codesandbox.io/product_mobile/?id=${match.params.id}`)
-        .then((res) => { setOffer(res.data.product_mobile.accessories); })
+        .then((res) => { setOffer(res.data); })
         .catch((err) => console.log(err));
     };
    
@@ -215,7 +215,7 @@ const Product_detail=({ match })=> {
                     );
                 })}
                 
-                <Offer /> 
+                <Offer bonus = { offerBonus } /> 
             </div>
             {/* Thông số kỹ thuật */}
             <h6 className="mt-4 mb-2">THÔNG SỐ KỸ THUẬT</h6>
@@ -227,7 +227,7 @@ const Product_detail=({ match })=> {
 
             {/* Similar product  */}
             <h6 className="mt-4 mb-2 m-0">SẢN PHẨM TƯƠNG TỰ</h6>
-            <Product_similar bonus={offerBonus} />
+            <Product_similar  />
 
             {/* Receive Mail   */}
             <Mail/>
