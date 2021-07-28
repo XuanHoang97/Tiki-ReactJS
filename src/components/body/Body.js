@@ -5,6 +5,7 @@ import Category from './Category';
 import Preferential from './Preferential';
 import Search_special from './Search_special';
 import Mobile_ctg from './Mobile_ctg';
+
 import Mail from './Mail';
 class Body extends Component {
     render() {

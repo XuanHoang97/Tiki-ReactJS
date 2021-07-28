@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import NumberFormat from 'react-number-format';
+import Pagination from './Pagination';
 
 // Call api 
 const Mobile_ctg = () => {
@@ -83,13 +84,15 @@ const Mobile_ctg = () => {
                     </React.Fragment>
                     );
                 })}
+
+                <Pagination />
                 
-                <div className="row col-md-12 justify-content-center">
+                {/* <div className="row col-md-12 justify-content-center">
                     <button className="btn btn-primary btn-sm" disabled>
                     <span className="spinner-border spinner-border-sm mr-2" />
                     Đang tải thêm sản phẩm . . .
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     );
