@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import TabMenu from "./TabMenu";
 
 export default function Category(props) {
   const [listMenu, setListMenu] = useState([]);
@@ -7,17 +8,12 @@ export default function Category(props) {
 
   useEffect(() => {
     axios.get(`https://y6896.sse.codesandbox.io/category_menu`)
-      .then((res) => { setListMenu(res.data); })
-      .catch((err) => { console.log(err); 
-      alert("Lỗi không load được sản phẩm từ Api"); });
+      .then((res) => { setListMenu(res.data) })
+      .catch((err) => {
+        console.log(err);
+        alert("Lỗi không load được sản phẩm từ Api");
+      });
   }, []);   //Empty arr: ko phụ thuộc vào thằng nào cả, chỉ chạy đÚng 1 lần
-
-  useEffect(() => {
-    axios.get(`https://y6896.sse.codesandbox.io/category_menu`)
-      .then((res) => { setDetailMenu(res.data); })
-      .catch((err) => { console.log(err); 
-      alert("Lỗi không load được sản phẩm từ Api"); });
-  }, []);
 
   return (
     <li className="menu_ctg nav-item dropdown mr-2 active">
@@ -25,84 +21,29 @@ export default function Category(props) {
         <i className="fas fa-bars mr-2" />
         <small>Danh mục</small>
         <br />
-        <span className>Sản phẩm</span>
+        <span>Sản phẩm</span>
       </a>
 
       <div className="dropdown-menu" aria-labelledby="dropdownId" style={{ top: "3.5rem", display: "", left: "-3.5em" }}>
-        {listMenu.map((menu, index) => {
+        {listMenu.map((menu) => {
           return (
-            <React.Fragment key={menu.id}>
-              <div className="category">
+
+            <React.Fragment key={menu.id} >
+              <div className="category" onMouseEnter={() => setDetailMenu(menu.detail)}>
                 <a className="dropdown-item" href="/">
                   <i className={menu.icon} />
-                  <small>{menu.item}</small>{" "}
+                  <small>{menu.item}</small>
                 </a>
               </div>
             </React.Fragment>
           );
         })}
-        
-        <div className="menu__item" style={{ display:"none", width: "800px", position: "absolute", top: 0, left: "14.5em", background: "rgb(235 247 255)", padding: "15px",}}>
-          <div className="col-md-3">
-            {
-              detailMenu.map((item) => {
-                return(
-                  <React.Fragment key={item.id}> 
-                      {
-                        item.detail.map((i) =>
-                        
-                            <div key={i.id}>
-                              <h6>{i.feature}</h6> 
-                              <div><a href="">{i.product}</a></div>
-                            </div>
-                          
-                      )}
-                  </React.Fragment>
-                );
-              })
-            }
-          </div>
-
-          <div className="col-md-3">
+        <div className="menu__item" style={{ display: "none", width: "800px", position: "absolute", top: 0, left: "14.5em", background: "rgb(235 247 255)", padding: "15px", }}>
           {
-              detailMenu.map((item) => {
-                return(
-                  <React.Fragment key={item.id}> 
-                      {
-                        item.detail.map((i) =>
-                        
-                            <div key={i.id}>
-                              <h6>{i.feature}</h6> 
-                              <div><a href="">{i.product}</a></div>
-                            </div>
-                          
-                      )}
-                  </React.Fragment>
-                );
-              })
-            }
-          </div>
-
-          <div className="col-md-3">
-            {
-              detailMenu.map((item) => {
-                return(
-                  <React.Fragment key={item.id}> 
-                      {
-                        item.detail.map((i) =>
-                        
-                            <div key={i.id}>
-                              <h6>{i.feature}</h6> 
-                              <div><a href="">{i.product}</a></div>
-                            </div>
-                          
-                      )}
-                  </React.Fragment>
-                );
-              })
-            }
-          </div>
-
+            detailMenu.map((element) => {
+              return <TabMenu key={element.id} feature={element.feature} product={element.product} />
+            })
+          }
           <div className="col-md-3">
             <img
               src="https://salt.tikicdn.com/ts/banner/58/4c/1f/504d88acdbc1d7b72f35743be0baa4e6.jpg"

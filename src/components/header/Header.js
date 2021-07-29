@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Button, Modal } from 'react-bootstrap'
-import Menu_top from './Menu_top'
+import { BrowserRouter as Link } from "react-router-dom";
+import { Modal } from 'react-bootstrap'
+import MenuTop from './Menu_top'
 import Category from './Category';
 import Search from './Search';
 import Cart from './Cart';
@@ -22,23 +22,23 @@ class Header extends Component {
                     <div className="row pr-2">
                         <nav className="navbar navbar-expand-sm navbar-dark col-12 pb-0 pt-1">
                             <Link to="/" className="navbar-brand pt-0 col-3 col-md-1">
-                                <img style={{ maxWidth: '82%' }} src="https://salt.tikicdn.com/ts/upload/ae/f5/15/2228f38cf84d1b8451bb49e2c4537081.png" alt="logo" />
+                                <img style={{ maxWidth: '82px' }} src="https://salt.tikicdn.com/ts/upload/ae/f5/15/2228f38cf84d1b8451bb49e2c4537081.png" alt="logo" />
                             </Link>
 
                             <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                                <i class="fas fa-bars"></i>
+                                <i className="fas fa-bars"></i>
                             </button>
-                            
+
                             <div className="collapse navbar-collapse col-md-11 p-0" id="collapsibleNavId">
                                 <ul className="navbar-nav align-items-center col-md-12">
-                                    <Category/>
-                                    
-                                    <Search/>
-                                    
+                                    <Category />
+
+                                    <Search />
+
                                     <li className="account nav-item dropdown ml-3 mr-2 active" style={{ fontSize: '14px' }}>
                                         <a className="nav-link dropdown-toggle" href="/" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i className="fas fa-user-circle mr-2" style={{fontSize:'18px'}} />
-                                            <span style={{fontSize:'14px'}}>Tài khoản</span>
+                                            <i className="fas fa-user-circle mr-2" style={{ fontSize: '18px' }} />
+                                            <span style={{ fontSize: '14px' }}>Tài khoản</span>
                                         </a>
                                         <div className="dropdown-menu" aria-labelledby="dropdownId">
                                             <a className="dropdown-item">
@@ -54,17 +54,17 @@ class Header extends Component {
                                                 </button>
                                             </a>
                                             <a className="dropdown-item" href="/">
-                                                <button type="button" name id className="btn btn-primary btn-sm btn-block">
+                                                <button type="button" className="btn btn-primary btn-sm btn-block">
                                                     <i className="fab fa-facebook-f mr-4" /> <span>Đăng nhập bằng Facebook</span>
                                                 </button>
                                             </a>
                                             <a className="dropdown-item" href="/">
-                                                <button type="button" name id className="btn btn-danger btn-sm btn-block">
+                                                <button type="button" className="btn btn-danger btn-sm btn-block">
                                                     <i className="fab fa-google-plus-g mr-3" /> <span>Đăng nhập bằng Google</span>
                                                 </button>
                                             </a>
                                             <a className="dropdown-item" href="/">
-                                                <button type="button" name id className="btn btn-info btn-sm btn-block">
+                                                <button type="button" className="btn btn-info btn-sm btn-block">
                                                     <i className="far fa-comment-dots mr-4" /> <span>Đăng nhập bằng Zalo</span>
                                                 </button>
                                             </a>
@@ -81,7 +81,7 @@ class Header extends Component {
                                                     <h4>Xin chào,</h4>
                                                     <div className="form-group">
                                                         <label htmlFor>Đăng nhập hoặc tạo tài khoản</label>
-                                                        <input type="text" className="form-control" name id aria-describedby="helpId" style={{border:'none', borderRadius: '0', borderBottom:'1px solid #ccc'}} placeholder="Số điện thoại hoặc email..." />
+                                                        <input type="text" className="form-control" name id aria-describedby="helpId" style={{ border: 'none', borderRadius: '0', borderBottom: '1px solid #ccc' }} placeholder="Số điện thoại hoặc email..." />
                                                         <button type="button" name id className="btn btn-danger mt-3 btn-smd btn-block">Tiếp tục</button>
                                                         <div className="text-center small mt-2 mb-5"><a href className="text-center">Đăng nhập bằng email</a></div>
                                                         <div className="text-center mb-3 small">Hoặc Tiếp tục bằng</div>
@@ -115,7 +115,7 @@ class Header extends Component {
                             </div>
                         </nav>
                     </div>
-                    <Menu_top/>
+                    <MenuTop />
                 </div>
             </div>
         );

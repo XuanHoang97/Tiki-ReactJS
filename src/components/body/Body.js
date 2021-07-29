@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Slide from './Slide';
 import Category from './Category';
 import Preferential from './Preferential';
@@ -12,13 +11,13 @@ class Body extends Component {
             <div className="main bg-light pt-3 pb-3">
                 <div className="container">
                     <Slide />
-                    
+
                     <Category />
-                    
-                    <Preferential/>
+
+                    <Preferential />
 
                     <Search_special />
-                    
+
                     <Mobile_ctg />
 
                     <Mail />
