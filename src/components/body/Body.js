@@ -13,13 +13,13 @@ class Body extends Component {
             <div className="main bg-light pt-3 pb-3">
                 <div className="container">
                     <Slide />
-                    
+
                     <Category />
-                    
-                    <Preferential/>
+
+                    <Preferential />
 
                     <SearchSpecial />
-                    
+
                     <Mobile />
 
                     <Mail />

@@ -22,8 +22,19 @@ img {
                         width: 100%;
                     }
                     .category {
-                        i {}
-                        small {}
+                        i {
+                        }
+                        small {
+                        }
+                        .menu__item {
+                            display: none;
+                            width: 800px;
+                            position: absolute;
+                            top: 0;
+                            left: 14.5em;
+                            background-color: rgb(235, 247, 255);
+                            padding: 15px;
+                        }
                         br {
                             @include phone {
                                 display: none;
@@ -35,6 +46,11 @@ img {
                             }
                         }
                     }
+                    .dropdown-item:hover {
+                        .menu__item {
+                            display: flex;
+                        }
+                    }
                     .dropdown-menu::before {
                         content: "";
                         border-bottom: 0.35rem solid #fff;
@@ -44,16 +60,17 @@ img {
                         top: -0.3rem;
                         right: 7rem;
                         z-index: 10;
-                        .menu__item {}
+                        .menu__item {
+                        }
                     }
                 }
                 .menu_ctg:after {
-                    content: '';
+                    content: "";
                     top: 0;
                     right: 0;
                     bottom: 0;
                     left: 0;
-                    transition: opacity .35s ease-in-out;
+                    transition: opacity 0.35s ease-in-out;
                     opacity: 0;
                     visibility: hidden;
                     background-color: rgba(0, 0, 0, 0.5);
@@ -65,7 +82,8 @@ img {
                     visibility: visible;
                     position: fixed;
                 }
-                .navbar-brand {}
+                .navbar-brand {
+                }
                 .navbar-toggler {
                     @include phone {
                         color: white;
@@ -73,7 +91,8 @@ img {
                     }
                 }
                 .navbar-collapse {
-                    @include phone {}
+                    @include phone {
+                    }
                     .navbar-nav {
                         @include phone {
                             display: flex;
@@ -83,7 +102,8 @@ img {
                             padding: 5px 15px;
                         }
                         .login_resg {
-                            .info {}
+                            .info {
+                            }
                         }
                         .search {
                             input {
