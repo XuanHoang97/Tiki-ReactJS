@@ -43,7 +43,7 @@ const renderMobile= (mobile) => {
                         
                             </span>
                             <span className="badge badge-pill badge-warning p-2 ml-2 mr-2">-{mobile.sale_off} %</span>
-                            <strike className="small" style={{color: '#8a8a8a'}}>
+                            <strike className="small" style={{ color: '#8a8a8a' }}>
                                 {new Intl.NumberFormat("GB-en", {
                                     currency: "VND",
                                     style: "currency",
