@@ -26,6 +26,15 @@ img {
                         }
                         small {
                         }
+                        .menu__item {
+                            display: none;
+                            width: 800px;
+                            position: absolute;
+                            top: 0;
+                            left: 14.5em;
+                            background-color: rgb(235, 247, 255);
+                            padding: 15px;
+                        }
                         br {
                             @include phone {
                                 display: none;
@@ -35,6 +44,11 @@ img {
                             @include phone {
                                 display: none;
                             }
+                        }
+                    }
+                    .dropdown-item:hover {
+                        .menu__item {
+                            display: flex;
                         }
                     }
                     .dropdown-menu::before {

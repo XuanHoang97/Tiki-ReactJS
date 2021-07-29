@@ -3,12 +3,9 @@ import React from 'react';
 function TabMenu(props) {
     return (
         <div className="col-md-3">
-            <div>
-                <h6>{props.feature}</h6>
-                <div><a href="">{props.product}</a></div>
-            </div>
+            <h6 style={{ color: 'black' }}>{props.feature}</h6>
+            <div style={{ color: 'black' }}>{props.product}</div>
         </div>
-
     );
 }
 

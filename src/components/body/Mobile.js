@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
-
-const Loading = () => {
-    return (
-        <div className="row col-md-12 justify-content-center">
-            <button className="btn btn-primary btn-sm" disabled>
-                <span className="spinner-border spinner-border-sm mr-2" />
-                Đang tải thêm sản phẩm . . .
-            </button>
-        </div>
-    )
-}
+import ReactPaginate from 'react-paginate';
+import { BrowserRouter as Link } from "react-router-dom";
+// import NumberFormat from 'react-number-format';
+import Pagination from './Pagination';
 
 // Call api 
-const Mobile_ctg = () => {
+const Mobile = () => {
+    // var NumberFormat = require('react-number-format');
 
+    // Pagination
+    const [postsPerPage] = useState(5);
+    const [offset, setOffset] = useState(1);
+    const [posts, setAllPosts] = useState([]);
+    const [pageCount, setPageCount] = useState(0)
+
+    // Call api
     const [products, setProducts] = useState([]);
     useEffect(() => {
         fetchProducts();
@@ -40,7 +39,6 @@ const Mobile_ctg = () => {
             <div className="product__detail row mt-5">
 
                 {products.map((mobile) => (
-
                     <React.Fragment key={mobile.id}>
                         <div className="product--item col-md-3 col-6 mb-4">
                             <Link to={`/chi-tiet-san-pham/${mobile.id}` + mobile.name + "." + mobile.id + ".html"}>
@@ -91,11 +89,20 @@ const Mobile_ctg = () => {
                             </div>
                         </div>
                     </React.Fragment>
-                ))}
-                <Loading />
+                )
+                )}
+
+                <Pagination />
+
+                {/* <div className="row col-md-12 justify-content-center">
+                    <button className="btn btn-primary btn-sm" disabled>
+                    <span className="spinner-border spinner-border-sm mr-2" />
+                    Đang tải thêm sản phẩm . . .
+                    </button>
+                </div> */}
             </div>
         </div>
     );
 }
 
-export default Mobile_ctg
+export default Mobile;

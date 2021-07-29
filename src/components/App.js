@@ -5,7 +5,7 @@ import Product_detail from '../pages/product/Product_detail';
 import Cart from '../pages/cart/Cart';
 import Cart1 from '../pages/cart/Cart1';
 import Payment from '../pages/payment/Payment';
-import OrderSuccess from '../pages/cart/Order_success';
+import OrderSuccess from '../pages/cart/OrderSuccess';
 import Footer from './footer/Footer';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from '../router/scrollToTop';

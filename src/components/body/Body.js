@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+// import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Slide from './Slide';
 import Category from './Category';
 import Preferential from './Preferential';
-import Search_special from './Search_special';
-import Mobile_ctg from './Mobile_ctg';
+import SearchSpecial from './SearchSpecial';
+import Mobile from './Mobile';
+
 import Mail from './Mail';
 class Body extends Component {
     render() {
@@ -16,9 +18,9 @@ class Body extends Component {
 
                     <Preferential />
 
-                    <Search_special />
+                    <SearchSpecial />
 
-                    <Mobile_ctg />
+                    <Mobile />
 
                     <Mail />
                 </div>
