@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, useParams} from "react-router-dom";
 import { Modal } from 'react-bootstrap'
 import MenuTop from './Menu_top'
 import Category from './Category';
