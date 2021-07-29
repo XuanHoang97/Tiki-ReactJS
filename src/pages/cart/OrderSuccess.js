@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-class Order_success extends Component {
+class OrderSuccess extends Component {
     render() {
         return (
             <div className="order_success bg-light ">
@@ -55,4 +55,4 @@ class Order_success extends Component {
     }
 }
 
-export default Order_success;
+export default OrderSuccess;

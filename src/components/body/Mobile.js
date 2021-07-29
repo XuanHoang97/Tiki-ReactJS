@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import NumberFormat from 'react-number-format';
+import ReactPaginate from 'react-paginate';
+import { BrowserRouter as  Link} from "react-router-dom";
+// import NumberFormat from 'react-number-format';
 import Pagination from './Pagination';
 
 // Call api 
-const Mobile_ctg = () => {
-    var NumberFormat = require('react-number-format');
+const Mobile = () => {
+    // var NumberFormat = require('react-number-format');
 
+    // Pagination
+    const [postsPerPage] = useState (5);
+    const [offset, setOffset] = useState (1);
+    const [posts, setAllPosts] = useState ([]);
+    const [pageCount, setPageCount] = useState (0)
+
+    // Call api
     const [products, setProducts] = useState([]);
     useEffect(() => {
         fetchProducts();
-        }, []);
+    }, []);
 
     const fetchProducts = () => {
         axios
@@ -98,4 +106,4 @@ const Mobile_ctg = () => {
     );
 }
 
-export default Mobile_ctg
+export default Mobile;
