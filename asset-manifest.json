@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Tiki-ReactJS/static/css/main.c8541116.chunk.css",
-    "main.js": "/Tiki-ReactJS/static/js/main.e84b62f2.chunk.js",
-    "main.js.map": "/Tiki-ReactJS/static/js/main.e84b62f2.chunk.js.map",
-    "runtime-main.js": "/Tiki-ReactJS/static/js/runtime-main.553d1877.js",
-    "runtime-main.js.map": "/Tiki-ReactJS/static/js/runtime-main.553d1877.js.map",
+    "main.css": "/Tiki-ReactJS/static/css/main.82eb5e0c.chunk.css",
+    "main.js": "/Tiki-ReactJS/static/js/main.0fb111b6.chunk.js",
+    "main.js.map": "/Tiki-ReactJS/static/js/main.0fb111b6.chunk.js.map",
+    "runtime-main.js": "/Tiki-ReactJS/static/js/runtime-main.2815355c.js",
+    "runtime-main.js.map": "/Tiki-ReactJS/static/js/runtime-main.2815355c.js.map",
     "static/css/2.27175f2b.chunk.css": "/Tiki-ReactJS/static/css/2.27175f2b.chunk.css",
-    "static/js/2.ec78c641.chunk.js": "/Tiki-ReactJS/static/js/2.ec78c641.chunk.js",
-    "static/js/2.ec78c641.chunk.js.map": "/Tiki-ReactJS/static/js/2.ec78c641.chunk.js.map",
-    "static/js/3.c50991c3.chunk.js": "/Tiki-ReactJS/static/js/3.c50991c3.chunk.js",
-    "static/js/3.c50991c3.chunk.js.map": "/Tiki-ReactJS/static/js/3.c50991c3.chunk.js.map",
+    "static/js/2.8fd41b35.chunk.js": "/Tiki-ReactJS/static/js/2.8fd41b35.chunk.js",
+    "static/js/2.8fd41b35.chunk.js.map": "/Tiki-ReactJS/static/js/2.8fd41b35.chunk.js.map",
+    "static/js/3.9e0e8991.chunk.js": "/Tiki-ReactJS/static/js/3.9e0e8991.chunk.js",
+    "static/js/3.9e0e8991.chunk.js.map": "/Tiki-ReactJS/static/js/3.9e0e8991.chunk.js.map",
     "index.html": "/Tiki-ReactJS/index.html",
     "static/css/2.27175f2b.chunk.css.map": "/Tiki-ReactJS/static/css/2.27175f2b.chunk.css.map",
-    "static/css/main.c8541116.chunk.css.map": "/Tiki-ReactJS/static/css/main.c8541116.chunk.css.map",
-    "static/js/2.ec78c641.chunk.js.LICENSE.txt": "/Tiki-ReactJS/static/js/2.ec78c641.chunk.js.LICENSE.txt"
+    "static/css/main.82eb5e0c.chunk.css.map": "/Tiki-ReactJS/static/css/main.82eb5e0c.chunk.css.map",
+    "static/js/2.8fd41b35.chunk.js.LICENSE.txt": "/Tiki-ReactJS/static/js/2.8fd41b35.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.553d1877.js",
+    "static/js/runtime-main.2815355c.js",
     "static/css/2.27175f2b.chunk.css",
-    "static/js/2.ec78c641.chunk.js",
-    "static/css/main.c8541116.chunk.css",
-    "static/js/main.e84b62f2.chunk.js"
+    "static/js/2.8fd41b35.chunk.js",
+    "static/css/main.82eb5e0c.chunk.css",
+    "static/js/main.0fb111b6.chunk.js"
   ]
 }
