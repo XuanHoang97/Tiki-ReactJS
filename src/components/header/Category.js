@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TabMenu from "./TabMenu";
+import { Link } from "react-router-dom";
 
 export default function Category(props) {
   const [listMenu, setListMenu] = useState([]);
@@ -17,7 +18,9 @@ export default function Category(props) {
       });
 
   }, []);   //Empty arr: ko phụ thuộc vào thằng nào cả, chỉ chạy đÚng 1 lần
-
+  const offPreDefault = (e) => {
+    e.preventDefault();
+  }
   return (
     <li className="menu_ctg nav-item dropdown mr-2 active"
       onMouseEnter={() => setHover(true)}
@@ -35,10 +38,11 @@ export default function Category(props) {
           return (
 
             <React.Fragment key={menu.id} >
-              <div className="category"
+              <Link className="category"
+                style={{ cursor: "pointer" }}
                 onMouseEnter={() => (setDetailMenu(menu.detail))}
               >
-                <a className="dropdown-item" href="/">
+                <div className="dropdown-item">
                   <i className={menu.icon} />
                   <small>{menu.item}</small>
                   <div className="menu__item">
@@ -57,9 +61,9 @@ export default function Category(props) {
                       />
                     </div>
                   </div>
-                </a>
+                </div>
 
-              </div>
+              </Link>
             </React.Fragment>
           );
         })}
