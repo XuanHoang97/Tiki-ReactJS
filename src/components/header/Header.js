@@ -22,7 +22,7 @@ class Header extends Component {
                     <div className="row pr-2">
                         <nav className="navbar navbar-expand-sm navbar-dark col-12 pb-0 pt-1">
                             <Link to="/" className="navbar-brand pt-0 col-3 col-md-1">
-                                <img style={{ maxWidth: '82px' }} src="https://salt.tikicdn.com/ts/upload/ae/f5/15/2228f38cf84d1b8451bb49e2c4537081.png" alt="logo" />
+                                <img style={{ maxWidth: '58px' }} src="https://salt.tikicdn.com/ts/upload/ae/f5/15/2228f38cf84d1b8451bb49e2c4537081.png" alt="logo" />
                             </Link>
 
                             <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
