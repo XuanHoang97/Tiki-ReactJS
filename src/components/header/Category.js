@@ -24,6 +24,8 @@ export default function Category(props) {
     <li className="menu_ctg nav-item dropdown mr-2 active"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => (setHover(false))}
+      onClick={() => (setHover(false))}
+
     >
       <a className="category nav-link dropdown-toggle" href="/" id="dropdownId" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
         <i className="fas fa-bars mr-2" />
@@ -37,7 +39,7 @@ export default function Category(props) {
           return (
 
             <React.Fragment key={menu.id} >
-              <Link className="category" to="/"
+              <Link className="category" to="/do-dung/:slug.:id.html"
                 onMouseEnter={() => (setDetailMenu(menu.detail))}
               >
                 <div className="dropdown-item drop__menu">
