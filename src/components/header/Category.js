@@ -39,7 +39,7 @@ export default function Category(props) {
           return (
 
             <React.Fragment key={menu.id} >
-              <Link className="category" to="/do-dung/:slug.:id.html"
+              <Link className="category" to={`/do-dung/${menu.item}.html`}
                 onMouseEnter={() => (setDetailMenu(menu.detail))}
               >
                 <div className="dropdown-item drop__menu">
