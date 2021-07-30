@@ -16,7 +16,7 @@ export default function Category(props) {
     return (
 
         <div className="category__hightlight mt-3 p-3 bg-white">
-            <h5><span className="text-danger">DANH MỤC NỔI BẬT</span></h5>
+            <h6><span className="text-danger">DANH MỤC NỔI BẬT</span></h6>
 
             <div className="list__category pt-4 pb-2 row">
                 {listCategory ? listCategory.map((ctg) => {

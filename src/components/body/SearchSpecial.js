@@ -13,9 +13,9 @@ export default function Search_special(props) {
         <div className="search__hightlight mt-3 p-3 bg-white">
             <div className="row justify-content-between pl-3 pr-3">
                 <div>
-                    <h5 className="text-danger">
+                    <h6 className="text-danger">
                         <img src="https://salt.tikicdn.com/ts/upload/c5/0e/02/23066556738e7f5df8b8fde5d0d1dfd6.png" style={{ width: '10%' }} alt="" /> TÌM KIẾM NỔI BẬT
-                    </h5>
+                    </h6>
                 </div>
                 <div className="view--more text-primary">
                     <i className="fas fa-sync-alt mr-1" />
