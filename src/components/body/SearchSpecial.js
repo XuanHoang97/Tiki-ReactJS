@@ -1,33 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Search_special(props) {
-    const [listSearch, setListSearch] = useState([]);
-    useEffect(() => {
-        const getSearchAPI = 'https://y6896.sse.codesandbox.io/search_special'
-        axios.get(getSearchAPI).then((res) => { setListSearch(res.data); })
-            .catch((err) => { console.log(err); alert("Lỗi không load được sản phẩm từ Api"); })
-    }, [])
-
+const renderProduct=(data) => {
     return (
-        <div className="search__hightlight mt-3 p-3 bg-white">
-            <div className="row justify-content-between pl-3 pr-3">
-                <div>
-                    <h6 className="text-danger">
-                        <img src="https://salt.tikicdn.com/ts/upload/c5/0e/02/23066556738e7f5df8b8fde5d0d1dfd6.png" style={{ width: '10%' }} alt="" /> TÌM KIẾM NỔI BẬT
-                    </h6>
-                </div>
-                <div className="view--more text-primary">
-                    <i className="fas fa-sync-alt mr-1" />
-                    <span>XEM THÊM</span>
-                </div>
-            </div>
-
-            <div className="list__search pt-4 pb-2 pl-3 pr-3 row">
-                {listSearch.map((search) => {
+        <div className="search__hightlight mt-0 p-3 bg-white">
+            <div className="list__search pt-0 pb-2 pl-3 pr-3 row">
+                {data.map((search) => {
                     return (
                         <React.Fragment key={search.id}>
-                            <div className="card col-md-3 border-grey p-0 mb-2">
+                            <div className="card col-md-3 border-grey p-0">
                                 <div className="card-body pl-0 pr-0 pt-2 pb-0">
                                     <div className="illutrator row m-1">
                                         <img className="col-md-4 col-4 p-0" src={search.img1} alt="" />
@@ -46,5 +27,51 @@ export default function Search_special(props) {
             </div>
         </div>
     );
+};
 
+// Handle logic:
+function Search_special() {
+    const [mobile, setMobile] = useState([]);
+    const [currentPage, setcurrentPage] = useState(1);
+    const [itemsPerPage, setitemsPerPage] = useState(4);
+
+    const pages = [];
+    for (let i = 1; i <= Math.ceil(mobile.length / itemsPerPage); i++) {
+        pages.push(i);
+    }
+
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = mobile.slice(indexOfFirstItem, indexOfLastItem);
+
+    useEffect(() => {
+        axios
+        .get('https://y6896.sse.codesandbox.io/search_special')
+        .then(res => { setMobile(res.data); })
+        .catch((err) => { console.log(err); });
+    }, []);
+
+    const handleNextbtn = () => {
+        setcurrentPage(currentPage + 1);
+    };
+
+    return (
+
+        <>
+            <div className="mt-4 row justify-content-between pl-3 pr-3 align-items-center">
+                <div className="">
+                    <h6 className="text-danger">
+                        <img src="https://salt.tikicdn.com/ts/upload/c5/0e/02/23066556738e7f5df8b8fde5d0d1dfd6.png" style={{ width: '10%' }} alt="" /> TÌM KIẾM NỔI BẬT
+                    </h6>
+                </div>
+                <div className="view--more text-primary" onClick={handleNextbtn} disabled={currentPage === pages[pages.length - 1] ? true : false}>
+                    <i className="fas fa-sync-alt mr-2" />
+                    <span className="small">XEM THÊM</span>
+                </div>
+            </div>
+            {renderProduct(currentItems)}
+        </>
+    );
 }
+export default Search_special;
+

@@ -24,7 +24,7 @@ export default function Category(props) {
                         dem++;
                         return (
                             <React.Fragment key={ctg.id}>
-                                <div className="col-md-2 col-4 text-center mb-3">
+                                <div className="col-md-2 col-4 text-center">
                                     <img className="w-50 rounded-circle" src={ctg.img} alt="" />
                                     <h6 className="small pt-2" style={{ fontSize: '12px' }}>{ctg.content}</h6>
                                 </div>
