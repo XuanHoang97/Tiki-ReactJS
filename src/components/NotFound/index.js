@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NotFound(props) {
+function NotFound() {
     return (
         <div className="container main">
             <div className="row err">
@@ -9,7 +9,7 @@ function NotFound(props) {
                     <div className="banner-top"></div>
                     <div className="banner-bottom"></div>
                     <div className="banner-content">
-                        <div className="err-404"><img src="https://salt.tikicdn.com/assets/img/404/super.png" /></div>
+                        <div className="err-404 question"><img src="https://salt.tikicdn.com/assets/img/404/super.png" /></div>
                         <div className="err-404"><img src="https://salt.tikicdn.com/assets/img/404/404.png" /></div>
                         <div className="err-404 err-h">
                             <h1>Xin lỗi, trang bạn đang tìm kiếm <br /> không tồn tại!</h1>

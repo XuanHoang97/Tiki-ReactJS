@@ -39,6 +39,29 @@
                     font-size: 22px;
                 }
             }
+            .question {
+                position: relative;
+            }
+            .question::before {
+                content: "";
+                position: absolute;
+                left: 25px;
+                top: -35px;
+                width: 37px;
+                height: 55px;
+                background-size: 37px 55px;
+                background-image: url(https://salt.tikicdn.com/desktop/img/404/question-2.png);
+            }
+            .question::after {
+                content: "";
+                position: absolute;
+                right: -35px;
+                top: 5px;
+                width: 37px;
+                height: 55px;
+                background-size: 37px 55px;
+                background-image: url(https://salt.tikicdn.com/desktop/img/404/question-1.png);
+            }
             .err-h {
                 color: #fff;
                 margin-top: 0;
