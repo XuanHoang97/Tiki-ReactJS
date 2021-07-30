@@ -45,7 +45,9 @@ export default function Category(props) {
                 <div className="dropdown-item drop__menu">
                   <i className={menu.icon} />
                   <small>{menu.item}</small>
-                  <div className="menu__item" onClick={(e => e.preventDefault())} onMouseEnter={(e => e.preventDefault())}>
+                  <div className="menu__item" onClick={(e => e.preventDefault())}
+                    onMouseEnter={(e => e.preventDefault())}
+                  >
                     {
                       detailMenu.map((element) => {
                         return <TabMenu key={element.id}
