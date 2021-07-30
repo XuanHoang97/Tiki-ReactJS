@@ -3,17 +3,16 @@ import axios from "axios";
 import ReactPaginate from 'react-paginate';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // import NumberFormat from 'react-number-format';
-import Pagination from './Pagination';
 import '../../assets/css/mobile.scss';
 
 // Pagination
 const renderMobile = (mobile) => {
     return (
         <div className="product mt-3 ml-0 mr-0 p-3 bg-white text-center">
-            <h5 className="text-left">
+            <h6 className="text-left">
                 <i className="fas fa-mobile-alt mr-1 text-danger mr-3" />
                 <span className="text-danger ">ĐIỆN THOẠI NỔI BẬT</span>
-            </h5>
+            </h6>
 
             <div className="product__detail row mt-5">
                 {mobile.map((mobile, key) => {

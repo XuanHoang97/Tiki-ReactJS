@@ -16,7 +16,7 @@ export default function Category(props) {
     return (
 
         <div className="category__hightlight mt-3 p-3 bg-white">
-            <h5><span className="text-danger">DANH MỤC NỔI BẬT</span></h5>
+            <h6><span className="text-danger">DANH MỤC NỔI BẬT</span></h6>
 
             <div className="list__category pt-4 pb-2 row">
                 {listCategory ? listCategory.map((ctg) => {
@@ -24,7 +24,7 @@ export default function Category(props) {
                         dem++;
                         return (
                             <React.Fragment key={ctg.id}>
-                                <div className="col-md-2 col-4 text-center mb-3">
+                                <div className="col-md-2 col-4 text-center">
                                     <img className="w-50 rounded-circle" src={ctg.img} alt="" />
                                     <h6 className="small pt-2" style={{ fontSize: '12px' }}>{ctg.content}</h6>
                                 </div>

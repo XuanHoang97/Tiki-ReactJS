@@ -26,6 +26,10 @@
     z-index: 9;
 }
 
+.view--more {
+    cursor: pointer;
+}
+
 .dropdown-item:after {
     display: none;
     content: "";
