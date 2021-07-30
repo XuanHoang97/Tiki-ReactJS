@@ -7,7 +7,6 @@ export default function Category(props) {
   const [listMenu, setListMenu] = useState([]);
   const [detailMenu, setDetailMenu] = useState([]);
   const [hover, setHover] = useState(false)
-  const [navhover, setNavHover] = useState(false)
 
   useEffect(() => {
     axios.get(`https://y6896.sse.codesandbox.io/category_menu`)
@@ -38,17 +37,17 @@ export default function Category(props) {
           return (
 
             <React.Fragment key={menu.id} >
-              <Link className="category"
-                style={{ cursor: "pointer" }}
+              <Link className="category" to="/"
                 onMouseEnter={() => (setDetailMenu(menu.detail))}
               >
-                <div className="dropdown-item">
+                <div className="dropdown-item drop__menu">
                   <i className={menu.icon} />
                   <small>{menu.item}</small>
-                  <div className="menu__item">
+                  <div className="menu__item" onClick={(e => e.preventDefault())} onMouseEnter={(e => e.preventDefault())}>
                     {
                       detailMenu.map((element) => {
                         return <TabMenu key={element.id}
+                          id={element.id}
                           feature={element.feature}
                           product={element.product}
                         />
@@ -64,9 +63,12 @@ export default function Category(props) {
                 </div>
 
               </Link>
+
             </React.Fragment>
+
           );
         })}
+
         {/* {navhover ? <div className="menu__item"
           style={{ display: (hover ? 'flex' : 'none'), width: "800px", position: "absolute", top: 0, left: "14.5em", background: "rgb(235 247 255)", padding: "15px", }}
 
