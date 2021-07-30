@@ -5,7 +5,9 @@ function TabMenu(props) {
     return (
         <div className="col-md-3">
             <h6 style={{ color: 'black' }}>{props.feature}</h6>
-            <div><Link to={`/${props.product}/${props.id}`}>{props.product}</Link></div>
+            <div><Link to={`/${props.product}/${props.id}`}>{props.product}</Link>
+                <img src={props.img} alt="" />
+            </div>
         </div>
     );
 }

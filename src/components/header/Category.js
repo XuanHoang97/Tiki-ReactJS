@@ -58,12 +58,7 @@ export default function Category(props) {
                         />
                       })
                     }
-                    {/* <div className="col-md-3">
-                      <img
-                        src="https://salt.tikicdn.com/ts/banner/58/4c/1f/504d88acdbc1d7b72f35743be0baa4e6.jpg"
-                        alt=""
-                      />
-                    </div> */}
+                    
                   </div>
                 </div>
 
