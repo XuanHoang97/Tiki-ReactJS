@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '././assets/css/index.css';
 import '././assets/css/tab.scss';
+import '././assets/css/NotFound.scss';
 import '././assets/css/header.scss';
 import '././assets/css/slide.scss';
 import '././assets/css/variable.scss';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './redux/store';
 ReactDOM.render(
   <Provider store={store}>

@@ -9,6 +9,7 @@ import OrderSuccess from '../pages/cart/OrderSuccess';
 import Footer from './footer/Footer';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from '../router/scrollToTop';
+import NotFound from './NotFound';
 
 console.warn = () => { };
 
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/gio-hang-1"><Cart1 /></Route>
           <Route exact path="/thanh-toan"><Payment /></Route>
           <Route exact path="/dat-hang-thanh-cong"><OrderSuccess /></Route>
+          <Route exact path="*"><NotFound /></Route>
         </Switch>
         <Footer />
       </div>

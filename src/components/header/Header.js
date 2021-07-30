@@ -73,7 +73,7 @@ class Header extends Component {
 
                                     {/* modal register/login  */}
                                     <Modal className="login_resg" show={this.state.showHide} size="lg" centered>
-                                        <button className="close text-end" closeButton onClick={() => this.Modal()} style={{ textAlign: 'end', position: 'absolute', right: '-15px', zIndex: 10,opacity:"1", background: 'white', top: '-15px', border: '1px solid', borderRadius: '50%', width: '30px', height: '30px', display: 'flex', justifyContent: 'center' }}>×</button>
+                                        <button className="close text-end" closeButton onClick={() => this.Modal()} style={{ textAlign: 'end', position: 'absolute', right: '-15px', zIndex: 10, opacity: "1", background: 'white', top: '-15px', border: '1px solid', borderRadius: '50%', width: '30px', height: '30px', display: 'flex', justifyContent: 'center' }}>×</button>
 
                                         <Modal.Body className="info p-0">
                                             <div className="row m-0 p-0">

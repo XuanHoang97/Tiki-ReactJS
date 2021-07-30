@@ -5,7 +5,8 @@ img {
 
 .slide {
     #carousel-example-1z {
-        .control {}
+        .control {
+        }
         .list_slide {
             .carousel-item {
                 @include phone {
@@ -19,10 +20,10 @@ img {
             }
         }
         .carousel-control-next {
-            @extend .carousel-control-prev
+            @extend .carousel-control-prev;
         }
     }
-    .banner {
+    .baner {
         @include phone {
             display: none;
         }

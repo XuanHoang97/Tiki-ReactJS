@@ -1,0 +1,89 @@
+.main {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    h5 {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .err {
+        margin-bottom: 50px;
+        position: relative;
+        text-align: center;
+        .banner-top {
+            height: 230px;
+            background-color: #3fc6f5;
+            background-image: url(https://salt.tikicdn.com/desktop/img/404/city-cloud.png);
+            background-repeat: repeat-x;
+            background-size: contain;
+            background-position: bottom center;
+        }
+        .banner-bottom {
+            height: 120px;
+            background-color: #fdba13;
+        }
+        .banner-content {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            .err-404 {
+                display: inline-block;
+                margin-bottom: 10px;
+                vertical-align: bottom;
+                white-space: normal;
+                h1 {
+                    font-size: 22px;
+                }
+            }
+            .question {
+                position: relative;
+            }
+            .question::before {
+                content: "";
+                position: absolute;
+                left: 25px;
+                top: -35px;
+                width: 37px;
+                height: 55px;
+                background-size: 37px 55px;
+                background-image: url(https://salt.tikicdn.com/desktop/img/404/question-2.png);
+            }
+            .question::after {
+                content: "";
+                position: absolute;
+                right: -35px;
+                top: 5px;
+                width: 37px;
+                height: 55px;
+                background-size: 37px 55px;
+                background-image: url(https://salt.tikicdn.com/desktop/img/404/question-1.png);
+            }
+            .err-h {
+                color: #fff;
+                margin-top: 0;
+                margin-left: 50px;
+                text-align: left;
+            }
+        }
+    }
+    .btn-quit {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        button {
+            border: 1px solid #ccc;
+            background: linear-gradient(#fff, #f7f7f7);
+            border-radius: 2px;
+            font-size: 12px;
+            padding: 6px 12px;
+            outline: none;
+            i {
+                transform: scale(1.4);
+            }
+        }
+    }
+}
