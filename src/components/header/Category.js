@@ -17,14 +17,13 @@ export default function Category(props) {
       });
 
   }, []);   //Empty arr: ko phụ thuộc vào thằng nào cả, chỉ chạy đÚng 1 lần
-  const offPreDefault = (e) => {
-    e.preventDefault();
+  const offPreDefault = () => {
+    setHover(false)
   }
   return (
     <li className="menu_ctg nav-item dropdown mr-2 active"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => (setHover(false))}
-      onClick={() => (setHover(false))}
 
     >
       <a className="category nav-link dropdown-toggle" href="/" id="dropdownId" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -41,13 +40,15 @@ export default function Category(props) {
             <React.Fragment key={menu.id} >
               <Link className="category" to={`/do-dung/${menu.item}.html`}
                 onMouseEnter={() => (setDetailMenu(menu.detail))}
+
               >
-                <div className="dropdown-item drop__menu">
-                  <i className={menu.icon} />
-                  <small>{menu.item}</small>
-                  <div className="menu__item" onClick={(e => e.preventDefault())}
-                    onMouseEnter={(e => e.preventDefault())}
-                  >
+                <div className="dropdown-item drop__menu" >
+                  <div onClick={() => (setHover(false))}>
+                    <i className={menu.icon} />
+                    <small >{menu.item}</small>
+                  </div>
+
+                  <div className="menu__item" style={{ cursor: "default" }} onClick={e => (e.preventDefault())}>
                     {
                       detailMenu.map((element) => {
                         return <TabMenu key={element.id}
@@ -55,10 +56,10 @@ export default function Category(props) {
                           feature={element.feature}
                           product={element.product}
                           img={element.img}
+                          offMenu={() => offPreDefault()}
                         />
                       })
                     }
-                    
                   </div>
                 </div>
 

@@ -21,9 +21,9 @@ function NotFound() {
                 <h5 className="suggest">Bạn có thể thử những liên kết sau</h5>
                 <hr />
                 <div className='row btn-quit'>
-                    <Link to='/'><button><i class="fa fa-angle-left"></i> Quay lại trang trước</button></Link>
+                    <Link to='/'><button><i className="fa fa-angle-left"></i> Quay lại trang trước</button></Link>
                     <Link to='/'><button>Tiếp tục mua hàng</button></Link>
-                    <Link to='/'><button>Xem thông tin tài khoản <i class="fa fa-angle-right"></i></button></Link>
+                    <Link to='/'><button>Xem thông tin tài khoản <i className="fa fa-angle-right"></i></button></Link>
                 </div>
             </div>
 

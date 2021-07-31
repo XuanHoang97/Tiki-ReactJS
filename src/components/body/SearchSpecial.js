@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const renderProduct=(data) => {
+const renderProduct = (data) => {
     return (
         <div className="search__hightlight mt-0 p-3 bg-white">
             <div className="list__search pt-0 pb-2 pl-3 pr-3 row">
@@ -46,13 +46,20 @@ function Search_special() {
 
     useEffect(() => {
         axios
-        .get('https://y6896.sse.codesandbox.io/search_special')
-        .then(res => { setMobile(res.data); })
-        .catch((err) => { console.log(err); });
+            .get('https://y6896.sse.codesandbox.io/search_special')
+            .then(res => { setMobile(res.data); })
+            .catch((err) => { console.log(err); });
     }, []);
 
     const handleNextbtn = () => {
-        setcurrentPage(currentPage + 1);
+        console.log(currentPage)
+        console.log(mobile.length)
+        if (currentPage > mobile.length / itemsPerPage - 1) {
+            setcurrentPage(1)
+        } else {
+            setcurrentPage(currentPage + 1);
+
+        }
     };
 
     return (

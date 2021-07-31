@@ -1,5 +1,4 @@
-import { tikiData } from '../APIs/firebaseConnect';
-import axios from "axios";
+
 var redux = require('redux');
 
 const tikiInitialState = {
