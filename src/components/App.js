@@ -1,3 +1,5 @@
+import React from 'react'
+import {Helmet} from "react-helmet";
 import './../assets/css/App.scss';
 import Header from './header/Header';
 import Body from './body/Body';
@@ -12,7 +14,7 @@ import ScrollToTop from '../router/scrollToTop';
 import NotFound from './NotFound';
 
 console.warn = () => { };
-
+const TITLE ='Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh';
 
 function App() {
   return (
@@ -20,7 +22,6 @@ function App() {
       <div>
         <ScrollToTop />
         <Header />
-        {/* <Redirect /> */}
         <Switch>
           <Route exact path="/"><Body /></Route>
           <Route exact path='/chi-tiet-san-pham/:slug.:id.html' component={Product_detail} />
@@ -31,6 +32,11 @@ function App() {
           <Route exact path="*"><NotFound /></Route>
         </Switch>
         <Footer />
+        <Helmet>
+          <meta charset="utf-8" />
+            <title>{TITLE}</title>
+          <meta name="description" content="This is main page" />
+        </Helmet>
       </div>
     </Router>
 

@@ -16,7 +16,7 @@ const renderProduct=(data) => {
                                         <img className="col-md-4 col-4 p-0" src={search.img3} alt="" />
                                     </div>
                                     <div className="info mt-2 pt-2 pl-3 pb-2" style={{ background: search.bg }}>
-                                        <h5 className="card-text small text-left font-weight-bold">{search.content}</h5>
+                                        <h5 className="card-text small font-weight-bold">{search.content}</h5>
                                         <span className="small text-secondary">{search.number} sản phẩm</span>
                                     </div>
                                 </div>

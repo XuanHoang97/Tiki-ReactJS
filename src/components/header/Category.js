@@ -34,7 +34,7 @@ export default function Category(props) {
         <span>Sản phẩm</span>
       </a>
 
-      {hover ? <div className="dropdown-menu" aria-labelledby="dropdown" style={{ top: "3.5rem", display: "block", left: "-3.5em" }}>
+      {hover ? <div className="dropdown-menu list__product" aria-labelledby="dropdown" style={{ top: "3.5rem", display: "block", left: "-3.5em" }}>
         {listMenu.map((menu) => {
           return (
 

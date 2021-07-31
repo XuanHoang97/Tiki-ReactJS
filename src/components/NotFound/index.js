@@ -18,7 +18,7 @@ function NotFound() {
                 </div>
             </div>
             <div className="err">
-                <h5>Bạn có thể thử những liên kết sau</h5>
+                <h5 className="suggest">Bạn có thể thử những liên kết sau</h5>
                 <hr />
                 <div className='row btn-quit'>
                     <Link to='/'><button><i class="fa fa-angle-left"></i> Quay lại trang trước</button></Link>

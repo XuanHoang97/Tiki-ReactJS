@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from 'react-helmet';
 import { BrowserRouter as Router, Switch, Route, Link, useParams} from "react-router-dom";
 import Prod_info from './Prod_info';
 import Prod_buy from './Prod_buy';
@@ -15,7 +16,8 @@ const Product_detail=({ match })=> {
     const [feature, setFeature] = useState([]);
     const [product, setProduct] = useState([]);
     const [offerBonus, setOffer] = useState([]);
-
+    const TITLE='Điện thoại ngon - bổ - rẻ';
+    // const TITLE=`${props.name}`;
     useEffect(() => {
         fetchProduct();
         fetchFeature();
@@ -78,6 +80,12 @@ const Product_detail=({ match })=> {
 
     return (
         <div className="main bg-light pt-3 pb-3">
+            <Helmet>
+                <meta charset="utf-8" />
+                    <title>{TITLE}</title>
+                <meta name="description" content="This is main page" />
+            </Helmet>
+
             <div className="container">
             {/* Product--detail  */}
             <h6 className="mb-2">CHI TIẾT SẢN PHẨM</h6>
