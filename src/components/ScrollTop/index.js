@@ -42,18 +42,17 @@ function ScrollTop() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 borderRadius: '50%',
+                zIndex: 10,
                 cursor: 'pointer'
             }}
                 onClick={() => scrollToTop()}
             >
 
-                <i className="fa fa-angle-right"
-                    style={{
-                        transform: 'rotate(-90deg) scale(1.5)',
+                <i class="fas fa-arrow-circle-up" style={{
+                        fontSize:'25px',
                         color: '#fff'
-                    }}
-                ></i>
-
+                    }}>
+                </i>
             </div>
 
         </div>) : '')
