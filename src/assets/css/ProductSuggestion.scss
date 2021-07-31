@@ -44,4 +44,54 @@
 .tab-content {
     background: white;
     margin-bottom: 15px;
+    padding: 0 0 20px 0;
+    #home {
+        .list {
+            gap: 10px;
+            display: flex;
+            .list__prod {
+                width: 20%;
+                padding: 10px;
+                p {
+                    font-size: 12px;
+                }
+                .rate {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    .vote {
+                        span {
+                            font-size: 12px;
+                        }
+                    }
+                    span {
+                        font-size: 12px;
+                        color: darkgrey;
+                    }
+                }
+                .price {
+                    display: flex;
+                    gap: 15px;
+                    align-items: center;
+                    .price_prod {
+                        font-size: 15px;
+                        font-weight: 500;
+                    }
+                }
+            }
+            .list__prod:hover {
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
+            }
+        }
+        .view__more {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0 0 0;
+            button {
+                width: 20%;
+                font-size: 13px;
+                font-weight: 500;
+            }
+        }
+    }
 }
