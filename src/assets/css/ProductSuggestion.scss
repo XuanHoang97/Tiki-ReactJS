@@ -1,0 +1,47 @@
+.Prod__Suggest {
+    background: white;
+    padding: 10px;
+    h5 {
+        font-weight: 500;
+        color: #4b4b4b;
+        font-size: 18px;
+    }
+}
+
+.tab__product {
+    background: rgb(241, 241, 241);
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-evenly;
+    ul {
+        gap: 7px;
+        li {
+            background: white;
+            .nav-link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                img {
+                    max-width: 42%;
+                }
+                span {
+                    font-size: 13px;
+                    color: grey;
+                }
+            }
+            .active {
+                border: 1px solid rgb(13, 92, 182);
+                background: transparent !important;
+                span {
+                    font-size: 13px;
+                    color: blue !important;
+                }
+            }
+        }
+    }
+}
+
+.tab-content {
+    background: white;
+    margin-bottom: 15px;
+}

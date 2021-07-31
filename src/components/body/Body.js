@@ -7,6 +7,7 @@ import SearchSpecial from './SearchSpecial';
 import Mobile from './Mobile';
 
 import Mail from './Mail';
+import ProductSuggestion from './ProductSuggestion';
 class Body extends Component {
     render() {
         return (
@@ -22,6 +23,7 @@ class Body extends Component {
 
                     <Mobile />
 
+                    <ProductSuggestion />
                     <Mail />
                 </div>
             </div>
