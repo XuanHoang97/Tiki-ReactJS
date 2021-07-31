@@ -3,16 +3,14 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    
-
+    .suggest {
+        font-size: 14px;
+        text-align: center;
+    }
     .err {
         margin-bottom: 50px;
         position: relative;
         text-align: center;
-        h5 {
-            font-size: 14px;
-            text-align: center;
-        }
         .banner-top {
             height: 230px;
             background-color: #3fc6f5;

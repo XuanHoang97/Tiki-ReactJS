@@ -41,29 +41,29 @@ class Header extends Component {
                                             <span style={{ fontSize: '14px' }}>Tài khoản</span>
                                         </a>
                                         <div className="dropdown-menu" aria-labelledby="dropdownId">
-                                            <a className="dropdown-item">
+                                            <a className="dropdown-item reg__log">
                                                 <button type="button" className="btn btn-warning btn-sm btn-block" onClick={() => this.Modal()}>
                                                     Đăng nhập
                                                 </button>
                                             </a>
 
 
-                                            <a className="dropdown-item">
+                                            <a className="dropdown-item reg__log">
                                                 <button type="button" className="btn btn-warning btn-sm btn-block" onClick={() => this.Modal()}>
                                                     Tạo tài khoản
                                                 </button>
                                             </a>
-                                            <a className="dropdown-item" href="/">
+                                            <a className="dropdown-item reg__log" href="/">
                                                 <button type="button" className="btn btn-primary btn-sm btn-block">
                                                     <i className="fab fa-facebook-f mr-4" /> <span>Đăng nhập bằng Facebook</span>
                                                 </button>
                                             </a>
-                                            <a className="dropdown-item" href="/">
+                                            <a className="dropdown-item reg__log" href="/">
                                                 <button type="button" className="btn btn-danger btn-sm btn-block">
                                                     <i className="fab fa-google-plus-g mr-3" /> <span>Đăng nhập bằng Google</span>
                                                 </button>
                                             </a>
-                                            <a className="dropdown-item" href="/">
+                                            <a className="dropdown-item reg__log" href="/">
                                                 <button type="button" className="btn btn-info btn-sm btn-block">
                                                     <i className="far fa-comment-dots mr-4" /> <span>Đăng nhập bằng Zalo</span>
                                                 </button>

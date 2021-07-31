@@ -63,7 +63,6 @@ function Search_special() {
     };
 
     return (
-
         <>
             <div className="mt-4 row justify-content-between pl-3 pr-3 align-items-center">
                 <div className="">

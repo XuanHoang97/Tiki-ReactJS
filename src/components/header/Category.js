@@ -33,7 +33,7 @@ export default function Category(props) {
         <span>Sản phẩm</span>
       </a>
 
-      {hover ? <div className="dropdown-menu" aria-labelledby="dropdown" style={{ top: "3.5rem", display: "block", left: "-3.5em" }}>
+      {hover ? <div className="dropdown-menu list__product" aria-labelledby="dropdown" style={{ top: "3.5rem", display: "block", left: "-3.5em" }}>
         {listMenu.map((menu) => {
           return (
 
@@ -60,12 +60,6 @@ export default function Category(props) {
                         />
                       })
                     }
-                    {/* <div className="col-md-3">
-                      <img
-                        src="https://salt.tikicdn.com/ts/banner/58/4c/1f/504d88acdbc1d7b72f35743be0baa4e6.jpg"
-                        alt=""
-                      />
-                    </div> */}
                   </div>
                 </div>
 
