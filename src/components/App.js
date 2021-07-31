@@ -10,6 +10,7 @@ import Footer from './footer/Footer';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from '../router/scrollToTop';
 import NotFound from './NotFound';
+import ScrollTop from './ScrollTop';
 
 console.warn = () => { };
 
@@ -19,6 +20,7 @@ function App() {
     <Router >
       <div>
         <ScrollToTop />
+        <ScrollTop />
         <Header />
         {/* <Redirect /> */}
         <Switch>
