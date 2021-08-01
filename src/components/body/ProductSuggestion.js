@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { StickyContainer, Sticky } from "react-sticky";
 
 ProductSuggestion.propTypes = {
   
@@ -8,67 +9,70 @@ ProductSuggestion.propTypes = {
 function ProductSuggestion(props) {
   return (
     <div className="suggest__list">
-      <div className="Prod__Suggest">
-        <h5 className="m-0">Gợi Ý Hôm Nay</h5>
-      </div>
+      <StickyContainer style={{ height: "auto" }}>
+        <Sticky>{({ style }) => 
+        <div style={style}>
+          <div className="Prod__Suggest"> <h5 className="m-0">Gợi Ý Hôm Nay</h5> </div>
 
-      <div className="tab__product">
-        <ul className="nav nav-pills" role="tablist">
-          <li className="nav-item">
-            <a className="nav-link active" data-toggle="pill" href="#home">
-              <img src="https://salt.tikicdn.com/cache/w100/ts/upload/6d/56/64/3c4a8a3a7475311d8c6892d9ede8ead7.png.webp" alt="" />
-              <span>Dành cho bạn</span> 
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-toggle="pill" href="#menu1">
-              <img src="https://salt.tikicdn.com/cache/w100/ts/category/a6/9f/45/460fdecbbe0f81da09c7da37aa08f680.png.webp" alt="" />
-              <span>Đi chợ siêu Sale</span> 
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-toggle="pill" href="#menu2">
-              <img src="https://salt.tikicdn.com/cache/w100/ts/product/7f/cc/71/ebca15e1230b667ea18f714184a7043d.jpg.webp" alt="" />
-              <span>Củ quả siêu tươi</span> 
-            </a>
-          </li>
+          <div className="tab__product" style={{ height: "90px" }}>
+            <ul className="nav nav-pills" role="tablist">
+              <li className="nav-item">
+                <a className="nav-link active" data-toggle="pill" href="#home">
+                  <img src="https://salt.tikicdn.com/cache/w100/ts/upload/6d/56/64/3c4a8a3a7475311d8c6892d9ede8ead7.png.webp" alt="" />
+                  <span>Dành cho bạn</span> 
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" data-toggle="pill" href="#menu1">
+                  <img src="https://salt.tikicdn.com/cache/w100/ts/category/a6/9f/45/460fdecbbe0f81da09c7da37aa08f680.png.webp" alt="" />
+                  <span>Đi chợ siêu Sale</span> 
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" data-toggle="pill" href="#menu2">
+                  <img src="https://salt.tikicdn.com/cache/w100/ts/product/7f/cc/71/ebca15e1230b667ea18f714184a7043d.jpg.webp" alt="" />
+                  <span>Củ quả siêu tươi</span> 
+                </a>
+              </li>
 
-          <li className="nav-item">
-            <a className="nav-link" data-toggle="pill" href="#menu3">
-              <img src="https://salt.tikicdn.com/cache/w100/ts/personalish/11/73/ea/570cae3c03f657c59690f463b5c94166.jpg.webp" alt="" />
-              <span>Deal siêu hot</span> 
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-toggle="pill" href="#menu4">
-              <img src="https://salt.tikicdn.com/cache/w100/ts/upload/14/d2/fa/49a9882cea6c62cc2527d297634f345a.png.webp" alt="" />
-              <span>Hàng mới</span> 
-            </a>
-          </li>
+              <li className="nav-item">
+                <a className="nav-link" data-toggle="pill" href="#menu3">
+                  <img src="https://salt.tikicdn.com/cache/w100/ts/personalish/11/73/ea/570cae3c03f657c59690f463b5c94166.jpg.webp" alt="" />
+                  <span>Deal siêu hot</span> 
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" data-toggle="pill" href="#menu4">
+                  <img src="https://salt.tikicdn.com/cache/w100/ts/upload/14/d2/fa/49a9882cea6c62cc2527d297634f345a.png.webp" alt="" />
+                  <span>Hàng mới</span> 
+                </a>
+              </li>
 
-          <li className="nav-item">
-            <a className="nav-link" data-toggle="pill" href="#menu5">
-              <img src="https://salt.tikicdn.com/cache/w100/ts/upload/3b/b7/5d/161ce01cd4c91ba5495bc44790314016.png.webp" alt="" />
-              <span>Không giới hạn</span> 
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-toggle="pill" href="#menu6">
-              <img src="https://salt.tikicdn.com/cache/w100/ts/category/48/96/3b/9403c9f9579883b9433decf44e3d4591.png.webp" alt="" />
-              <span>Thời trang nữ</span> 
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" data-toggle="pill" href="#menu7">
-              <img src="https://salt.tikicdn.com/cache/w100/ts/category/12/29/a2/7409ff03cff5c0d3d695cb19f8f15896.png.webp" alt="" />
-              <span>Nhà cửa-đời sống</span> 
-            </a>
-          </li>
-          
-        </ul>
-      </div>
-      
-      <div className="tab-content">
+              <li className="nav-item">
+                <a className="nav-link" data-toggle="pill" href="#menu5">
+                  <img src="https://salt.tikicdn.com/cache/w100/ts/upload/3b/b7/5d/161ce01cd4c91ba5495bc44790314016.png.webp" alt="" />
+                  <span>Không giới hạn</span> 
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" data-toggle="pill" href="#menu6">
+                  <img src="https://salt.tikicdn.com/cache/w100/ts/category/48/96/3b/9403c9f9579883b9433decf44e3d4591.png.webp" alt="" />
+                  <span>Thời trang nữ</span> 
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" data-toggle="pill" href="#menu7">
+                  <img src="https://salt.tikicdn.com/cache/w100/ts/category/12/29/a2/7409ff03cff5c0d3d695cb19f8f15896.png.webp" alt="" />
+                  <span>Nhà cửa-đời sống</span> 
+                </a>
+              </li>
+              
+            </ul>`
+          </div>
+        </div>}
+        </Sticky>
+
+        <div className="tab-content">
         <div id="home" className="container tab-pane active"><br />
           <div className="list">
             <div className="list__prod">
@@ -282,40 +286,40 @@ function ProductSuggestion(props) {
 
         <div id="menu1" className="container tab-pane fade"><br />
           <h6>Menu 1</h6>
-          <p>Mua gì cũng rẻ</p>
+          <p>Giá rẻ nhất vịnh bắc bộ - ở đâu rẻ hơn em cho 5 củ</p>
         </div>
 
         <div id="menu2" className="container tab-pane fade"><br />
           <h6>Menu 2</h6>
-          <p>Tươi không cần tưới</p>
+          <p>Tươi không cần tưới - Tìm được củ nào héo em không nói gì</p>
         </div>
 
         <div id="menu3" className="container tab-pane fade"><br />
           <h6>Menu 3</h6>
-          <p>Chốt deal nhanh chóng</p>
+          <p>Chốt deal nhanh chóng - nêú mà chậm chân thì vẫn hết hàng</p>
         </div>
 
         <div id="menu4" className="container tab-pane fade"><br />
-          <h6>Menu 4</h6>
-          <p>Hàng mới ngon-bổ-rẻ</p>
+          <img src="" alt="" />
+          <p>Hàng mới ngon-bổ-rẻ, nhưng nhiều khi lẫn cả hàng cũ, hàng Fake em ko kiểm chứng được</p>
         </div>
 
         <div id="menu5" className="container tab-pane fade"><br />
-          <h6>Menu 5</h6>
-          <p>Mua gì cũng có</p>
+          <img className="w-25" src="https://traderviet.com/attachments/lam-sao-toi-co-the-lam-giau-tu-forex-chi-voi-5000-ma-khong-co-kinh-nghiem-traderviet2-jpg.93523/" alt="" />
+          <p>Mua gì cũng có - Chỉ sợ viêm màng túi</p>
         </div>
 
         <div id="menu6" className="container tab-pane fade"><br />
           <h6>Menu 6</h6>
-          <p>Thời trang-phong cách-chất chơi người dơi</p>
+          <p>Thời trang - Phong cách - Chất chơi người dơi</p>
         </div>
 
         <div id="menu7" className="container tab-pane fade"><br />
           <h6>Menu 7</h6>
-          <p>Tiện ích đủ thứ</p>
+          <p>Tiện ích đủ thứ - Toàn hàng Sang-Sịn-Mịn</p>
         </div>
       </div>
-      
+      </StickyContainer>
     </div>
   );
 }

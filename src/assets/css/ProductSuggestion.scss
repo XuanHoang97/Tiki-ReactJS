@@ -10,9 +10,7 @@
     }
     .tab__product {
         background: rgb(241, 241, 241);
-        margin: 5px 0;
-        display: flex;
-        justify-content: space-evenly;
+        padding: 5px 0;
         ul {
             gap: 7px;
             li {
@@ -51,6 +49,7 @@
                 .list__prod {
                     width: 20%;
                     padding: 10px;
+                    cursor: pointer;
                     p {
                         font-size: 12px;
                     }
@@ -60,11 +59,11 @@
                         align-items: center;
                         .vote {
                             span {
-                                font-size: 12px;
+                                font-size: 9px;
                             }
                         }
                         span {
-                            font-size: 12px;
+                            font-size: 11px;
                             color: darkgrey;
                         }
                     }

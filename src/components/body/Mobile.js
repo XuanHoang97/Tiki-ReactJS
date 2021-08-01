@@ -18,10 +18,10 @@ const renderMobile = (mobile) => {
                 {mobile.map((mobile, key) => {
                     return (
                         <React.Fragment key={key}>
-                            <div className="product--item col-md-3 col-6">
+                            <div className="product--item col-md-3 col-6 pt-3">
                                 <Link to={`/chi-tiet-san-pham/${mobile.id}` + mobile.name + "." + mobile.id + ".html"}>
                                     <img src={mobile.img} alt="mobile" />
-                                    <h6 className="mt-4 mb-1 text-darkgrey">{mobile.name}</h6>
+                                    <h6 className="mt-4 mb-1 text-dark">{mobile.name}</h6>
                                 </Link>
 
 

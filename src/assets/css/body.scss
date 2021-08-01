@@ -1,0 +1,32 @@
+.category__hightlight {
+    .list__category {
+        .col-md-1:hover {
+            color: blue;
+        }
+    }
+}
+
+.voucher {
+    .col-md-1:hover {
+        color: blue;
+    }
+}
+
+.search__hightlight {
+    .list__search {
+        .card {
+            .card-body:hover {
+                border: 1px solid rgb(85, 85, 255) !important;
+            }
+        }
+    }
+}
+
+.product {
+    .product__detail {
+        .product--item:hover {
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px !important;
+            color: rgb(0, 47, 255) !important;
+        }
+    }
+}

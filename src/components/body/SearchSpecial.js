@@ -8,7 +8,7 @@ const renderProduct = (data) => {
                 {data.map((search) => {
                     return (
                         <React.Fragment key={search.id}>
-                            <div className="card col-md-3 p-0" style={{border: 'none'}}>
+                            <div className="card col-md-3 p-0" style={{border: 'none', cursor: 'pointer'}}>
                                 <div className="card-body pl-0 pr-0 pt-2 pb-0" style={{borderRadius:'5px', border:'1px solid rgb(230 230 230)', marginRight:'15px'}}>
                                     <div className="illutrator row m-1">
                                         <img className="col-md-4 col-4 p-0" src={search.img1} alt="" />
