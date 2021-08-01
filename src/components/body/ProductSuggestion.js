@@ -7,7 +7,7 @@ ProductSuggestion.propTypes = {
 
 function ProductSuggestion(props) {
   return (
-    <>
+    <div className="suggest__list">
       <div className="Prod__Suggest">
         <h5 className="m-0">Gợi Ý Hôm Nay</h5>
       </div>
@@ -67,7 +67,6 @@ function ProductSuggestion(props) {
           
         </ul>
       </div>
-      
       
       <div className="tab-content">
         <div id="home" className="container tab-pane active"><br />
@@ -171,6 +170,109 @@ function ProductSuggestion(props) {
                 <span className="badge badge-danger">-6%</span>
               </div>
             </div>
+            
+          </div>
+
+          <div className="list__second mt-4">
+            <div className="list__prod">
+              <img src="https://salt.tikicdn.com/cache/w200/ts/product/ce/4b/ba/f1d2cb05feef5b78bf17d727b634de94.png.webp" alt="" />
+              <p className="text-secondary mt-3 mb-1">Dầu gội X-Men For Boss Luxury - Hương trầm sang trọng 650g</p>
+              <div className="rate">
+                <div className="vote">
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star text-secondary small" />
+                    <span className="fa fa-star text-secondary small" />
+                </div>
+                <span className="">Đã bán 111</span>
+              </div>
+
+              <div className="price">
+                <span className="price_prod">185.000 đ</span>
+                <span className="badge badge-danger">-6%</span>
+              </div>
+            </div>
+
+            <div className="list__prod">
+              <img src="https://salt.tikicdn.com/cache/w200/ts/product/c8/71/cd/0140f9d5f3e477b22f49706f5b4f908f.jpg.webp" alt="" />
+              <p className="text-secondary mt-3 mb-1">Dầu gội X-Men For Boss Luxury - Hương trầm sang trọng 650g</p>
+              <div className="rate">
+                <div className="vote">
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star text-secondary small" />
+                    <span className="fa fa-star text-secondary small" />
+                </div>
+                <span className="">Đã bán 111</span>
+              </div>
+
+              <div className="price">
+                <span className="price_prod">185.000 đ</span>
+                <span className="badge badge-danger">-6%</span>
+              </div>
+            </div>
+
+            <div className="list__prod">
+              <img src="https://salt.tikicdn.com/cache/w200/ts/product/25/a9/12/bad9397f7be0f9aa8a53797d468da65f.jpg.webp" alt="" />
+              <p className="text-secondary mt-3 mb-1">Dầu gội X-Men For Boss Luxury - Hương trầm sang trọng 650g</p>
+              <div className="rate">
+                <div className="vote">
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star text-secondary small" />
+                    <span className="fa fa-star text-secondary small" />
+                </div>
+                <span className="">Đã bán 111</span>
+              </div>
+
+              <div className="price">
+                <span className="price_prod">185.000 đ</span>
+                <span className="badge badge-danger">-6%</span>
+              </div>
+            </div>
+
+            <div className="list__prod">
+              <img src="https://salt.tikicdn.com/cache/w200/ts/product/ad/98/30/5172e44a886d09c3c070601cd8213650.jpg.webp" alt="" />
+              <p className="text-secondary mt-3 mb-1">Dầu gội X-Men For Boss Luxury - Hương trầm sang trọng 650g</p>
+              <div className="rate">
+                <div className="vote">
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star text-secondary small" />
+                    <span className="fa fa-star text-secondary small" />
+                </div>
+                <span className="">Đã bán 111</span>
+              </div>
+
+              <div className="price">
+                <span className="price_prod">185.000 đ</span>
+                <span className="badge badge-danger">-6%</span>
+              </div>
+            </div>
+
+            <div className="list__prod">
+              <img src="https://salt.tikicdn.com/cache/w200/ts/product/50/f1/b3/7ff75fd017f968c3faf3cdfded49bd26.jpg.webp" alt="" />
+              <p className="text-secondary mt-3 mb-1">Dầu gội X-Men For Boss Luxury - Hương trầm sang trọng 650g</p>
+              <div className="rate">
+                <div className="vote">
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star checked text-warning small" />
+                    <span className="fa fa-star text-secondary small" />
+                    <span className="fa fa-star text-secondary small" />
+                </div>
+                <span className="">Đã bán 111</span>
+              </div>
+
+              <div className="price">
+                <span className="price_prod">185.000 đ</span>
+                <span className="badge badge-danger">-6%</span>
+              </div>
+            </div>
           </div>
           
           <div className="view__more"> 
@@ -214,7 +316,7 @@ function ProductSuggestion(props) {
         </div>
       </div>
       
-    </>
+    </div>
   );
 }
 

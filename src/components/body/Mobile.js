@@ -14,7 +14,7 @@ const renderMobile = (mobile) => {
                 <span className="text-danger ">ĐIỆN THOẠI NỔI BẬT</span>
             </h6>
 
-            <div className="product__detail row mt-5">
+            <div className="product__detail row mt-4">
                 {mobile.map((mobile, key) => {
                     return (
                         <React.Fragment key={key}>

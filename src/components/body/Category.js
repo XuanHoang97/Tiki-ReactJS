@@ -12,19 +12,19 @@ export default function Category(props) {
         })
             .catch((err) => { console.log(err); alert("Lỗi không load được sản phẩm từ Api"); })
     }, [])
-    var dem = 1;
+    let dem = 1;
     return (
 
         <div className="category__hightlight mt-3 p-3 bg-white">
             <h6><span className="text-danger">DANH MỤC NỔI BẬT</span></h6>
 
-            <div className="list__category pt-4 pb-2 row">
+            <div className="list__category pt-4 pl-2 pr-2 row">
                 {listCategory ? listCategory.map((ctg) => {
-                    if (dem <= 6) {
+                    if (dem <= 12) {
                         dem++;
                         return (
                             <React.Fragment key={ctg.id}>
-                                <div className="col-md-2 col-4 text-center">
+                                <div className="col-md-1 col-4 p-0 text-center">
                                     <img className="w-50 rounded-circle" src={ctg.img} alt="" />
                                     <h6 className="small pt-2" style={{ fontSize: '12px' }}>{ctg.content}</h6>
                                 </div>
