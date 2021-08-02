@@ -1,15 +1,76 @@
 import { Modal } from 'react-bootstrap';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Verify from './Verify';
+import styled from 'styled-components'
 
+const InputPhone = styled.input.attrs(props => ({
+    placeholder: "Số điện thoại",
+    type: "text",
+    borderBottom: props.borderBottom,
+}))`
+    border: none;
+    border-bottom: ${props => props.borderBottom ? '1px solid #ccc' : '1px solid rgb(255, 66, 78)'};
+    font-size: 24px;
+    width: 100%;
+    outline: none;
+    ::placeholder{
+        font-size: 24px;
+    }
+`
+const RightImg = styled.div`
+    background: linear-gradient(136deg, rgb(240, 248, 255) -1%, rgb(219, 238, 255) 85%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`;
 function LogIn(props) {
-    const [verify, setVerify] = useState(true)
-    const [number, setNumber] = useState(0)
 
+    const [verify, setVerify] = useState(true)
+    const [number, setNumber] = useState()
+    const [validate, setValidate] = useState(true)
+    const [disable, setDisable] = useState(true)
+
+    useEffect(() => {
+        if (number) {
+            if (number === '') {
+                setValidate(false)
+                setDisable(true)
+            } else if (number.match(/(84|0[3|5|7|8|9])+([0-9]{8})\b/g)) {
+                setValidate(true)
+                setDisable(false)
+
+            } else {
+                setValidate(false)
+                setDisable(true)
+            }
+        } else {
+            setValidate(true)
+            setDisable(true)
+
+        }
+        return () => {
+        }
+    })
+
+    const submitNumber = () => {
+        setVerify(false)
+        setDisable(true)
+    }
+    const verifyFormat = () => {
+        setVerify(true);
+        setNumber();
+    }
+    const hiddenForm = () => {
+        props.hidden()
+        setVerify(true);
+        setNumber();
+        return;
+    }
     return (
         <>
             <Modal className="login_resg" show={props.show} size="lg" centered>
-                <button className="close text-end" onClick={props.hidden} style={{ textAlign: 'end', position: 'absolute', right: '-15px', zIndex: 10, opacity: "1", background: 'white', top: '-15px', border: '0', borderRadius: '50%', width: '30px', height: '30px', display: 'flex', justifyContent: 'center', transform: 'scale(1.3)' }}>×</button>
+                <button className="close text-end" onClick={() => hiddenForm()} style={{ textAlign: 'end', position: 'absolute', right: '-15px', zIndex: 10, opacity: "1", background: 'white', top: '-15px', border: '0', borderRadius: '50%', width: '30px', height: '30px', display: 'flex', justifyContent: 'center', transform: 'scale(1.3)' }}>×</button>
 
                 <Modal.Body className="info p-0">
                     <div className="row m-0 p-0">
@@ -17,15 +78,22 @@ function LogIn(props) {
                             {verify ? (<>
                                 <h4>Xin chào,</h4>
                                 <div className="form-group">
-                                    <label>Đăng nhập hoặc tạo tài khoản</label>
-                                    <input type="text" className="form-control" aria-describedby="helpId"
-                                        style={{ border: 'none', borderRadius: '0', borderBottom: '1px solid #ccc' }}
-                                        placeholder="Số điện thoại hoặc email..."
+                                    <label>Đăng nhập hoặc Tạo tài khoản</label>
+                                    <InputPhone className='mt-4'
+                                        borderBottom={validate}
                                         onChange={(e) => setNumber(e.target.value)}
                                     />
-                                    <button type="button"
+                                    < p
+                                        style={{
+                                            display: (validate ? 'none' : 'block'),
+                                            color: 'rgb(255, 66, 78)', fontSize: '14px'
+                                        }}
+                                        className='mb-4 mt-2'
+                                    > Số điện thoại không đúng định dạng.</p >
+                                    <button type="button" disabled={disable}
+                                        style={{ fontSize: '20px', border: '0', background: 'rgb(255, 66, 78)' }}
                                         className="btn btn-danger mt-3 btn-smd btn-block"
-                                        onClick={() => setVerify(false)}
+                                        onClick={() => (disable === false && validate === true) ? submitNumber() : setVerify(true)}
                                     >Tiếp tục</button>
                                     <div className="text-center small mt-2 mb-5"><a className="text-center">Đăng nhập bằng email</a></div>
                                     <div className="text-center mb-3 small">Hoặc Tiếp tục bằng</div>
@@ -44,24 +112,15 @@ function LogIn(props) {
                                         <div className="small mt-2 m-3">Bằng việc tiếp tục, bạn đã chấp nhận <a className="text-primary">điều khoản sử dụng</a> </div>
                                     </div>
                                 </div>
-                            </>) : <Verify phone={number} verify={() => setVerify(true)} />}
+                            </>) : <Verify phone={number} verify={() => verifyFormat()} />}
                         </div>
-                        <div className="col-md-4 text-center"
-                            style={{
-                                background: 'linear-gradient(136deg, rgb(240, 248, 255) -1%, rgb(219, 238, 255) 85%)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                flexDirection: 'column',
-                            }}
-                        >
+                        <RightImg className="col-md-4 text-center">
                             <img className="w-75" src="https://salt.tikicdn.com/ts/upload/eb/f3/a3/25b2ccba8f33a5157f161b6a50f64a60.png" alt="tiki" />
                             <div style={{ color: 'rgb(11, 116, 229)' }}>
                                 <h6 className="mt-4 ">Mua sắm tại Tiki</h6>
                                 <p className="small">Siêu ưu đãi mỗi ngày</p>
                             </div>
-
-                        </div>
+                        </RightImg>
                     </div>
                 </Modal.Body>
             </Modal>

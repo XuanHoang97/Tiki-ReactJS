@@ -33,7 +33,7 @@ function ScrollTop() {
             }}
                 onClick={() => scrollToTop()}
             >
-                <i class="fas fa-arrow-alt-circle-up" style={{ fontSize: '25px', color: '#fff' }}></i>
+                <i className="fas fa-arrow-alt-circle-up" style={{ fontSize: '25px', color: '#fff' }}></i>
             </div>
 
         </div>) : '')

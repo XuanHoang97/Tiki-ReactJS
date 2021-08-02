@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Link } from "react-router-dom";
-import { Modal } from 'react-bootstrap'
+import { Link } from "react-router-dom";
 import MenuTop from './Menu_top'
 import Category from './Category';
 import Search from './Search';
@@ -24,7 +23,7 @@ class Header extends Component {
                         <nav className="navbar navbar-expand-sm navbar-dark col-12 pb-0 pt-1">
                             <Link to="/" >
                                 <div className="navbar-brand pt-0 col-3 col-md-1">
-                                    <img style={{ maxWidth: '100%' }} src="https://salt.tikicdn.com/ts/upload/ae/f5/15/2228f38cf84d1b8451bb49e2c4537081.png" alt="logo" />
+                                    <img style={{ maxWidth: '58px' }} src="https://salt.tikicdn.com/ts/upload/ae/f5/15/2228f38cf84d1b8451bb49e2c4537081.png" alt="logo" />
                                 </div>
                             </Link>
 
@@ -38,11 +37,7 @@ class Header extends Component {
 
                                     <Search />
 
-
                                     <Account />
-
-                                    {/* modal register/login  */}
-
 
                                     <Cart />
                                 </ul>
