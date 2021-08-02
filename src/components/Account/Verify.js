@@ -19,7 +19,6 @@ function Verify(props) {
             outline:none;
             text-align: center;
             font-weight: bold;
-            -moz-appearance: textfield;
           }
           
           .code::-webkit-outer-spin-button,
