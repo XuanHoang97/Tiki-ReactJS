@@ -1,5 +1,5 @@
 import React from 'react'
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import './../assets/css/App.scss';
 import Header from './header/Header';
 import Body from './body/Body';
@@ -15,7 +15,7 @@ import NotFound from './NotFound';
 import ScrollTop from './ScrollTop';
 
 console.warn = () => { };
-const TITLE ='Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh';
+const TITLE = 'Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh';
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
         <Footer />
         <Helmet>
           <meta charset="utf-8" />
-            <title>{TITLE}</title>
+          <title>{TITLE}</title>
           <meta name="description" content="This is main page" />
         </Helmet>
       </div>
