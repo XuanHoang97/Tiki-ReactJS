@@ -1,5 +1,5 @@
 import React from 'react'
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import './../assets/css/App.scss';
 import Header from './header/Header';
 import Body from './body/Body';
@@ -14,11 +14,7 @@ import ScrollToTop from '../router/scrollToTop';
 import NotFound from './NotFound';
 import ScrollTop from './ScrollTop';
 
-// Chatbot
-import Chatbot from 'react-chatbot-kit';
-import config from './chatbot/config';
-import ActionProvider from './chatbot/ActionProvider';
-import MessageParser from './chatbot/MessageParser';
+
 
 console.warn = () => { };
 // SEO Web
@@ -28,7 +24,6 @@ function App() {
   return (
     <Router >
       <div>
-        <Chatbot config={config} actionProvider={ActionProvider} 	messageParser={MessageParser} />
         <ScrollToTop />
         <ScrollTop />
         <Header />
@@ -44,7 +39,7 @@ function App() {
         <Footer />
         <Helmet>
           <meta charset="utf-8" />
-            <title>{TITLE}</title>
+          <title>{TITLE}</title>
           <meta name="description" content="This is main page" />
         </Helmet>
       </div>

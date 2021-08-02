@@ -1,0 +1,31 @@
+.code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+    gap: 20px;
+    .code {
+        font-size: 32px;
+        border: none;
+        border-bottom: 1px solid #eee;
+        margin: 0;
+        color: rgb(36, 36, 36);
+        padding: 10px 0;
+        width: 1em;
+        outline: none;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .code::-webkit-outer-spin-button,
+    .code::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    .code:focus {
+        border-color: #3498db;
+    }
+    .code::placeholder {
+        font-size: 32px;
+    }
+}

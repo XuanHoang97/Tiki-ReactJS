@@ -6,6 +6,12 @@ import Preferential from './Preferential';
 import SearchSpecial from './SearchSpecial';
 import Mobile from './Mobile';
 
+// Chatbot
+import Chatbot from 'react-chatbot-kit';
+import config from 'components/chatbot/config';
+import ActionProvider from 'components/chatbot/ActionProvider';
+import MessageParser from 'components/chatbot/MessageParser';
+
 import Mail from './Mail';
 import ProductSuggestion from './ProductSuggestion';
 class Body extends Component {
@@ -25,6 +31,8 @@ class Body extends Component {
 
                     <ProductSuggestion />
                     <Mail />
+                    <Chatbot config={config} actionProvider={ActionProvider} 	messageParser={MessageParser} />
+
                 </div>
             </div>
         );

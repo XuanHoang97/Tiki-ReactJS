@@ -50,11 +50,10 @@ function Search_special() {
             .then(res => { setMobile(res.data); })
             .catch((err) => { console.log(err); });
     }, []);
-
     const handleNextbtn = () => {
-        console.log(currentPage)
-        console.log(mobile.length)
+
         if (currentPage > mobile.length / itemsPerPage - 1) {
+
             setcurrentPage(1)
         } else {
             setcurrentPage(currentPage + 1);
@@ -63,6 +62,7 @@ function Search_special() {
     };
 
     return (
+
         <>
             <div className="mt-3 bg-white m-0 pt-3 pb-1 row justify-content-between pl-3 pr-3 align-items-center">
                 <div className="">
