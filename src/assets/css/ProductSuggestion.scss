@@ -1,3 +1,4 @@
+@import "./variable.scss";
 .suggest__list {
     .Prod__Suggest {
         background: white;
@@ -13,6 +14,10 @@
         padding: 5px 0;
         ul {
             gap: 7px;
+            @include phone {
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+            }
             li {
                 background: white;
                 .nav-link {
@@ -46,10 +51,17 @@
             .list {
                 gap: 10px;
                 display: flex;
+                @include phone {
+                    display: -webkit-box;
+                    overflow-x: scroll;
+                }
                 .list__prod {
                     width: 20%;
                     padding: 10px;
                     cursor: pointer;
+                    @include phone {
+                        width: 50%;
+                    }
                     p {
                         font-size: 12px;
                     }

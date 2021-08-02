@@ -14,8 +14,8 @@ function ScrollTop() {
     const scrollToTop = () => {
         return window.scrollTo({
             top: 0,
-            behavior: 'smooth',
-        })
+            behavior: "smooth"
+        });
     };
 
     const handleScroll = () => {
