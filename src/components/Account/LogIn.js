@@ -70,7 +70,7 @@ function LogIn(props) {
     return (
         <>
             <Modal className="login_resg" show={props.show} size="lg" centered>
-                <button className="close text-end" onClick={() => hiddenForm()} style={{ textAlign: 'end', position: 'absolute', right: '-15px', zIndex: 10, opacity: "1", background: 'white', top: '-15px', border: '0', borderRadius: '50%', width: '30px', height: '30px', display: 'flex', justifyContent: 'center', transform: 'scale(1.3)' }}>×</button>
+                <button className="close text-end" onClick={() => hiddenForm()} style={{ textAlign: 'end', position: 'absolute', right: '-15px', zIndex: 10, opacity: "1", background: 'white', top: '-15px', border: '0', borderRadius: '50%', width: '30px', height: '30px', display: 'flex', justifyContent: 'center', transform: 'scale(1.3)', outline: 'none' }}>×</button>
 
                 <Modal.Body className="info p-0">
                     <div className="row m-0 p-0">
