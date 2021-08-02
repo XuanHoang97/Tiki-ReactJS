@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ReactPaginate from 'react-paginate';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // import NumberFormat from 'react-number-format';
-import '../../assets/css/mobile.scss';
 
 // Pagination
 const renderMobile = (mobile) => {

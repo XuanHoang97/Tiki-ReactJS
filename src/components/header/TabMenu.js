@@ -8,7 +8,7 @@ function TabMenu(props) {
             <div ><Link to={`/${props.product}/${props.id}`} onClick={props.offMenu}>{props.product}</Link>
                 <img src={props.img} alt="" />
             </div>
-        </div >
+        </div>
     );
 }
 

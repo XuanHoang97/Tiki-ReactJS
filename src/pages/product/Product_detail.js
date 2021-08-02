@@ -7,9 +7,10 @@ import Offer from './Offer';
 import Specifications from './Specifications';
 import Product_desc from './Product_desc';
 import Product_similar from './Product_similar';
-import Mail from '../../components/body/Mail';
 import axios from "axios";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Mail from "components/body/Mail";
+
 
 const Product_detail=({ match })=> {
     const [data, setData] = useState([]);

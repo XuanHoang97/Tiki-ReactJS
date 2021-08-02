@@ -14,13 +14,21 @@ import ScrollToTop from '../router/scrollToTop';
 import NotFound from './NotFound';
 import ScrollTop from './ScrollTop';
 
+// Chatbot
+import Chatbot from 'react-chatbot-kit';
+import config from './chatbot/config';
+import ActionProvider from './chatbot/ActionProvider';
+import MessageParser from './chatbot/MessageParser';
+
 console.warn = () => { };
+// SEO Web
 const TITLE ='Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh';
 
 function App() {
   return (
     <Router >
       <div>
+        <Chatbot config={config} actionProvider={ActionProvider} 	messageParser={MessageParser} />
         <ScrollToTop />
         <ScrollTop />
         <Header />
