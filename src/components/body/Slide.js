@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 function DataSlide(props) {
     return (
         <div className={`carousel-item ${props.active}`}>
-            <img className="d-block w-100" style={{ height: '240px' }} src={props.img} alt="Second slide" />
+            <img className="d-block w-100" style={{ height: '240px' }} src={props.img} alt="img slide" />
         </div>
     )
 }
@@ -24,6 +24,9 @@ function Slide() {
                     <li style={{ width: '10px', height: '10px', borderRadius: '50%' }} data-target="#carousel-example-1z" data-slide-to={0} className="active" />
                     <li style={{ width: '10px', height: '10px', borderRadius: '50%' }} data-target="#carousel-example-1z" data-slide-to={1} />
                     <li style={{ width: '10px', height: '10px', borderRadius: '50%' }} data-target="#carousel-example-1z" data-slide-to={2} />
+                    <li style={{ width: '10px', height: '10px', borderRadius: '50%' }} data-target="#carousel-example-1z" data-slide-to={3} />
+                    <li style={{ width: '10px', height: '10px', borderRadius: '50%' }} data-target="#carousel-example-1z" data-slide-to={4} />
+                    <li style={{ width: '10px', height: '10px', borderRadius: '50%' }} data-target="#carousel-example-1z" data-slide-to={5} />
                 </ol>
 
                 {/*Slides*/}
@@ -35,13 +38,11 @@ function Slide() {
                     }
                 </div>
                 {/*Controls*/}
-                <a className="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev" style={{ left: '15px', background: '#c7c7c7', borderBottomRightRadius: '5px', borderTopRightRadius: '5px', width: '4%', top: '100px', height: '40px' }}>
-                    <span className="carousel-control-prev-icon" aria-hidden="true" />
-                    <span className="sr-only">Previous</span>
+                <a className="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev" style={{ left: '15px', width: '4%', top: '100px', opacity:'0.2', height: '40px' }}>
+                    <img src="https://salt.tikicdn.com/ts/upload/6b/59/c2/b61db5f1c32cfdc6d75e59d4fac2dbe8.png" alt="" style={{transform:'rotate(180deg)'}} />
                 </a>
-                <a className="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next" style={{ right: '0px', background: '#c7c7c7', borderBottomLeftRadius: '5px', borderTopLeftRadius: '5px', width: '4%', top: '100px', height: '40px' }}>
-                    <span className="carousel-control-next-icon" aria-hidden="true" />
-                    <span className="sr-only">Next</span>
+                <a className="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next" style={{ right: '0px', width: '4%', top: '100px', opacity:'0.2', height: '40px' }}>
+                    <img src="https://salt.tikicdn.com/ts/upload/6b/59/c2/b61db5f1c32cfdc6d75e59d4fac2dbe8.png" alt="" />
                 </a>
 
             </div>

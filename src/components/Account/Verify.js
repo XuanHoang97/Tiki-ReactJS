@@ -40,7 +40,6 @@ function Verify(props) {
     useEffect(() => {
         const codeVerify = codes.current.querySelectorAll('.code')
 
-
         // 0 for null values
         // 8 for backspace 
         // 48-57 for 0-9 numbers
@@ -98,7 +97,6 @@ function Verify(props) {
 
                 >Xác minh</button>
                 <div className="small mt-2 mb-5">Không nhận được? <a href="/">Gửi lại mã</a></div>
-
 
             </div>
         </>

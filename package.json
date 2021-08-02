@@ -22,6 +22,7 @@
         "react-redux": "^7.2.4",
         "react-router-dom": "^5.2.0",
         "react-scripts": "4.0.3",
+        "react-sticky": "^6.0.3",
         "react-tabs": "^3.2.2",
         "reactstrap": "^8.9.0",
         "redux": "^4.1.0",

@@ -25,7 +25,7 @@
         }
         .banner-content {
             position: absolute;
-            top: 45px;
+            top: 100px;
             left: 0;
             right: 0;
             bottom: 0;
@@ -74,12 +74,7 @@
         justify-content: center;
         gap: 80px;
         button {
-            border: 1px solid #ccc;
-            background: linear-gradient(#fff, #f7f7f7);
-            border-radius: 2px;
             font-size: 12px;
-            padding: 6px 12px;
-            outline: none;
             i {
                 transform: scale(1.4);
             }
