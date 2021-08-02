@@ -28,11 +28,12 @@ function ScrollTop() {
 
     return (
         (scroll ? (<div style={{ position: 'fixed', bottom: '30px', right: '30px', zIndex: '10 !important' }} >
-            <div style={{ width: '40px', height: '40px', backgroundColor: '#017fff', display: 'flex', justifyContent: 'center', alignItems: 'center',borderRadius: '50%',zIndex: 10,cursor: 'pointer'
+            <div style={{
+                width: '40px', height: '40px', backgroundColor: '#017fff', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '50%', zIndex: 10, cursor: 'pointer'
             }}
                 onClick={() => scrollToTop()}
             >
-                <i class="fas fa-arrow-alt-circle-up" style={{ fontSize:'25px', color: '#fff' }}></i>
+                <i className="fas fa-arrow-alt-circle-up" style={{ fontSize: '25px', color: '#fff' }}></i>
             </div>
 
         </div>) : '')

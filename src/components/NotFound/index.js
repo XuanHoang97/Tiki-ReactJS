@@ -3,17 +3,15 @@ import { Link } from 'react-router-dom';
 
 function NotFound() {
     return (
-        <div className="container main">
-            <div className="row err">
-                <div className="col">
-                    <div className="banner-top"></div>
-                    <div className="banner-bottom"></div>
-                    <div className="banner-content">
-                        <div className="err-404 question"><img className="w-75" src="https://salt.tikicdn.com/assets/img/404/super.png" /></div>
-                        <div className="err-404"><img className="w-75" src="https://salt.tikicdn.com/assets/img/404/404.png" /></div>
-                        <div className="err-404 err-h">
-                            <h1>Xin lỗi, trang bạn tìm kiếm <br /> đang trong quá trình phát triển !</h1>
-                        </div>
+        <div className="container main" style={{ overflow: 'hidden' }}>
+            <div className="err">
+                <div className="banner-top"></div>
+                <div className="banner-bottom"></div>
+                <div className="banner-content">
+                    <div className="err-404 question"><img className="w-75" src="https://salt.tikicdn.com/assets/img/404/super.png" /></div>
+                    <div className="err-404"><img className="w-75" src="https://salt.tikicdn.com/assets/img/404/404.png" /></div>
+                    <div className="err-404 err-h">
+                        <h1>Xin lỗi, trang bạn tìm kiếm <br /> đang trong quá trình phát triển !</h1>
                     </div>
                 </div>
             </div>
@@ -22,13 +20,13 @@ function NotFound() {
                 <hr />
                 <div className='row btn-quit'>
                     <Link to='/'>
-                        <button type="button" class="btn btn-outline-primary"><i className="fa fa-angle-left"></i> Quay lại trang trước</button>
+                        <button type="button" className="btn btn-outline-primary"><i className="fa fa-angle-left"></i> Quay lại trang trước</button>
                     </Link>
                     <Link to='/'>
-                        <button type="button" class="btn btn-outline-success">Tiếp tục mua hàng</button>
+                        <button type="button" className="btn btn-outline-success">Tiếp tục mua hàng</button>
                     </Link>
                     <Link to='/'>
-                        <button type="button" class="btn btn-outline-primary"> Xem thông tin tài khoản <i className="fa fa-angle-right"></i></button>
+                        <button type="button" className="btn btn-outline-primary"> Xem thông tin tài khoản <i className="fa fa-angle-right"></i></button>
                     </Link>
                 </div>
             </div>

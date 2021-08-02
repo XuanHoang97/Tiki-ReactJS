@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import axios from "axios";
 import Prod_Related from './Prod_Related';
 
 // Product_similar.propTypes = {
-    
+
 // };
 
-const Product_similar=({  })=> {
+const Product_similar = ({ }) => {
     const [prodRelated, setProdRelated] = useState([]);
 
     useEffect(() => {
@@ -18,15 +16,15 @@ const Product_similar=({  })=> {
     // Call api
     const fetchProdRelated = () => {
         axios.get(`https://y6896.sse.codesandbox.io/product_mobile`)
-        .then((res) => { setProdRelated(res.data); console.log(res.data); })
-        .catch((err) => console.log(err));
+            .then((res) => { setProdRelated(res.data); console.log(res.data); })
+            .catch((err) => console.log(err));
     };
 
 
     // function Product_similar(props) {
-        return (
-            <div className="row bg-white pt-4 pb-4 p-3 m-1">
-                {/* {
+    return (
+        <div className="row bg-white pt-4 pb-4 p-3 m-1">
+            {/* {
                     prodRelated.map(related=>{
                         return (
                             <Prod_Related key={related.id } prod={prodRelated} />
@@ -34,12 +32,12 @@ const Product_similar=({  })=> {
                     })
                 } */}
 
-                <Prod_Related  />
-                <Prod_Related  />
-                <Prod_Related  />
-                <Prod_Related  />
-            </div>
-        );
+            <Prod_Related />
+            <Prod_Related />
+            <Prod_Related />
+            <Prod_Related />
+        </div>
+    );
     // }
 }
 
