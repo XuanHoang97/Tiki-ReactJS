@@ -38,7 +38,7 @@ class ActionProvider {
     };
     
     greet() {
-      const greetingMessage = this.createChatBotMessage("Xin chào người đang đọc đoạn chat này :) ");
+      const greetingMessage = this.createChatBotMessage("Em chào anh (chị) ạ ");
       this.updateChatbotState(greetingMessage)
     }
 

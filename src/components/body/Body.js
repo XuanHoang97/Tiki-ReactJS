@@ -49,7 +49,7 @@ function Body(props) {
                 </div>
                 
                 {chatbot && 
-                    <div className="chatbot bg-white p-3">
+                    <div className="chatbot bg-white">
                         <Chatbot config={config} actionProvider={ActionProvider}  messageHistory={loadMessages()} saveMessages={saveMessages}	messageParser={MessageParser} />
                     </div>
                 }

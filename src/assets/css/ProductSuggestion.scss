@@ -12,6 +12,10 @@
     .tab__product {
         background: rgb(241, 241, 241);
         padding: 5px 0;
+        @include phone {
+            overflow-x: scroll;
+            height: 115px;
+        }
         ul {
             gap: 7px;
             @include phone {
