@@ -45,7 +45,7 @@ class ActionProvider {
     greet1() {
         const greetingMessage = this.createChatBotMessage("Đấm chết cha mày giờ :v ");
         this.updateChatbotState(greetingMessage)
-      }
+    }
     
     updateChatbotState(message) {
    

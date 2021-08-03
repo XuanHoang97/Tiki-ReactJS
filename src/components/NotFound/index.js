@@ -20,13 +20,13 @@ function NotFound() {
                 <hr />
                 <div className='row btn-quit'>
                     <Link to='/'>
-                        <button type="button" className="btn btn-outline-primary"><i className="fa fa-angle-left"></i> Quay lại trang trước</button>
+                        <button type="button" className="btn btn-primary"><i className="fa fa-angle-left mr-2"></i> Quay lại trang trước</button>
                     </Link>
                     <Link to='/'>
-                        <button type="button" className="btn btn-outline-success">Tiếp tục mua hàng</button>
+                        <button type="button" className="btn btn-success">Tiếp tục mua hàng</button>
                     </Link>
                     <Link to='/'>
-                        <button type="button" className="btn btn-outline-primary"> Xem thông tin tài khoản <i className="fa fa-angle-right"></i></button>
+                        <button type="button" className="btn btn-primary"> Xem thông tin tài khoản <i className="fa fa-angle-right ml-2"></i></button>
                     </Link>
                 </div>
             </div>

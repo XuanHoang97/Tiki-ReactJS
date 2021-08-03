@@ -33,7 +33,7 @@ const LearningOptions = (props) => {
 
     return <div className = "learning-options-container"> 
                 <div className="text-primary small m-0 mb-2">                    
-                        Anh (chị) có thể tham khảo 1 số hướng dẫn này cho bớt ngáo đá, hỏi ngu rồi bấm linh tinh ạ, please.
+                        Anh (chị) có thể tham khảo trước 1 số hướng dẫn này cho bớt ngáo đá ạ, please.
                 </div>
                     
                 { optionsMarkup } 

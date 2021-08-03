@@ -42,13 +42,13 @@
         cursor: pointer;
     }
     img:hover {
-        transform: scale(1.2);
+        transform: scale(1.4);
     }
 }
 
 .chatbot::before {
     content: "";
-    border-bottom: 0.7rem solid #fff;
+    border-bottom: 0.7rem solid rgb(255, 255, 255);
     border-right: 0.35rem solid transparent;
     border-left: 0.35rem solid transparent;
     position: absolute;
@@ -60,19 +60,49 @@
 
 .chatbot {
     position: fixed;
-    z-index: 9;
-    top: 2em;
+    border-radius: 7px;
+    z-index: 99;
+    bottom: 2em;
     right: 5.5em;
     box-shadow: rgba(129, 93, 93, 0.45) 0px 0px 20px;
     .react-chatbot-kit-chat-container {
-        width: 285px;
+        width: 450px;
         .react-chatbot-kit-chat-inner-container {
             .react-chatbot-kit-chat-header {}
             .react-chatbot-kit-chat-message-container {
                 background: #ffe3a4 !important;
                 .react-chatbot-kit-chat-bot-message-container {
-                    .react-chatbot-kit-chat-bot-message-container {
-                        .react-chatbot-kit-chat-bot-message {}
+                    .react-chatbot-kit-chat-bot-avatar {
+                        .react-chatbot-kit-chat-bot-avatar-container {
+                            width: 40px;
+                            background: none !important;
+                            .react-chatbot-kit-chat-bot-avatar-letter {
+                                display: none;
+                            }
+                        }
+                        .react-chatbot-kit-chat-bot-avatar-container::before {
+                            content: "";
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            position: relative;
+                            background: url('../../assets/img/ironman.png') !important;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                    .react-chatbot-kit-chat-bot-message {
+                        width: 420px !important;
+                        border-radius: 15px;
+                        .react-chatbot-kit-chat-bot-message-arrow {
+                            width: 0;
+                            height: 0;
+                            border-top: 5px solid transparent;
+                            border-bottom: 5px solid transparent;
+                            border-right: 14px solid #2898ec;
+                            position: absolute;
+                            left: -14px;
+                            top: 13px;
+                        }
                     }
                 }
                 .learning-options-container {
@@ -95,7 +125,26 @@
                         color: white;
                     }
                 }
-                .react-chatbot-kit-user-chat-message-container {}
+                .react-chatbot-kit-user-chat-message-container {
+                    .react-chatbot-kit-user-avatar {
+                        .react-chatbot-kit-user-avatar-container {
+                            width: 50px;
+                            background: none !important;
+                            svg {
+                                display: none;
+                            }
+                        }
+                        .react-chatbot-kit-user-avatar-container::before {
+                            content: "";
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            position: relative;
+                            background: url('../../assets/img/fun.png') !important;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                }
             }
             .react-chatbot-kit-chat-input-container {
                 .react-chatbot-kit-chat-input-form {

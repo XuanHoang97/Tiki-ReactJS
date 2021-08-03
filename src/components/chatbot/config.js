@@ -3,17 +3,21 @@ import { createChatBotMessage } from "react-chatbot-kit";
 import LearningOptions from './LearningOptions';
 import LinkList from "./LinkList";
 
+const botName = "Chatbot IRON MAN";
 const config = {
-initialMessages: [
-    createChatBotMessage("Haluuu, em là Chatbot do anh Hoàng Handsome tạo ra, Anh (chị) cần giúp đỡ gì thì cứ hỏi em ạ", {
-      widget: "learningOptions",
-    }),
-  ],
+    botName: botName,
+    lang: "vi",
+    
+    initialMessages: [
+        createChatBotMessage("Haluuu, em là Chatbot do anh Hoàng tạo ra, Anh (chị) cần giúp đỡ gì thì cứ hỏi em ạ", {
+        widget: "learningOptions",
+        }),
+    ],
  
- widgets: [
+    widgets: [
     {
-    widgetName: "learningOptions",
-    widgetFunc: (props) => <LearningOptions {...props} />,
+        widgetName: "learningOptions",
+        widgetFunc: (props) => <LearningOptions {...props} />,
     },
 
     {

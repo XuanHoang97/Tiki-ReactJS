@@ -1,4 +1,3 @@
-// import React, { Component } from 'react';
 class MessageParser {
     constructor(actionProvider) {
       this.actionProvider = actionProvider;

@@ -16,6 +16,17 @@ import Mail from './Mail';
 import ProductSuggestion from './ProductSuggestion';
 function Body(props) {
     const [chatbot, setChatbot]= useState(false);
+
+    // Save Dialogue in the Chatbot
+    const saveMessages = (messages) => {
+        localStorage.setItem("chat_messages", JSON.stringify(messages));
+    };
+    
+    const loadMessages = () => {
+    const messages = JSON.parse(localStorage.getItem("chat_messages"));
+    return messages;
+    };
+
     return (
         <div className="main bg-light pt-3 pb-3">
             <div className="container">
@@ -39,7 +50,7 @@ function Body(props) {
                 
                 {chatbot && 
                     <div className="chatbot bg-white p-3">
-                        <Chatbot config={config} actionProvider={ActionProvider} 	messageParser={MessageParser} />
+                        <Chatbot config={config} actionProvider={ActionProvider}  messageHistory={loadMessages()} saveMessages={saveMessages}	messageParser={MessageParser} />
                     </div>
                 }
 
