@@ -30,3 +30,80 @@
         }
     }
 }
+
+.chatbotTest {
+    position: fixed;
+    right: 1.5em;
+    bottom: 5em;
+    text-align: right;
+    img {
+        width: 7%;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    img:hover {
+        transform: scale(1.2);
+    }
+}
+
+.chatbot::before {
+    content: "";
+    border-bottom: 0.7rem solid #fff;
+    border-right: 0.35rem solid transparent;
+    border-left: 0.35rem solid transparent;
+    position: absolute;
+    transform: rotate( 90deg);
+    bottom: 4.5rem;
+    right: -0.7rem;
+    z-index: 10;
+}
+
+.chatbot {
+    position: fixed;
+    z-index: 9;
+    top: 2em;
+    right: 5.5em;
+    box-shadow: rgba(129, 93, 93, 0.45) 0px 0px 20px;
+    .react-chatbot-kit-chat-container {
+        width: 285px;
+        .react-chatbot-kit-chat-inner-container {
+            .react-chatbot-kit-chat-header {}
+            .react-chatbot-kit-chat-message-container {
+                background: #ffe3a4 !important;
+                .react-chatbot-kit-chat-bot-message-container {
+                    .react-chatbot-kit-chat-bot-message-container {
+                        .react-chatbot-kit-chat-bot-message {}
+                    }
+                }
+                .learning-options-container {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                    .learning-option-button {
+                        padding: 3px 15px;
+                        font-size: 13px;
+                        border-radius: 25px;
+                        background: transparent;
+                        border: 1px solid green;
+                        margin: 2px;
+                        color: white;
+                        background: rgb(56, 136, 56);
+                        outline: none;
+                    }
+                    .learning-option-button:hover {
+                        background: green;
+                        color: white;
+                    }
+                }
+                .react-chatbot-kit-user-chat-message-container {}
+            }
+            .react-chatbot-kit-chat-input-container {
+                .react-chatbot-kit-chat-input-form {
+                    input.react-chatbot-kit-chat-input {
+                        border: 1px solid #6bbfd2 !important;
+                    }
+                }
+            }
+        }
+    }
+}

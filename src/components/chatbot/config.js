@@ -1,35 +1,77 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 
 import LearningOptions from './LearningOptions';
+import LinkList from "./LinkList";
 
 const config = {
 initialMessages: [
-    createChatBotMessage("Xin chào, Tôi ở đây là để giúp bạn. Bạn muốn học gì nhỉ ?", {
+    createChatBotMessage("Haluuu, em là Chatbot do anh Hoàng Handsome tạo ra, Anh (chị) cần giúp đỡ gì thì cứ hỏi em ạ", {
       widget: "learningOptions",
     }),
   ],
  
  widgets: [
-     {
-     	widgetName: "learningOptions",
-    	widgetFunc: (props) => <LearningOptions {...props} />,
-     },
+    {
+    widgetName: "learningOptions",
+    widgetFunc: (props) => <LearningOptions {...props} />,
+    },
+
+    {
+        widgetName: "OrderLinks",
+        widgetFunc: (props) => <LinkList {...props} />,
+        props: {
+            options: [
+            {
+                text: "Hướng dẫn mua hàng nhanh mà lại chất lượng",
+                url:
+                "https://www.youtube.com/watch?v=LIIDh-qI9oI",
+                id: 1,
+            },
+            {
+                text: "Hướng dẫn tìm kiếm sản phẩm Sang-sịn-mịn",
+                url:
+                "https://www.youtube.com/watch?v=Kma3NpC3JKQ",
+                id: 2,
+            },
+            {
+                text: "Danh sách sản phẩm ngon-bổ-rẻ",
+                url: "https://www.youtube.com/watch?v=SQ0FrpZ182Q",
+                id: 3,
+            },
+            ],
+        },
+    },
+
+    {
+        widgetName: "IntroduceLinks",
+        widgetFunc: (props) => <LinkList {...props} />,
+        props: {
+            options: [
+                {
+                text: "Website dựa trên ý tưởng clone lại Web Tiki với React và Redux",
+                url:
+                    "https://www.youtube.com/watch?v=LIIDh-qI9oI",
+                id: 1,
+                },
+            ],
+            },
+    },
+
+    {
+        widgetName: "ExchangeLinks",
+        widgetFunc: (props) => <LinkList {...props} />,
+        props: {
+            options: [
+                {
+                text: "Mua rồi éo cho đổi nữa :v ",
+                url:
+                    "https://www.youtube.com/watch?v=LIIDh-qI9oI",
+                id: 1,
+                },
+            ],
+        },
+    },
  ],
 }
-
-
-// const config = { 
-//     botName: "LearningBot",
-//     initialMessages: [createChatBotMessage("Xin chào, Tôi ở đây là để giúp bạn. Bạn muốn học gì nhỉ ?")],
-//     customStyles: {
-//       botMessageBox: {
-//         backgroundColor: "#2898ec",
-//       },
-//       chatButton: {
-//         backgroundColor: "#2898ec",
-//       },
-//     },
-//   }
-
 
 export default config;

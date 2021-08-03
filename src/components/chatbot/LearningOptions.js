@@ -1,24 +1,43 @@
 import React from "react";
-import "../../assets/css/LearningOptions.scss";
 
 const LearningOptions = (props) => {
     const options = [
-        { text: "Javascript", handler: () => {}, id: 1 },
-        { text: "Data visualization", handler: () => {}, id: 2 },
-        { text: "APIs", handler: () => {}, id: 3 },
-        { text: "Security", handler: () => {}, id: 4 },
-        { text: "Interview prep", handler: () => {}, id: 5 },
+        {
+          text: "Hướng dẫn mua hàng",
+          handler: props.actionProvider.handleOrder,
+          id: 1,
+        },
+
+        { 
+            text: "Giới thiệu về Website", 
+            handler: props.actionProvider.handleIntroduce,
+            id: 2,
+        },
+
+        { 
+            text: "Hướng dẫn đổi trả hàng",
+            handler: props.actionProvider.handleExchange,
+            id: 3,
+        },
     ];
 
     const optionsMarkup = options.map((option) => ( 
-        <button className = "learning-option-button"
-        key = { option.id }
-        onClick = { option.handler } >
-        { option.text } 
-        </button>
+        <>
+            <button className = "learning-option-button"
+            key = { option.id }
+            onClick = { option.handler } >
+            { option.text } 
+            </button>
+        </>
     ));
 
-    return <div className = "learning-options-container"> { optionsMarkup } </div>;
+    return <div className = "learning-options-container"> 
+                <div className="text-primary small m-0 mb-2">                    
+                        Anh (chị) có thể tham khảo 1 số hướng dẫn này cho bớt ngáo đá, hỏi ngu rồi bấm linh tinh ạ, please.
+                </div>
+                    
+                { optionsMarkup } 
+            </div>;
 };
 
 export default LearningOptions;
