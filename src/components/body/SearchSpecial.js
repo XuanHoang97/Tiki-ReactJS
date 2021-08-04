@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Spinner } from "react-bootstrap";
+
 
 const renderProduct = (data) => {
     return (
@@ -30,10 +32,12 @@ const renderProduct = (data) => {
 };
 
 // Handle logic:
-function Search_special() {
+function Search_special(props) {
     const [mobile, setMobile] = useState([]);
     const [currentPage, setcurrentPage] = useState(1);
     const [itemsPerPage, setitemsPerPage] = useState(4);
+
+    const {isSubmmitting} = props;
 
     const pages = [];
     for (let i = 1; i <= Math.ceil(mobile.length / itemsPerPage); i++) {
@@ -50,15 +54,19 @@ function Search_special() {
             .then(res => { setMobile(res.data); })
             .catch((err) => { console.log(err); });
     }, []);
+
+    // Set 1s moi load product
     const handleNextbtn = () => {
-
-        if (currentPage > mobile.length / itemsPerPage - 1) {
-
-            setcurrentPage(1)
-        } else {
-            setcurrentPage(currentPage + 1);
-
-        }
+        return new Promise((resolve)=>{
+            setTimeout(()=>{
+                if (currentPage > mobile.length / itemsPerPage - 1) {
+                    setcurrentPage(1)
+                } else {
+                    setcurrentPage(currentPage + 1);
+                }
+                resolve(true);
+            },600)
+        });
     };
 
     return (
@@ -72,7 +80,9 @@ function Search_special() {
                 </div>
                 <div className="view--more text-primary" onClick={handleNextbtn} disabled={currentPage === pages[pages.length - 1] ? true : false}>
                     <i className="fas fa-sync-alt mr-2" />
-                    <span className="small">XEM THÊM</span>
+                    <span className="small">
+                        {isSubmmitting && <Spinner size="sm" />}
+                    XEM THÊM</span>
                 </div>
             </div>
             {renderProduct(currentItems)}
