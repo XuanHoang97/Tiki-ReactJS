@@ -18,7 +18,7 @@ const InputPhone = styled.input.attrs(props => ({
 `;
 
 function Accounted() {
-    const { setLogin, number, setNumber, account: { name, password }, setShowModal, setNameAccount } = useContext(AuthContext)
+    const { setLogin, number, setNumber, account: { name, password }, setShowModal, setNameAccount, setAlert } = useContext(AuthContext)
     const [passLogin, setPassLogin] = useState()
     const [comparePass, setComparePass] = useState(true)
     const handleKeyEnter = (e) => {
@@ -27,6 +27,7 @@ function Accounted() {
                 setComparePass(true)
                 setShowModal(false)
                 setNameAccount(name)
+                setAlert(true)
             } else {
                 setComparePass(false)
             }
@@ -40,6 +41,7 @@ function Accounted() {
             setComparePass(true)
             setShowModal(false)
             setNameAccount(name)
+            setAlert(true)
         } else {
             setComparePass(false)
         }
