@@ -14,7 +14,7 @@ import ScrollToTop from '../router/scrollToTop';
 import NotFound from './NotFound';
 import ScrollTop from './ScrollTop';
 
-
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 console.warn = () => { };
 // SEO Web
@@ -24,6 +24,12 @@ function App() {
   return (
     <Router >
       <div>
+      <MessengerCustomerChat
+        pageId="100009467395348"
+        appId="315974210215417"
+        htmlRef="<REF_STRING>"
+      />
+
         <ScrollToTop />
         <ScrollTop />
         <Header />
