@@ -15,7 +15,7 @@ const RightImg = styled.div`
     flex-direction: column;
 `;
 function FormLogin() {
-    const { login, setLogin, setAccount, showModal, setShowModal } = useContext(AuthContext)
+    const { login, setLogin, setAccount, showModal, setShowModal, setKeyRandom, setNumber } = useContext(AuthContext)
     const hiddenForm = () => {
         setAccount({
             name: '',
@@ -23,8 +23,11 @@ function FormLogin() {
         })
         setLogin('login')
         setShowModal(false)
+        setNumber()
+        setKeyRandom(Math.ceil(Math.random() * 100000).toFixed(0))
         return;
     }
+
 
     return (
         <>

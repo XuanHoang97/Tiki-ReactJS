@@ -44,7 +44,6 @@ function AddAccount() {
             setValidatePass(true)
             setAccept(false)
         }
-
     })
 
     const handleCLick = () => {
