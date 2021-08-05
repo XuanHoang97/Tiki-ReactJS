@@ -7,7 +7,7 @@ function AuthContextProvider({ children }) {
     const [number, setNumber] = useState()
     const [showModal, setShowModal] = useState(false);
     const [nameAccount, setNameAccount] = useState(false);
-
+    const [alert, setAlert] = useState(false)
     const [account, setAccount] = useState({
         name: '',
         password: ''
@@ -22,9 +22,10 @@ function AuthContextProvider({ children }) {
         showModal,
         setShowModal,
         nameAccount,
-        setNameAccount
+        setNameAccount,
+        alert,
+        setAlert
     }
-
 
     return (
         <AuthContext.Provider value={AuthContextData}>
