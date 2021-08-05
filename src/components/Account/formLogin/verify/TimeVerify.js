@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { AuthContext } from 'components/Account/Context/AuthContext';
+import React, { useContext, useEffect, useState } from 'react';
 
 function TimeVerify() {
     const [count, setCount] = useState(15)
-
+    const { setKeyRandom } = useContext(AuthContext)
     useEffect(() => {
         var counts = setInterval(() => {
             setCount(count => count - 1)
@@ -27,7 +28,7 @@ function TimeVerify() {
                 <span style={{
                     color: 'rgb(13, 92, 182)', cursor: 'pointer',
                 }}
-                    onClick={() => setCount(count => count + 30)}
+                    onClick={() => (setCount(count => count + 30), setKeyRandom(Math.ceil(Math.random() * 1000000).toFixed(0)))}
                 > Gửi lại mã</span>
             </div>
             <div className="small mt-2 mb-2" style={{ display: (count > 0 ? 'block' : 'none') }}>

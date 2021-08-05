@@ -12,19 +12,27 @@ function AuthContextProvider({ children }) {
         name: '',
         password: ''
     })
+
+    const [keyRandom, setKeyRandom] = useState(String(Math.ceil(Math.random() * 1000000).toFixed(0)))
+    const [keyInput, setKeyInput] = useState()
+    const [keycode, setKeycode] = useState({
+        one: '',
+        two: '',
+        three: '',
+        four: '',
+        five: '',
+        six: ''
+    })
     const AuthContextData = {
-        login,
-        setLogin,
-        number,
-        setNumber,
-        account,
-        setAccount,
-        showModal,
-        setShowModal,
-        nameAccount,
-        setNameAccount,
-        alert,
-        setAlert
+        login, setLogin,
+        number, setNumber,
+        account, setAccount,
+        showModal, setShowModal,
+        nameAccount, setNameAccount,
+        alert, setAlert,
+        keycode, setKeycode,
+        keyRandom, setKeyRandom,
+        keyInput, setKeyInput,
     }
 
     return (

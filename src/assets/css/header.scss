@@ -22,8 +22,10 @@ img {
                         width: 100%;
                     }
                     .category {
-                        i {}
-                        small {}
+                        i {
+                        }
+                        small {
+                        }
                         .menu__item {
                             display: none;
                             width: 800px;
@@ -59,7 +61,8 @@ img {
                         top: -0.3rem;
                         right: 7rem;
                         z-index: 10;
-                        .menu__item {}
+                        .menu__item {
+                        }
                     }
                 }
                 .menu_ctg:after {
@@ -80,7 +83,8 @@ img {
                     visibility: visible;
                     position: fixed;
                 }
-                .navbar-brand {}
+                .navbar-brand {
+                }
                 .navbar-toggler {
                     @include phone {
                         color: white;
@@ -88,7 +92,8 @@ img {
                     }
                 }
                 .navbar-collapse {
-                    @include phone {}
+                    @include phone {
+                    }
                     .navbar-nav {
                         @include phone {
                             display: flex;
@@ -98,7 +103,8 @@ img {
                             padding: 5px 15px;
                         }
                         .login_resg {
-                            .info {}
+                            .info {
+                            }
                         }
                         .search {
                             input {
