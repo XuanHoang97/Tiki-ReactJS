@@ -1,9 +1,10 @@
-import React from 'react';
-import KeyCode from './KeyCode/KeyCode';
-import TimeVerify from './TimeVerify';
+import React, { useContext } from 'react';
+import { AuthContext } from '../Context/AuthContext';
+import KeyCode from './verify/KeyCode';
+import TimeVerify from './verify/TimeVerify';
 
-function Verify(props) {
-
+function Verify() {
+    const { setLogin, number, setNumber } = useContext(AuthContext)
     return (
         <>
             <i className="fa fa-angle-left mb-4"
@@ -12,16 +13,16 @@ function Verify(props) {
                     color: '#ccc',
                     cursor: 'pointer'
                 }}
-                onClick={props.verify}
+                onClick={() => (setLogin('login'), setNumber())}
             ></i>
             <h3 className="mt-8">Nhập mã xác minh</h3>
             <div className="form-group">
-                <label>Để xác minh số điện thoại là của bạn, nhập mã gồm 6 chữ số vừa được gửi đến <span style={{ fontWeight: 'bold' }}>{props.phone}</span></label>
+                <label>Để xác minh số điện thoại là của bạn, nhập mã gồm 6 chữ số vừa được gửi đến <span style={{ fontWeight: 'bold' }}>{number}</span></label>
                 <KeyCode />
                 <button type="button"
                     className="btn btn-danger mt-3 btn-smd btn-block"
                     style={{ background: "rgb(255, 66, 78", outline: 'none', fontSize: '20px' }}
-
+                    onClick={() => setLogin('addAccount')}
                 >Xác minh</button>
             </div>
             <TimeVerify />

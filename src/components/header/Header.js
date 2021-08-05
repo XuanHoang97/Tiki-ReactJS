@@ -1,11 +1,12 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import MenuTop from './Menu_top'
 import Category from './Category';
 import Search from './Search';
 import Cart from './Cart';
 import Account from '../Account';
-function Header(props){
+import AuthContextProvider from 'components/Account/Context/AuthContext';
+function Header() {
     return (
         <div className="header" style={{ backgroundColor: 'rgb(1, 127, 255)' }}>
             <div className="container p-0">
@@ -26,8 +27,9 @@ function Header(props){
                                 <Category />
 
                                 <Search />
-
-                                <Account />
+                                <AuthContextProvider>
+                                    <Account />
+                                </AuthContextProvider>
 
                                 <Cart />
                             </ul>
