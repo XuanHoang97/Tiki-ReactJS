@@ -1,5 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components'
 
+const ScrollContainer = styled.div`
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000000 !important;
+`;
+const InScroll = styled.div`
+    width: 40px; 
+    height: 40px; 
+    background-color: rgb(1, 127, 255); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 50%; 
+    cursor: pointer;
+    .control{
+        font-size: 25px;
+        color: #fff;
+    }
+`;
 function ScrollTop() {
     const [scroll, setScroll] = useState(false)
 
@@ -27,16 +48,12 @@ function ScrollTop() {
     };
 
     return (
-        (scroll ? (<div style={{ position: 'fixed', bottom: '30px', right: '30px', zIndex: '10 !important' }} >
-            <div style={{
-                width: '40px', height: '40px', backgroundColor: '#017fff', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '50%', zIndex: 10, cursor: 'pointer'
-            }}
-                onClick={() => scrollToTop()}
-            >
-                <i className="fas fa-arrow-alt-circle-up" style={{ fontSize: '25px', color: '#fff' }}></i>
-            </div>
-
-        </div>) : '')
+        (scroll ? (
+            <ScrollContainer onClick={() => scrollToTop()}>
+                <InScroll>
+                    <i className="fas fa-arrow-alt-circle-up control"></i>
+                </InScroll>
+            </ScrollContainer >) : '')
     );
 }
 

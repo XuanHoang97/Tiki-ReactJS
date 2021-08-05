@@ -30,7 +30,7 @@ function TimeVerify() {
                     onClick={() => setCount(count => count + 30)}
                 > Gửi lại mã</span>
             </div>
-            <div className="small mt-2 mb-5" style={{ display: (count > 0 ? 'block' : 'none') }}>
+            <div className="small mt-2 mb-2" style={{ display: (count > 0 ? 'block' : 'none') }}>
                 Mã xác minh có hiệu lực trong 15 phút
             </div>
         </>

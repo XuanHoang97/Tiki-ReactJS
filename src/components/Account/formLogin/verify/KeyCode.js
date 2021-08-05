@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import styled from 'styled-components';
 import './keyCode.scss'
 function KeyCode() {
 
@@ -11,14 +10,12 @@ function KeyCode() {
         // 0 for null values
         // 8 for backspace 
         // 48-57 for 0-9 numbers
+        codeVerify[0].focus();
         codeVerify.forEach((code, idx) => {
-            console.log(code)
             code.addEventListener('keydown', (e) => {
-                console.log(idx)
                 if (e.which != 8 && e.which != 0 && e.which < 48 || e.which > 57) {
                     e.preventDefault();
                 } else if (e.key >= 0 && e.key <= 9) {
-                    codeVerify[idx].value = ''
                     setTimeout(() => {
                         if (idx < 5) {
                             codeVerify[idx + 1].focus()
@@ -38,7 +35,6 @@ function KeyCode() {
             })
         })
         return () => {
-            console.log(123)
         }
     }, [])
 
