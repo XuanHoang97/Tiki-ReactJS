@@ -33,16 +33,17 @@
 
 .chatbotTest {
     position: fixed;
-    right: 1.5em;
-    bottom: 5em;
+    right: 1.8em;
+    bottom: 4.8em;
     text-align: right;
     img {
-        width: 7%;
+        border: 1px solid deeppink;
+        width: 20%;
         border-radius: 50%;
         cursor: pointer;
     }
     img:hover {
-        transform: scale(1.4);
+        transform: scale(1.1);
     }
 }
 
@@ -87,7 +88,7 @@
                             height: 40px;
                             border-radius: 50%;
                             position: relative;
-                            background: url('../../assets/img/ironman.png') !important;
+                            background: url('../../assets/img/hotgirl.png') !important;
                             background-repeat: no-repeat;
                         }
                     }

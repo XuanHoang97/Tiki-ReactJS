@@ -36,6 +36,7 @@ function Search_special(props) {
     const [mobile, setMobile] = useState([]);
     const [currentPage, setcurrentPage] = useState(1);
     const [itemsPerPage, setitemsPerPage] = useState(4);
+    
 
     const {isSubmmitting} = props;
 

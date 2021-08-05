@@ -3,7 +3,7 @@ import { createChatBotMessage } from "react-chatbot-kit";
 import LearningOptions from './LearningOptions';
 import LinkList from "./LinkList";
 
-const botName = "Chatbot IRON MAN";
+const botName = "Katty Hatheway";
 const config = {
     botName: botName,
     lang: "vi",

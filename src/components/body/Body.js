@@ -45,7 +45,7 @@ function Body(props) {
 
                 {/* Build Chatbot */}
                 <div className="chatbotTest" onClick={() => {setChatbot(!chatbot)}}>
-                    <img src="https://image.voso.vn/users/vosoimage/images/73ad6fb32257eab0a40c3987f118b03c?t%5B0%5D=compress%3Alevel%3D100&accessToken=a4d3879e76716b5ba558f6ed73e480601257169613b05f38ba45ebaf64741361" alt=""  title="ChatBot Ironman" />
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE5LV5FEwLk2UGd5-UApCpu7yuOMV7cAKDFKTofRzlzxdT3wKd3pAPBc_KzhnWFuhowFI&usqp=CAU" alt="ko hien anh" />
                 </div>
                 
                 {chatbot && 
