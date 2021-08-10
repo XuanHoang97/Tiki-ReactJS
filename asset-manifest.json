@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Tiki-ReactJS/static/css/main.0af1bcd6.chunk.css",
-    "main.js": "/Tiki-ReactJS/static/js/main.0019465e.chunk.js",
-    "main.js.map": "/Tiki-ReactJS/static/js/main.0019465e.chunk.js.map",
-    "runtime-main.js": "/Tiki-ReactJS/static/js/runtime-main.ca4fa972.js",
-    "runtime-main.js.map": "/Tiki-ReactJS/static/js/runtime-main.ca4fa972.js.map",
-    "static/js/2.b0d03a52.chunk.js": "/Tiki-ReactJS/static/js/2.b0d03a52.chunk.js",
-    "static/js/2.b0d03a52.chunk.js.map": "/Tiki-ReactJS/static/js/2.b0d03a52.chunk.js.map",
-    "static/js/3.07b50fac.chunk.js": "/Tiki-ReactJS/static/js/3.07b50fac.chunk.js",
-    "static/js/3.07b50fac.chunk.js.map": "/Tiki-ReactJS/static/js/3.07b50fac.chunk.js.map",
+    "main.css": "/Tiki-ReactJS/static/css/main.f09fd6c3.chunk.css",
+    "main.js": "/Tiki-ReactJS/static/js/main.791954be.chunk.js",
+    "main.js.map": "/Tiki-ReactJS/static/js/main.791954be.chunk.js.map",
+    "runtime-main.js": "/Tiki-ReactJS/static/js/runtime-main.3eb0fbfd.js",
+    "runtime-main.js.map": "/Tiki-ReactJS/static/js/runtime-main.3eb0fbfd.js.map",
+    "static/js/2.3e96b689.chunk.js": "/Tiki-ReactJS/static/js/2.3e96b689.chunk.js",
+    "static/js/2.3e96b689.chunk.js.map": "/Tiki-ReactJS/static/js/2.3e96b689.chunk.js.map",
+    "static/js/3.0a8545b3.chunk.js": "/Tiki-ReactJS/static/js/3.0a8545b3.chunk.js",
+    "static/js/3.0a8545b3.chunk.js.map": "/Tiki-ReactJS/static/js/3.0a8545b3.chunk.js.map",
     "index.html": "/Tiki-ReactJS/index.html",
-    "static/css/main.0af1bcd6.chunk.css.map": "/Tiki-ReactJS/static/css/main.0af1bcd6.chunk.css.map",
-    "static/js/2.b0d03a52.chunk.js.LICENSE.txt": "/Tiki-ReactJS/static/js/2.b0d03a52.chunk.js.LICENSE.txt",
-    "static/media/body.scss": "/Tiki-ReactJS/static/media/ironman.f3f82dc4.png"
+    "static/css/main.f09fd6c3.chunk.css.map": "/Tiki-ReactJS/static/css/main.f09fd6c3.chunk.css.map",
+    "static/js/2.3e96b689.chunk.js.LICENSE.txt": "/Tiki-ReactJS/static/js/2.3e96b689.chunk.js.LICENSE.txt",
+    "static/media/body.scss": "/Tiki-ReactJS/static/media/hotgirl.9e9bb79c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ca4fa972.js",
-    "static/js/2.b0d03a52.chunk.js",
-    "static/css/main.0af1bcd6.chunk.css",
-    "static/js/main.0019465e.chunk.js"
+    "static/js/runtime-main.3eb0fbfd.js",
+    "static/js/2.3e96b689.chunk.js",
+    "static/css/main.f09fd6c3.chunk.css",
+    "static/js/main.791954be.chunk.js"
   ]
 }
