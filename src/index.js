@@ -7,6 +7,7 @@ import '././assets/css/header.scss';
 import '././assets/css/body.scss';
 import '././assets/css/mobile.scss';
 import '././assets/css/slide.scss';
+import '././assets/css/ResultSearch.scss';
 import '././assets/css/ProductSuggestion.scss';
 import '././assets/css/variable.scss';
 import App from './components/App';

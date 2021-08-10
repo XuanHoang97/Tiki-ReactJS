@@ -1,0 +1,207 @@
+@import "./variable.scss";
+.Result__search {
+    // Style breadcrumb
+    ul.breadcrumb {
+        padding: 10px 60px;
+        list-style: none;
+        li {
+            display: inline;
+            font-size: 14px;
+        }
+        a {
+            color: #0275d8;
+            text-decoration: none;
+        }
+        .breadcrumb li a:hover {
+            color: #01447e;
+            text-decoration: underline;
+        }
+    }
+    ul.breadcrumb li+li:before {
+        padding: 8px;
+        color: black;
+        content: "/\00a0";
+    }
+    .product {
+        display: grid;
+        margin: 0px 60px;
+        grid-template-columns: 18% 82%;
+        .sort {
+            border-right: 1px solid rgb(228, 228, 228);
+            .category {
+                padding: 20px 15px 15px 15px;
+                border-bottom: 1px solid rgb(228, 228, 228);
+                h6 {
+                    font-size: 13px !important;
+                    margin-bottom: 20px;
+                }
+                p {
+                    font-size: 12px;
+                    margin-bottom: 8px !important;
+                }
+                .viewMore {
+                    margin-top: 20px;
+                    font-weight: 500;
+                }
+            }
+            .addr__receive {
+                padding: 20px 15px 15px 15px;
+                border-bottom: 1px solid rgb(228, 228, 228);
+                h5 {
+                    font-size: 13px;
+                }
+                h6 {
+                    font-size: 12px;
+                }
+                .change__addr {
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+            }
+            .service {
+                padding: 15px;
+                border-bottom: 1px solid rgb(228, 228, 228);
+                h6 {
+                    font-size: 13px;
+                    margin-bottom: 20px;
+                }
+                .item__service {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    margin-bottom: 5px;
+                    img {
+                        width: 25%;
+                    }
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+            .branding {
+                @extend .service;
+                .item__branding {
+                    @extend .item__service;
+                }
+            }
+        }
+        .list__product {
+            padding: 15px;
+            .suggest__list {
+                .Prod__Suggest {
+                    background: white;
+                    padding: 0px;
+                    margin-bottom: 10px;
+                    h5 {
+                        font-weight: 400;
+                        color: #4b4b4b;
+                        font-size: 20px;
+                    }
+                }
+                .tab__product {
+                    background: rgb(241, 241, 241);
+                    padding: 5px 0;
+                    @include phone {
+                        overflow-x: scroll;
+                        height: 115px;
+                    }
+                    ul {
+                        gap: 7px;
+                        @include phone {
+                            display: grid;
+                            grid-template-columns: repeat(8, 1fr);
+                        }
+                        li {
+                            background: white;
+                            .nav-link {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                img {
+                                    max-width: 42%;
+                                }
+                                span {
+                                    font-size: 13px;
+                                    color: grey;
+                                }
+                            }
+                            .active {
+                                border: 1px solid rgb(13, 92, 182);
+                                background: transparent !important;
+                                span {
+                                    font-size: 13px;
+                                    color: blue !important;
+                                }
+                            }
+                        }
+                    }
+                }
+                .tab-content {
+                    background: white;
+                    margin-bottom: 15px;
+                    padding: 0 0 20px 0;
+                    #home {
+                        .list {
+                            gap: 10px;
+                            display: flex;
+                            @include phone {
+                                display: -webkit-box;
+                                overflow-x: scroll;
+                            }
+                            .list__prod {
+                                width: 25%;
+                                padding: 10px;
+                                cursor: pointer;
+                                @include phone {
+                                    width: 50%;
+                                }
+                                p {
+                                    font-size: 12px;
+                                }
+                                .rate {
+                                    display: flex;
+                                    gap: 10px;
+                                    align-items: center;
+                                    .vote {
+                                        span {
+                                            font-size: 9px;
+                                        }
+                                    }
+                                    span {
+                                        font-size: 11px;
+                                        color: darkgrey;
+                                    }
+                                }
+                                .price {
+                                    display: flex;
+                                    gap: 15px;
+                                    align-items: center;
+                                    .price_prod {
+                                        font-size: 15px;
+                                        font-weight: 500;
+                                    }
+                                }
+                            }
+                            .list__prod:hover {
+                                box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
+                            }
+                        }
+                        .list__second {
+                            @extend .list;
+                        }
+                        .view__more {
+                            display: flex;
+                            justify-content: center;
+                            margin: 30px 0 0 0;
+                            button {
+                                width: 20%;
+                                font-size: 13px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

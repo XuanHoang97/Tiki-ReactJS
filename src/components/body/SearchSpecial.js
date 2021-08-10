@@ -34,11 +34,11 @@ const renderProduct = (data) => {
 // Handle logic:
 function Search_special(props) {
     const [mobile, setMobile] = useState([]);
+    const [loading, setLoading] = useState(false);
     const [currentPage, setcurrentPage] = useState(1);
     const [itemsPerPage, setitemsPerPage] = useState(4);
     
 
-    const {isSubmmitting} = props;
 
     const pages = [];
     for (let i = 1; i <= Math.ceil(mobile.length / itemsPerPage); i++) {
@@ -50,6 +50,7 @@ function Search_special(props) {
     const currentItems = mobile.slice(indexOfFirstItem, indexOfLastItem);
 
     useEffect(() => {
+        setLoading(true);
         axios
             .get('https://y6896.sse.codesandbox.io/search_special')
             .then(res => { setMobile(res.data); })
@@ -82,7 +83,7 @@ function Search_special(props) {
                 <div className="view--more text-primary" onClick={handleNextbtn} disabled={currentPage === pages[pages.length - 1] ? true : false}>
                     <i className="fas fa-sync-alt mr-2" />
                     <span className="small">
-                        {isSubmmitting && <Spinner size="sm" />}
+                        {/* {loading && <Spinner size="sm" />} */}
                     XEM THÊM</span>
                 </div>
             </div>
