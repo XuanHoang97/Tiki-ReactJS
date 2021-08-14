@@ -20,7 +20,7 @@ function AddAccount() {
     const [accept, setAccept] = useState(false)
 
     useEffect(() => {
-
+        
         //Validate name
         if (account.name === '') {
             setValidateName(false)

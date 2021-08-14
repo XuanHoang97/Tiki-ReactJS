@@ -14,11 +14,12 @@ import ScrollToTop from '../router/scrollToTop';
 import NotFound from './NotFound';
 import ScrollTop from './ScrollTop';
 import Result from './header/search/Result';
+import FormSearch from './header/FormSearch';
 
 
 console.warn = () => { };
 // SEO Web
-const TITLE ='Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh';
+const TITLE = 'Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route exact path="/thanh-toan"><Payment /></Route>
           <Route exact path="/dat-hang-thanh-cong"><OrderSuccess /></Route>
           <Route exact path="/result"><Result /></Route>
+          <Route exact path="/search"><FormSearch /></Route>
           <Route exact path="*"><NotFound /></Route>
         </Switch>
         <Footer />

@@ -112,29 +112,33 @@ img {
                                     height: 30px;
                                 }
                             }
-                            .search__info {
-                                background: white;
-                                display: none;
+                            .search-form {
                                 position: absolute;
-                                top: 3em;
-                                z-index: 99;
-                                height: auto;
-                                width: 563px;
-                                padding: 15px 5px;
-                                .search__popular {
-                                    img {
-                                        max-width: 100% !important;
-                                    }
-                                }
-                                .list__search {
-                                    .list__item {
-                                        display: flex;
+                                bottom: 0;
+                                .search__info {
+                                    background: white;
+                                    position: absolute;
+                                    // top: 0em;
+                                    z-index: 99;
+                                    height: auto;
+                                    width: 563px;
+                                    padding: 15px 5px;
+                                    .search__popular {
                                         img {
-                                            width: 25%;
+                                            max-width: 100% !important;
+                                        }
+                                    }
+                                    .list__search {
+                                        .list__item {
+                                            display: flex;
+                                            img {
+                                                width: 25%;
+                                            }
                                         }
                                     }
                                 }
                             }
+
                             .btn_search {
                                 @include phone {
                                     height: 30px !important;
