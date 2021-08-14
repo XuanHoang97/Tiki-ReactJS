@@ -1,6 +1,11 @@
 .react-tabs {
     .react-tabs__tab-list {
-        border-bottom: none !important;
+        list-style-type: none;
+        padding-left: 0;
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+        cursor: pointer;
         .react-tabs__tab--selected {
             padding: 2px 15px;
             font-size: 14px;

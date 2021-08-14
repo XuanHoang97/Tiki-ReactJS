@@ -16,7 +16,6 @@ const Product_detail = ({ match }) => {
     const [product, setProduct] = useState([]);
     const [offerBonus, setOffer] = useState([]);
     const TITLE = 'Điện thoại ngon - bổ - rẻ';
-    // const TITLE=`${props.name}`;
     useEffect(() => {
         fetchProduct();
         fetchFeature();
@@ -50,7 +49,7 @@ const Product_detail = ({ match }) => {
     };
 
     // Option number product
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
     const [error, setError] = useState(null);
     // const Qty = props.qty;
 
@@ -184,9 +183,9 @@ const Product_detail = ({ match }) => {
                                     <small>Số lượng:</small>
                                     <div className="input-group col-md-3 pt-2 col-6 p-0">
                                         <div className="input-group-prepend">
-                                            <button className="btn btn-success btn-sm"><i className="fas fa-minus small" /></button>
+                                            <button className="btn btn-success btn-sm" disabled={count <2 ? true: ""}><i className="fas fa-minus small" /></button>
                                         </div>
-                                        <input type="text" min="0" value={count} onClick={() => setCount(0)} className="form-control text-center" style={{ height: '31px' }} />
+                                        <input type="text" min="1" value={count} onClick={() => setCount(1)} className="form-control text-center" style={{ height: '31px' }} />
                                         <div className="input-group-append">
                                             <button className="btn btn-success btn-sm"><i className="fas fa-plus small" /></button>
                                         </div>
