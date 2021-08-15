@@ -4,6 +4,9 @@ img {
 }
 
 .header {
+    background: rgb(1, 127, 255);
+    position: relative;
+    z-index: 1000;
     @include phone {
         padding: 5px 0;
     }
@@ -22,10 +25,8 @@ img {
                         width: 100%;
                     }
                     .category {
-                        i {
-                        }
-                        small {
-                        }
+                        i {}
+                        small {}
                         .menu__item {
                             display: none;
                             width: 800px;
@@ -61,8 +62,7 @@ img {
                         top: -0.3rem;
                         right: 7rem;
                         z-index: 10;
-                        .menu__item {
-                        }
+                        .menu__item {}
                     }
                 }
                 .menu_ctg:after {
@@ -83,8 +83,7 @@ img {
                     visibility: visible;
                     position: fixed;
                 }
-                .navbar-brand {
-                }
+                .navbar-brand {}
                 .navbar-toggler {
                     @include phone {
                         color: white;
@@ -92,8 +91,7 @@ img {
                     }
                 }
                 .navbar-collapse {
-                    @include phone {
-                    }
+                    @include phone {}
                     .navbar-nav {
                         @include phone {
                             display: flex;
@@ -103,8 +101,7 @@ img {
                             padding: 5px 15px;
                         }
                         .login_resg {
-                            .info {
-                            }
+                            .info {}
                         }
                         .search {
                             input {
@@ -118,27 +115,110 @@ img {
                                 .search__info {
                                     background: white;
                                     position: absolute;
-                                    // top: 0em;
                                     z-index: 99;
                                     height: auto;
-                                    width: 563px;
-                                    padding: 15px 5px;
-                                    .search__popular {
-                                        img {
-                                            max-width: 100% !important;
+                                    width: 565px;
+                                    box-shadow: rgb(121, 121, 121) 0px 6px 12px 0px;
+                                    .search__items:hover {
+                                        background: rgb(227, 242, 252);
+                                    }
+                                    .suggest {
+                                        padding: 10px;
+                                        .coupon {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;
+                                            h6 {
+                                                font-size: 13px;
+                                            }
+                                        }
+                                        .history {
+                                            display: grid;
+                                            grid-template-columns: 80% 20%;
+                                            justify-content: space-between;
+                                            align-items: center;
+                                            cursor: pointer;
+                                            .item_log {
+                                                img {
+                                                    width: 7%;
+                                                }
+                                                span {
+                                                    font-size: 13px;
+                                                    font-weight: 500;
+                                                }
+                                            }
+                                            &:hover {
+                                                background: rgba(27, 168, 255, 0.1);
+                                            }
+                                            .close {
+                                                img {
+                                                    width: 20%;
+                                                }
+                                            }
                                         }
                                     }
                                     .list__search {
-                                        .list__item {
+                                        padding: 0 10px;
+                                        border-top: 1px solid rgb(236, 236, 236);
+                                        border-bottom: 1px solid rgb(236, 236, 236);
+                                        .search__popular {
+                                            margin: 10px 0;
                                             display: flex;
+                                            gap: 5px;
                                             img {
-                                                width: 25%;
+                                                max-width: 4% !important;
+                                            }
+                                            span {
+                                                font-size: 15px;
+                                            }
+                                        }
+                                        .pop {
+                                            display: grid;
+                                            grid-template-columns: 33% 33% 33%;
+                                            .list__item {
+                                                display: flex;
+                                                gap: 10px;
+                                                margin-bottom: 15px;
+                                                img {
+                                                    width: 20%;
+                                                }
+                                                span {
+                                                    font-size: 11px;
+                                                    background: rgb(250, 250, 250);
+                                                    width: 90%;
+                                                    padding: 3px 7px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .special__prod {
+                                        padding: 10px;
+                                        h6 {
+                                            color: rgb(68, 68, 68);
+                                            font-size: 14px;
+                                            margin-bottom: 15px;
+                                            font-weight: 500;
+                                        }
+                                        .list__prod {
+                                            display: grid;
+                                            grid-template-columns: 1fr 1fr 1fr 1fr;
+                                            .item--prod {
+                                                display: grid;
+                                                grid-template-rows: 50% 50%;
+                                                gap: 20px;
+                                                justify-items: center;
+                                                img {
+                                                    width: 35%;
+                                                    border-radius: 35%;
+                                                }
+                                                span {
+                                                    font-size: 12px;
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
-
                             .btn_search {
                                 @include phone {
                                     height: 30px !important;
