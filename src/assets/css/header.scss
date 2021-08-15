@@ -156,6 +156,15 @@ img {
                                                 }
                                             }
                                         }
+                                        .viewMore {
+                                            color: rgb(32, 109, 252);
+                                            font-size: 13px;
+                                            justify-content: center;
+                                            cursor: pointer;
+                                            display: flex;
+                                            gap: 5px;
+                                            align-items: center;
+                                        }
                                     }
                                     .list__search {
                                         padding: 0 10px;

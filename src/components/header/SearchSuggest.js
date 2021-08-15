@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import MoreSuggest from './MoreSuggest';
 
 function SearchSuggest({ dataSearch, show, blur, search }) {
-    const [data, setData] = useState('')
-    const [showData, setShowData] = useState(true)
+    const [data, setData] = useState('');
+    const [showData, setShowData] = useState(true);
+    const [suggest, setSuggest] = useState(false);
 
     useEffect(() => {
         if (search === '') {
@@ -32,7 +34,6 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
                         </div>
                     </div>
                     
-
                     <div className="history">
                         <div className="item_log">
                             <img src="https://salt.tikicdn.com/ts/upload/90/fa/09/9deed3e3186254637b5ca648f3032665.png" alt="" />
@@ -43,16 +44,14 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
                         </div>
                     </div>
 
-                    <div className="history">
-                        <div className="item_log">
-                            <img src="https://salt.tikicdn.com/ts/upload/90/fa/09/9deed3e3186254637b5ca648f3032665.png" alt="" />
-                            <span>Tông đơ cắt tóc</span>
+                    {suggest && <MoreSuggest />}
+                    {!suggest ?
+                        <div className="text-center">
+                            <div className="viewMore" onClick={()=> setSuggest(true)}>
+                                <span>Xem thêm</span><i className="fas fa-sort-down"></i>
+                            </div>
                         </div>
-                        <div className="close text-right">
-                            <img src="https://salt.tikicdn.com/ts/upload/5c/a1/7e/cd8cde79e81844f2c394efdc415f5441.png" alt="" />
-                        </div>
-                    </div>
-
+                    : ''} 
                 </div>
 
                 <div className="list__search">
@@ -143,7 +142,7 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
             </div>)
 
                 :
-                (<div className="search__info" >
+                (<div className="search__info">
                     {dataSearch.length !== 0  && dataSearch ? dataSearch.map((item, i) =>
                     (
                         <div className="search__items" style={{ cursor: 'pointer', borderBottom: '1px solid rgb(232 232 232)', padding:'5px'}} key={i}>
