@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Tiki-ReactJS/static/css/main.96fec2b6.chunk.css",
-    "main.js": "/Tiki-ReactJS/static/js/main.2a1bf357.chunk.js",
-    "main.js.map": "/Tiki-ReactJS/static/js/main.2a1bf357.chunk.js.map",
+    "main.css": "/Tiki-ReactJS/static/css/main.401fcabd.chunk.css",
+    "main.js": "/Tiki-ReactJS/static/js/main.6c63e1b4.chunk.js",
+    "main.js.map": "/Tiki-ReactJS/static/js/main.6c63e1b4.chunk.js.map",
     "runtime-main.js": "/Tiki-ReactJS/static/js/runtime-main.3eb0fbfd.js",
     "runtime-main.js.map": "/Tiki-ReactJS/static/js/runtime-main.3eb0fbfd.js.map",
     "static/js/2.4a21387b.chunk.js": "/Tiki-ReactJS/static/js/2.4a21387b.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.0a8545b3.chunk.js": "/Tiki-ReactJS/static/js/3.0a8545b3.chunk.js",
     "static/js/3.0a8545b3.chunk.js.map": "/Tiki-ReactJS/static/js/3.0a8545b3.chunk.js.map",
     "index.html": "/Tiki-ReactJS/index.html",
-    "static/css/main.96fec2b6.chunk.css.map": "/Tiki-ReactJS/static/css/main.96fec2b6.chunk.css.map",
+    "static/css/main.401fcabd.chunk.css.map": "/Tiki-ReactJS/static/css/main.401fcabd.chunk.css.map",
     "static/js/2.4a21387b.chunk.js.LICENSE.txt": "/Tiki-ReactJS/static/js/2.4a21387b.chunk.js.LICENSE.txt",
     "static/media/body.scss": "/Tiki-ReactJS/static/media/hotgirl.9e9bb79c.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3eb0fbfd.js",
     "static/js/2.4a21387b.chunk.js",
-    "static/css/main.96fec2b6.chunk.css",
-    "static/js/main.2a1bf357.chunk.js"
+    "static/css/main.401fcabd.chunk.css",
+    "static/js/main.6c63e1b4.chunk.js"
   ]
 }
