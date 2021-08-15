@@ -13,17 +13,10 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
 
     }, [search])
 
-
     return (
         <div className="search-form" style={{ display: (show ? 'block' : 'none') }}>
             {showData ? (<div className="search__info" >
-                {data ? data.map(item =>
-                (
-                    <div className="search__items" style={{ cursor: 'pointer' }} key={item.id}>
-                        <span>{item.name}</span>
-                        <hr />
-                    </div>)
-                ) : ''}
+
                 <div className="search__popular">
                     <img src="https://salt.tikicdn.com/ts/upload/4f/03/a0/2455cd7c0f3aef0c4fd58aa7ff93545a.png" alt="" />
                     <span>Tìm kiếm phổ biến</span>
@@ -62,13 +55,14 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
             </div>)
                 :
                 (<div className="search__info" >
-                    {dataSearch ? dataSearch.map((item, i) =>
+                    {dataSearch.length !== 0 && dataSearch ? dataSearch.map((item, i) =>
                     (
                         <div className="search__items" style={{ cursor: 'pointer' }} key={i}>
                             <span>{item.name}</span>
                             <hr />
                         </div>)
-                    ) : ''}
+                    ) : <div>Không tìm thấy kết quả</div>}
+
                 </div>)}
             <div className='blur'
                 onClick={blur}

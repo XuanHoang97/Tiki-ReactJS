@@ -23,7 +23,6 @@ function Search() {
             .get(`https://y6896.sse.codesandbox.io/${item}/`)
             .then(res => { setMobile(mobile => [...mobile, ...res.data]); })
             .catch((err) => { console.log(err); }))
-
     };
     const handleClickSearch = () => {
         setSuggest(false)
