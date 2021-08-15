@@ -4,6 +4,9 @@ img {
 }
 
 .header {
+    background: rgb(1, 127, 255);
+    position: relative;
+    z-index: 1000;
     @include phone {
         padding: 5px 0;
     }
@@ -116,10 +119,14 @@ img {
                                     height: auto;
                                     width: 565px;
                                     box-shadow: rgb(121, 121, 121) 0px 6px 12px 0px;
+                                    .search__items:hover {
+                                        background: rgb(227, 242, 252);
+                                    }
                                     .suggest {
                                         padding: 10px;
                                         .coupon {
                                             display: flex;
+                                            align-items: center;
                                             justify-content: space-between;
                                             h6 {
                                                 font-size: 13px;

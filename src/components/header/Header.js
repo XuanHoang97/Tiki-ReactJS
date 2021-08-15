@@ -8,7 +8,7 @@ import Account from '../Account';
 import AuthContextProvider from 'components/Account/Context/AuthContext';
 function Header() {
     return (
-        <div className="header" style={{ backgroundColor: 'rgb(1, 127, 255)' }}>
+        <div className="header">
             <div className="container p-0">
                 <div className="row pr-2">
                     <nav className="navbar navbar-expand-sm navbar-dark col-12 pb-0 pt-1 pr-2">

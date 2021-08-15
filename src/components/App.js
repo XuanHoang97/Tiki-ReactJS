@@ -37,7 +37,7 @@ function App() {
           <Route exact path="/thanh-toan"><Payment /></Route>
           <Route exact path="/dat-hang-thanh-cong"><OrderSuccess /></Route>
           <Route exact path="/result"><Result /></Route>
-          <Route exact path="/search"><FormSearch /></Route>
+          <Route exact path="/search"><Result /></Route>
           <Route exact path="*"><NotFound /></Route>
         </Switch>
         <Footer />

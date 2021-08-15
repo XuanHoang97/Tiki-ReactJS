@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 function SearchSuggest({ dataSearch, show, blur, search }) {
     const [data, setData] = useState('')
     const [showData, setShowData] = useState(true)
+
     useEffect(() => {
         if (search === '') {
             setData('')
@@ -10,21 +11,11 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
         } else {
             setShowData(false)
         }
-
     }, [search])
-
 
     return (
         <div className="search-form" style={{ display: (show ? 'block' : 'none') }}>
             {showData ? (<div className="search__info" >
-                {data ? data.map(item =>
-                (
-                    <div className="search__items" style={{ cursor: 'pointer'}} key={item.id}>
-                        <span>{item.name}</span>
-                        <hr />
-                    </div>)
-                ) : ''}
-
                 <div className="suggest">
                     <div className="coupon">
                         <h6>TikiNGON - Freeship Đơn từ 149k </h6>
@@ -63,7 +54,6 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
                     </div>
 
                 </div>
-
 
                 <div className="list__search">
                     <div className="search__popular">
@@ -151,22 +141,23 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
                     </div>
                 </div>
             </div>)
+
                 :
                 (<div className="search__info" >
-                    {dataSearch ? dataSearch.map((item, i) =>
+                    {dataSearch.length !== 0  && dataSearch ? dataSearch.map((item, i) =>
                     (
-                        <div className="search__items" style={{ cursor: 'pointer', borderBottom: '1px solid #e0e0e0', padding:'5px'}} key={i}>
+                        <div className="search__items" style={{ cursor: 'pointer', borderBottom: '1px solid rgb(232 232 232)', padding:'5px'}} key={i}>
                             <small style={{fontWeight: '500'}}>
                                 <img src="https://salt.tikicdn.com/ts/upload/e8/aa/26/42a11360f906c4e769a0ff144d04bfe1.png" alt="" style={{width:'6%'}} />
                                 {item.name}
                             </small>
                         </div>)
-                    ) : ''}
+                    ) : <div className="text-primary small pl-3 p-2">Không tìm thấy kết quả</div>}
                 </div>)}
 
             <div className='blur'
                 onClick={blur}
-                style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: '5', background: 'black', opacity: 0.3 }}
+                style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: '-1', background: 'rgba(0, 0, 0, 0.53)', opacity: 0.4 }}
             ></div>
         </div>
     );
