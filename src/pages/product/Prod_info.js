@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const Prod_info = ({ match }) => {
+const Prod_info = ({match }) => {
     const [data, setData] = useState([]);
     const [feature, setFeature] = useState([]);
 
@@ -10,11 +10,11 @@ const Prod_info = ({ match }) => {
         fetchFeature();
     }, []);
 
-    const fetchProduct = () => {
-        axios.get(`https://y6896.sse.codesandbox.io/product_mobile/?id=${match?.params.id}`)
+    const fetchProduct = () => {    
+        axios.get(`https://y6896.sse.codesandbox.io/product_mobile/?id=1`)
             .then((res) => { setData(res.data);})
             .catch((err) => console.log(err));
-    };
+        };
     const fetchFeature = () => {
         axios.get(`https://y6896.sse.codesandbox.io/feature_special`)
             .then((res) => { setFeature(res.data);})
@@ -23,10 +23,11 @@ const Prod_info = ({ match }) => {
 
     return (
         <div className="col-md-3 p-0 text-left">
+            {/* <img className="w-75" src={data.img} alt="ko hien" /> */}
             {data.map((item, key) => {
                 return (
                     <React.Fragment key={item.id}>
-                        <img className="w-75" src={item.img} alt="" />
+                        <img className="w-75" src={item.img} alt="loi" />
 
                         <div className="row mt-2 m-0">
                             <div className="col-md-3 col-3 border border-light p-1">
@@ -44,6 +45,7 @@ const Prod_info = ({ match }) => {
                         </div>
                     </React.Fragment>
                 );
+                
             })}
 
             <p className="text-left mt-4 mb-0 bg-danger text-white p-1 pl-3 pr-3 w-75 rounded">Đặc điểm nổi bật</p>

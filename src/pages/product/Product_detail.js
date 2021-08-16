@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Offer from './Offer';
 import Specifications from './Specifications';
 import Product_desc from './Product_desc';
@@ -15,14 +15,30 @@ const Product_detail = ({ match }) => {
 
     const [product, setProduct] = useState([]);
     const [offerBonus, setOffer] = useState([]);
+    const [data, setData] = useState([]);
+    const [feature, setFeature] = useState([]);
+
     const TITLE = 'Điện thoại ngon - bổ - rẻ';
 
     useEffect(() => {
+        fetchProduct();
+        fetchFeature();
         fetchOptionProd();
         fetchOffer();
     }, []);
 
     // Call api
+    const fetchProduct = () => {    
+        axios.get(`https://y6896.sse.codesandbox.io/product_mobile/?id=${match.params.id}`)
+            .then((res) => { setData(res.data);})
+            .catch((err) => console.log(err));
+        };
+    const fetchFeature = () => {
+        axios.get(`https://y6896.sse.codesandbox.io/feature_special`)
+            .then((res) => { setFeature(res.data);})
+            .catch((err) => console.log(err));
+    };
+
     const fetchOptionProd = () => {
         axios.get(`https://y6896.sse.codesandbox.io/product_mobile/?id=${match.params.id}`)
             .then((res) => { setProduct(res.data); })
@@ -36,9 +52,7 @@ const Product_detail = ({ match }) => {
     };
 
     // Option number product
-    const [count, setCount] = useState(1);
-    const [error, setError] = useState(null);
-    
+    const [count, setCount] = useState(1);    
 
     return (
         <div className="main bg-light pt-3 pb-3">
@@ -50,8 +64,47 @@ const Product_detail = ({ match }) => {
                 {/* Product--detail  */}
                 <h6 className="mb-2">CHI TIẾT SẢN PHẨM</h6>
                 <div className="bg-white pt-4 pb-4 p-3 m-0 text-center row">
-                    <Prod_info />
-                    
+                    <div className="col-md-3 p-0 text-left">
+                        {data.map((item, key) => {
+                            return (
+                                <React.Fragment key={item.id}>
+                                    <img className="w-75" src={item.img} alt="loi" />
+
+                                    <div className="row mt-2 m-0">
+                                        <div className="col-md-3 col-3 border border-light p-1">
+                                            <img className="w-100" src="https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%20Detail%20Image%2Fss-galaxy-zFold-detail02.png?alt=media&token=c931c715-0279-481f-a921-d8a0b07b7606" alt="" />
+                                        </div>
+                                        <div className="col-md-3 col-3 border border-light p-1">
+                                            <img className="w-100" src="https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%20Detail%20Image%2Fss-galaxy-zFold-detail03.png?alt=media&token=267b8976-db73-48f5-be47-f9b4a17d1c8e" alt="" />
+                                        </div>
+                                        <div className="col-md-3 col-3 border border-light p-1">
+                                            <img className="w-100" src="https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%20Detail%20Image%2Fss-galaxy-zFold-detail02.png?alt=media&token=c931c715-0279-481f-a921-d8a0b07b7606" alt="" />
+                                        </div>
+                                        <div className="col-md-3 col-3 border border-light p-1">
+                                            <img className="w-100" src="https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%20Detail%20Image%2Fss-galaxy-zFold-detail03.png?alt=media&token=267b8976-db73-48f5-be47-f9b4a17d1c8e" alt="" />
+                                        </div>
+                                    </div>
+                                </React.Fragment>
+                            );
+                            
+                        })}
+
+                        <p className="text-left mt-4 mb-0 bg-danger text-white p-1 pl-3 pr-3 w-75 rounded">Đặc điểm nổi bật</p>
+
+                        <div className="special">
+                            <ul className="p-3">
+                                {feature.map((ft, key) => {
+                                    return (
+                                        <React.Fragment key={ft.id}>
+                                            <li className="small text-left mb-2">{ft.content}</li>
+                                        </React.Fragment>
+                                    );
+                                })}
+                            </ul>
+                        </div>
+                    </div>
+                    {/* <Prod_info /> */}
+
                     {/* <Prod_buy qty={3} /> */}
                     {product.map((prod, key) => {
                         return (
@@ -114,7 +167,6 @@ const Product_detail = ({ match }) => {
                                             <button className="btn btn-success btn-sm"><i className="fas fa-plus small" /></button>
                                         </div>
                                     </div>
-                                    {error}
 
 
                                     <Link to="/gio-hang-1">
