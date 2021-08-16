@@ -1,12 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 function MoreSuggest() {
-    const [block, setBlock]=useState(false);
     return (
         <>
-            {!block ? 
-            <>
-             <div className="history">
+            <div className="history">
                 <div className="item_log">
                     <img src="https://salt.tikicdn.com/ts/upload/90/fa/09/9deed3e3186254637b5ca648f3032665.png" alt="" />
                     <span>Tông đơ cắt tóc</span>
@@ -35,18 +32,6 @@ function MoreSuggest() {
                     <img src="https://salt.tikicdn.com/ts/upload/5c/a1/7e/cd8cde79e81844f2c394efdc415f5441.png" alt="" />
                 </div>
             </div>
-
-            <div className="text-center">
-                <div className="viewMore" onClick={() => setBlock(true)}>
-                    <span>Thu gọn</span><i className="fas fa-sort-up"></i>
-                </div>
-            </div> 
-            </> : <div className="text-center">
-                    <div className="viewMore">
-                        <span>Xem thêm</span><i className="fas fa-sort-down"></i>
-                    </div>
-                </div>
-            }
         </>
     );
 }

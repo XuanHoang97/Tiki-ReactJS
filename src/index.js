@@ -9,6 +9,7 @@ import '././assets/css/mobile.scss';
 import '././assets/css/slide.scss';
 import '././assets/css/ResultSearch.scss';
 import '././assets/css/ProductSuggestion.scss';
+import '././assets/css/ProdDetail.scss';
 import '././assets/css/variable.scss';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';

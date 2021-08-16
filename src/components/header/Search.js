@@ -38,7 +38,7 @@ function Search() {
                 onChange={(e) => setSearch(e.target.value)}
                 type="text" className="form-control"
                 placeholder="Tìm sản phẩm, danh mục hay thương hiệu mong muốn ..."
-                id="demo" name="email" style={{ borderRadius: '2px 0px 0px 2px'}}
+                id="demo" name="email" style={{ borderRadius: '2px 0px 0px 2px', border:'0'}}
                 onFocus={() => setSuggest(true)}
                 ref={inputSearch}
                 autoComplete="off"

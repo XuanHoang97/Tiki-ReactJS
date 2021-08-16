@@ -26,11 +26,11 @@ export default function Category(props) {
       onMouseLeave={() => (setHover(false))}
     >
       <a className="category nav-link dropdown-toggle" href="/" id="dropdownId" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false"
-        style={{ padding: '10px' }}>
+        style={{ padding: '10px 15px' }}>
         <i className="fas fa-bars mr-2" />
         <small>Danh mục</small>
         <br />
-        <span>Sản phẩm</span>
+        <span style={{fontSize: '15px' }}>Sản phẩm</span>
       </a>
 
       {hover ? <div className="dropdown-menu list__product" aria-labelledby="dropdown" style={{ top: "3.5rem", display: "block", left: "-3.5em" }}>

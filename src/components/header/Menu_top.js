@@ -10,7 +10,7 @@ class MenuTop extends Component {
                     </a>
                 </div>
 
-                <div className="col-md-8 row" style={{ fontSize: '11px', paddingLeft: '30px' }}>
+                <div className="col-md-8 row" style={{ fontSize: '11px', paddingLeft: '35px' }}>
                     <a className="mr-3 text-white">Đồng hồ thông minh</a>
                     <a className="mr-3 text-white">Mũ bảo hiểm</a>
                     <a className="mr-3 text-white">Đầm dự tiệc</a>

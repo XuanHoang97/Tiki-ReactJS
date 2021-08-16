@@ -16,7 +16,7 @@ const Product_similar = ({ }) => {
     // Call api
     const fetchProdRelated = () => {
         axios.get(`https://y6896.sse.codesandbox.io/product_mobile`)
-            .then((res) => { setProdRelated(res.data); console.log(res.data); })
+            .then((res) => { setProdRelated(res.data);})
             .catch((err) => console.log(err));
     };
 

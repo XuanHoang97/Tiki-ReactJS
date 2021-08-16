@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-function Result(props) {
+function Result(search) {
     return (
         <div className="Result__search bg-light pb-3">
             <ul className="breadcrumb mb-0">
-                <li><a href="#">Home</a></li>
+                <li><Link to="/">Home</Link></li>
                 <li>Phone</li>
             </ul>
 
@@ -103,7 +104,6 @@ function Result(props) {
                             <span>Rẻ hơn hoàn tiền</span>
                         </div>
                     </div>
-
                 </div>
 
                 <div className="list__product">

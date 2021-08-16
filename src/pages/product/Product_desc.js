@@ -12,15 +12,15 @@ const MoreContent = () => {
 function Product_desc(props) {
     const [isShow, setShow] = useState(false);
     return (
-        <div className="row bg-white pt-4 pb-4 p-3 m-1">
+        <div className="description row bg-white pt-4 pb-4 p-3 m-1">
             <div className="description--product col-md-7">
             <p>Không giống bất kỳ chiếc điện thoại nào khác, Samsung Galaxy Z Fold 2 5G sở hữu màn hình gập kỳ diệu mà mỗi khi mở màn hình, bạn đã mở ra tương lai của ngành công nghiệp smartphone.</p>
             <img className="w-100" src="https://images.fpt.shop/unsafe/fit-in/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/QuanLNH2/samsung-galaxy-zfold2-6.jpg" alt="" />
             
             {isShow === true ? <MoreContent /> : ''}
             {isShow === false ?
-            <div className="text-center">
-                <button type="button" onClick={()=> {setShow(true);}} className="btn btn-success btn-sm mt-3">Đọc thêm 
+            <div className="text-center ShowMore">
+                <button type="button" onClick={()=> {setShow(true);}} className="btn btn-primary btn-sm mt-3">Đọc thêm 
                     <i className="fas fa-caret-down ml-2" />
                 </button>
             </div>

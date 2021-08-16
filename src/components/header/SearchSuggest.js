@@ -44,6 +44,16 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
                         </div>
                     </div>
 
+                    <div className="history">
+                        <div className="item_log">
+                            <img src="https://salt.tikicdn.com/ts/upload/90/fa/09/9deed3e3186254637b5ca648f3032665.png" alt="" />
+                            <span>Điện thoại - phụ kiện</span>
+                        </div>
+                        <div className="close text-right">
+                            <img src="https://salt.tikicdn.com/ts/upload/5c/a1/7e/cd8cde79e81844f2c394efdc415f5441.png" alt="" />
+                        </div>
+                    </div>
+
                     {suggest && <MoreSuggest />}
                     {!suggest ?
                         <div className="text-center">
@@ -51,7 +61,13 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
                                 <span>Xem thêm</span><i className="fas fa-sort-down"></i>
                             </div>
                         </div>
-                    : ''} 
+
+                    :   <div className="text-center">
+                            <div className="viewMore" onClick={() => setSuggest(false)}>
+                                <span>Thu gọn</span><i className="fas fa-sort-up"></i>
+                            </div>
+                        </div> 
+                    } 
                 </div>
 
                 <div className="list__search">
@@ -145,7 +161,7 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
                 (<div className="search__info">
                     {dataSearch.length !== 0  && dataSearch ? dataSearch.map((item, i) =>
                     (
-                        <div className="search__items" style={{ cursor: 'pointer', borderBottom: '1px solid rgb(232 232 232)', padding:'5px'}} key={i}>
+                        <div className="search__items"  key={i}>
                             <small style={{fontWeight: '500'}}>
                                 <img src="https://salt.tikicdn.com/ts/upload/e8/aa/26/42a11360f906c4e769a0ff144d04bfe1.png" alt="" style={{width:'6%'}} />
                                 {item.name}
@@ -156,7 +172,6 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
 
             <div className='blur'
                 onClick={blur}
-                style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: '-1', background: 'rgba(0, 0, 0, 0.53)', opacity: 0.4 }}
             ></div>
         </div>
     );
