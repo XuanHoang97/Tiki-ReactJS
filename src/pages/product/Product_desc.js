@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import {connect} from 'react-redux';
-
 
 const MoreContent = () => {
     return (
@@ -23,12 +21,13 @@ function Product_desc(props) {
             {isShow === false ?
             <div className="text-center">
                 <button type="button" onClick={()=> {setShow(true);}} className="btn btn-success btn-sm mt-3">Đọc thêm 
-                <i className="fas fa-caret-down ml-2" />
+                    <i className="fas fa-caret-down ml-2" />
                 </button>
             </div>
             : ''} 
 
             </div>
+            
             <div className="col-md-5">
                 <h5 className="mb-4">Tin tức và sự kiện</h5>
 
@@ -55,7 +54,5 @@ function Product_desc(props) {
         </div>
     );
 }
-
-
 
 export default Product_desc;

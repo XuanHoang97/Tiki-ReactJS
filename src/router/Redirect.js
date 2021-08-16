@@ -9,7 +9,6 @@ import Order_success from '../pages/cart/Order_success';
 class Redirect extends Component {
     render() {
         return (
-            
             <div>
                 <Switch>
                     <Route exact path="/"><Body /></Route>
