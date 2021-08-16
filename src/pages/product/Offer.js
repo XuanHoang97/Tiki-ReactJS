@@ -27,7 +27,7 @@ function Offer(props) {
                 <div className="card-body m-1 pl-3 pr-3 p-0">
                     {
                         bonus.map((offer, key)=>(
-                            <React.Fragment key={offer.id}> 
+                            <div key={offer.id}> 
                                 {
                                     offer.accessories.map((test, key) =>
                                     <div className=" row p-2 p-0 justify-content-between" key={key}>
@@ -35,7 +35,7 @@ function Offer(props) {
                                         <span>x{test.numb}</span>
                                     </div>
                                 )}
-                            </React.Fragment>
+                            </div>
                         ))
                     }
                 </div>
