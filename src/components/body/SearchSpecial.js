@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-
 const renderProduct = (data) => {
     return (
         <div className="search__hightlight mt-0 pl-3 pb-2 p-0 bg-white" style={{ paddingRight: '5px' }}>
@@ -37,8 +36,6 @@ function Search_special(props) {
     const [currentPage, setcurrentPage] = useState(1);
     const [itemsPerPage, setitemsPerPage] = useState(4);
 
-
-
     const pages = [];
     for (let i = 1; i <= Math.ceil(mobile.length / itemsPerPage); i++) {
         pages.push(i);
@@ -71,7 +68,6 @@ function Search_special(props) {
     };
 
     return (
-
         <>
             <div className="mt-3 bg-white m-0 pt-3 pb-1 row justify-content-between pl-3 pr-3 align-items-center">
                 <div className="">

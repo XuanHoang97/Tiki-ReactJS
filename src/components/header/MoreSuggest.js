@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MoreSuggest() {
+export default function MoreSuggest() {
     return (
         <>
             <div className="history">
@@ -35,5 +35,3 @@ function MoreSuggest() {
         </>
     );
 }
-
-export default MoreSuggest;

@@ -5,8 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { postsState$ } from "redux/selectors";
 import * as actions from '../../redux/actions'
 
-// import NumberFormat from 'react-number-format';
-
 // Pagination
 const renderMobile = (mobile) => {
     return (
@@ -25,7 +23,6 @@ const renderMobile = (mobile) => {
                                     <img src={mobile.img} alt="mobile" />
                                     <h6 className="mt-4 mb-1 text-dark">{mobile.name}</h6>
                                 </Link>
-
 
                                 <div className="rate mb-3">
                                     <span className="fa fa-star checked text-warning small" />
@@ -71,14 +68,12 @@ const renderMobile = (mobile) => {
                         </React.Fragment>
                     );
                 })}
-
             </div>
         </div>
     );
 };
 
 function Mobile() {
-
     const [currentPage, setcurrentPage] = useState(1);
     const [itemsPerPage] = useState(4);
 
@@ -120,7 +115,6 @@ function Mobile() {
 
     useEffect(() => {
         dispatch(actions.getDataMobile.getDataMobileRequest())
-
     }, [dispatch]);
 
     const handleNextbtn = () => {
@@ -169,5 +163,4 @@ function Mobile() {
         </>
     );
 }
-
 export default Mobile;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { slideState$ } from 'redux/selectors';
 import * as actions from '../../redux/actions'
@@ -14,15 +14,14 @@ function DataSlide(props) {
 function Slide() {
     const slide = useSelector(slideState$)
     const dispatch = useDispatch()
+
     useEffect(() => {
         dispatch(actions.getDataSlide.getSlideRequest())
     }, [dispatch])
 
     return (
         <div className="slide row">
-            {/*Carousel Wrapper*/}
             <div id="carousel-example-1z" className="carousel slide carousel-fade col-md-8 pr-0" data-ride="carousel">
-                {/*Indicators*/}
                 <ol className="carousel-indicators control">
                     <li style={{ width: '10px', height: '10px', borderRadius: '50%' }} data-target="#carousel-example-1z" data-slide-to={0} className="active" />
                     <li style={{ width: '10px', height: '10px', borderRadius: '50%' }} data-target="#carousel-example-1z" data-slide-to={1} />
@@ -47,7 +46,6 @@ function Slide() {
                 <a className="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next" style={{ right: '0px', width: '4%', top: '100px', opacity: '0.2', height: '40px' }}>
                     <img src="https://salt.tikicdn.com/ts/upload/6b/59/c2/b61db5f1c32cfdc6d75e59d4fac2dbe8.png" alt="" />
                 </a>
-
             </div>
 
             <div className="col-md-4 pl-2 baner">
@@ -58,5 +56,4 @@ function Slide() {
         </div>
     );
 }
-
 export default Slide;

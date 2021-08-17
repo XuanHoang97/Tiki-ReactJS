@@ -1,7 +1,6 @@
 import { getDataMobile, getType } from "../actions"
 import { INIT_STATE } from "../contains"
 
-
 export default function postsReducers(state = INIT_STATE.posts, action) {
     switch (action.type) {
         case getType(getDataMobile.getDataMobileRequest):

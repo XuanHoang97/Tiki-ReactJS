@@ -19,7 +19,7 @@ console.warn = () => { };
 // SEO Web
 const TITLE = 'Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh';
 
-function App() {
+export default function App() {
   return (
     <Router >
       <div>
@@ -38,15 +38,8 @@ function App() {
           <Route exact path="*"><NotFound /></Route>
         </Switch>
         <Footer />
-        <Helmet>
-          <meta charset="utf-8" />
-          <title>{TITLE}</title>
-          <meta name="description" content="This is main page" />
-        </Helmet>
+        <Helmet> <title>{TITLE}</title> </Helmet>
       </div>
     </Router>
-
   );
 }
-
-export default App;
