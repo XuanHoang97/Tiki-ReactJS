@@ -101,7 +101,7 @@ button:focus {
     box-shadow: none !important;
 }
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -109,6 +109,6 @@ button:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(187, 187, 187);
-    border-radius: 5px;
+    background: rgb(170, 170, 170);
+    border-radius: 10px;
 }

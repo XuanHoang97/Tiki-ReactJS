@@ -1,18 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
-Prod_Related.propTypes = {
-    prod: PropTypes.array,
-};
-
-Prod_Related.defaultProps = {
-    prod: [],
-};
-
-function Prod_Related(props) {
-    const { prod } = props;
-
+function ProdRelated(props) {
     return (
 
         <div className="product--item col-md-3 col-6">
@@ -29,9 +18,6 @@ function Prod_Related(props) {
                 <span className="fa fa-star text-secondary small" />
             </div>
 
-            {/* {
-                prod.map((p)=>(
-                    <React.Fragment key={p.id}> */}
             <span className="badge badge-pill badge-danger pt-2 pb-2 pl-3 pr-3">21.499.000 <u>đ</u></span>
             <span className="badge badge-pill badge-warning p-2 ml-2 mr-2">-20%</span>
             <strike className="small" style={{ color: '#8a8a8a' }}>24.999.999 <u>đ</u></strike>
@@ -49,13 +35,8 @@ function Prod_Related(props) {
                     <small>256G</small>
                 </div>
             </div>
-
-            {/* </React.Fragment>
-                    
-                ))
-            } */}
         </div>
     );
 }
 
-export default Prod_Related;
+export default ProdRelated;

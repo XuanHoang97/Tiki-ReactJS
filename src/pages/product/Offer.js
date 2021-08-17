@@ -26,16 +26,16 @@ function Offer(props) {
                 <div className="card-header font-weight-bold p-1">Phụ kiện đi kèm</div>
                 <div className="card-body m-1 pl-3 pr-3 p-0">
                     {
-                        bonus.map((offer)=>(
-                            <React.Fragment key={offer.id}> 
+                        bonus.map((offer, key)=>(
+                            <div key={offer.id}> 
                                 {
-                                    offer.accessories.map((test) =>
-                                    <div className=" row p-2 p-0 justify-content-between" key={test.id}>
+                                    offer.accessories.map((test, key) =>
+                                    <div className=" row p-2 p-0 justify-content-between" key={key}>
                                         <span>{test.name}</span>
                                         <span>x{test.numb}</span>
                                     </div>
                                 )}
-                            </React.Fragment>
+                            </div>
                         ))
                     }
                 </div>

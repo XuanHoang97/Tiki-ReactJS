@@ -9,11 +9,20 @@ import '././assets/css/mobile.scss';
 import '././assets/css/slide.scss';
 import '././assets/css/ResultSearch.scss';
 import '././assets/css/ProductSuggestion.scss';
+import '././assets/css/ProdDetail.scss';
 import '././assets/css/variable.scss';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import createSagaMiddleware from 'redux-saga';
+import { applyMiddleware, createStore } from 'redux';
+import reducers from './redux/reducers';
+import mySaga from 'redux/sagas';
+
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(reducers, applyMiddleware(sagaMiddleware))
+sagaMiddleware.run(mySaga)
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

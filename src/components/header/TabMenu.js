@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function TabMenu(props) {
+
     return (
         <div className="col-md-3">
             <h6 style={{ color: 'black' }}>{props.feature}</h6>

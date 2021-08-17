@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { postsState$ } from "redux/selectors";
+import * as actions from '../../redux/actions'
+
 // import NumberFormat from 'react-number-format';
 
 // Pagination
@@ -74,27 +78,28 @@ const renderMobile = (mobile) => {
 };
 
 function Mobile() {
-    const [mobile, setMobile] = useState([]);
 
     const [currentPage, setcurrentPage] = useState(1);
-    const [itemsPerPage, setitemsPerPage] = useState(4);
+    const [itemsPerPage] = useState(4);
 
-    const [pageNumberLimit, setpageNumberLimit] = useState(5);
+    const [pageNumberLimit] = useState(5);
     const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
     const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
+    const dispatch = useDispatch()
+    const posts = useSelector(postsState$)
 
     const handleClick = (e) => {
         setcurrentPage(Number(e.target.id));
     };
 
     const pages = [];
-    for (let i = 1; i <= Math.ceil(mobile.length / itemsPerPage); i++) {
+    for (let i = 1; i <= Math.ceil(posts.length / itemsPerPage); i++) {
         pages.push(i);
     }
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = mobile.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = posts.slice(indexOfFirstItem, indexOfLastItem);
 
     const renderPageNumbers = pages.map((number) => {
         if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
@@ -114,15 +119,9 @@ function Mobile() {
     });
 
     useEffect(() => {
-        fetchProducts();
-    }, []);
+        dispatch(actions.getDataMobile.getDataMobileRequest())
 
-    const fetchProducts = () => {
-        axios
-            .get('https://y6896.sse.codesandbox.io/product_mobile/')
-            .then(res => { setMobile(res.data); })
-            .catch((err) => { console.log(err); });
-    };
+    }, [dispatch]);
 
     const handleNextbtn = () => {
         setcurrentPage(currentPage + 1);
