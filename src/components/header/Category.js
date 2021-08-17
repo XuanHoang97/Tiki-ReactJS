@@ -39,7 +39,6 @@ export default function Category() {
             <React.Fragment key={menu.id} >
               <Link className="category" to={`/do-dung/${menu.item}.html`}
                 onMouseEnter={() => (setDetailMenu(menu.detail))}
-
               >
                 <div className="dropdown-item drop__menu" >
                   <div onClick={() => (setHover(false))}>

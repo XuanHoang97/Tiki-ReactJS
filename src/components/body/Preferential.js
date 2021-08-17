@@ -8,7 +8,7 @@ export default function Preferential() {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(actions.getDataPreferent.getPreferentRequest())
-    }, [])
+    }, [dispatch])
 
     let dem = 1;
 

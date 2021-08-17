@@ -16,7 +16,7 @@ function Slide() {
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(actions.getDataSlide.getSlideRequest())
-    }, [])
+    }, [dispatch])
 
     return (
         <div className="slide row">

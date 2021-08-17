@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { catagoryState$ } from "redux/selectors";
 import * as actions from '../../redux/actions'
 
-export default function Category(props) {
+export default function Category() {
     const dispatch = useDispatch()
     const catagory = useSelector(catagoryState$)
     useEffect(() => {
         dispatch(actions.getDataCatagory.getCatagoryRequest())
-    }, [])
+    }, [dispatch])
     let dem = 1;
     return (
 

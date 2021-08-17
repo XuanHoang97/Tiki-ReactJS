@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Spinner } from "react-bootstrap";
 
 
 const renderProduct = (data) => {
     return (
-        <div className="search__hightlight mt-0 pl-3 pb-2 p-0 bg-white" style={{paddingRight:'5px'}}>
+        <div className="search__hightlight mt-0 pl-3 pb-2 p-0 bg-white" style={{ paddingRight: '5px' }}>
             <div className="list__search pt-0 pb-2 pl-3 pr-3 row">
                 {data.map((search) => {
                     return (
                         <React.Fragment key={search.id}>
-                            <div className="card col-md-3 p-0" style={{border: 'none', cursor: 'pointer'}}>
-                                <div className="card-body pl-0 pr-0 pt-2 pb-0" style={{borderRadius:'5px', border:'1px solid rgb(230 230 230)', marginRight:'15px'}}>
+                            <div className="card col-md-3 p-0" style={{ border: 'none', cursor: 'pointer' }}>
+                                <div className="card-body pl-0 pr-0 pt-2 pb-0" style={{ borderRadius: '5px', border: '1px solid rgb(230 230 230)', marginRight: '15px' }}>
                                     <div className="illutrator row m-1">
                                         <img className="col-md-4 col-4 p-0" src={search.img1} alt="" />
                                         <img className="col-md-4 col-4 p-0" src={search.img2} alt="" />
@@ -37,7 +36,7 @@ function Search_special(props) {
     const [loading, setLoading] = useState(false);
     const [currentPage, setcurrentPage] = useState(1);
     const [itemsPerPage, setitemsPerPage] = useState(4);
-    
+
 
 
     const pages = [];
@@ -59,15 +58,15 @@ function Search_special(props) {
 
     // Set 1s moi load product
     const handleNextbtn = () => {
-        return new Promise((resolve)=>{
-            setTimeout(()=>{
+        return new Promise((resolve) => {
+            setTimeout(() => {
                 if (currentPage > mobile.length / itemsPerPage - 1) {
                     setcurrentPage(1)
                 } else {
                     setcurrentPage(currentPage + 1);
                 }
                 resolve(true);
-            },600)
+            }, 600)
         });
     };
 
@@ -84,7 +83,7 @@ function Search_special(props) {
                     <i className="fas fa-sync-alt mr-2" />
                     <span className="small">
                         {/* {loading && <Spinner size="sm" />} */}
-                    XEM THÊM</span>
+                        XEM THÊM</span>
                 </div>
             </div>
             {renderProduct(currentItems)}
