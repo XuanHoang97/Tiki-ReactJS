@@ -1,0 +1,39 @@
+#wheel {
+    height: 560px;
+    width: 390px;
+    border-radius: 10px;
+    box-shadow: #8432ae 0px 0px 25px 2px;
+    background-image: url('https://scontent-sin6-3.xx.fbcdn.net/v/t1.15752-9/235770688_953522218541198_6956876336066537041_n.png?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_ohc=mIiROTtzcJ4AX-zZgKS&_nc_ht=scontent-sin6-3.xx&oh=1b29e3e4bbfcab4619e3be723a878481&oe=61426C6F');
+    position: fixed;
+    bottom: 1.5em;
+    left: 5em;
+    z-index: 1000;
+    #canvas {
+        height: 570px;
+        cursor: pointer;
+        margin: -22px 0px 0 -17px;
+    }
+}
+
+.LuckyWheel {
+    position: fixed;
+    left: 0em;
+    bottom: 2.5em;
+    z-index: 999;
+    cursor: pointer;
+    .lucky {
+        border-radius: 50%;
+        width: 24%;
+    }
+}
+
+.spin {
+    position: fixed;
+    left: 2.5em;
+    bottom: 2.2em;
+    z-index: 1001;
+    cursor: pointer;
+    img {
+        width: 17%;
+    }
+}
