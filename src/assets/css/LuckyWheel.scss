@@ -2,17 +2,33 @@
     height: 560px;
     width: 390px;
     border-radius: 10px;
-    box-shadow: #8432ae 0px 0px 25px 2px;
-    background-image: url('https://scontent-sin6-3.xx.fbcdn.net/v/t1.15752-9/235770688_953522218541198_6956876336066537041_n.png?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_ohc=mIiROTtzcJ4AX-zZgKS&_nc_ht=scontent-sin6-3.xx&oh=1b29e3e4bbfcab4619e3be723a878481&oe=61426C6F');
+    box-shadow: #5a31ca 0px 0px 20px 0px;
+    // background-image: url('https://scontent.fsgn13-2.fna.fbcdn.net/v/t1.15752-9/228704473_523900258914047_2727090571689418254_n.png?_nc_cat=108&ccb=1-5&_nc_sid=ae9488&_nc_ohc=VDcxdnMeX7UAX-i3WsV&_nc_ht=scontent.fsgn13-2.fna&oh=11cc580b7028fadeef7581ebbf056046&oe=61417E62');
+    background: url("https://scontent-hkg4-2.xx.fbcdn.net/v/t1.15752-9/236231952_2627140604258454_2211414137724963620_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=-Fc0jBYfsDIAX8LWous&_nc_ht=scontent-hkg4-2.xx&oh=f8eed5338fb2257b8d25720c1f67860a&oe=6141812E"), url("https://scontent-hkg4-1.xx.fbcdn.net/v/t1.15752-9/229571476_890514604882584_2746549162163311529_n.png?_nc_cat=101&ccb=1-5&_nc_sid=ae9488&_nc_ohc=0NKS0G3_KgIAX_PnWoe&_nc_ht=scontent-hkg4-1.xx&oh=8e7300784811bba9e25c51ac891fe957&oe=6141E08C");
+    background-repeat: no-repeat, repeat-x;
+    background-position: 0px 0px, 0px 0px;
     position: fixed;
-    bottom: 1.5em;
+    bottom: 1.4em;
     left: 5em;
     z-index: 1000;
     #canvas {
-        height: 570px;
+        height: 560px;
         cursor: pointer;
-        margin: -22px 0px 0 -17px;
+        margin: -7px 0px 0 -17px;
+        color: rgb(240, 73, 12);
     }
+}
+
+div#wheel::before {
+    position: absolute;
+    content: "";
+    border-bottom: 2rem solid #047bcf;
+    border-right: 0.85rem solid transparent;
+    border-left: 0rem solid transparent;
+    transform: rotate(-90deg);
+    left: -22px;
+    bottom: 3.2em;
+    z-index: 10;
 }
 
 .LuckyWheel {
@@ -30,7 +46,7 @@
 .spin {
     position: fixed;
     left: 2.5em;
-    bottom: 2.2em;
+    bottom: 2.1em;
     z-index: 1001;
     cursor: pointer;
     img {
