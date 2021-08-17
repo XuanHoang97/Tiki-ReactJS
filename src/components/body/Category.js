@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios"; //Sử dụng axios
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { catagoryState$ } from "redux/selectors";
+import * as actions from '../../redux/actions'
 
-export default function Category(props) {
-    const [listCategory, setListCatg] = useState([]);
+export default function Category() {
+    const dispatch = useDispatch()
+    const catagory = useSelector(catagoryState$)
     useEffect(() => {
-        const getCategoryAPI = 'https://y6896.sse.codesandbox.io/category_special'
-        axios.get(getCategoryAPI).then((res) => {
-            if (res.request.status === 200) {
-                setListCatg(res.data)
-            }
-        })
-            .catch((err) => { console.log(err); alert("Lỗi không load được sản phẩm từ Api"); })
-    }, [])
+        dispatch(actions.getDataCatagory.getCatagoryRequest())
+    }, [dispatch])
     let dem = 1;
     return (
 
@@ -19,12 +16,12 @@ export default function Category(props) {
             <h6><span className="text-danger">DANH MỤC NỔI BẬT</span></h6>
 
             <div className="list__category pt-4 pl-2 pr-2 row">
-                {listCategory ? listCategory.map((ctg) => {
+                {catagory ? catagory.map((ctg) => {
                     if (dem <= 12) {
                         dem++;
                         return (
                             <React.Fragment key={ctg.id}>
-                                <div className="col-md-1 col-4 p-0 text-center" style={{cursor:'pointer'}}>
+                                <div className="col-md-1 col-4 p-0 text-center" style={{ cursor: 'pointer' }}>
                                     <img className="w-50 rounded-circle" src={ctg.img} alt="" />
                                     <h6 className="small pt-2" style={{ fontSize: '12px' }}>{ctg.content}</h6>
                                 </div>

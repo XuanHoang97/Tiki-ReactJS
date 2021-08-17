@@ -14,7 +14,6 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
             setShowData(false)
         }
     }, [search])
-
     return (
         <div className="search-form" style={{ display: (show ? 'block' : 'none') }}>
             {showData ? (<div className="search__info" >
@@ -33,7 +32,7 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
                             <img src="https://salt.tikicdn.com/ts/upload/5c/a1/7e/cd8cde79e81844f2c394efdc415f5441.png" alt="" />
                         </div>
                     </div>
-                    
+
                     <div className="history">
                         <div className="item_log">
                             <img src="https://salt.tikicdn.com/ts/upload/90/fa/09/9deed3e3186254637b5ca648f3032665.png" alt="" />
@@ -57,17 +56,17 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
                     {suggest && <MoreSuggest />}
                     {!suggest ?
                         <div className="text-center">
-                            <div className="viewMore" onClick={()=> setSuggest(true)}>
+                            <div className="viewMore" onClick={() => setSuggest(true)}>
                                 <span>Xem thêm</span><i className="fas fa-sort-down"></i>
                             </div>
                         </div>
 
-                    :   <div className="text-center">
+                        : <div className="text-center">
                             <div className="viewMore" onClick={() => setSuggest(false)}>
                                 <span>Thu gọn</span><i className="fas fa-sort-up"></i>
                             </div>
-                        </div> 
-                    } 
+                        </div>
+                    }
                 </div>
 
                 <div className="list__search">
@@ -159,11 +158,11 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
 
                 :
                 (<div className="search__info">
-                    {dataSearch.length !== 0  && dataSearch ? dataSearch.map((item, i) =>
+                    {dataSearch.length !== 0 && dataSearch ? dataSearch.map((item, i) =>
                     (
-                        <div className="search__items"  key={i}>
-                            <small style={{fontWeight: '500'}}>
-                                <img src="https://salt.tikicdn.com/ts/upload/e8/aa/26/42a11360f906c4e769a0ff144d04bfe1.png" alt="" style={{width:'6%'}} />
+                        <div className="search__items" key={i}>
+                            <small style={{ fontWeight: '500' }}>
+                                <img src="https://salt.tikicdn.com/ts/upload/e8/aa/26/42a11360f906c4e769a0ff144d04bfe1.png" alt="" style={{ width: '6%' }} />
                                 {item.name}
                             </small>
                         </div>)

@@ -1,24 +1,25 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios"; //Sử dụng axios
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { preferentState$ } from "redux/selectors";
+import * as actions from '../../redux/actions'
 
-export default function Preferential(props) {
-    const [listPreferent, setListPreferent] = useState([]);
+export default function Preferential() {
+    const preferent = useSelector(preferentState$)
+    const dispatch = useDispatch()
     useEffect(() => {
-        const getPreferentAPI = 'https://y6896.sse.codesandbox.io/preferent'
-        axios.get(getPreferentAPI).then((res) => { setListPreferent(res.data); })
-            .catch((err) => { console.log(err); alert("Lỗi không load được sản phẩm từ Api"); })
-    }, [])
+        dispatch(actions.getDataPreferent.getPreferentRequest())
+    }, [dispatch])
 
     let dem = 1;
 
     return (
         <div className="voucher row bg-white mt-3 pt-3 p-2 m-0">
-            {listPreferent.map((pref, index) => {
+            {preferent.map((pref) => {
                 if (dem <= 12) {
                     dem++;
                     return (
                         <React.Fragment key={pref.id}>
-                            <div className="col-md-1 col-3 p-1 text-center" style={{cursor:'pointer'}}>
+                            <div className="col-md-1 col-3 p-1 text-center" style={{ cursor: 'pointer' }}>
                                 <img className="w-50" src={pref.img} alt="" />
                                 <p className="small mt-2 mb-0">{pref.content}</p>
                             </div>
