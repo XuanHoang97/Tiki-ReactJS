@@ -1,7 +1,7 @@
 import { getDataPreferent, getType } from "../actions"
 import { INIT_STATE } from "../contains"
 
-export default function catagoryReducers(state = INIT_STATE.preferent, action) {
+export default function preferentReducers(state = INIT_STATE.preferent, action) {
     switch (action.type) {
         case getType(getDataPreferent.getPreferentRequest):
             return {
