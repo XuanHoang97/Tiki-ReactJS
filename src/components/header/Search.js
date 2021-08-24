@@ -1,14 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import SearchSuggest from './SearchSuggest';
 
-function Search() {
+export default function Search() {
     const [suggest, setSuggest] = useState(false);
     const [mobile, setMobile] = useState([])
     const [search, setSearch] = useState('')
-    const [allData, setAllData] = useState(['courses', 'category_menu', 'product_mobile', 'search_special', 'new_event'])
+    const [allData, setAllData] = useState(['courses', 'category_menu', 'product_mobile'])
     const inputSearch = useRef(null)
 
     useEffect(() => {
@@ -59,5 +58,3 @@ function Search() {
         </div>
     );
 }
-
-export default Search;

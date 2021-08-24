@@ -169,9 +169,7 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
                     ) : <div className="text-primary small pl-3 p-2">Không tìm thấy kết quả</div>}
                 </div>)}
 
-            <div className='blur'
-                onClick={blur}
-            ></div>
+            <div className='blur' onClick={blur} ></div>
         </div>
     );
 }

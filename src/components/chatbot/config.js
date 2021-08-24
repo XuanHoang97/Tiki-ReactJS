@@ -53,8 +53,7 @@ const config = {
             options: [
                 {
                 text: "Website dựa trên ý tưởng: Clone lại Web Tiki với React và Redux, trong tương lai sẽ tiến tới việc thương mại hoá.  ",
-                // url:
-                //     "https://www.youtube.com/watch?v=LIIDh-qI9oI",
+                
                 id: 1,
                 },
             ],

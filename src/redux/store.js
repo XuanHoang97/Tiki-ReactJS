@@ -1,4 +1,3 @@
-
 var redux = require('redux');
 
 const tikiInitialState = {
@@ -7,10 +6,8 @@ const tikiInitialState = {
 const allReducer = (state = tikiInitialState, action) => {
     switch (action.type) {
         case "SHOW_MORE":
-            console.log('load tahnh cong');
+            console.log('load thanh cong');
             return { ...state, viewMore: !state.viewMore }
-
-
         default:
             return state
     }

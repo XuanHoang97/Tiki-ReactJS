@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useRef} from 'react';
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Slide from './Slide';
 import Category from './Category';
@@ -15,11 +15,16 @@ import MessageParser from 'components/chatbot/MessageParser';
 import Mail from './Mail';
 import ProductSuggestion from './ProductSuggestion';
 import LuckyWheel from './LuckyWheel';
-
+import useOutsideClick from 'components/useOutsideClick';
 
 export default function Body() {
     const [chatbot, setChatbot]= useState(false);
     const [lucky, setLucky]= useState(false);
+    const ref = useRef();
+
+    useOutsideClick(ref, () => {
+        if (chatbot) setChatbot(false);
+    });
 
     // Save Dialogue in the Chatbot
     const saveMessages = (messages) => {
@@ -35,15 +40,10 @@ export default function Body() {
         <div className="main bg-light pt-3 pb-3">
             <div className="container">
                 <Slide />
-
                 <Category />
-
                 <Preferential />
-
                 <SearchSpecial />
-
                 <Mobile />
-
                 <ProductSuggestion />
                 <Mail />
 
@@ -51,9 +51,8 @@ export default function Body() {
                 <div className="LuckyWheel" onClick={() => {setLucky(!lucky)}}>
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCoasT2bQThAGlar2I5RrPEFYZba00VUDBMN0FFz6mwJTk73Oo2lRxuAEuY3-AJGQuqt0&usqp=CAU" className="lucky" />
                 </div>
-                <div className="spin">
-                    <img src="https://www.webtretho.com/static/img/luckyspin/title_1.png" alt="" />
-                </div> 
+                <div className="spin"><img src="https://www.webtretho.com/static/img/luckyspin/title_1.png" alt="" /></div> 
+                
                 {lucky &&  <LuckyWheel/> }
 
                 {/* Build Chatbot */}
@@ -62,7 +61,7 @@ export default function Body() {
                 </div>
                 
                 {chatbot && 
-                    <div className="chatbot bg-white">
+                    <div className="chatbot bg-white" ref={ref} >
                         <Chatbot config={config} actionProvider={ActionProvider}  messageHistory={loadMessages()} saveMessages={saveMessages}	messageParser={MessageParser} />
                     </div>
                 }

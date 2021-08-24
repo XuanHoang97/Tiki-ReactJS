@@ -6,17 +6,13 @@ class MessageParser {
     parse(message) {
         const lowerCaseMessage = message.toLowerCase();
 
-        if (lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("") || lowerCaseMessage.includes("hi") || lowerCaseMessage.includes("halu")) {
+        if (lowerCaseMessage.includes("") || lowerCaseMessage.includes("hello") || lowerCaseMessage.includes("hi")) {
             this.actionProvider.greet();
-        }
-
-        if (lowerCaseMessage.includes("dmm") || lowerCaseMessage.includes("dcmm") || lowerCaseMessage.includes("dkmm") || lowerCaseMessage.includes("dkbm") || lowerCaseMessage.includes("dbm")) {
-            this.actionProvider.greet1();
-        }
+        };
 
         if (lowerCaseMessage.includes("hdmh")) {
             this.actionProvider.handleOrder();
-        }
+        };
     }
 }
 

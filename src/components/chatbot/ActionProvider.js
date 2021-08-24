@@ -2,7 +2,12 @@ class ActionProvider {
     constructor(createChatBotMessage, setStateFunc) {
       this.createChatBotMessage = createChatBotMessage;
       this.setState = setStateFunc;
-    }
+    };
+
+    greet() {
+      const message = this.createChatBotMessage("Anh (chị) cần em giúp gì ạ");
+      this.updateChatbotState(message);
+    };
 
     handleOrder = () => {
         const message = this.createChatBotMessage(
@@ -36,16 +41,6 @@ class ActionProvider {
     
         this.updateChatbotState(message);
     };
-    
-    greet() {
-      const greetingMessage = this.createChatBotMessage("Em chào anh (chị) ạ ");
-      this.updateChatbotState(greetingMessage)
-    }
-
-    greet1() {
-        const greetingMessage = this.createChatBotMessage("Đấm chết cha mày giờ :v ");
-        this.updateChatbotState(greetingMessage)
-    }
     
     updateChatbotState(message) {
    

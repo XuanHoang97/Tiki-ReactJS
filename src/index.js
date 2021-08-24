@@ -14,6 +14,7 @@ import '././assets/css/LuckyWheel.scss';
 import '././assets/css/variable.scss';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import { applyMiddleware, createStore } from 'redux';
