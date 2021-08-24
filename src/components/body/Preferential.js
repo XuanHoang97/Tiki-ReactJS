@@ -6,12 +6,12 @@ import * as actions from '../../redux/actions'
 export default function Preferential() {
     const preferent = useSelector(preferentState$)
     const dispatch = useDispatch()
+
     useEffect(() => {
         dispatch(actions.getDataPreferent.getPreferentRequest())
-    }, [dispatch])
+    }, [])
 
     let dem = 1;
-
     return (
         <div className="voucher row bg-white mt-3 pt-3 p-2 m-0">
             {preferent.map((pref) => {

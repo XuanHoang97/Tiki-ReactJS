@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import posts from './posts';
+import posts from './mobile';
 import catagory from './catagory';
 import preferent from './preferent';
 import slide from './slide';

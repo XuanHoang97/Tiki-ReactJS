@@ -55,6 +55,4 @@ function* mySaga() {
     yield takeLatest(actions.getDataCatagoryMenu.getCatagoryMenuRequest, getDataCatagoryMenu)
 
 }
-
-
 export default mySaga;
