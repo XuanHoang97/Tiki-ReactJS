@@ -1,5 +1,5 @@
+import { INIT_STATE } from "contants/contains"
 import { getDataPreferent, getType } from "../actions"
-import { INIT_STATE } from "../contains"
 
 export default function preferentReducers(state = INIT_STATE.preferent, action) {
     switch (action.type) {

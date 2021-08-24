@@ -1,14 +1,16 @@
 import { combineReducers } from "redux";
-import posts from './mobile';
+import mobiles from './mobile';
 import catagory from './catagory';
 import preferent from './preferent';
 import slide from './slide';
 import catagoryMenu from './catagoryMenu';
+import cart from './cart';
 
 export default combineReducers({
-    posts,
+    mobiles,
     catagory,
     preferent,
     slide,
-    catagoryMenu
+    catagoryMenu,
+    cart
 })

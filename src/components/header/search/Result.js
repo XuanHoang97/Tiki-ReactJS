@@ -110,38 +110,38 @@ function Result(search) {
                     <div className="suggest__list">
                         <div>
                             <div >
-                            <div className="Prod__Suggest"> <h5 className="m-0">Kết quả tìm kiếm cho `phone`: 5k+ kết quả</h5> </div>
+                                <div className="Prod__Suggest"> <h5 className="m-0">Kết quả tìm kiếm cho `phone`: 5k+ kết quả</h5> </div>
 
-                            <div className="tab__product">
-                                <ul className="nav nav-pills" role="tablist">
-                                    <li className="nav-item">
-                                        <a className="nav-link active" data-toggle="pill" href="#home">
-                                        <span>Phổ biến</span>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="pill" href="#menu1">
-                                        <span>Bán chạy</span>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="pill" href="#menu2">
-                                        <span>Hàng mới</span>
-                                        </a>
-                                    </li>
+                                <div className="tab__product">
+                                    <ul className="nav nav-pills" role="tablist">
+                                        <li className="nav-item">
+                                            <a className="nav-link active" data-toggle="pill" href="#home">
+                                                <span>Phổ biến</span>
+                                            </a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a className="nav-link" data-toggle="pill" href="#menu1">
+                                                <span>Bán chạy</span>
+                                            </a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a className="nav-link" data-toggle="pill" href="#menu2">
+                                                <span>Hàng mới</span>
+                                            </a>
+                                        </li>
 
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="pill" href="#menu3">
-                                        <span>Giá thấp</span>
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a className="nav-link" data-toggle="pill" href="#menu4">
-                                        <span>Giá cao</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                                        <li className="nav-item">
+                                            <a className="nav-link" data-toggle="pill" href="#menu3">
+                                                <span>Giá thấp</span>
+                                            </a>
+                                        </li>
+                                        <li className="nav-item">
+                                            <a className="nav-link" data-toggle="pill" href="#menu4">
+                                                <span>Giá cao</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
 
@@ -153,11 +153,11 @@ function Result(search) {
                                         <p className="text-secondary mt-3 mb-1">Dầu gội X-Men For Boss Luxury - Hương trầm sang trọng 650g</p>
                                         <div className="rate">
                                             <div className="vote">
-                                            <span className="fa fa-star checked text-warning small" />
-                                            <span className="fa fa-star checked text-warning small" />
-                                            <span className="fa fa-star checked text-warning small" />
-                                            <span className="fa fa-star text-secondary small" />
-                                            <span className="fa fa-star text-secondary small" />
+                                                <span className="fa fa-star checked text-warning small" />
+                                                <span className="fa fa-star checked text-warning small" />
+                                                <span className="fa fa-star checked text-warning small" />
+                                                <span className="fa fa-star text-secondary small" />
+                                                <span className="fa fa-star text-secondary small" />
                                             </div>
                                             <span className="">Đã bán 111</span>
                                         </div>
@@ -173,11 +173,11 @@ function Result(search) {
                                         <p className="text-secondary mt-3 mb-1">Dầu gội X-Men For Boss Luxury - Hương trầm sang trọng 650g</p>
                                         <div className="rate">
                                             <div className="vote">
-                                            <span className="fa fa-star checked text-warning small" />
-                                            <span className="fa fa-star checked text-warning small" />
-                                            <span className="fa fa-star checked text-warning small" />
-                                            <span className="fa fa-star text-secondary small" />
-                                            <span className="fa fa-star text-secondary small" />
+                                                <span className="fa fa-star checked text-warning small" />
+                                                <span className="fa fa-star checked text-warning small" />
+                                                <span className="fa fa-star checked text-warning small" />
+                                                <span className="fa fa-star text-secondary small" />
+                                                <span className="fa fa-star text-secondary small" />
                                             </div>
                                             <span className="">Đã bán 111</span>
                                         </div>
@@ -193,11 +193,11 @@ function Result(search) {
                                         <p className="text-secondary mt-3 mb-1">Dầu gội X-Men For Boss Luxury - Hương trầm sang trọng 650g</p>
                                         <div className="rate">
                                             <div className="vote">
-                                            <span className="fa fa-star checked text-warning small" />
-                                            <span className="fa fa-star checked text-warning small" />
-                                            <span className="fa fa-star checked text-warning small" />
-                                            <span className="fa fa-star text-secondary small" />
-                                            <span className="fa fa-star text-secondary small" />
+                                                <span className="fa fa-star checked text-warning small" />
+                                                <span className="fa fa-star checked text-warning small" />
+                                                <span className="fa fa-star checked text-warning small" />
+                                                <span className="fa fa-star text-secondary small" />
+                                                <span className="fa fa-star text-secondary small" />
                                             </div>
                                             <span className="">Đã bán 111</span>
                                         </div>
@@ -213,11 +213,11 @@ function Result(search) {
                                         <p className="text-secondary mt-3 mb-1">Dầu gội X-Men For Boss Luxury - Hương trầm sang trọng 650g</p>
                                         <div className="rate">
                                             <div className="vote">
-                                            <span className="fa fa-star checked text-warning small" />
-                                            <span className="fa fa-star checked text-warning small" />
-                                            <span className="fa fa-star checked text-warning small" />
-                                            <span className="fa fa-star text-secondary small" />
-                                            <span className="fa fa-star text-secondary small" />
+                                                <span className="fa fa-star checked text-warning small" />
+                                                <span className="fa fa-star checked text-warning small" />
+                                                <span className="fa fa-star checked text-warning small" />
+                                                <span className="fa fa-star text-secondary small" />
+                                                <span className="fa fa-star text-secondary small" />
                                             </div>
                                             <span className="">Đã bán 111</span>
                                         </div>
@@ -231,19 +231,19 @@ function Result(search) {
                             </div>
 
                             <div id="menu1" className="container tab-pane fade"><br />
-                            <h6>Menu 1</h6>
+                                <h6>Menu 1</h6>
                             </div>
 
                             <div id="menu2" className="container tab-pane fade"><br />
-                            <h6>Menu 2</h6>
+                                <h6>Menu 2</h6>
                             </div>
 
                             <div id="menu3" className="container tab-pane fade"><br />
-                            <h6>Menu 3</h6>
+                                <h6>Menu 3</h6>
                             </div>
 
                             <div id="menu4" className="container tab-pane fade"><br />
-                            <h6>Menu 4</h6>
+                                <h6>Menu 4</h6>
                             </div>
                         </div>
                     </div>

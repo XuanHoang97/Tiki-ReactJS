@@ -1,5 +1,5 @@
+import { INIT_STATE } from "contants/contains"
 import { getDataSlide, getType } from "../actions"
-import { INIT_STATE } from "../contains"
 
 export default function slideReducers(state = INIT_STATE.slide, action) {
     switch (action.type) {

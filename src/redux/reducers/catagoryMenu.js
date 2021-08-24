@@ -1,5 +1,5 @@
+import { INIT_STATE } from "contants/contains"
 import { getDataCatagoryMenu, getType } from "../actions"
-import { INIT_STATE } from "../contains"
 
 export default function catagoryMenuReducers(state = INIT_STATE.catagoryMenu, action) {
     switch (action.type) {

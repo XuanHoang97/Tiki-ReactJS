@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { postsState$ } from "redux/selectors";
-import * as actions from '../../redux/actions'
+import { Link } from "react-router-dom";
+import { addProduct } from "redux/actions/cart";
+import { mobilesState$ } from "redux/selectors";
+import * as actions from '../../redux/actions';
 
 // Pagination
-const renderMobile = (mobile) => {
+const RenderMobile = (mobile) => {
+    const dispatch = useDispatch()
+    const handleMobile = (e) => {
+        dispatch(addProduct(e))
+    }
     return (
         <div className="product mt-3 ml-0 mr-0 p-3 bg-white text-center">
             <h6 className="text-left">
@@ -18,12 +22,13 @@ const renderMobile = (mobile) => {
                 {mobile.map((mobile, key) => {
                     return (
                         <React.Fragment key={key}>
-                            <div className="product--item col-md-3 col-6 pt-3">
-                                <Link to={`/chi-tiet-san-pham/${mobile.id}` + mobile.name + "." + mobile.id + ".html"}>
-                                    <img src={mobile.img} alt="mobile" />
-                                    <h6 className="mt-4 mb-1 text-dark">{mobile.name}</h6>
-                                </Link>
-
+                            <div className="product--item col-md-3 col-6 pt-3" >
+                                <div onClick={() => handleMobile(mobile)}>
+                                    <Link to={`/chi-tiet-san-pham/${mobile.id}` + mobile.name + "." + mobile.id + ".html"}>
+                                        <img src={mobile.img} alt="mobile" />
+                                        <h6 className="mt-4 mb-1 text-dark">{mobile.name}</h6>
+                                    </Link>
+                                </div>
                                 <div className="rate mb-3">
                                     <span className="fa fa-star checked text-warning small" />
                                     <span className="fa fa-star checked text-warning small" />
@@ -81,7 +86,7 @@ function Mobile() {
     const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
     const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
     const dispatch = useDispatch()
-    const posts = useSelector(postsState$)
+    const posts = useSelector(mobilesState$)
 
     const handleClick = (e) => {
         setcurrentPage(Number(e.target.id));
@@ -148,7 +153,7 @@ function Mobile() {
     //pagination ui
     return (
         <>
-            {renderMobile(currentItems)}
+            {RenderMobile(currentItems)}
             <ul className="pageNumbers">
                 <li> <button onClick={handlePrevbtn} disabled={currentPage === pages[0] ? true : false} > <i className="fas fa-chevron-left"></i> </button> </li>
 

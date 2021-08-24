@@ -1,5 +1,5 @@
-import React, { useState} from 'react';
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Slide from './Slide';
 import Category from './Category';
 import Preferential from './Preferential';
@@ -18,17 +18,17 @@ import LuckyWheel from './LuckyWheel';
 
 
 export default function Body() {
-    const [chatbot, setChatbot]= useState(false);
-    const [lucky, setLucky]= useState(false);
+    const [chatbot, setChatbot] = useState(false);
+    const [lucky, setLucky] = useState(false);
 
     // Save Dialogue in the Chatbot
     const saveMessages = (messages) => {
         localStorage.setItem("chat_messages", JSON.stringify(messages));
     };
-    
+
     const loadMessages = () => {
-    const messages = JSON.parse(localStorage.getItem("chat_messages"));
-    return messages;
+        const messages = JSON.parse(localStorage.getItem("chat_messages"));
+        return messages;
     };
 
     return (
@@ -48,22 +48,22 @@ export default function Body() {
                 <Mail />
 
                 {/* Lucky Wheel */}
-                <div className="LuckyWheel" onClick={() => {setLucky(!lucky)}}>
+                <div className="LuckyWheel" onClick={() => { setLucky(!lucky) }}>
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCoasT2bQThAGlar2I5RrPEFYZba00VUDBMN0FFz6mwJTk73Oo2lRxuAEuY3-AJGQuqt0&usqp=CAU" className="lucky" />
                 </div>
                 <div className="spin">
                     <img src="https://www.webtretho.com/static/img/luckyspin/title_1.png" alt="" />
-                </div> 
-                {lucky &&  <LuckyWheel/> }
+                </div>
+                {lucky && <LuckyWheel />}
 
                 {/* Build Chatbot */}
-                <div className="chatbotTest" onClick={() => {setChatbot(!chatbot)}}>
+                <div className="chatbotTest" onClick={() => { setChatbot(!chatbot) }}>
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE5LV5FEwLk2UGd5-UApCpu7yuOMV7cAKDFKTofRzlzxdT3wKd3pAPBc_KzhnWFuhowFI&usqp=CAU" alt="ko hien anh" />
                 </div>
-                
-                {chatbot && 
+
+                {chatbot &&
                     <div className="chatbot bg-white">
-                        <Chatbot config={config} actionProvider={ActionProvider}  messageHistory={loadMessages()} saveMessages={saveMessages}	messageParser={MessageParser} />
+                        <Chatbot config={config} actionProvider={ActionProvider} messageHistory={loadMessages()} saveMessages={saveMessages} messageParser={MessageParser} />
                     </div>
                 }
             </div>
