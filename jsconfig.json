@@ -4,5 +4,8 @@
         "target": "es6",
         "baseUrl": "./src"
     },
-    "include": ["src/**/*"]
+    "include": [
+        "src/**/*",
+        "contants"
+    ]
 }

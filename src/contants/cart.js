@@ -1,0 +1,9 @@
+export const ADD_MOBILE = 'ADD_MOBILE'
+
+export const COUNT_PRODUCT = 'COUNT_PRODUCT'
+export const UP_COUNT_PRODUCT = 'UP_COUNT_PRODUCT'
+export const DOWN_COUNT_PRODUCT = 'DOWN_COUNT_PRODUCT'
+
+export const ADD_TO_CART = 'ADD_TO_CART'
+
+export const DELETE_ITEM_CART = 'DELETE_ITEM_CART'
