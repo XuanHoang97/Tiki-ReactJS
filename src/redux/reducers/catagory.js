@@ -1,5 +1,5 @@
+import { INIT_STATE } from "contants/contains"
 import { getDataCatagory, getType } from "../actions"
-import { INIT_STATE } from "../contains"
 
 export default function catagoryReducers(state = INIT_STATE.catagory, action) {
     switch (action.type) {

@@ -1,12 +1,24 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
+import { addProduct, addToCart, countProduct } from 'redux/actions/cart';
 
 
 function Order(props) {
+    const { order, number, handleDown, handleUp } = props
     // Option number product
-    const [count, setCount] = useState(1);  
+    const dispatch = useDispatch()
 
+    const handleChangeNumber = (e) => {
+    }
+
+    const addCart = () => {
+        order.count = number
+        dispatch(addToCart(order))
+        dispatch(addProduct(null))
+        dispatch(countProduct(1))
+    }
     return (
         <div>
             <div className="text-danger">
@@ -28,18 +40,18 @@ function Order(props) {
 
                 <small>Số lượng:</small>
                 <div className="input-group col-md-3 pt-2 col-6 p-0">
-                    <div className="input-group-prepend">
-                        <button className="btn btn-success btn-sm" disabled={count <2 ? true: ""}><i className="fas fa-minus small" /></button>
+                    <div className="input-group-prepend" onClick={handleDown}>
+                        <button className="btn btn-success btn-sm" disabled={number < 2 ? true : ""}><i className="fas fa-minus small" /></button>
                     </div>
-                    <input type="text" min="1" defaultValue={count} onClick={() => setCount(1)} className="form-control text-center" style={{ height: '31px' }} />
+                    <input type="text" min="1" value={number} onChange={(e) => handleChangeNumber(e)} className="form-control text-center" style={{ height: '31px' }} />
                     <div className="input-group-append">
-                        <button className="btn btn-success btn-sm"><i className="fas fa-plus small" /></button>
+                        <button className="btn btn-success btn-sm" onClick={handleUp}><i className="fas fa-plus small" /></button>
                     </div>
                 </div>
 
 
                 <Link to="/gio-hang-1">
-                    <button type="button" className="btn btn-success btn-md btn-block mt-5">Thêm vào giỏ hàng</button>
+                    <button type="button" className="btn btn-success btn-md btn-block mt-5" onClick={addCart}>Thêm vào giỏ hàng</button>
                 </Link>
                 <div className="row mt-2 m-0">
                     <button type="button" className="col-md-6 btn btn-outline-primary btn-sm">
