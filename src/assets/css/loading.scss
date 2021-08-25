@@ -1,0 +1,16 @@
+.loading {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-Index: 9999;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-Items: center;
+    justify-Content: center;
+    .icon {
+        position: fixed;
+        width: 300px;
+    }
+}
