@@ -15,6 +15,7 @@ import Illutrator from './vote/Illutrator';
 import Vote from "./vote/Vote";
 import { cartCountMenuState$ } from 'redux/selectors';
 import { numberFormat } from "contants/NumberFormat";
+import SupAndAns from "./vote/SupAndAns";
 
 const Product_detail = ({ match }) => {
     const [data, setData] = useState([]);
@@ -29,21 +30,24 @@ const Product_detail = ({ match }) => {
     }
     //giam so luong
     const handleDown = () => {
-        if (number > 0)
+        if (number > 1)
             dispatch(downCount())
     }
 
 
+    data.length > 0 && dispatch(addProduct(data[0]))
+
     useEffect(() => {
+        const { params } = match
+        const fetchProduct = () => {
+            axios.get(`https://y6896.sse.codesandbox.io/product_mobile/?id=${params.id}`)
+                .then((res) => { setData(res.data); })
+                .catch((err) => console.log(err));
+        };
         !dataProDetail && fetchProduct();
-        data.length > 0 && dispatch(addProduct(data[0]))
-    }, []);
+    }, [dataProDetail, match]);
     // Call api
-    const fetchProduct = () => {
-        axios.get(`https://y6896.sse.codesandbox.io/product_mobile/?id=${match.params.id}`)
-            .then((res) => { setData(res.data); })
-            .catch((err) => console.log(err));
-    };
+
 
     return (
         <div className="main bg-light pt-3 pb-3">
@@ -95,6 +99,7 @@ const Product_detail = ({ match }) => {
                 <ProductDesc />
                 <ProductSimilar />
                 <Mail />
+                <SupAndAns />
             </div>
         </div>
     );

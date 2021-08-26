@@ -15,12 +15,16 @@ import NotFound from "./NotFound";
 import ScrollTop from "./ScrollTop";
 import Result from "./header/search/Result";
 import GlobalLoading from "./GlobalLoading";
+import { useSelector } from "react-redux";
+import { productsCartMenuState$ } from "redux/selectors";
 
-console.warn = () => {};
+console.warn = () => { };
 // SEO Web
 const TITLE = "Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh";
 
 export default function App() {
+  const productsCart = useSelector(productsCartMenuState$)
+
   return (
     <Router>
       <div>
@@ -40,11 +44,8 @@ export default function App() {
             path="/chi-tiet-san-pham/:slug.:id.html"
             component={Product_detail}
           />
-          <Route exact path="/gio-hang-0">
-            <Cart />
-          </Route>
-          <Route exact path="/gio-hang-1">
-            <Cart1 />
+          <Route exact path="/gio-hang">
+            {productsCart.length > 0 ? <Cart1 /> : <Cart />}
           </Route>
           <Route exact path="/thanh-toan">
             <Payment />

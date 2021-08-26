@@ -5,5 +5,6 @@ export const UP_COUNT_PRODUCT = 'UP_COUNT_PRODUCT'
 export const DOWN_COUNT_PRODUCT = 'DOWN_COUNT_PRODUCT'
 
 export const ADD_TO_CART = 'ADD_TO_CART'
+export const UPDATE_TO_CART = 'UPDATE_TO_CART'
 
 export const DELETE_ITEM_CART = 'DELETE_ITEM_CART'

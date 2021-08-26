@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import { addProduct, addToCart, countProduct } from 'redux/actions/cart';
+import { addProduct, addToCart, countProduct, updateToCart } from 'redux/actions/cart';
 
 
 function Order(props) {
@@ -14,10 +14,14 @@ function Order(props) {
     }
 
     const addCart = () => {
-        order.count = number
-        dispatch(addToCart(order))
-        dispatch(addProduct(null))
-        dispatch(countProduct(1))
+        if (number > 0) {
+            order.count = number
+            dispatch(addToCart(order))
+            dispatch(addProduct(null))
+            dispatch(countProduct(1))
+            // dispatch(updateToCart(order))
+        }
+
     }
     return (
         <div>
@@ -50,7 +54,7 @@ function Order(props) {
                 </div>
 
 
-                <Link to="/gio-hang-1">
+                <Link to="/gio-hang">
                     <button type="button" className="btn btn-success btn-md btn-block mt-5" onClick={addCart}>Thêm vào giỏ hàng</button>
                 </Link>
                 <div className="row mt-2 m-0">

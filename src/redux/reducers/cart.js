@@ -30,11 +30,22 @@ const productReducer = (state = initialstate, action) => {
                 count: state.count + 1
             }
         case cart.ADD_TO_CART:
-            const { productsCart } = state
-            productsCart.push(action.payload)
+
+            state.productsCart.push(action.payload)
+
             return {
                 ...state,
                 productsCart: [...state.productsCart]
+            }
+        case cart.UPDATE_TO_CART:
+            const { id, count } = action.payload
+
+
+            return {
+                ...state,
+                productsCart: state.productsCart.filter(function (obj) {
+                    return obj.id !== id
+                })
             }
         case cart.DELETE_ITEM_CART:
             const index = state.productsCart.findIndex(item => item.id === action.payload)

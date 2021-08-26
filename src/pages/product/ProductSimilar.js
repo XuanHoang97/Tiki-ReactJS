@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 import ProdRelated from './ProdRelated';
 
 const ProductSimilar = ({ }) => {
@@ -12,7 +12,7 @@ const ProductSimilar = ({ }) => {
     // Call api
     const fetchProdRelated = () => {
         axios.get(`https://y6896.sse.codesandbox.io/product_mobile`)
-            .then((res) => { setProdRelated(res.data);})
+            .then((res) => { setProdRelated(res.data); })
             .catch((err) => console.log(err));
     };
 

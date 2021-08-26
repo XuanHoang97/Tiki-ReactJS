@@ -15,10 +15,8 @@ function Cart1() {
         setCount(e)
     }
 
-    useEffect(() => {
-        renderCart()
-    }, [count])
 
+    console.log(productsCart)
     const totalMoney = () => {
         let total = 0
         for (let item of productsCart) {

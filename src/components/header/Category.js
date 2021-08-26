@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import TabMenu from "./TabMenu";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { catagoryMenuState$, catagoryState$ } from "redux/selectors";
-import * as actions from "../../redux/actions"
+import { Link } from "react-router-dom";
+import { catagoryMenuState$ } from "redux/selectors";
+import * as actions from "../../redux/actions";
+import TabMenu from "./TabMenu";
 
 export default function Category() {
   const [detailMenu, setDetailMenu] = useState([]);

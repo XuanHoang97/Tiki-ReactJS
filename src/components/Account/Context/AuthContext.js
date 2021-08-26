@@ -12,7 +12,8 @@ function AuthContextProvider({ children }) {
         name: '',
         password: ''
     })
-
+    let keyNumber;
+    let keyBackspace;
     const [keyRandom, setKeyRandom] = useState(String(Math.ceil(Math.random() * 1000000).toFixed(0)))
     const [keyInput, setKeyInput] = useState()
     const [keycode, setKeycode] = useState({
@@ -33,6 +34,7 @@ function AuthContextProvider({ children }) {
         keycode, setKeycode,
         keyRandom, setKeyRandom,
         keyInput, setKeyInput,
+        keyNumber, keyBackspace
     }
 
     return (

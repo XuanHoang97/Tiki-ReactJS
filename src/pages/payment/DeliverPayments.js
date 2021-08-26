@@ -1,7 +1,5 @@
 import { numberFormat } from 'contants/NumberFormat';
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { productsCartMenuState$ } from 'redux/selectors';
 
 function DeliverPayments(props) {
     const { productsCart } = props

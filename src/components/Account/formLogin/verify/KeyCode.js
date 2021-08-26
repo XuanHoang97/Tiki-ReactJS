@@ -4,7 +4,8 @@ import './keyCode.scss'
 
 function KeyCode() {
     const codes = useRef(null);
-    const { keycode, setKeycode, setKeyInput } = useContext(AuthContext)
+    let { keycode, setKeycode, setKeyInput, keyNumber, keyBackspace } = useContext(AuthContext)
+
     useEffect(() => {
         const codeVerify = codes.current.querySelectorAll('.code')
 
@@ -13,24 +14,23 @@ function KeyCode() {
         // 8 for backspace 
         // 48-57 for 0-9 numbers
         codeVerify[0].focus();
+
         codeVerify.forEach((code, idx) => {
             code.addEventListener('keydown', (e) => {
                 if (e.which != 8 && e.which != 0 && e.which < 48 || e.which > 57) {
                     e.preventDefault();
                 } else if (e.key >= 0 && e.key <= 9) {
                     codeVerify[idx].value = ''
-                    setTimeout(() => {
+                    keyNumber = setTimeout(() => {
                         if (idx < 5) {
                             codeVerify[idx + 1].focus()
                         } else {
-                            return codeVerify[5].focus();
+                            codeVerify[5].focus();
                         }
                     }, 10)
                 } else if (e.key === 'Backspace') {
                     if (idx >= 1) {
-                        setTimeout(() => codeVerify[idx - 1].focus(), 10)
-                    } else {
-                        return;
+                        keyBackspace = setTimeout(() => codeVerify[idx - 1].focus(), 10)
                     }
                 }
 

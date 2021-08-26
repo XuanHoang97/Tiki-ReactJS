@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Cart extends Component {
     render() {
@@ -10,7 +11,9 @@ class Cart extends Component {
                     <div className="bg-white p-5 m-1 text-center">
                         <img className="col-md-2" src="https://salt.tikicdn.com/desktop/img/mascot@2x.png" alt="" />
                         <p className="small mt-2 mb-4">Không có sản phẩm nào trong giỏ hàng của bạn.</p>
-                        <button type=" button " className="btn btn-warning pl-5 pr-5 ">Tiếp tục mua sắm</button>
+                        <Link to='/'>
+                            <button type=" button " className="btn btn-warning pl-5 pr-5 ">Tiếp tục mua sắm</button>
+                        </Link>
                     </div>
                     {/* Receive Mail   */}
                     <div className="row p-3 mt-3 align-items-center ">

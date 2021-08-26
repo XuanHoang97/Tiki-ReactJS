@@ -4,13 +4,15 @@ import KeyCode from './verify/KeyCode';
 import TimeVerify from './verify/TimeVerify';
 
 function Verify() {
-    const { setLogin, number, setNumber, keyRandom, keyInput, setKeycode } = useContext(AuthContext)
+    const { setLogin, number, setNumber, keyRandom, keyInput, setKeycode, keyNumber, keyBackspace } = useContext(AuthContext)
     const [otp, setOtp] = useState(false)
     const handleVerify = () => {
         if (keyRandom === keyInput) {
             setOtp(false)
             setLogin('addAccount')
             setKeycode('')
+            clearTimeout(keyNumber)
+            clearTimeout(keyBackspace)
         } else {
             setOtp(true)
             return;

@@ -20,7 +20,7 @@ function AddAccount() {
     const [accept, setAccept] = useState(false)
 
     useEffect(() => {
-        
+
         //Validate name
         if (account.name === '') {
             setValidateName(false)
@@ -44,7 +44,7 @@ function AddAccount() {
             setValidatePass(true)
             setAccept(false)
         }
-    })
+    }, [account.name, account.password])
 
     const handleCLick = () => {
         if (validateName === false && validatePass === false && accept === true) {
