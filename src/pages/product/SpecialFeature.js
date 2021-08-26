@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 
 function SpecialFeature(props) {
@@ -6,12 +6,12 @@ function SpecialFeature(props) {
 
     useEffect(() => {
         fetchFeature();
-        
+
     }, []);
 
     const fetchFeature = () => {
-        axios.get(`https://y6896.sse.codesandbox.io/feature_special`)
-            .then((res) => { setFeature(res.data);})
+        axios.get(`https://61275b59c2e8920017bc0c43.mockapi.io/api/feature_special`)
+            .then((res) => { setFeature(res.data); })
             .catch((err) => console.log(err));
     };
 

@@ -36,13 +36,6 @@ export const addToCart = (payload) => {
     })
 }
 
-export const updateToCart = (payload) => {
-    return ({
-        type: cart.UPDATE_TO_CART,
-        payload
-    })
-}
-
 //Xoa item gio hang
 export const deleteItemCart = (id) => {
     return ({

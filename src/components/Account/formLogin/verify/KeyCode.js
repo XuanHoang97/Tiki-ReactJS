@@ -39,7 +39,7 @@ function KeyCode() {
 
         return () => {
         }
-    })
+    }, [keyNumber, keyBackspace, keycode])
 
     return (
         <>

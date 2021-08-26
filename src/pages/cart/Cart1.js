@@ -15,7 +15,6 @@ function Cart1() {
         setCount(e)
     }
 
-
     console.log(productsCart)
     const totalMoney = () => {
         let total = 0
