@@ -49,26 +49,35 @@ const Product_detail = ({ match }) => {
   }, [dataProDetail, match]);
   // Call api
 
-  return (
-    <div className="main bg-light pt-3 pb-3">
-      <Helmet>
-        {" "}
-        <title>{TITLE}</title>
-      </Helmet>
-      <div className="container">
-        <h6 className="mb-2">CHI TIẾT SẢN PHẨM</h6>
-        <div className="bg-white pt-4 pb-4 p-3 m-0 text-center row">
-          <div className="col-md-3 p-0 text-left">
-            {(dataProDetail ? [dataProDetail] : data).map((item, key) => {
-              return (
-                <div key={item.id}>
-                  <img className="w-75" src={item.img} alt="loi" />
-                  <Illutrator />
-                </div>
-              );
-            })}
-            <SpecialFeature />
-          </div>
+    useEffect(() => {
+        const { params } = match
+        const fetchProduct = () => {
+            axios.get(`https://61275b59c2e8920017bc0c43.mockapi.io/api/product_mobile/?id=${params.id}`)
+                .then((res) => { setData(res.data); })
+                .catch((err) => console.log(err));
+        };
+        !dataProDetail && fetchProduct();
+    }, [dataProDetail, match]);
+    // Call api
+
+
+    return (
+        <div className="main bg-light pt-3 pb-3">
+            <Helmet> <title>{TITLE}</title></Helmet>
+            <div className="container">
+                <h6 className="mb-2">CHI TIẾT SẢN PHẨM</h6>
+                <div className="bg-white pt-4 pb-4 p-3 m-0 text-center row">
+                    <div className="col-md-3 p-0 text-left">
+                        {(dataProDetail ? [dataProDetail] : data).map((item, key) => {
+                            return (
+                                <div key={item.id}>
+                                    <img className="w-75" src={item.img} alt="loi" />
+                                    <Illutrator />
+                                </div>
+                            );
+                        })}
+                        <SpecialFeature />
+                    </div>
 
           {(dataProDetail ? [dataProDetail] : data).map((prod, key) => {
             return (

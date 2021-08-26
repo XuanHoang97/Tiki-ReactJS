@@ -48,7 +48,7 @@ function Search_special(props) {
     useEffect(() => {
         setLoading(true);
         axios
-            .get('https://y6896.sse.codesandbox.io/search_special')
+            .get('https://61275b59c2e8920017bc0c43.mockapi.io/api/feature_special')
             .then(res => { setMobile(res.data); })
             .catch((err) => { console.log(err); });
     }, []);

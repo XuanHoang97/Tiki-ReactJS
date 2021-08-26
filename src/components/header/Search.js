@@ -7,7 +7,7 @@ export default function Search() {
     const [suggest, setSuggest] = useState(false);
     const [mobile, setMobile] = useState([])
     const [search, setSearch] = useState('')
-    const [allData, setAllData] = useState(['courses', 'category_menu', 'product_mobile'])
+    const [allData, setAllData] = useState(['product_mobile'])
     const inputSearch = useRef(null)
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export default function Search() {
 
     const fetchProducts = () => {
         allData.map(item => axios
-            .get(`https://y6896.sse.codesandbox.io/${item}/`)
+            .get(`https://61275b59c2e8920017bc0c43.mockapi.io/api/${item}/`)
             .then(res => { setMobile(mobile => [...mobile, ...res.data]); })
             .catch((err) => { console.log(err); }))
     };

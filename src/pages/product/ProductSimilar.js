@@ -1,20 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import ProdRelated from './ProdRelated';
+import { mobilesState$ } from "redux/selectors";
 
 const ProductSimilar = ({ }) => {
     const [prodRelated, setProdRelated] = useState([]);
-
+    const mobiles = useSelector(mobilesState$)
     useEffect(() => {
-        fetchProdRelated();
     }, []);
 
     // Call api
-    const fetchProdRelated = () => {
-        axios.get(`https://y6896.sse.codesandbox.io/product_mobile`)
-            .then((res) => { setProdRelated(res.data); })
-            .catch((err) => console.log(err));
-    };
 
     return (
         <>
