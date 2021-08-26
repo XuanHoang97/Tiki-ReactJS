@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import { addProduct, addToCart, countProduct, updateToCart } from 'redux/actions/cart';
+import { addProduct, addToCart, countProduct } from 'redux/actions/cart';
 
 
 function Order(props) {
@@ -17,9 +17,8 @@ function Order(props) {
         if (number > 0) {
             order.count = number
             dispatch(addToCart(order))
-            dispatch(addProduct(null))
             dispatch(countProduct(1))
-            // dispatch(updateToCart(order))
+            // dispatch(addProduct(null))
         }
 
     }

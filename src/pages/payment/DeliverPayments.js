@@ -6,7 +6,7 @@ function DeliverPayments(props) {
     const renderProduct = () => {
         return productsCart.map(item => {
             return (
-                <div style={{ display: 'flex' }}>
+                <div style={{ display: 'flex' }} key={item.id}>
                     <div className="col-md-3 p-0">
                         <img className="w-75" src={item.img} alt="" />
                     </div>

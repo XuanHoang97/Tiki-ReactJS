@@ -30,22 +30,35 @@ const productReducer = (state = initialstate, action) => {
                 count: state.count + 1
             }
         case cart.ADD_TO_CART:
-
-            state.productsCart.push(action.payload)
-
-            return {
-                ...state,
-                productsCart: [...state.productsCart]
-            }
-        case cart.UPDATE_TO_CART:
             const { id, count } = action.payload
+            let { productsCart } = state;
+            const index1 = productsCart.findIndex(item => item.id === id);
+            let newArr
+            if (index1 !== -1) {
 
+                productsCart.map(item => {
+                    if (item.id === id) {
+                        console.log({
+                            ...item,
+                            count: count + item.count
+                        })
+                        newArr = [...productsCart.slice(0, index1), {
+                            ...item,
+                            count: count + item.count
+                        }, ...productsCart.slice(index1 + 1)]
 
+                    } else {
+                        console.log(11)
+                    }
+                })
+                console.log(newArr)
+                productsCart = [...newArr]
+            } else {
+                productsCart.push(action.payload)
+            }
             return {
                 ...state,
-                productsCart: state.productsCart.filter(function (obj) {
-                    return obj.id !== id
-                })
+                productsCart: [...productsCart]
             }
         case cart.DELETE_ITEM_CART:
             const index = state.productsCart.findIndex(item => item.id === action.payload)
