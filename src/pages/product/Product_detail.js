@@ -15,7 +15,7 @@ import Illutrator from "./vote/Illutrator";
 import Vote from "./vote/Vote";
 import { cartCountMenuState$ } from "redux/selectors";
 import { numberFormat } from "contants/NumberFormat";
-import SupAndAns from "./vote/SupAndAns";
+import Rate from "./vote/Rate";
 
 const Product_detail = ({ match }) => {
   const [data, setData] = useState([]);
@@ -113,7 +113,7 @@ const Product_detail = ({ match }) => {
         </div>
         <Specifications />
         <ProductDesc />
-        <SupAndAns />
+        <Rate />
         <ProductSimilar />
         <Mail />
       </div>

@@ -1,20 +1,7 @@
-import React from "react";
-import FormVote from "./FormVote";
+import React from 'react';
 
-function SupAndAns(props) {
-  return (
-    <div className="container bg-white p-3 pl-2 mt-4">
-      <div className="row">
-        <div className="row align-items-center ml-3">
-          <h5>ĐÁNH GIÁ và BÌNH LUẬN </h5>
-          <div className="chat ml-4">
-            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-              <i class="fas fa-plus mr-2"></i>Thêm đánh giá sản phẩm
-            </button>
-            <FormVote />
-          </div>
-        </div>
-
+function LogChat(props) {
+    return (
         <div className="users col-md-12 mt-4">
           <div className="user d-flex">
             <div style={{ width: 50, height: 50}} >
@@ -46,9 +33,7 @@ function SupAndAns(props) {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }
 
-export default SupAndAns;
+export default LogChat;
