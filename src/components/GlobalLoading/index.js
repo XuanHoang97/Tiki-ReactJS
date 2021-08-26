@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import LoadingIcon from "./../../assets/img/ld1.gif";
 
 function GlobalLoading() {
-  const loading = useSelector((state) => state.ui.showLoading);
+  const loading = useSelector((state) => state.loading.showLoading);
   return (
     <>
       {loading ? (
