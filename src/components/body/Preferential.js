@@ -26,6 +26,9 @@ export default function Preferential() {
                         </React.Fragment>
                     );
                 }
+                else {
+                    return null
+                }
             })}
         </div>
     );

@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
-import MenuTop from './Menu_top'
-import Category from './Category';
-import Search from './Search';
-import Cart from './Cart';
-import Account from '../Account';
 import AuthContextProvider from 'components/Account/Context/AuthContext';
+import React from 'react';
+import { Link } from "react-router-dom";
+import Account from '../Account';
+import Cart from './Cart';
+import Category from './Category';
+import MenuTop from './Menu_top';
+import Search from './Search';
+
 function Header() {
     return (
         <div className="header">

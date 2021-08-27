@@ -41,7 +41,7 @@ function LogIn() {
         }
         return () => {
         }
-    })
+    }, [number, setValidate])
     const submitNumber = () => {
         setLogin('verify')
         setDisable(true)

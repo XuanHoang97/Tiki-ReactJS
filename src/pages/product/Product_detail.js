@@ -19,65 +19,52 @@ import Rate from "./vote/Rate";
 
 const Product_detail = ({ match }) => {
   const [data, setData] = useState([]);
-  const TITLE = "Điện thoại ngon - bổ - rẻ";
-  const dataProDetail = useSelector(cartProductMenuState$);
-  const dispatch = useDispatch();
-  console.log(dataProDetail);
-  let number = useSelector(cartCountMenuState$);
+  const TITLE = 'Điện thoại ngon - bổ - rẻ';
+  const dataProDetail = useSelector(cartProductMenuState$)
+  const dispatch = useDispatch()
+  let number = useSelector(cartCountMenuState$)
   //tang so luong
   const handleUp = () => {
-    dispatch(upCount());
-  };
+    dispatch(upCount())
+  }
   //giam so luong
   const handleDown = () => {
-    if (number > 1) dispatch(downCount());
-  };
-
-  data.length > 0 && dispatch(addProduct(data[0]));
+    if (number > 1)
+      dispatch(downCount())
+  }
 
   useEffect(() => {
-    const { params } = match;
+    data.length > 0 && dispatch(addProduct(data[0]))
+  }, [data, dispatch])
+
+  useEffect(() => {
     const fetchProduct = () => {
-      axios
-        .get(`https://y6896.sse.codesandbox.io/product_mobile/?id=${params.id}`)
-        .then((res) => {
-          setData(res.data);
-        })
+      axios.get(`https://61275b59c2e8920017bc0c43.mockapi.io/api/product_mobile/?id=${match.params.id}`)
+        .then((res) => { setData(res.data); })
         .catch((err) => console.log(err));
     };
     !dataProDetail && fetchProduct();
-  }, [dataProDetail, match]);
+  }, [dataProDetail, match.params.id]);
   // Call api
 
-    useEffect(() => {
-        const { params } = match
-        const fetchProduct = () => {
-            axios.get(`https://61275b59c2e8920017bc0c43.mockapi.io/api/product_mobile/?id=${params.id}`)
-                .then((res) => { setData(res.data); })
-                .catch((err) => console.log(err));
-        };
-        !dataProDetail && fetchProduct();
-    }, [dataProDetail, match]);
-    // Call api
 
-
-    return (
-        <div className="main bg-light pt-3 pb-3">
-            <Helmet> <title>{TITLE}</title></Helmet>
-            <div className="container">
-                <h6 className="mb-2">CHI TIẾT SẢN PHẨM</h6>
-                <div className="bg-white pt-4 pb-4 p-3 m-0 text-center row">
-                    <div className="col-md-3 p-0 text-left">
-                        {(dataProDetail ? [dataProDetail] : data).map((item, key) => {
-                            return (
-                                <div key={item.id}>
-                                    <img className="w-75" src={item.img} alt="loi" />
-                                    <Illutrator />
-                                </div>
-                            );
-                        })}
-                        <SpecialFeature />
-                    </div>
+  return (
+    <div className="main bg-light pt-3 pb-3">
+      <Helmet> <title>{TITLE}</title></Helmet>
+      <div className="container">
+        <h6 className="mb-2">CHI TIẾT SẢN PHẨM</h6>
+        <div className="bg-white pt-4 pb-4 p-3 m-0 text-center row">
+          <div className="col-md-3 p-0 text-left">
+            {(dataProDetail ? [dataProDetail] : data).map((item, key) => {
+              return (
+                <div key={item.id}>
+                  <img className="w-75" src={item.img} alt="loi" />
+                  <Illutrator />
+                </div>
+              );
+            })}
+            <SpecialFeature />
+          </div>
 
           {(dataProDetail ? [dataProDetail] : data).map((prod, key) => {
             return (

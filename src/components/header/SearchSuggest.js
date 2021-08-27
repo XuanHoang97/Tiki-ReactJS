@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react';
 import MoreSuggest from './MoreSuggest';
 
 function SearchSuggest({ dataSearch, show, blur, search }) {
-    const [data, setData] = useState('');
     const [showData, setShowData] = useState(true);
     const [suggest, setSuggest] = useState(false);
 
     useEffect(() => {
         if (search === '') {
-            setData('')
             setShowData(true)
         } else {
             setShowData(false)

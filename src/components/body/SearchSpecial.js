@@ -34,7 +34,7 @@ function Search_special(props) {
     const [mobile, setMobile] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setcurrentPage] = useState(1);
-    const [itemsPerPage, setitemsPerPage] = useState(4);
+    const [itemsPerPage] = useState(4);
 
     const pages = [];
     for (let i = 1; i <= Math.ceil(mobile.length / itemsPerPage); i++) {
@@ -48,7 +48,7 @@ function Search_special(props) {
     useEffect(() => {
         setLoading(true);
         axios
-            .get('https://61275b59c2e8920017bc0c43.mockapi.io/api/feature_special')
+            .get('https://61270106c2e8920017bc0ab9.mockapi.io/api/search_special')
             .then(res => { setMobile(res.data); })
             .catch((err) => { console.log(err); });
     }, []);
