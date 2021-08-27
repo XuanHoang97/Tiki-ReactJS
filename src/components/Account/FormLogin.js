@@ -1,11 +1,11 @@
+import React, { useContext } from 'react';
 import { Modal } from 'react-bootstrap';
-import React, { useContext, useState } from 'react';
-import Verify from './formLogin/Verify';
 import styled from 'styled-components';
-import LogIn from './formLogin/LogIn';
 import { AuthContext } from './Context/AuthContext';
-import AddAccount from './formLogin/AddAccount';
 import Accounted from './formLogin/Accounted';
+import AddAccount from './formLogin/AddAccount';
+import LogIn from './formLogin/LogIn';
+import Verify from './formLogin/Verify';
 
 const RightImg = styled.div`
     background: linear-gradient(136deg, rgb(240, 248, 255) -1%, rgb(219, 238, 255) 85%);

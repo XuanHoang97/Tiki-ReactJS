@@ -1,14 +1,7 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
 import ProdRelated from './ProdRelated';
-import { mobilesState$ } from "redux/selectors";
 
-const ProductSimilar = ({ }) => {
-    const [prodRelated, setProdRelated] = useState([]);
-    const mobiles = useSelector(mobilesState$)
-    useEffect(() => {
-    }, []);
+const ProductSimilar = () => {
 
     // Call api
 

@@ -1,18 +1,11 @@
-import { numberFormat } from 'contants/NumberFormat';
+import { numberFormat, totalMoney } from 'contants/NumberFormat';
 import React from 'react';
 import { Link } from "react-router-dom";
 
-function ContactDeliver(props) {
-    const { productsCart } = props
+function ContactDeliver() {
     const sale = 10000
     const ship = 30000
-    const totalMoney = () => {
-        let total = 0
-        for (let item of productsCart) {
-            total += item.price * item.count
-        }
-        return total
-    }
+
     return (
         <div className="col-md-3 pr-0">
             <div className="bg-white p-3">

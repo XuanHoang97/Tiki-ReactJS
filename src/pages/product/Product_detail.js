@@ -22,7 +22,6 @@ const Product_detail = ({ match }) => {
     const TITLE = 'Điện thoại ngon - bổ - rẻ';
     const dataProDetail = useSelector(cartProductMenuState$)
     const dispatch = useDispatch()
-    console.log(dataProDetail)
     let number = useSelector(cartCountMenuState$)
     //tang so luong
     const handleUp = () => {
@@ -34,8 +33,9 @@ const Product_detail = ({ match }) => {
             dispatch(downCount())
     }
 
-
-    data.length > 0 && dispatch(addProduct(data[0]))
+    useEffect(() => {
+        data.length > 0 && dispatch(addProduct(data[0]))
+    }, [data, dispatch])
 
     useEffect(() => {
         const { params } = match

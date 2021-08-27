@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import { addProduct, addToCart, countProduct } from 'redux/actions/cart';
+import { addToCart, countProduct } from 'redux/actions/cart';
 
 
 function Order(props) {

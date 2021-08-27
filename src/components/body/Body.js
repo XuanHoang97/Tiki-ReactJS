@@ -1,21 +1,20 @@
-import React, { useState, useRef } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Slide from "./Slide";
-import Category from "./Category";
-import Preferential from "./Preferential";
-import SearchSpecial from "./SearchSpecial";
-import Mobile from "./Mobile";
-
+import ActionProvider from "components/chatbot/ActionProvider";
+import config from "components/chatbot/config";
+import MessageParser from "components/chatbot/MessageParser";
+import useOutsideClick from "components/useOutsideClick";
+import React, { useRef, useState } from "react";
 // Chatbot
 import Chatbot from "react-chatbot-kit";
-import config from "components/chatbot/config";
-import ActionProvider from "components/chatbot/ActionProvider";
-import MessageParser from "components/chatbot/MessageParser";
-
-import Mail from "./Mail";
-import ProductSuggestion from "./ProductSuggestion";
+import Category from "./Category";
 import LuckyWheel from "./LuckyWheel";
-import useOutsideClick from "components/useOutsideClick";
+import Mail from "./Mail";
+import Mobile from "./Mobile";
+import Preferential from "./Preferential";
+import ProductSuggestion from "./ProductSuggestion";
+import SearchSpecial from "./SearchSpecial";
+import Slide from "./Slide";
+
+
 
 export default function Body() {
   const [chatbot, setChatbot] = useState(false);

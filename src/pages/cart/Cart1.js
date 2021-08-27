@@ -1,4 +1,4 @@
-import { numberFormat } from 'contants/NumberFormat';
+import { numberFormat, totalMoney } from 'contants/NumberFormat';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
@@ -14,15 +14,10 @@ function Cart1() {
     const handleCountUp = (e) => {
         setCount(e)
     }
+    useEffect(() => {
+        localStorage.setItem('dataCart', JSON.stringify(productsCart))
+    }, [productsCart, count])
 
-    console.log(productsCart)
-    const totalMoney = () => {
-        let total = 0
-        for (let item of productsCart) {
-            total += item.price * item.count
-        }
-        return total
-    }
 
     const deleteCart = (id) => {
         dispatch(deleteItemCart(id))

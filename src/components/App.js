@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import "./../assets/css/App.scss";
 import Header from "./header/Header";
@@ -24,7 +24,11 @@ const TITLE = "Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh";
 
 export default function App() {
   const productsCart = useSelector(productsCartMenuState$)
-
+  const [data, setData] = useState([])
+  useEffect(() => {
+    let dataLocalStorage = JSON.parse(localStorage.getItem('dataCart')) || []
+    setData(dataLocalStorage)
+  }, [productsCart])
   return (
     <Router>
       <div>
