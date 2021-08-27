@@ -93,7 +93,7 @@ function Cart1() {
                             <div className="row  pl-3 pr-3 p-2 justify-content-between">
                                 <span>Tạm tính</span>
                                 <small className="text-secondary">
-                                    {numberFormat(totalMoney())}
+                                    {numberFormat(totalMoney(productsCart))}
                                 </small>
                             </div>
                             <div className="row  pl-3 pr-3 p-2 justify-content-between">
@@ -104,7 +104,7 @@ function Cart1() {
                             <div className="row  pl-3 pr-3 p-2 justify-content-between">
                                 <span>Tổng cộng</span>
                                 <h6 className="text-secondary">
-                                    {numberFormat(totalMoney())}
+                                    {numberFormat(totalMoney(productsCart))}
                                 </h6>
                                 <small className="col-md-12 p-0 text-right">(Đã bao gồm VAT nếu có)</small>
                             </div>

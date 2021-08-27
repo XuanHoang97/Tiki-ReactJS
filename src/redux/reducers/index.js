@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import mobiles from './mobile';
-import ui from './ui';
+import loading from './ui';
+import vote from './vote';
 import catagory from './catagory';
 import preferent from './preferent';
 import slide from './slide';
@@ -9,7 +10,8 @@ import cart from './cart';
 
 export default combineReducers({
     mobiles,
-    ui,
+    loading,
+    vote,
     catagory,
     preferent,
     slide,

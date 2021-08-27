@@ -38,10 +38,7 @@ const productReducer = (state = initialstate, action) => {
 
                 productsCart.map(item => {
                     if (item.id === id) {
-                        console.log({
-                            ...item,
-                            count: count + item.count
-                        })
+
                         newArr = [...productsCart.slice(0, index1), {
                             ...item,
                             count: count + item.count
@@ -62,7 +59,6 @@ const productReducer = (state = initialstate, action) => {
             }
         case cart.DELETE_ITEM_CART:
             const index = state.productsCart.findIndex(item => item.id === action.payload)
-            console.log(index)
             state.productsCart.splice(index, 1)
             localStorage.setItem('dataCart', JSON.stringify(state.productsCart))
             return {

@@ -1,10 +1,13 @@
 import { numberFormat, totalMoney } from 'contants/NumberFormat';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
+import { productsCartMenuState$ } from 'redux/selectors';
 
 function ContactDeliver() {
     const sale = 10000
     const ship = 30000
+    const productsCart = useSelector(productsCartMenuState$)
 
     return (
         <div className="col-md-3 pr-0">
@@ -33,7 +36,7 @@ function ContactDeliver() {
                     <div>
                         <span>Tạm tính</span>
                     </div>
-                    <h6>{numberFormat(totalMoney())}</h6>
+                    <h6>{numberFormat(totalMoney(productsCart))}</h6>
                 </div>
 
                 <div className="row  pl-3 pr-3 p-2 justify-content-between">
@@ -55,7 +58,7 @@ function ContactDeliver() {
                     <div>
                         <span>Thành tiền</span>
                     </div>
-                    <h5 className="text-danger">{numberFormat(totalMoney() - sale + ship)}</h5>
+                    <h5 className="text-danger">{numberFormat(totalMoney(productsCart) - sale + ship)}</h5>
                     <div className="w-100 text-right">
                         <small className="text-secondary">(Đã bao gồm VAT nếu có)</small>
                     </div>

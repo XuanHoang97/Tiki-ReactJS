@@ -17,6 +17,7 @@ import Result from "./header/search/Result";
 import GlobalLoading from "./GlobalLoading";
 import { useSelector } from "react-redux";
 import { productsCartMenuState$ } from "redux/selectors";
+import Modals from 'components/Modal';
 
 console.warn = () => { };
 // SEO Web
@@ -36,39 +37,23 @@ export default function App() {
         <ScrollTop />
         <Header />
         <GlobalLoading />
+        <Modals/>
         <Switch>
-          <Route exact path="/">
-            <Body />
-          </Route>
-          <Route exact path="/Tiki-ReactJS">
-            <Body />
-          </Route>
-          <Route
-            exact
-            path="/chi-tiet-san-pham/:slug.:id.html"
-            component={Product_detail}
-          />
+          <Route exact path="/"> <Body /> </Route>
+          <Route exact path="/Tiki-ReactJS"> <Body /> </Route>
+          <Route exact path="/chi-tiet-san-pham/:slug.:id.html" component={Product_detail} />
+
           <Route exact path="/gio-hang">
             {productsCart.length > 0 ? <Cart1 /> : <Cart />}
           </Route>
-          <Route exact path="/thanh-toan">
-            <Payment />
-          </Route>
-          <Route exact path="/dat-hang-thanh-cong">
-            <OrderSuccess />
-          </Route>
-          <Route exact path="/search">
-            <Result />
-          </Route>
-          <Route exact path="*">
-            <NotFound />
-          </Route>
+
+          <Route exact path="/thanh-toan"><Payment /></Route>
+          <Route exact path="/dat-hang-thanh-cong"><OrderSuccess /></Route>
+          <Route exact path="/search"><Result /></Route>
+          <Route exact path="*"><NotFound /></Route>
         </Switch>
         <Footer />
-        <Helmet>
-          {" "}
-          <title>{TITLE}</title>{" "}
-        </Helmet>
+        <Helmet><title>{TITLE}</title></Helmet>
       </div>
     </Router>
   );

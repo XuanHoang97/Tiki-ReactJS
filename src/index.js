@@ -18,12 +18,16 @@ import reportWebVitals from "./reportWebVitals";
 
 import { Provider } from "react-redux";
 import createSagaMiddleware from "redux-saga";
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, compose, createStore } from "redux";
 import reducers from "./redux/reducers";
 import mySaga from "redux/sagas";
 
+const composeEnhancer = process.env.NODE_ENV !== 'production' && typeof window === 'object'
+  && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+    shouldHotReload: false
+  }) : compose;
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+const store = createStore(reducers, composeEnhancer(applyMiddleware(sagaMiddleware)));
 sagaMiddleware.run(mySaga);
 
 ReactDOM.render(
