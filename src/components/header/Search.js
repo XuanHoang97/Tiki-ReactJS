@@ -11,6 +11,12 @@ export default function Search() {
     const inputSearch = useRef(null)
 
     useEffect(() => {
+        const fetchProducts = () => {
+            allData.map(item => axios
+                .get(`https://61275b59c2e8920017bc0c43.mockapi.io/api/${item}/`)
+                .then(res => { setMobile(mobile => [...mobile, ...res.data]); })
+                .catch((err) => { console.log(err); }))
+        };
         fetchProducts();
     }, []);
 
@@ -20,12 +26,7 @@ export default function Search() {
         }
     }, [search])
 
-    const fetchProducts = () => {
-        allData.map(item => axios
-            .get(`https://61275b59c2e8920017bc0c43.mockapi.io/api/${item}/`)
-            .then(res => { setMobile(mobile => [...mobile, ...res.data]); })
-            .catch((err) => { console.log(err); }))
-    };
+
 
     const handleClickSearch = () => {
         setSuggest(false)

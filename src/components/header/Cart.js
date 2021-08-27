@@ -1,26 +1,33 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { deleteItemCart } from 'redux/actions/cart';
 import { productsCartMenuState$ } from 'redux/selectors';
 import { numberFormat, totalMoney } from '../../contants/NumberFormat';
 
 function Cart(props) {
     const productsCart = useSelector(productsCartMenuState$)
+    const dispatch = useDispatch()
+    const handleDelete = (id) => {
+        dispatch(deleteItemCart(id))
+    }
     const renderCart = () => {
         return productsCart.map(item => {
             return (<div key={item.id}>
-                <div className='d-flex justify-content-between align-items-center'>
-                    <div className="col-md-2 p-0">
-                        <img className="w-75" src={item.img} alt="" />
+                <div className='d-flex justify-content-between align-items-start'>
+                    <div className="col-md-2 text-center border" style={{ padding: '2px 3px' }}>
+                        <img className="w-75 h-75" src={item.img} alt={item.name} />
                     </div>
-                    <div className="col-md-5 p-0">
-                        <small>{item.name}</small>
-                        <p className='text-muted small m-0'>Trả góp 0% - Tặng phụ kiện - Voucher 5% </p>
+                    <div className="col-md-5 p-0" style={{ lineHeight: 0 }}>
+                        <small style={{ lineHeight: '15px' }}>{item.name}</small>
+                        <p className='text-muted small mt-1 mb-0' style={{ lineHeight: '15px' }}>Trả góp 0% - Tặng phụ kiện - Voucher 5% </p>
                     </div>
-
-                    <div className="col-md-4 p-0 d-flex justify-content-end align-items-start" style={{ gap: 2, alignSelf: 'start' }}>
-                        <h6 className='small text-danger m-0' style={{ lineHeight: '15px', fontWeight: '700' }}>{numberFormat(item.price)}</h6>
-                        <span className='small m-0' style={{ lineHeight: '15px' }}> x{item.count}</span>
+                    <div className="col-md-4 p-0" style={{ display: 'grid', gap: '10px', textAlign: 'end' }}>
+                        <div className="p-0 d-flex justify-content-end align-items-start" style={{ gap: 2, alignSelf: 'start' }}>
+                            <h6 className='small text-danger m-0' style={{ lineHeight: '15px', fontWeight: '700' }}>{numberFormat(item.price)}</h6>
+                            <span className='small m-0' style={{ lineHeight: '15px' }}> x{item.count}</span>
+                        </div>
+                        <div onClick={() => handleDelete(item.id)} style={{ cursor: 'pointer' }}>Xóa</div>
                     </div>
                 </div>
                 <hr />

@@ -1,4 +1,4 @@
-import { numberFormat } from 'contants/NumberFormat';
+import { numberFormat, totalMoney } from 'contants/NumberFormat';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
@@ -14,15 +14,10 @@ function Cart1() {
     const handleCountUp = (e) => {
         setCount(e)
     }
+    useEffect(() => {
+        localStorage.setItem('dataCart', JSON.stringify(productsCart))
+    }, [productsCart, count])
 
-    console.log(productsCart)
-    const totalMoney = () => {
-        let total = 0
-        for (let item of productsCart) {
-            total += item.price * item.count
-        }
-        return total
-    }
 
     const deleteCart = (id) => {
         dispatch(deleteItemCart(id))
@@ -98,7 +93,7 @@ function Cart1() {
                             <div className="row  pl-3 pr-3 p-2 justify-content-between">
                                 <span>Tạm tính</span>
                                 <small className="text-secondary">
-                                    {numberFormat(totalMoney())}
+                                    {numberFormat(totalMoney(productsCart))}
                                 </small>
                             </div>
                             <div className="row  pl-3 pr-3 p-2 justify-content-between">
@@ -109,7 +104,7 @@ function Cart1() {
                             <div className="row  pl-3 pr-3 p-2 justify-content-between">
                                 <span>Tổng cộng</span>
                                 <h6 className="text-secondary">
-                                    {numberFormat(totalMoney())}
+                                    {numberFormat(totalMoney(productsCart))}
                                 </h6>
                                 <small className="col-md-12 p-0 text-right">(Đã bao gồm VAT nếu có)</small>
                             </div>

@@ -1,9 +1,9 @@
 import * as cart from "contants/cart";
-
+let dataLocalStorage = JSON.parse(localStorage.getItem('dataCart')) || []
 const initialstate = {
     productDetail: undefined,
     count: 1,
-    productsCart: []
+    productsCart: dataLocalStorage
 }
 
 const productReducer = (state = initialstate, action) => {
@@ -38,33 +38,29 @@ const productReducer = (state = initialstate, action) => {
 
                 productsCart.map(item => {
                     if (item.id === id) {
-                        console.log({
-                            ...item,
-                            count: count + item.count
-                        })
+
                         newArr = [...productsCart.slice(0, index1), {
                             ...item,
                             count: count + item.count
                         }, ...productsCart.slice(index1 + 1)]
-
+                        return 0;
                     } else {
-                        console.log(11)
+                        return 0;
                     }
                 })
-                console.log(newArr)
                 productsCart = [...newArr]
             } else {
                 productsCart.push(action.payload)
             }
+
             return {
                 ...state,
                 productsCart: [...productsCart]
             }
         case cart.DELETE_ITEM_CART:
             const index = state.productsCart.findIndex(item => item.id === action.payload)
-            console.log(index)
             state.productsCart.splice(index, 1)
-            console.log(state.productsCart)
+            localStorage.setItem('dataCart', JSON.stringify(state.productsCart))
             return {
                 ...state,
                 productsCart: [...state.productsCart]
