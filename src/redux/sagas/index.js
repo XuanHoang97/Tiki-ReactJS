@@ -81,7 +81,7 @@ function* addChatSaga({ payload }) {
         yield put(addChatFailed(data));
     }
 
-    delay(1500);
+    delay(2000);
     yield put(hideLoading());
 }
 

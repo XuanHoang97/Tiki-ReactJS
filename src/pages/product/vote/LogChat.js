@@ -33,7 +33,7 @@ function LogChat() {
     useEffect(() => {
         dispatch(actions.getDataVote.getVoteRequest())
     }, [])
-console.log(vote)
+
     return (
         <div className="users col-md-12">
             <div className="user">

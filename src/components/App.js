@@ -15,6 +15,8 @@ import NotFound from "./NotFound";
 import ScrollTop from "./ScrollTop";
 import Result from "./header/search/Result";
 import GlobalLoading from "./GlobalLoading";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from "react-redux";
 import { productsCartMenuState$ } from "redux/selectors";
 import Modals from 'components/Modal';
@@ -32,6 +34,7 @@ export default function App() {
         <ScrollToTop />
         <ScrollTop />
         <Header />
+        <ToastContainer />
         <GlobalLoading />
         <Modals/>
         <Switch>

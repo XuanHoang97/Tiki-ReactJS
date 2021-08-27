@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import FormVote from "./FormVote";
 import LogChat from "./LogChat";
@@ -8,6 +8,10 @@ import { fetchListChat } from "redux/actions/logchat";
 function Rate(props) {
   const listChat = useSelector((state) => state.chat);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchListChat());
+  }, []);
 
   const handleClickOpen = () => {
     dispatch(showModal());
