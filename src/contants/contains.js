@@ -11,8 +11,12 @@ export const INIT_STATE = {
     slide: {
         data: []
     },
+
+    vote: {
+        data: []
+    },
+
     catagoryMenu: {
         data: []
     },
 }
-

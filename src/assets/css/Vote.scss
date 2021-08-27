@@ -1,0 +1,49 @@
+.modal-content {
+    .modal-header {
+        .modal-title {
+            font-size: 18px;
+        }
+    }
+    .modal-body {
+        form {
+            .vote {
+                .name,
+                .cmt {
+                    width: 100%;
+                }
+                .control {
+                    margin-top: 15px;
+                    display: flex;
+                    gap: 10px;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}
+
+.users {
+    margin-top: 25px;
+    .user {
+        .avatar {
+            width: 50px;
+            img {
+                border-radius: 50%;
+            }
+        }
+        .account__chat {
+            .option {
+                gap: 10px;
+                font-size: 13px;
+                display: flex;
+                div {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .reply {
+        border-left: 5px solid green;
+    }
+    .pagination {}
+}

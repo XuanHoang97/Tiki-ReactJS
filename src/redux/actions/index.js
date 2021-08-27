@@ -28,6 +28,12 @@ export const getDataSlide = createActions({
     getSlideFailure: (err) => err
 })
 
+export const getDataVote = createActions({
+    getVoteRequest: undefined,
+    getVoteSuccess: (payload) => payload,
+    getVoteFailure: (err) => err
+})
+
 export const getDataCatagoryMenu = createActions({
     getCatagoryMenuRequest: undefined,
     getCatagoryMenuSuccess: (payload) => payload,

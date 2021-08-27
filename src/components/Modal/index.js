@@ -1,30 +1,21 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Modal } from 'react-bootstrap';
 import { hideModal } from 'redux/actions/vote';
 
 function Modals() {
-    const modal = useSelector(state => state.vote);
-    const { component, title, showModal} = modal;
+    const vote = useSelector(state => state.vote);
+    const { component, title, showModal} = vote;
     const dispatch = useDispatch();
     
     return (
-        <div open={showModal} onClose={hideModal}>
-            <div className="modal">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h4 className="modal-title">{title}</h4>
-                            <button type="button" className="close" onClick={() => dispatch(hideModal())}>
-                                &times;
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            {component}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Modal show={showModal} onHide={hideModal} centered>
+            <Modal.Header className="bg-success text-white p-2 pl-3">
+                <Modal.Title>{title}</Modal.Title>
+                <button type="button" className="close text-white" onClick={() => dispatch(hideModal())}> &times; </button>
+            </Modal.Header>
+            <Modal.Body>{component}</Modal.Body>
+        </Modal>
     );
 }
 

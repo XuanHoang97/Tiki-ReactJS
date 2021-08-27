@@ -1,37 +1,61 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import { voteState$ } from 'redux/selectors';
+import * as actions from '../../../redux/actions';
+import VotePagination from './VotePagination';
 
-function LogChat(props) {
+function DataVote(props) {
     return (
-        <div className="users col-md-12 mt-4">
-          <div className="user d-flex">
-            <div style={{ width: 50, height: 50}} >
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE5LV5FEwLk2UGd5-UApCpu7yuOMV7cAKDFKTofRzlzxdT3wKd3pAPBc_KzhnWFuhowFI&usqp=CAU" alt="" style={{borderRadius:'50%'}} />
+        <div className="row mb-3 ml-0">
+            <div className="avatar"><img src={props.img} alt=""/></div>
+            <div className="ml-2 account__chat">
+                <div className="title d-flex align-items-baseline">
+                    <h6 className="text-capitalize mb-0">{props.name}</h6>
+                    <span className="badge badge-warning text-white ml-2">User</span>
+                    <span className="ml-2 text-muted small">1 ngày trước</span>
+                </div>
+
+                <div className="content">{props.comment}</div>
+                <div className="option mt-2" >
+                    <div className="text-success"> Trả lời </div>
+                    <div className="text-primary"> <i class="fas fa-pencil-alt"></i></div>
+                    <div className="text-danger"> <i class="far fa-trash-alt"></i> </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+function LogChat() {
+    const vote = useSelector(voteState$)
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(actions.getDataVote.getVoteRequest())
+    }, [])
+console.log(vote)
+    return (
+        <div className="users col-md-12">
+            <div className="user">
+                {
+                    vote&&vote.map((data, key) => (
+                        <DataVote key={data.id} img={data.avatar} name={data.name} comment={data.comment}  />
+                    ))
+                }
             </div>
 
-            <div className="ml-2">
-              <div className="title d-flex align-items-baseline">
-                <h6 className="text-capitalize mb-0">Văn Đắc</h6>
-                <span className="ml-2 text-muted small">1 ngày trước</span>
-              </div>
-
-              <div className="content">Sản phẩm sang-sịn-mịn quá ạ :) </div>
-              <div className="option d-flex mt-2" style={{ gap: 10, fontSize: 13 }} >
-                <div className="text-success" style={{ cursor: "pointer" }}> Trả lời </div>
-                <div className="text-warning" style={{ cursor: "pointer" }}> Sửa </div>
-                <div className="text-danger" style={{ cursor: "pointer" }}> Xóa </div>
-              </div>
+            <div className="reply ml-5 mt-3 p-2 pl-3 bg-light">
+                <div className="ml-2">
+                <div className="title d-flex align-items-baseline">
+                    <h6 className="text-capitalize mb-0">Lê Xuân Hoàng</h6>
+                    <span className="badge badge-success ml-2">Admin</span>
+                    <span className="ml-2 text-muted small">1 ngày trước</span>
+                </div>
+                <div className="content">Tks you</div>
+                </div>
             </div>
-          </div>
 
-          <div className="reply ml-5 mt-3 pl-3" style={{ borderLeft: "5px solid green" }}>
-            <div className="ml-2">
-              <div className="title d-flex align-items-baseline">
-                <h6 className="text-capitalize mb-0">Xuân Hoàng</h6>
-                <span className="ml-2 text-muted small">1 ngày trước</span>
-              </div>
-              <div className="content">Tks you :)</div>
-            </div>
-          </div>
+            <VotePagination />
         </div>
     );
 }
