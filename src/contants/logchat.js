@@ -4,7 +4,6 @@ export const FETCH_CHAT_SUCCESS = 'FETCH_CHAT_SUCCESS';
 export const FETCH_CHAT_FAILED = 'FETCH_CHAT_FAILED';
 
 export const FILTER_CHAT = 'FILTER_CHAT';
-
 export const FILTER_CHAT_SUCCESS = 'FILTER_CHAT_SUCCESS';
 
 export const ADD_CHAT = 'ADD_CHAT';

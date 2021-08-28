@@ -15,8 +15,17 @@ export const getDataSlide = () => axios.get(`${URL}/slide/`)
 
 export const getDataCatagoryMenu = () => axios.get(`${URL}/category_menu/`)
 
+// Vote and Comment product 
 export const getDataVote = () => axios.get(`${URL3}/vote/`)
 
 export const addChat = (data) => {
-    return axios.post(`$ { URL }, data`);
+    return axios.post(`${URL3}/vote`, data);
 };
+
+export const updateChat = (data, chatId)=>{
+    return axios.put(`${URL3}/${chatId}`, data);
+};
+
+// export const deleteChat = (taskId)=>{
+//     return axios.delete(`${URL3}/${chatId}`);
+// };

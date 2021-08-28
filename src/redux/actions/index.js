@@ -28,14 +28,27 @@ export const getDataSlide = createActions({
     getSlideFailure: (err) => err
 })
 
+
+export const getDataCatagoryMenu = createActions({
+    getCatagoryMenuRequest: undefined,
+    getCatagoryMenuSuccess: (payload) => payload,
+    getCatagoryMenuFailure: (err) => err
+})
+
 export const getDataVote = createActions({
     getVoteRequest: undefined,
     getVoteSuccess: (payload) => payload,
     getVoteFailure: (err) => err
 })
 
-export const getDataCatagoryMenu = createActions({
-    getCatagoryMenuRequest: undefined,
-    getCatagoryMenuSuccess: (payload) => payload,
-    getCatagoryMenuFailure: (err) => err
+export const createDataVote = createActions({
+    createVoteRequest: (payload) => payload,
+    createVoteSuccess: (payload) => payload,
+    createVoteFailure: (err) => err
+})
+
+export const updateDataVote = createActions({
+    updateVoteRequest: (payload) => payload,
+    updateVoteSuccess: (payload) => payload,
+    updateVoteFailure: (err) => err
 })

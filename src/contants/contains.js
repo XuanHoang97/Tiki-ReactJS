@@ -16,6 +16,10 @@ export const INIT_STATE = {
         data: []
     },
 
+    logChat: {
+        data: []
+    },
+
     catagoryMenu: {
         data: []
     },

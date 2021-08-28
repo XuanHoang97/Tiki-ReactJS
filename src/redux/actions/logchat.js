@@ -9,7 +9,6 @@ export const fetchListChat = (params = {}) => {
     };
 };
 
-
 export const fetchListChatSuccess = (data) => {
     return {
         type: FETCH_CHAT_SUCCESS,
@@ -29,16 +28,15 @@ export const fetchListChatFailed = (error) => {
 };
 
 //Add Chat
-export const addChat = (info, cmt) => {
+export const addChat = (name, comment) => {
     return {
         type: ADD_CHAT,
         payload: {
-            info,
-            cmt
+            name,
+            comment
         }
     };
 };
-
 
 export const addChatSuccess = (data) => {
     return {
@@ -59,23 +57,21 @@ export const addChatFailed = (error) => {
 };
 
 //edit 
-export const setChatEditting = (Chat) => {
+export const setChatEditting = (chat) => {
     return {
         type: SET_CHAT_EDITTING,
         payload: {
-            Chat
+            chat
         }
     };
 };
 
-//update
-export const updateChat = (title, description, status = 0) => {
+export const updateChat = (name, comment) => {
     return {
         type: UPDATE_CHAT,
         payload: {
-            title,
-            description,
-            status
+            name,
+            comment,
         }
     };
 };
@@ -93,34 +89,6 @@ export const updateChatSuccess = (data) => {
 export const updateChatFailed = (error) => {
     return {
         type: UPDATE_CHAT_FAILED,
-        payload: {
-            error
-        }
-    };
-};
-
-export const deleteChat = (id) => {
-    return {
-        type: DELETE_CHAT,
-        payload: {
-            id,
-        }
-    };
-};
-
-
-export const deleteChatSuccess = (data) => {
-    return {
-        type: DELETE_CHAT_SUCCESS,
-        payload: {
-            data
-        }
-    };
-};
-
-export const deleteChatFailed = (error) => {
-    return {
-        type: DELETE_CHAT_FAILED,
         payload: {
             error
         }

@@ -1,9 +1,9 @@
-import { takeLatest, takeEvery, call, put, delay } from "redux-saga/effects";
+import { takeLatest, takeEvery, call, put, delay, select } from "redux-saga/effects";
 import * as api from "../../APIs";
 import * as actions from "../actions";
 import { hideLoading, showLoading } from "../actions/ui";
-import { ADD_CHAT, DELETE_CHAT, FETCH_CHAT, UPDATE_CHAT, } from "../../contants/logchat";
-import { addChat, addChatFailed, addChatSuccess } from "redux/actions/logchat";
+import { FETCH_CHAT, ADD_CHAT,  UPDATE_CHAT, DELETE_CHAT } from "../../contants/logchat";
+import { addChat, addChatFailed, addChatSuccess, updateChat, updateChatSuccess, updateChatFailed } from "redux/actions/logchat";
 import { hideModal } from "redux/actions/vote";
 
 function* getDataMobileSaga() {
@@ -65,38 +65,39 @@ function* getDataVote() {
     }
 }
 
-function* addChatSaga({ payload }) {
-    const { info, cmt } = payload;
-    yield put(showLoading());
-    const resp = yield call(addChat, {
-        info,
-        cmt,
-    });
-
-    const { data } = resp;
+function* addChatSaga(action) {
     try {
-        yield put(addChatSuccess(data));
+        const resp = yield call(api.addChat, action.payload);
+        yield put(actions.createDataVote.createVoteSuccess(resp.data));
         yield put(hideModal());
     } catch (err) {
-        yield put(addChatFailed(data));
+        yield put(actions.createDataVote.createVoteFailure(err));
     }
-
-    delay(2000);
-    yield put(hideLoading());
 }
 
-
+function* updateChatSaga({ action }) {
+    try{
+        const chatEditing = yield select((state) => state.logChat.chatEditting);
+        const resp = yield call( api.updateChat, action.payload, chatEditing.id );
+        yield put(actions.updateDataVote.updateVoteSuccess(resp.data));
+        yield put(hideModal());
+    }
+    catch (err){
+        yield put(action.updateDataVote.updateVoteFailed(err));
+    }
+}
 
 function* mySaga() {
     yield takeLatest(actions.getDataMobile.getDataMobileRequest, getDataMobileSaga);
     yield takeLatest(actions.getDataCatagory.getCatagoryRequest, getDataCatagory);
     yield takeLatest(actions.getDataPreferent.getPreferentRequest, getDataPreferent);
     yield takeLatest(actions.getDataSlide.getSlideRequest, getDataSlide);
+    yield takeLatest(actions.getDataCatagoryMenu.getCatagoryMenuRequest, getDataCatagoryMenu);
 
     yield takeLatest(actions.getDataVote.getVoteRequest, getDataVote);
-    yield takeEvery(ADD_CHAT, addChatSaga);
+    yield takeLatest(actions.createDataVote.createVoteRequest, addChatSaga);
+    yield takeLatest(actions.updateDataVote.updateVoteRequest, updateChatSaga);
 
 
-    yield takeLatest(actions.getDataCatagoryMenu.getCatagoryMenuRequest, getDataCatagoryMenu);
 }
 export default mySaga;
