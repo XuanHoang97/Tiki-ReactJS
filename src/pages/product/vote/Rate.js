@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import FormVote from "./FormVote";
 import VoteList from "./VoteList";
-import { changeModalContent, changeModalTitle, changeBgCreate, hideModal, showModal, } from "redux/actions/vote";
-import { fetchListChat, setChatEditting } from "redux/actions/logchat";
+import { changeModalContent, changeModalTitle, changeBg, hideModal, showModal } from "redux/actions/vote";
+import { fetchListChat, setChatEditting, deleteChat } from "redux/actions/logchat";
 
 function Rate(props) {
-  const listChat = useSelector((state) => state.logChat);
+  const listChat = useSelector((state) => state.listChat);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,12 +20,47 @@ function Rate(props) {
     dispatch(setChatEditting(null));
   };
 
+  const handleReplyVote = () => {
+    dispatch(showModal());
+    dispatch(changeModalTitle("Trả lời đánh giá sản phẩm"));
+    dispatch(changeModalContent(<FormVote />));
+    dispatch(setChatEditting(null));
+  }
+
   const handleEditVote = (chat) =>{
     dispatch(setChatEditting(chat));
     dispatch(showModal());
     dispatch(changeModalTitle("Sửa đánh giá sản phẩm"));
     dispatch(changeModalContent(<FormVote />));
   } 
+
+  const handleDeleteVote = (chat)=>{
+    console.log('chat: ', chat);
+    dispatch(deleteChat(chat.id));
+  }
+
+  const showModalDeleteVote = (chat)=>{
+    dispatch(showModal());
+    dispatch(changeModalTitle("Xoá đánh giá sản phẩm"));
+    dispatch(changeModalContent(
+      <div className="modalDelete">
+        <div className="modalText">
+          Bạn có chắc chắn muốn xóa đánh giá của:
+          <span className="font-weight-bold ml-1">{chat.name}</span> không ?
+        </div>
+
+        <div className="row mt-3 m-0 justify-content-end">
+          <div className="ml-1">
+            <button onClick={() => dispatch(hideModal())} type="button" class="btn btn-light btn-sm">HUỶ BỎ</button>
+          </div>
+
+          <div className="ml-1">
+            <button onClick={() => handleDeleteVote(chat)} type="button" class="btn btn-primary btn-sm">ĐỒNG Ý</button>
+          </div>
+        </div>
+      </div>
+    ));
+  }
   
   return (
     <div className="container bg-white p-3 pl-2 mt-4">
@@ -39,7 +74,7 @@ function Rate(props) {
             </button>
           </div>
         </div>
-        <VoteList editVote={handleEditVote} />
+        <VoteList editVote={handleEditVote} deleteVote={showModalDeleteVote} replyVote={handleReplyVote} />
       </div>
     </div>
   );

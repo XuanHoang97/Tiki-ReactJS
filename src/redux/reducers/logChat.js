@@ -84,6 +84,7 @@ const reducer = (state = initialstate, action) => {
             const {data}= action.payload;
             const {listChat} = state;
             const index = listChat.findIndex(item => item.id === data.id);
+            console.log(listChat)
             if( index !== -1){
                 const newList = [
                     ...listChat.slice(0, index),
@@ -91,11 +92,41 @@ const reducer = (state = initialstate, action) => {
                     ...listChat.slice(index+1)
                 ];
                 toastSuccess('Sửa đánh giá sản phẩm thành công');
+                console.log(newList)
                 return {
                     ...state,
                     listChat: newList
                 };
             }
+            return {
+                ...state,
+            };
+        }
+
+        case UPDATE_CHAT_FAILED: {
+            const { error } =action.payload;
+            toastError(error);
+            return {
+                ...state,
+            };
+        }
+
+        case DELETE_CHAT: {
+            return {
+                ...state,
+            };
+        }
+        case DELETE_CHAT_SUCCESS: {
+            const {data:chatId}= action.payload;
+            toastSuccess('Xóa đánh giá thành công');
+            return {
+                ...state,
+                listChat: state.listChat.filter(item => item.id !== chatId)
+            };
+        }
+        case DELETE_CHAT_FAILED: {
+            const { error } =action.payload;
+            toastError(error);
             return {
                 ...state,
             };

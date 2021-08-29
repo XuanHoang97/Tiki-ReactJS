@@ -6,7 +6,7 @@ import Reply from './Reply';
 import VotePagination from './VotePagination';
 import VoteItem from './VoteItem';
 
-function VoteList({editVote}) {
+function VoteList({editVote, deleteVote, replyVote}) {
     const vote = useSelector(voteState$)
     const dispatch = useDispatch()
 
@@ -23,7 +23,9 @@ function VoteList({editVote}) {
                         img={vote.avatar} 
                         name={vote.name} 
                         comment={vote.comment}
+                        replyVote={()=> replyVote(vote)}
                         editVote={()=> editVote(vote)} 
+                        deleteVote={()=> deleteVote(vote)}
                         />
                     ))
                 }

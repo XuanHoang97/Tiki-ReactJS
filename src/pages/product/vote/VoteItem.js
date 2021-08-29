@@ -16,9 +16,9 @@ function VoteItem(props) {
 
                 <div className="content">{props.comment}</div>
                 <div className="option mt-2" >
-                    <div className="text-success"> Trả lời </div>
+                    <div onClick={props.replyVote} className="text-success"> Trả lời </div>
                     <div onClick={props.editVote} className="text-primary"> Sửa</div>
-                    <div className="text-danger"> Xoá </div>
+                    <div onClick={props.deleteVote} className="text-danger"> Xoá </div>
                 </div>
             </div>
         </div>

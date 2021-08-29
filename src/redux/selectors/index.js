@@ -14,4 +14,4 @@ export const cartCountMenuState$ = (state) => state.cart.count
 
 export const productsCartMenuState$ = (state) => state.cart.productsCart
 
-export const voteState$ = (state) => state.vote.data
+export const voteState$ = (state) => state.logChat.listChat

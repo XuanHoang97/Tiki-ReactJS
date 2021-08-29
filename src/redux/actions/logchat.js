@@ -33,7 +33,8 @@ export const addChat = (name, comment) => {
         type: ADD_CHAT,
         payload: {
             name,
-            comment
+            comment,
+            avatar:'https://cellphones.com.vn/sforum/wp-content/uploads/2020/04/LR-29-scaled.jpg',
         }
     };
 };
@@ -56,7 +57,7 @@ export const addChatFailed = (error) => {
     };
 };
 
-//edit 
+//edit Chat
 export const setChatEditting = (chat) => {
     return {
         type: SET_CHAT_EDITTING,
@@ -66,12 +67,13 @@ export const setChatEditting = (chat) => {
     };
 };
 
-export const updateChat = (name, comment) => {
+export const updateChat = (name, comment,avatar) => {
     return {
         type: UPDATE_CHAT,
         payload: {
             name,
             comment,
+            avatar
         }
     };
 };
@@ -89,6 +91,35 @@ export const updateChatSuccess = (data) => {
 export const updateChatFailed = (error) => {
     return {
         type: UPDATE_CHAT_FAILED,
+        payload: {
+            error
+        }
+    };
+};
+
+// delete Chat
+export const deleteChat = (id) => {
+    return {
+        type: DELETE_CHAT,
+        payload: {
+            id,
+        }
+    };
+};
+
+
+export const deleteChatSuccess = (data) => {
+    return {
+        type: DELETE_CHAT_SUCCESS,
+        payload: {
+            data
+        }
+    };
+};
+
+export const deleteChatFailed = (error) => {
+    return {
+        type: DELETE_CHAT_FAILED,
         payload: {
             error
         }

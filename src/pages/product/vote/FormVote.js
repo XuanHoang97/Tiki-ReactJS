@@ -12,7 +12,7 @@ import { createDataVote, updateDataVote } from "redux/actions";
 function FormVote({ handleSubmit, invalid, submitting }) {
   const chatEditting = useSelector((state) => state.logChat.chatEditting);
   const dispatch = useDispatch();
-
+  console.log(chatEditting)
   const [data, setData] = useState({
     avatar:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw2cafAJXiEVaaJbi2DgN4KppO2XjlaAh1eQ&usqp=CAU',
     name:'',
@@ -20,11 +20,13 @@ function FormVote({ handleSubmit, invalid, submitting }) {
   })
 
   const handleSubmitForm = useCallback(() => {
+    const {name, comment, avatar} =data
     if(chatEditting && chatEditting.id){
-      dispatch(updateDataVote.updateVoteRequest(data))
+      dispatch(updateChat(name, comment, avatar))
     }
     else{
-      dispatch(createDataVote.createVoteRequest(data))
+      dispatch(addChat(name, comment))
+
     }
   },[data,dispatch]);
 
@@ -32,16 +34,29 @@ function FormVote({ handleSubmit, invalid, submitting }) {
     let xhtml = null;
     if (chatEditting && chatEditting.id) {
       xhtml = (
-        <Field
-          id="status"
-          label="Phân quyền"
-          className="select"
-          name="permission"
-          component={renderSelectField}
-        >
-          <option value={0}>User</option>
-          <option value={1}>Admin</option>
-        </Field>
+        <>
+          <Field
+            id="avatar"
+            label="Nhập đường dẫn URL ảnh"
+            className="avatar"
+            margin="normal"
+            name="avatar"
+            onChange={e => setData({...data, avatar: e.target.value})}
+            component={renderTextField}
+          />
+
+          <Field
+            id="status"
+            label="Phân quyền"
+            className="select"
+            name="permission"
+            component={renderSelectField}
+          >
+
+            <option value={0}>User</option>
+            <option value={1}>Admin</option>
+          </Field>
+        </>
       );
     }
     return xhtml;
@@ -69,7 +84,6 @@ function FormVote({ handleSubmit, invalid, submitting }) {
             onChange={e => setData({...data, comment: e.target.value})}
             component={renderTextAreaField}
         />
-
         {renderPermissionSelection()}
         <div className="control">
           <button onClick={() => dispatch(hideModal())} type="button" className="btn btn-light btn-sm"> HUỶ BỎ </button>
@@ -91,6 +105,7 @@ FormVote = connect((state) => ({
   initialValues: {
     name: state.logChat.chatEditting ? state.logChat.chatEditting.name : null,
     comment: state.logChat.chatEditting ? state.logChat.chatEditting.comment : null,
+    avatar: state.logChat.chatEditting ? state.logChat.chatEditting.avatar : null,
   },
 }))(FormVote);
 
