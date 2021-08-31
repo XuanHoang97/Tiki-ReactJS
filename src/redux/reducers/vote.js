@@ -1,5 +1,5 @@
 import { CHANGE_MODAL_CONTENT, CHANGE_MODAL_TITLE, HIDE_MODAL, SHOW_MODAL, CHANGE_BG} from '../../contants/vote';
-import { HIDE_LOADING, SHOW_LOADING } from '../../contants/ui';
+import { HIDE_LOADING, SHOW_LOADING } from '../../contants/loading';
 import {  getType, getDataVote, createDataVote, updateDataVote, deleteDataVote } from 'redux/actions';
 
 const initialstate = {

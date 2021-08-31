@@ -4,24 +4,27 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import { deleteItemCart } from 'redux/actions/cart';
 import { productsCartMenuState$ } from 'redux/selectors';
+
 function Cart1() {
     const [count, setCount] = useState(0)
     const productsCart = useSelector(productsCartMenuState$)
     const dispatch = useDispatch()
+
     const handleCountDown = (e) => {
         setCount(e)
     }
     const handleCountUp = (e) => {
         setCount(e)
     }
+
     useEffect(() => {
         localStorage.setItem('dataCart', JSON.stringify(productsCart))
     }, [productsCart, count])
 
-
     const deleteCart = (id) => {
         dispatch(deleteItemCart(id))
     }
+
     const renderCart = () => {
         return productsCart.map((item, index) => {
             return (
@@ -64,6 +67,7 @@ function Cart1() {
             )
         })
     }
+    
     return (
         <div className="main bg-light pt-3 pb-3">
             <div className="container">

@@ -294,6 +294,8 @@ img {
                             }
                         }
                         .cart {
+                            font-size: 14px;
+                            cursor: pointer;
                             @include phone {
                                 position: absolute;
                                 top: -2.2rem;
@@ -309,6 +311,39 @@ img {
                                 top: -0.35rem;
                                 right: 5.3rem;
                                 z-index: 10;
+                            }
+                            .cart__info {
+                                // display: block;
+                                width: 24rem;
+                                left: -14.5rem;
+                                a {}
+                                .text-left {
+                                    .info {
+                                        .content {
+                                            line-height: 0;
+                                            small {
+                                                font-size: 14px;
+                                                font-weight: 500;
+                                            }
+                                            .small,
+                                            p {
+                                                line-height: 15px;
+                                            }
+                                        }
+                                        .price {
+                                            display: grid;
+                                            text-align: end;
+                                            .price__num {
+                                                h6 {
+                                                    font-weight: bold;
+                                                }
+                                            }
+                                            .btnDelProd {
+                                                cursor: pointer;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import { addToCart, countProduct } from 'redux/actions/cart';
 
-
 function Order(props) {
     const { order, number, handleDown, handleUp } = props
     // Option number product
@@ -20,8 +19,8 @@ function Order(props) {
             dispatch(countProduct(1))
             // dispatch(addProduct(null))
         }
-
     }
+    
     return (
         <div>
             <div className="text-danger">

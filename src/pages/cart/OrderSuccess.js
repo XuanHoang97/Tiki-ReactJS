@@ -7,9 +7,7 @@ class OrderSuccess extends Component {
                 <div className="pt-3 pb-3 container">
                     <div className="row bg-white p-0 pt-3 pb-3">
                         <div className="col-md-3">
-
                             <img className="mb-2 w-100" src="http://shopeeplus.com//upload/images/1tiki.jpg" style={{ width: '12%' }} alt="" />
-
                         </div>
 
                         <div className="col-md-9">

@@ -5,6 +5,8 @@ import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct, downCount, upCount } from "redux/actions/cart";
 import { cartProductMenuState$ } from "redux/selectors";
+import { cartCountMenuState$ } from "redux/selectors";
+import { numberFormat } from "contants/NumberFormat";
 import Offer from "./Offer";
 import Order from "./Order";
 import ProductDesc from "./ProductDesc";
@@ -13,8 +15,6 @@ import SpecialFeature from "./SpecialFeature";
 import Specifications from "./Specifications";
 import Illutrator from "./Illutrator";
 import Vote from "./Vote";
-import { cartCountMenuState$ } from "redux/selectors";
-import { numberFormat } from "contants/NumberFormat";
 import Rate from "./vote/Rate";
 
 const Product_detail = ({ match }) => {
@@ -46,7 +46,6 @@ const Product_detail = ({ match }) => {
     !dataProDetail && fetchProduct();
   }, [dataProDetail, match.params.id]);
   // Call api
-
 
   return (
     <div className="main bg-light pt-3 pb-3">

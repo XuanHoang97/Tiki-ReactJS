@@ -28,6 +28,12 @@ export const getDataSlide = createActions({
     getSlideFailure: (err) => err
 })
 
+export const getDataSearchSpecial = createActions({
+    getSearchSpecialRequest: undefined,
+    getSearchSpecialSuccess: (payload) => payload,
+    getSearchSpecialFailure: (err) => err
+})
+
 
 export const getDataCatagoryMenu = createActions({
     getCatagoryMenuRequest: undefined,
@@ -35,7 +41,7 @@ export const getDataCatagoryMenu = createActions({
     getCatagoryMenuFailure: (err) => err
 })
 
-// Vote aand comment product 
+// Vote and comment product 
 export const getDataVote = createActions({
     getVoteRequest: undefined,
     getVoteSuccess: (payload) => payload,

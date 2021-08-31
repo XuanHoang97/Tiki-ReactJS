@@ -12,7 +12,7 @@ function VoteList({editVote, deleteVote, replyVote}) {
 
     useEffect(() => {
         dispatch(actions.getDataVote.getVoteRequest())
-    }, [])
+    }, [dispatch])
 
     return (
         <div className="users col-md-12">

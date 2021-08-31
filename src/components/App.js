@@ -26,12 +26,15 @@ console.warn = () => { };
 const TITLE = "Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh";
 
 export default function App() {
+  // Save data Cart 
   const productsCart = useSelector(productsCartMenuState$)
   const [data, setData] = useState([])
+
   useEffect(() => {
     let dataLocalStorage = JSON.parse(localStorage.getItem('dataCart')) || []
     setData(dataLocalStorage)
   }, [productsCart])
+
   return (
     <Router>
       <div>
@@ -52,11 +55,11 @@ export default function App() {
 
           <Route exact path="/thanh-toan"><Payment /></Route>
           <Route exact path="/dat-hang-thanh-cong"><OrderSuccess /></Route>
-          <Route exact path="/search"><Result /></Route>
+          <Route exact path="/search/:slug.:id.html"><Result /></Route>
           <Route exact path="*"><NotFound /></Route>
         </Switch>
-        <Footer />
         <Helmet><title>{TITLE}</title></Helmet>
+        <Footer />
       </div>
     </Router>
   );

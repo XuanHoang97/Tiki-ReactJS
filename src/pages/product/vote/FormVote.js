@@ -13,6 +13,7 @@ function FormVote({ handleSubmit, invalid, submitting }) {
   const chatEditting = useSelector((state) => state.logChat.chatEditting);
   const dispatch = useDispatch();
   console.log(chatEditting)
+
   const [data, setData] = useState({
     avatar:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw2cafAJXiEVaaJbi2DgN4KppO2XjlaAh1eQ&usqp=CAU',
     name:'',
@@ -96,11 +97,13 @@ function FormVote({ handleSubmit, invalid, submitting }) {
 
 const FORM_NAME = "VOTE_MANAGEMENT";
 
+// Setup reduxForm & validate 
 FormVote = reduxForm({
   form: FORM_NAME,
   validate,
 })(FormVote);
 
+// Set ChatEditting 
 FormVote = connect((state) => ({
   initialValues: {
     name: state.logChat.chatEditting ? state.logChat.chatEditting.name : null,

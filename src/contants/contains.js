@@ -12,6 +12,10 @@ export const INIT_STATE = {
         data: []
     },
 
+    searchSpecial: {
+        data: []
+    },
+
     vote: {
         data: []
     },

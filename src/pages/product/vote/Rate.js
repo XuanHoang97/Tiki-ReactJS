@@ -46,7 +46,7 @@ function Rate(props) {
       <div className="modalDelete">
         <div className="modalText">
           Bạn có chắc chắn muốn xóa đánh giá của:
-          <span className="font-weight-bold ml-1">{chat.name}</span> không ?
+          <span className="font-weight-bold text-danger ml-1">{chat.name}</span> không ?
         </div>
 
         <div className="row mt-3 m-0 justify-content-end">

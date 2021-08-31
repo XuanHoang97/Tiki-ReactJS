@@ -29,6 +29,7 @@ const RenderMobile = (mobile) => {
                                         <h6 className="mt-4 mb-1 text-dark">{mobile.name}</h6>
                                     </Link>
                                 </div>
+
                                 <div className="rate mb-3">
                                     <span className="fa fa-star checked text-warning small" />
                                     <span className="fa fa-star checked text-warning small" />
@@ -85,6 +86,7 @@ function Mobile() {
     const [pageNumberLimit] = useState(5);
     const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
     const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
+    
     const dispatch = useDispatch()
     const posts = useSelector(mobilesState$)
 

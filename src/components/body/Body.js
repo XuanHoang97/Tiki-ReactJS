@@ -11,7 +11,7 @@ import Mail from "./Mail";
 import Mobile from "./Mobile";
 import Preferential from "./Preferential";
 import ProductSuggestion from "./ProductSuggestion";
-import SearchSpecial from "./SearchSpecial";
+import SearchSpecial from "./searchSpecial/Index";
 import Slide from "./Slide";
 
 
@@ -48,32 +48,19 @@ export default function Body() {
 
         {/* Lucky Wheel */}
         <div
-          className="LuckyWheel"
-          onClick={() => {
-            setLucky(!lucky);
-          }}
-        >
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCoasT2bQThAGlar2I5RrPEFYZba00VUDBMN0FFz6mwJTk73Oo2lRxuAEuY3-AJGQuqt0&usqp=CAU"
-            className="lucky"
-          />
+          className="LuckyWheel" onClick={() => { setLucky(!lucky); }} >
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCoasT2bQThAGlar2I5RrPEFYZba00VUDBMN0FFz6mwJTk73Oo2lRxuAEuY3-AJGQuqt0&usqp=CAU" className="lucky"/>
         </div>
+
         <div className="spin">
-          <img
-            src="https://www.webtretho.com/static/img/luckyspin/title_1.png"
-            alt=""
-          />
+          <img src="https://www.webtretho.com/static/img/luckyspin/title_1.png" alt="" />
         </div>
 
         {lucky && <LuckyWheel />}
 
         {/* Build Chatbot */}
         <div
-          className="chatbotTest"
-          onClick={() => {
-            setChatbot(!chatbot);
-          }}
-        >
+          className="chatbotTest" onClick={() => { setChatbot(!chatbot);}} >
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE5LV5FEwLk2UGd5-UApCpu7yuOMV7cAKDFKTofRzlzxdT3wKd3pAPBc_KzhnWFuhowFI&usqp=CAU"
             alt="ko hien anh"
