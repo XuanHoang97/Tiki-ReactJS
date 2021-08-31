@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Tiki-ReactJS/static/css/main.1e459964.chunk.css",
-    "main.js": "/Tiki-ReactJS/static/js/main.af840073.chunk.js",
-    "main.js.map": "/Tiki-ReactJS/static/js/main.af840073.chunk.js.map",
+    "main.js": "/Tiki-ReactJS/static/js/main.cb38f27c.chunk.js",
+    "main.js.map": "/Tiki-ReactJS/static/js/main.cb38f27c.chunk.js.map",
     "runtime-main.js": "/Tiki-ReactJS/static/js/runtime-main.87e4c1a4.js",
     "runtime-main.js.map": "/Tiki-ReactJS/static/js/runtime-main.87e4c1a4.js.map",
     "static/css/2.ad1526a1.chunk.css": "/Tiki-ReactJS/static/css/2.ad1526a1.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.ad1526a1.chunk.css",
     "static/js/2.897c562e.chunk.js",
     "static/css/main.1e459964.chunk.css",
-    "static/js/main.af840073.chunk.js"
+    "static/js/main.cb38f27c.chunk.js"
   ]
 }
