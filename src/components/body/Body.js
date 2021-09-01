@@ -3,7 +3,6 @@ import config from "components/chatbot/config";
 import MessageParser from "components/chatbot/MessageParser";
 import useOutsideClick from "components/useOutsideClick";
 import React, { useRef, useState } from "react";
-// Chatbot
 import Chatbot from "react-chatbot-kit";
 import Category from "./Category";
 import LuckyWheel from "./LuckyWheel";
@@ -11,10 +10,9 @@ import Mail from "./Mail";
 import Mobile from "./Mobile";
 import Preferential from "./Preferential";
 import ProductSuggestion from "./ProductSuggestion";
+import LaptopProduct from "./product_Laptop/Index";
 import SearchSpecial from "./searchSpecial/Index";
 import Slide from "./Slide";
-
-
 
 export default function Body() {
   const [chatbot, setChatbot] = useState(false);
@@ -43,6 +41,7 @@ export default function Body() {
         <Preferential />
         <SearchSpecial />
         <Mobile />
+        <LaptopProduct />
         <ProductSuggestion />
         <Mail />
 

@@ -9,6 +9,9 @@ function ContactDeliver() {
     const ship = 30000
     const productsCart = useSelector(productsCartMenuState$)
 
+    const codeOrder=useSelector(state=>state.cart.codeOrder);
+    console.log("codeOder:", codeOrder)
+    
     return (
         <div className="col-md-3 pr-0">
             <div className="bg-white p-3">

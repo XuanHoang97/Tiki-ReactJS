@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 import { reducer as formReducer } from 'redux-form';
 import mobiles from './mobile';
+import laptop from './laptop';
 import loading from './loading';
 import vote from './vote';
 import logChat from './logChat';
@@ -13,6 +14,7 @@ import cart from './cart';
 
 export default combineReducers({
     mobiles,
+    laptop,
     loading,
     vote,
     logChat,

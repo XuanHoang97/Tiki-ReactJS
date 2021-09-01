@@ -334,6 +334,9 @@ img {
                                             display: grid;
                                             text-align: end;
                                             .price__num {
+                                                display: inline-flex;
+                                                justify-content: flex-end;
+                                                gap: 5px;
                                                 h6 {
                                                     font-weight: bold;
                                                 }

@@ -8,6 +8,20 @@ export const addProduct = (payload) => {
     })
 }
 
+export const addLaptop = (payload) => {
+    return ({
+        type: cart.ADD_LAPTOP,
+        payload
+    })
+}
+
+export const addNewCodeOrder = (codeOrder) => {
+    return ({
+        type: 'ADD_CODE_ORDER',
+        payload: codeOrder
+    })
+}
+
 //so luong san pham
 export const countProduct = (payload) => {
     return ({

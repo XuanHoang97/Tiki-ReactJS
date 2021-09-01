@@ -32,7 +32,7 @@ class OrderSuccess extends Component {
                                 </div>
 
                                 <div className="order_next text-primary text-right">
-                                    <Link to="/" className="">
+                                    <Link to="/">
                                         Tiếp tục mua hàng
                                     </Link>
                                 </div>

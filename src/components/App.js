@@ -20,6 +20,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from "react-redux";
 import { productsCartMenuState$ } from "redux/selectors";
 import Modals from 'components/Modal';
+import Laptop_detail from "pages/laptopProduct";
 
 console.warn = () => { };
 // SEO Web
@@ -48,6 +49,7 @@ export default function App() {
           <Route exact path="/"> <Body /> </Route>
           <Route exact path="/Tiki-ReactJS"> <Body /> </Route>
           <Route exact path="/chi-tiet-san-pham/:slug.:id.html" component={Product_detail} />
+          <Route exact path="/laptop/:slug.:id.html" component={Laptop_detail} />
 
           <Route exact path="/gio-hang">
             {productsCart.length > 0 ? <Cart1 /> : <Cart />}

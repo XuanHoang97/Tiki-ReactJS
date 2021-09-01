@@ -22,6 +22,7 @@ const Product_detail = ({ match }) => {
   const TITLE = 'Điện thoại ngon - bổ - rẻ';
   const dataProDetail = useSelector(cartProductMenuState$)
   const dispatch = useDispatch()
+
   let number = useSelector(cartCountMenuState$)
   //tang so luong
   const handleUp = () => {
@@ -45,7 +46,7 @@ const Product_detail = ({ match }) => {
     };
     !dataProDetail && fetchProduct();
   }, [dataProDetail, match.params.id]);
-  // Call api
+ 
 
   return (
     <div className="main bg-light pt-3 pb-3">

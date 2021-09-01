@@ -51,10 +51,8 @@ function Order(props) {
                     </div>
                 </div>
 
-
-                <Link to="/gio-hang">
-                    <button type="button" className="btn btn-success btn-md btn-block mt-5" onClick={addCart}>Thêm vào giỏ hàng</button>
-                </Link>
+                <button type="button" className="btn btn-success btn-md btn-block mt-5" onClick={addCart}>Thêm vào giỏ hàng</button>                
+               
                 <div className="row mt-2 m-0">
                     <button type="button" className="col-md-6 btn btn-outline-primary btn-sm">
                         <h6 className="m-0">TRẢ GÓP 0%</h6>

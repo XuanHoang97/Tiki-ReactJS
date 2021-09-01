@@ -14,8 +14,17 @@ function* getDataMobileSaga() {
     } catch (error) {
         yield put(actions.getDataMobile.getDataMobileFailure(error));
     }
-    yield delay(1500);
+    yield delay(500);
     yield put(hideLoading());
+}
+
+function* getDataLaptopSaga() {
+    try {
+        const laptop = yield call(api.getDataLaptop);
+        yield put(actions.getDataLaptop.getDataLaptopSuccess(laptop.data));
+    } catch (error) {
+        yield put(actions.getDataLaptop.getDataLaptopFailure(error));
+    }
 }
 
 function* getDataCatagory() {
@@ -124,6 +133,7 @@ function* deleteChatSaga({ payload }) {
 
 function* mySaga() {
     yield takeLatest(actions.getDataMobile.getDataMobileRequest, getDataMobileSaga);
+    yield takeLatest(actions.getDataLaptop.getDataLaptopRequest, getDataLaptopSaga);
     yield takeLatest(actions.getDataCatagory.getCatagoryRequest, getDataCatagory);
     yield takeLatest(actions.getDataPreferent.getPreferentRequest, getDataPreferent);
     yield takeLatest(actions.getDataSlide.getSlideRequest, getDataSlide);

@@ -10,6 +10,12 @@ export const getDataMobile = createActions({
     getDataMobileFailure: (err) => err
 })
 
+export const getDataLaptop = createActions({
+    getDataLaptopRequest: undefined,
+    getDataLaptopSuccess: (payload) => payload,
+    getDataLaptopFailure: (err) => err
+})
+
 export const getDataCatagory = createActions({
     getCatagoryRequest: undefined,
     getCatagorySuccess: (payload) => payload,
@@ -30,7 +36,7 @@ export const getDataSlide = createActions({
 
 export const getDataSearchSpecial = createActions({
     getSearchSpecialRequest: undefined,
-    getSearchSpecialSuccess: (payload) => payload,
+    getSearchSpecialSuccess: (payload, id) => payload,
     getSearchSpecialFailure: (err) => err
 })
 

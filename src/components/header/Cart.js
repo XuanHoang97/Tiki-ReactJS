@@ -16,13 +16,13 @@ function Cart(props) {
         return productsCart.map(item => {
             return (<div key={item.id} className="info">
                 <div className='d-flex justify-content-between align-items-start'>
-                    <div className="col-md-2 text-center border p-1">
+                    <div className="col-md-3 p-1">
                         <img className="w-75 h-75" src={item.img} alt={item.name} />
                     </div>
 
                     <div className="col-md-5 mt-1 p-0 content">
                         <small>{item.name}</small>
-                        <p className='text-muted small mt-3'>Trả góp 0% - Tặng phụ kiện - Voucher 5% </p>
+                        <div className='text-muted small mt-3'>Trả góp 0% - Tặng phụ kiện - Voucher 5% </div>
                     </div>
 
                     <div className="col-md-4 p-0 price">
@@ -30,7 +30,7 @@ function Cart(props) {
                             <h6 className='small text-danger m-0'>{numberFormat(item.price)}</h6>
                             <span className='small m-0'> x{item.count}</span>
                         </div>
-                        <div onClick={() => handleDelete(item.id)} className="btnDelProd text-danger">Xóa</div>
+                        <div onClick={() => handleDelete(item.id)} className="btnDelProd text-danger small mt-2">Xóa</div>
                     </div>
                 </div>
                 <hr />

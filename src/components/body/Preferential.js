@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import {Link} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { preferentState$ } from "redux/selectors";
 import * as actions from '../../redux/actions'
@@ -20,8 +21,10 @@ export default function Preferential() {
                     return (
                         <React.Fragment key={pref.id}>
                             <div className="col-md-1 col-3 p-1 text-center" style={{ cursor: 'pointer' }}>
-                                <img className="w-50" src={pref.img} alt="" />
-                                <p className="small mt-2 mb-0">{pref.content}</p>
+                                <Link to="*">
+                                    <img className="w-50" src={pref.img} alt="" />
+                                    <p className="small mt-2 mb-0 text-dark">{pref.content}</p>
+                                </Link>
                             </div>
                         </React.Fragment>
                     );

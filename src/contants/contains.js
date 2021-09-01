@@ -1,30 +1,19 @@
 export const INIT_STATE = {
-    mobiles: {
-        data: [],
-    },
-    catagory: {
-        data: []
-    },
-    preferent: {
-        data: []
-    },
-    slide: {
-        data: []
-    },
+    mobiles: { data: [], },
 
-    searchSpecial: {
-        data: []
-    },
+    laptop: { data: [], },
 
-    vote: {
-        data: []
-    },
+    catagory: { data: [] },
 
-    logChat: {
-        data: []
-    },
+    preferent: { data: [] },
 
-    catagoryMenu: {
-        data: []
-    },
+    slide: { data: [] },
+
+    searchSpecial: { data: [] },
+
+    vote: { data: [] },
+
+    logChat: { data: [] },
+
+    catagoryMenu: { data: [] },
 }
