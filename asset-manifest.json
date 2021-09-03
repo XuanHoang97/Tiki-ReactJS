@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Tiki-ReactJS/static/css/main.21d024dc.chunk.css",
-    "main.js": "/Tiki-ReactJS/static/js/main.05983d7b.chunk.js",
-    "main.js.map": "/Tiki-ReactJS/static/js/main.05983d7b.chunk.js.map",
+    "main.css": "/Tiki-ReactJS/static/css/main.e16b8e0e.chunk.css",
+    "main.js": "/Tiki-ReactJS/static/js/main.591b6809.chunk.js",
+    "main.js.map": "/Tiki-ReactJS/static/js/main.591b6809.chunk.js.map",
     "runtime-main.js": "/Tiki-ReactJS/static/js/runtime-main.87e4c1a4.js",
     "runtime-main.js.map": "/Tiki-ReactJS/static/js/runtime-main.87e4c1a4.js.map",
     "static/css/2.ad1526a1.chunk.css": "/Tiki-ReactJS/static/css/2.ad1526a1.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.5b189892.chunk.js.map": "/Tiki-ReactJS/static/js/3.5b189892.chunk.js.map",
     "index.html": "/Tiki-ReactJS/index.html",
     "static/css/2.ad1526a1.chunk.css.map": "/Tiki-ReactJS/static/css/2.ad1526a1.chunk.css.map",
-    "static/css/main.21d024dc.chunk.css.map": "/Tiki-ReactJS/static/css/main.21d024dc.chunk.css.map",
+    "static/css/main.e16b8e0e.chunk.css.map": "/Tiki-ReactJS/static/css/main.e16b8e0e.chunk.css.map",
     "static/js/2.1ed5f7de.chunk.js.LICENSE.txt": "/Tiki-ReactJS/static/js/2.1ed5f7de.chunk.js.LICENSE.txt",
     "static/media/body.scss": "/Tiki-ReactJS/static/media/hotgirl.9e9bb79c.png",
     "static/media/ld1.e01ac89b.gif": "/Tiki-ReactJS/static/media/ld1.e01ac89b.gif"
@@ -21,7 +21,7 @@
     "static/js/runtime-main.87e4c1a4.js",
     "static/css/2.ad1526a1.chunk.css",
     "static/js/2.1ed5f7de.chunk.js",
-    "static/css/main.21d024dc.chunk.css",
-    "static/js/main.05983d7b.chunk.js"
+    "static/css/main.e16b8e0e.chunk.css",
+    "static/js/main.591b6809.chunk.js"
   ]
 }
