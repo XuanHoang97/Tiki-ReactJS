@@ -10,12 +10,12 @@ import { numberFormat } from "contants/NumberFormat";
 import Offer from "./Offer";
 import Order from "./Order";
 import ProductDesc from "./ProductDesc";
-import ProductSimilar from "./ProductSimilar";
 import SpecialFeature from "./SpecialFeature";
 import Specifications from "./Specifications";
 import Illutrator from "./Illutrator";
 import Vote from "./Vote";
 import Rate from "./vote/Rate";
+import ProdRelated from "./ProdRelated";
 
 const Product_detail = ({ match }) => {
   const [data, setData] = useState([]);
@@ -23,6 +23,7 @@ const Product_detail = ({ match }) => {
   const dataProDetail = useSelector(cartProductMenuState$)
   const dispatch = useDispatch()
 
+  let count =1;
   let number = useSelector(cartCountMenuState$)
   //tang so luong
   const handleUp = () => {
@@ -101,7 +102,26 @@ const Product_detail = ({ match }) => {
         <Specifications />
         <ProductDesc />
         <Rate />
-        <ProductSimilar />
+        
+        {/* ProductRelated  */}
+        <div>
+            <h6 className="mt-4 mb-2 m-0">SẢN PHẨM TƯƠNG TỰ</h6>
+            <div className="row bg-white pt-4 pb-4 p-3 m-1">
+                {
+                  data.map((value, key) => {
+                    console.log(key)
+                    if(value.id != match.params.id){
+                      if(count<=4){
+                        count++;
+                        return(
+                          <ProdRelated key={key} img={value.img} name={value.name} />
+                        )
+                      }
+                    }
+                  })
+                }
+            </div>
+        </div>
         <Mail />
       </div>
     </div>

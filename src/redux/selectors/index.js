@@ -1,5 +1,6 @@
 export const mobilesState$ = (state) => state.mobiles.data
 
+export const newState$ = (state) => state.news.data
 
 export const catagoryState$ = (state) => state.catagory.data
 

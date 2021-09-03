@@ -117,7 +117,7 @@ img {
                                     position: absolute;
                                     z-index: 99;
                                     height: auto;
-                                    width: 560px;
+                                    width: 555px;
                                     box-shadow: rgb(121, 121, 121) 0px 6px 12px 0px;
                                     .search__items:hover {
                                         background: rgb(227, 242, 252);
@@ -293,6 +293,12 @@ img {
                                 z-index: 10;
                             }
                         }
+                        .cart:hover {
+                            .cart__info {
+                                animation: zoom .3s linear;
+                                transform-origin: calc(100% - 60px) top;
+                            }
+                        }
                         .cart {
                             font-size: 14px;
                             cursor: pointer;
@@ -314,8 +320,9 @@ img {
                             }
                             .cart__info {
                                 // display: block;
-                                width: 24rem;
-                                left: -14.5rem;
+                                box-shadow: 0 2px 10px 1px grey;
+                                width: 25rem;
+                                left: -15rem;
                                 a {}
                                 .text-left {
                                     .info {

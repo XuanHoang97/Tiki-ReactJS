@@ -14,6 +14,8 @@ export const getDataPreferent = () => axios.get(`${URL2}/preferent/`)
 
 export const getDataSlide = () => axios.get(`${URL}/slide/`)
 
+export const getDataNew = () => axios.get(`${URL2}/new_event/`)
+
 export const getDataSearchSpecial = () => axios.get(`${URL}/search_special/`)
 
 export const getDataCatagoryMenu = () => axios.get(`${URL}/category_menu/`)

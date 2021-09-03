@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addProduct } from "redux/actions/cart";
 import { mobilesState$ } from "redux/selectors";
-import * as actions from '../../redux/actions';
+import * as actions from '../../../redux/actions';
+import Rate from "../Rate";
 
 // Pagination
 const RenderMobile = (mobile) => {
@@ -12,7 +13,7 @@ const RenderMobile = (mobile) => {
         dispatch(addProduct(e))
     }
     return (
-        <div className="product mt-3 ml-0 mr-0 p-3 bg-white text-center">
+        <div className="product mt-3 ml-0 mr-0 pb-4 p-3 bg-white text-center">
             <h6 className="text-left">
                 <i className="fas fa-mobile-alt mr-1 text-danger mr-3" />
                 <span className="text-danger ">ĐIỆN THOẠI NỔI BẬT</span>
@@ -22,54 +23,41 @@ const RenderMobile = (mobile) => {
                 {mobile.map((mobile, key) => {
                     return (
                         <React.Fragment key={key}>
-                            <div className="product--item col-md-3 col-6 pt-3" >
+                            <div className="product--item col-md-3 col-6 pt-3 p-0" >
                                 <div onClick={() => handleMobile(mobile)}>
-                                    <Link to={`/chi-tiet-san-pham/${mobile.id}` + mobile.name + "." + mobile.id + ".html"}>
-                                        <img src={mobile.img} alt="mobile" />
-                                        <h6 className="mt-4 mb-1 text-dark">{mobile.name}</h6>
+                                    <Link to={`/chi-tiet-san-pham/` + mobile.name + "." + mobile.id + ".html"}>
+                                        <img src={mobile.img} alt="mobile" style={{height:'200px'}} />
+                                        <h6 className="mt-2 mb-1 text-dark">{mobile.name}</h6>
                                     </Link>
                                 </div>
+                                <Rate />
 
-                                <div className="rate mb-3">
-                                    <span className="fa fa-star checked text-warning small" />
-                                    <span className="fa fa-star checked text-warning small" />
-                                    <span className="fa fa-star checked text-warning small" />
-                                    <span className="fa fa-star text-secondary small" />
-                                    <span className="fa fa-star text-secondary small" />
+                                <div className="price__prod row align-items-center justify-content-center">
+                                    <span className="font-weight-bold" style={{color:'red', fontSize:'14px'}}>
+                                        {new Intl.NumberFormat("GB-en", {
+                                            currency: "VND",
+                                            style: "currency",
+                                            minimumFractionDigits: 0,
+                                            maximumFractionDigits: 0
+                                        }).format(mobile.price)}
+                                    </span>
+
+                                    <span className="badge badge-pill badge-warning p-1 ml-3 mr-2">-{mobile.sale_off}%</span>
+                                    <strike className="small" style={{ color: '#8a8a8a' }}>
+                                        {new Intl.NumberFormat("GB-en", {
+                                            currency: "VND",
+                                            style: "currency",
+                                            minimumFractionDigits: 0,
+                                            maximumFractionDigits: 0
+                                        }).format(mobile.price_old)}
+                                    </strike>
                                 </div>
-                                <span className="badge badge-pill badge-danger pt-2 pb-2 pl-3 pr-3">
-                                    {new Intl.NumberFormat("GB-en", {
-                                        currency: "VND",
-                                        style: "currency",
-                                        minimumFractionDigits: 0,
-                                        maximumFractionDigits: 0
-                                    }).format(mobile.price)}
 
-                                </span>
-                                <span className="badge badge-pill badge-warning p-2 ml-2 mr-2">-{mobile.sale_off} %</span>
-                                <strike className="small" style={{ color: '#8a8a8a' }}>
-                                    {new Intl.NumberFormat("GB-en", {
-                                        currency: "VND",
-                                        style: "currency",
-                                        minimumFractionDigits: 0,
-                                        maximumFractionDigits: 0
-                                    }).format(mobile.price_old)}
-                                </strike>
-                                <div className="config bg-light rounded mt-3 ml-1 mr-1 mb-3 pt-2 pb-2 pl-2 pr-2 row">
-                                    <div className="chip border border-default mb-1 mr-1 rounded col-md-8">
-                                        <small> {mobile.chip}</small>
-                                    </div>
+                                <button type="button" name="" id="" class="AddCart btn btn-success btn-sm btn-block mt-4">
+                                    <img src="https://salt.tikicdn.com/ts/upload/40/44/6c/b80ad73e5e84aeb71c08e5d8d438eaa1.png" alt="" className="mr-2" style={{width: '8%' }} />
+                                    Mua ngay
+                                </button>
 
-                                    <div className="chip border border-default rounded col-md-4">
-                                        <small>{mobile.screen} ''</small>
-                                    </div>
-                                    <div className="chip border border-default rounded col-md-4">
-                                        <small>{mobile.ram} GB</small>
-                                    </div>
-                                    <div className="chip border border-default rounded col-md-4">
-                                        <small>{mobile.rom} GB</small>
-                                    </div>
-                                </div>
                             </div>
                         </React.Fragment>
                     );

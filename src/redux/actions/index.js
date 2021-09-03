@@ -34,6 +34,12 @@ export const getDataSlide = createActions({
     getSlideFailure: (err) => err
 })
 
+export const getDataNew = createActions({
+    getNewRequest: undefined,
+    getNewSuccess: (payload) => payload,
+    getNewFailure: (err) => err
+})
+
 export const getDataSearchSpecial = createActions({
     getSearchSpecialRequest: undefined,
     getSearchSpecialSuccess: (payload, id) => payload,

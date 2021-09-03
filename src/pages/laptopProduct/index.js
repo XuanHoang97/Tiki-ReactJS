@@ -56,10 +56,22 @@ const Laptop_detail = ({ match }) => {
                 <div className="col-md-6 pl-4 pr-2 text-left" key={prod.id}>
                     <h5>{prod.name}</h5>
                 
-                    <div className="price bg-light p-2">
+                    <div className="price bg-light p-2 row align-items-center">
                         <div className="row m-1 align-items-center">
-                            <h4>{numberFormat(prod.price)}</h4>
+                            <h4 className="text-danger">{numberFormat(prod.price)}</h4>
                         </div>
+                        <span className="badge badge-pill badge-warning ml-3 mr-4">
+                          -{prod.sale_off}%
+                        </span>
+
+                        <strike className="small">
+                          {new Intl.NumberFormat("GB-en", {
+                            currency: "VND",
+                            style: "currency",
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0,
+                          }).format(prod.price_old)}
+                        </strike>
                     </div>
                 
                     <Order order={laptopDetail ? laptopDetail : data[0]}

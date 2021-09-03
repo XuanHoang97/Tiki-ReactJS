@@ -42,7 +42,7 @@ export default function App() {
         <ScrollToTop />
         <ScrollTop />
         <Header />
-        <ToastContainer />
+        <ToastContainer autoClose={3000} />
         <GlobalLoading />
         <Modals/>
         <Switch>

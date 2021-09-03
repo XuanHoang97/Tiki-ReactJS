@@ -16,11 +16,11 @@ function Cart(props) {
         return productsCart.map(item => {
             return (<div key={item.id} className="info">
                 <div className='d-flex justify-content-between align-items-start'>
-                    <div className="col-md-3 p-1">
-                        <img className="w-75 h-75" src={item.img} alt={item.name} />
+                    <div className="col-md-2 p-0">
+                        <img className="w-100 rounded" src={item.img} alt={item.name} />
                     </div>
 
-                    <div className="col-md-5 mt-1 p-0 content">
+                    <div className="col-md-6 mt-1 pl-2 p-0 content">
                         <small>{item.name}</small>
                         <div className='text-muted small mt-3'>Trả góp 0% - Tặng phụ kiện - Voucher 5% </div>
                     </div>
@@ -57,7 +57,7 @@ function Cart(props) {
                             <hr />
                             {renderCart()}
 
-                            <h6 className='text-muted'>Tổng cộng: 
+                            <h6>Tổng cộng: 
                                 <span className='ml-3 font-weight-bold text-danger'>
                                     {numberFormat(totalMoney(productsCart))}
                                 </span>

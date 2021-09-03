@@ -5,7 +5,6 @@ const initialstate = {
     productDetail: undefined,
     count: 1,
     productsCart: dataLocalStorage,
-    codeOrder: []
 }
 
 const productReducer = (state = initialstate, action) => {
@@ -34,12 +33,6 @@ const productReducer = (state = initialstate, action) => {
                 ...state,
                 count: state.count + 1
             }
-
-        case 'ADD_CODE_ORDER':
-            {
-                return state;
-            }
-
 
         case cart.ADD_TO_CART:
             const { id, count } = action.payload

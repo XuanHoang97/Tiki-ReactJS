@@ -9,6 +9,8 @@ export const INIT_STATE = {
 
     slide: { data: [] },
 
+    new: { data: [] },
+
     searchSpecial: { data: [] },
 
     vote: { data: [] },

@@ -95,10 +95,9 @@
                 }
                 .list__prod:hover {
                     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px;
+                    transform: scale(1.15);
+                    transition: transform .4s linear;
                 }
-            }
-            .list__second {
-                @extend .list;
             }
             .view__more {
                 display: flex;

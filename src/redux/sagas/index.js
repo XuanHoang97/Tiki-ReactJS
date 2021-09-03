@@ -8,14 +8,14 @@ import { hideModal } from "redux/actions/vote";
 
 function* getDataMobileSaga() {
     try {
-        yield put(showLoading());
+        // yield put(showLoading());
         const mobile = yield call(api.getDataMobile);
         yield put(actions.getDataMobile.getDataMobileSuccess(mobile.data));
     } catch (error) {
         yield put(actions.getDataMobile.getDataMobileFailure(error));
     }
-    yield delay(500);
-    yield put(hideLoading());
+    // yield delay(500);
+    // yield put(hideLoading());
 }
 
 function* getDataLaptopSaga() {
@@ -71,6 +71,16 @@ function* getDataSearchSpecial() {
         yield put(actions.getDataSearchSpecial.getSearchSpecialSuccess(searchSpecial.data));
     } catch (error) {
         yield put(actions.getDataSearchSpecial.getSearchSpecialFailure(error));
+    }
+}
+
+
+function* getDataNew() {
+    try {
+        const news = yield call(api.getDataNew);
+        yield put(actions.getDataNew.getNewSuccess(news.data));
+    } catch (error) {
+        yield put(actions.getDataNew.getNewFailure(error));
     }
 }
 
@@ -137,6 +147,7 @@ function* mySaga() {
     yield takeLatest(actions.getDataCatagory.getCatagoryRequest, getDataCatagory);
     yield takeLatest(actions.getDataPreferent.getPreferentRequest, getDataPreferent);
     yield takeLatest(actions.getDataSlide.getSlideRequest, getDataSlide);
+    yield takeLatest(actions.getDataNew.getNewRequest, getDataNew);
     yield takeLatest(actions.getDataSearchSpecial.getSearchSpecialRequest, getDataSearchSpecial);
     yield takeLatest(actions.getDataCatagoryMenu.getCatagoryMenuRequest, getDataCatagoryMenu);
 

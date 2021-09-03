@@ -4,6 +4,7 @@ import mobiles from './mobile';
 import laptop from './laptop';
 import loading from './loading';
 import vote from './vote';
+import news from './new';
 import logChat from './logChat';
 import catagory from './catagory';
 import preferent from './preferent';
@@ -17,6 +18,7 @@ export default combineReducers({
     laptop,
     loading,
     vote,
+    news,
     logChat,
     catagory,
     preferent,

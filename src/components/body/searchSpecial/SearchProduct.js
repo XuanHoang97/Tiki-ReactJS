@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Rate from './Rate';
+import Rate from '../Rate';
 function SearchProduct(props) {
     return (
         <div className="list__prod">

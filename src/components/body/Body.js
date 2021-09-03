@@ -7,10 +7,10 @@ import Chatbot from "react-chatbot-kit";
 import Category from "./Category";
 import LuckyWheel from "./LuckyWheel";
 import Mail from "./Mail";
-import Mobile from "./Mobile";
+import Mobile from "./mobile/Index";
 import Preferential from "./Preferential";
-import ProductSuggestion from "./ProductSuggestion";
-import LaptopProduct from "./product_Laptop/Index";
+import ProductSuggestion from "./productSuggestion/Index";
+import LaptopProduct from "./laptop/Index";
 import SearchSpecial from "./searchSpecial/Index";
 import Slide from "./Slide";
 
