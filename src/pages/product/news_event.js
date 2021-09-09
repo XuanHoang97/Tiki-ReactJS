@@ -27,4 +27,5 @@ function News_Event(props) {
         </div>
     );
 }
+
 export default News_Event;
