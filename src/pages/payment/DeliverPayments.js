@@ -10,6 +10,7 @@ function DeliverPayments(props) {
                     <div className="col-md-3 p-0">
                         <img className="w-75" src={item.img} alt="" />
                     </div>
+                    
                     <div className="col-md-5 p-0">
                         <small>{item.name}</small>
                         <p>Số lượng: X{item.count} </p>
@@ -22,9 +23,11 @@ function DeliverPayments(props) {
             )
         })
     }
+
     const handleChange = () => {
 
     }
+
     return (
         <div>
             <h6 className="text-dark">1. Chọn hình thức giao hàng</h6>

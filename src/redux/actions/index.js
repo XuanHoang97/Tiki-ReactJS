@@ -16,6 +16,12 @@ export const getDataLaptop = createActions({
     getDataLaptopFailure: (err) => err
 })
 
+export const getDataProductSuggest = createActions({
+    getSuggestRequest: undefined,
+    getSuggestSuccess: (payload) => payload,
+    getSuggestFailure: (err) => err
+})
+
 export const getDataCatagory = createActions({
     getCatagoryRequest: undefined,
     getCatagorySuccess: (payload) => payload,

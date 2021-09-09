@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { reduxForm, Field } from "redux-form";
 import { hideModal } from "redux/actions/vote";
@@ -7,12 +7,10 @@ import renderSelectField from "components/FormHelper/Select";
 import renderTextAreaField from "components/FormHelper/TextField";
 import validate from "./validate";
 import { addChat, updateChat } from "../../../redux/actions/logchat";
-import { createDataVote, updateDataVote } from "redux/actions";
 
 function FormVote({ handleSubmit, invalid, submitting }) {
   const chatEditting = useSelector((state) => state.logChat.chatEditting);
   const dispatch = useDispatch();
-  console.log(chatEditting)
 
   const [data, setData] = useState({
     avatar:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw2cafAJXiEVaaJbi2DgN4KppO2XjlaAh1eQ&usqp=CAU',
@@ -27,7 +25,6 @@ function FormVote({ handleSubmit, invalid, submitting }) {
     }
     else{
       dispatch(addChat(name, comment))
-
     }
   },[data,dispatch]);
 

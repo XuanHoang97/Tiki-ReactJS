@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { deleteItemCart } from 'redux/actions/cart';
@@ -40,43 +40,43 @@ function Cart(props) {
 
     return (
         <li className="cart nav-item dropdown active">
-            <a className="nav-link dropdown-toggle"  id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <Link to="/gio-hang" className="nav-link dropdown-toggle"  id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i className="fas fa-shopping-cart mr-2" style={{ fontSize: '18px' }}>
                     <span className="badge badge-pill badge-warning position-absolute " style={{ top: '-5px', left: '1.4rem' }}>
                         {productsCart.length}
                     </span>
                 </i>
                 <span>Giỏ Hàng</span>
-            </a>
+            </Link>
 
             <div className="dropdown-menu cart__info p-3 text-center" aria-labelledby="dropdownId">
                 {
                     productsCart.length > 0 ?
-                        (<div className='text-left'>
-                            <h6 className='text-muted'>Sản phẩm đã thêm</h6>
-                            <hr />
-                            {renderCart()}
+                    (<div className='text-left'>
+                        <h6 className='text-muted'>Sản phẩm đã thêm</h6>
+                        <hr />
+                        {renderCart()}
 
-                            <h6>Tổng cộng: 
-                                <span className='ml-3 font-weight-bold text-danger'>
-                                    {numberFormat(totalMoney(productsCart))}
-                                </span>
-                            </h6>
-                            <Link to='/gio-hang'>
-                                <button className='btn btn-success btn-sm w-100 mt-2 font-weight-bold'>Xem giỏ hàng</button>
-                            </Link>
-                        </div>)
-                        :
-                        (
-                            <>
-                                <img className="w-25 mb-3" src="https://salt.tikicdn.com/desktop/img/mascot@2x.png" />
-                                <p>Chưa có sản phẩm nào trong giỏ hàng</p>
-                            </>
-                        )
+                        <h6>Tổng cộng: 
+                            <span className='ml-3 font-weight-bold text-danger'>
+                                {numberFormat(totalMoney(productsCart))}
+                            </span>
+                        </h6>
+                        
+                        <Link to='/gio-hang'>
+                            <button className='btn btn-success btn-sm w-100 mt-2 font-weight-bold'>Xem giỏ hàng</button>
+                        </Link>
+                    </div>)
+                    :
+                    (
+                        <div>
+                            <img className="w-25 mb-3" src="https://salt.tikicdn.com/desktop/img/mascot@2x.png" alt="" />
+                            <p>Chưa có sản phẩm nào trong giỏ hàng</p>
+                        </div>
+                    )
                 }
 
             </div>
-
         </li>
     );
 }

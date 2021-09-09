@@ -13,8 +13,8 @@ import ProductDesc from "./ProductDesc";
 import SpecialFeature from "./SpecialFeature";
 import Specifications from "./Specifications";
 import Illutrator from "./Illutrator";
-import Vote from "./Vote";
 import Rate from "./vote/Rate";
+import Vote from "./Vote";
 import ProdRelated from "./ProdRelated";
 
 const Product_detail = ({ match }) => {
@@ -47,7 +47,6 @@ const Product_detail = ({ match }) => {
     };
     !dataProDetail && fetchProduct();
   }, [dataProDetail, match.params.id]);
- 
 
   return (
     <div className="main bg-light pt-3 pb-3">
@@ -69,9 +68,10 @@ const Product_detail = ({ match }) => {
 
           {(dataProDetail ? [dataProDetail] : data).map((prod, key) => {
             return (
-              <div className="col-md-6 pl-4 pr-2 text-left" key={prod.id}>
+              <div className="col-md-6 pl-4 pr-2 text-left" key={key}>
                 <h5>{prod.name}</h5>
                 <Vote />
+                
                 <div className="price bg-light p-2">
                   <div className="row m-1 align-items-center">
                     <h4>{numberFormat(prod.price)}</h4>
@@ -109,7 +109,6 @@ const Product_detail = ({ match }) => {
             <div className="row bg-white pt-4 pb-4 p-3 m-1">
                 {
                   data.map((value, key) => {
-                    console.log(key)
                     if(value.id != match.params.id){
                       if(count<=4){
                         count++;

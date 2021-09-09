@@ -11,6 +11,7 @@ const Laptop_detail = ({ match }) => {
   const laptopDetail = useSelector(laptopDetailState$)
   const dispatch = useDispatch()
 
+  let count =1;
   let number = useSelector(cartCountMenuState$)
   //tang so luong
   const handleUp = () => {

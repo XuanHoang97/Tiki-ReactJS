@@ -3,6 +3,8 @@ export const INIT_STATE = {
 
     laptop: { data: [], },
 
+    suggest: { data: [], },
+
     catagory: { data: [] },
 
     preferent: { data: [] },

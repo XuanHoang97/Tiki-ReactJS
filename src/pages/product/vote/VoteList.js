@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { voteState$ } from 'redux/selectors';
 import * as actions from '../../../redux/actions';

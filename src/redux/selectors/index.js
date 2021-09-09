@@ -1,4 +1,6 @@
-export const mobilesState$ = (state) => state.mobiles.data
+// pages 
+
+export const suggestState$ = (state) => state.suggest
 
 export const newState$ = (state) => state.news.data
 
@@ -16,6 +18,8 @@ export const laptopState$ = (state) => state.laptop.data
 export const laptopDetailState$ = (state) => state.cart.laptopDetail
 
 // cart mobile
+export const mobilesState$ = (state) => state.mobiles.data
+
 export const catagoryMenuState$ = (state) => state.catagoryMenu.data
 
 export const cartProductMenuState$ = (state) => state.cart.productDetail

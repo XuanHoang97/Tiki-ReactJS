@@ -1,9 +1,6 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { showModal } from 'redux/actions/vote';
 
 function VoteItem(props) {
-
     return (
         <div className="row mb-3 ml-0">
             <div className="avatar"><img src={props.img} alt="" /></div>
@@ -24,5 +21,4 @@ function VoteItem(props) {
         </div>
     );
 }
-
 export default VoteItem;

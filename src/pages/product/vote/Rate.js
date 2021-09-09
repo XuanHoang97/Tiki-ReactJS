@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import FormVote from "./FormVote";
 import VoteList from "./VoteList";
-import { changeModalContent, changeModalTitle, changeBg, hideModal, showModal } from "redux/actions/vote";
+import { changeModalContent, changeModalTitle, hideModal, showModal } from "redux/actions/vote";
 import { fetchListChat, setChatEditting, deleteChat } from "redux/actions/logchat";
 
 function Rate(props) {
-  const listChat = useSelector((state) => state.listChat);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -35,7 +34,6 @@ function Rate(props) {
   } 
 
   const handleDeleteVote = (chat)=>{
-    console.log('chat: ', chat);
     dispatch(deleteChat(chat.id));
   }
 

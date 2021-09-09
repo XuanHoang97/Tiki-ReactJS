@@ -1,5 +1,5 @@
 import { toastError, toastSuccess } from 'components/helper/toastHelper';
-import { ADD_CHAT, ADD_CHAT_FAILED, ADD_CHAT_SUCCESS, DELETE_CHAT, DELETE_CHAT_FAILED, DELETE_CHAT_SUCCESS, FETCH_CHAT, FETCH_CHAT_FAILED, FETCH_CHAT_SUCCESS, FILTER_CHAT_SUCCESS, SET_CHAT_EDITTING, UPDATE_CHAT, UPDATE_CHAT_FAILED, UPDATE_CHAT_SUCCESS } from '../../contants/logchat';
+import { ADD_CHAT, ADD_CHAT_FAILED, ADD_CHAT_SUCCESS, DELETE_CHAT, DELETE_CHAT_FAILED, DELETE_CHAT_SUCCESS, FETCH_CHAT, FETCH_CHAT_FAILED, FETCH_CHAT_SUCCESS, SET_CHAT_EDITTING, UPDATE_CHAT, UPDATE_CHAT_FAILED, UPDATE_CHAT_SUCCESS } from '../../contants/logchat';
 
 const initialstate = {
     listChat: [],
@@ -29,8 +29,7 @@ const reducer = (state = initialstate, action) => {
 
         case FETCH_CHAT_FAILED:
             {
-                const { error } = action.payload;
-                // toastError(error);
+                // const { error } = action.payload;
                 return {
                     ...state,
                     listChat: []
@@ -62,8 +61,6 @@ const reducer = (state = initialstate, action) => {
                     ...state,
                 };
             }
-
-        
         
         case SET_CHAT_EDITTING:
             {
