@@ -8,7 +8,7 @@
         form {
             .vote {
                 .name,
-                .cmt {
+                .cmt, .avatar {
                     width: 100%;
                 }
                 .control {
@@ -26,8 +26,9 @@
     margin-top: 25px;
     .user {
         .avatar {
-            width: 50px;
             img {
+                width: 50px;
+                height: 50px;
                 border-radius: 50%;
             }
         }

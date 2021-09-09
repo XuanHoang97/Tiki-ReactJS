@@ -9,7 +9,6 @@ export const fetchListChat = (params = {}) => {
     };
 };
 
-
 export const fetchListChatSuccess = (data) => {
     return {
         type: FETCH_CHAT_SUCCESS,
@@ -29,16 +28,16 @@ export const fetchListChatFailed = (error) => {
 };
 
 //Add Chat
-export const addChat = (info, cmt) => {
+export const addChat = (name, comment) => {
     return {
         type: ADD_CHAT,
         payload: {
-            info,
-            cmt
+            name,
+            comment,
+            avatar:'https://cellphones.com.vn/sforum/wp-content/uploads/2020/04/LR-29-scaled.jpg',
         }
     };
 };
-
 
 export const addChatSuccess = (data) => {
     return {
@@ -58,24 +57,23 @@ export const addChatFailed = (error) => {
     };
 };
 
-//edit 
-export const setChatEditting = (Chat) => {
+//edit Chat
+export const setChatEditting = (chat) => {
     return {
         type: SET_CHAT_EDITTING,
         payload: {
-            Chat
+            chat
         }
     };
 };
 
-//update
-export const updateChat = (title, description, status = 0) => {
+export const updateChat = (name, comment,avatar) => {
     return {
         type: UPDATE_CHAT,
         payload: {
-            title,
-            description,
-            status
+            name,
+            comment,
+            avatar
         }
     };
 };
@@ -99,6 +97,7 @@ export const updateChatFailed = (error) => {
     };
 };
 
+// delete Chat
 export const deleteChat = (id) => {
     return {
         type: DELETE_CHAT,

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import News_Event from './News_Event';
 
 const MoreContent = () => {
     return (
@@ -14,45 +15,22 @@ function ProductDesc(props) {
     return (
         <>
             <h6 className="mt-4 mb-2 m-0">MÔ TẢ SẢN PHẨM</h6>
-            <div className="description row bg-white pt-4 pb-4 p-3 m-1">
-                <div className="description--product col-md-7">
-                <p>Không giống bất kỳ chiếc điện thoại nào khác, Samsung Galaxy Z Fold 2 5G sở hữu màn hình gập kỳ diệu mà mỗi khi mở màn hình, bạn đã mở ra tương lai của ngành công nghiệp smartphone.</p>
-                <img className="w-100" src="https://images.fpt.shop/unsafe/fit-in/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/QuanLNH2/samsung-galaxy-zfold2-6.jpg" alt="" />
-                
-                {isShow === true ? <MoreContent /> : ''}
-                {isShow === false ?
-                <div className="text-center ShowMore">
-                    <button type="button" onClick={()=> {setShow(true);}} className="btn btn-primary btn-sm mt-3">Đọc thêm 
-                        <i className="fas fa-caret-down ml-2" />
-                    </button>
-                </div>
-                : ''} 
-
-                </div>
-                
-                <div className="col-md-5">
-                    <h5 className="mb-4">Tin tức và sự kiện</h5>
-
-                    <div className="list_news row pl-3 pr-3">
-
-                        <div className="row mb-2 col-md-12 p-0">
-                            <img className="col-md-4" src="https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%20New%20Image%2Fss-galaxy-zFold-new04.png?alt=media&token=19053c30-7a46-4cdb-9851-c97da0ff5276" alt="" />
-                            <small className="col-md-8">Samsung đang đưa một số tính năng của Galaxy S21 lên các thiết bị cũ hơn</small>
-                        </div>
-                        <div className="row mb-2 col-md-12 p-0">
-                            <img className="col-md-4" src="https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%20New%20Image%2Fss-galaxy-zFold-new04.png?alt=media&token=19053c30-7a46-4cdb-9851-c97da0ff5276" alt="" />
-                            <small className="col-md-8">Samsung đang đưa một số tính năng của Galaxy S21 lên các thiết bị cũ hơn</small>
-                        </div>
-                        <div className="row mb-2 col-md-12 p-0">
-                            <img className="col-md-4" src="https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%20New%20Image%2Fss-galaxy-zFold-new04.png?alt=media&token=19053c30-7a46-4cdb-9851-c97da0ff5276" alt="" />
-                            <small className="col-md-8">Samsung đang đưa một số tính năng của Galaxy S21 lên các thiết bị cũ hơn</small>
-                        </div>
-                        <div className="row mb-2 col-md-12 p-0">
-                            <img className="col-md-4" src="https://firebasestorage.googleapis.com/v0/b/techshop-website.appspot.com/o/images%2FProduct%20New%20Image%2Fss-galaxy-zFold-new04.png?alt=media&token=19053c30-7a46-4cdb-9851-c97da0ff5276" alt="" />
-                            <small className="col-md-8">Samsung đang đưa một số tính năng của Galaxy S21 lên các thiết bị cũ hơn</small>
-                        </div>
+            <div className="description row bg-white p-3 m-1">
+                <div className="description--product col-md-8 p-0 pr-2">
+                    <p>Không giống bất kỳ chiếc điện thoại nào khác, Samsung Galaxy Z Fold 2 5G sở hữu màn hình gập kỳ diệu mà mỗi khi mở màn hình, bạn đã mở ra tương lai của ngành công nghiệp smartphone.</p>
+                    <img className="w-100" src="https://images.fpt.shop/unsafe/fit-in/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/QuanLNH2/samsung-galaxy-zfold2-6.jpg" alt="" />
+                    
+                    {isShow === true ? <MoreContent /> : ''}
+                    {isShow === false ?
+                    <div className="text-center ShowMore">
+                        <button type="button" onClick={()=> {setShow(true);}} className="btn btn-primary btn-sm mt-3">Đọc thêm 
+                            <i className="fas fa-caret-down ml-2" />
+                        </button>
                     </div>
+                    : ''} 
                 </div>
+                
+                <News_Event />
             </div>
         </>
     );

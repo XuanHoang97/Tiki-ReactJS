@@ -5,7 +5,7 @@ import { hideModal } from 'redux/actions/vote';
 
 function Modals() {
     const vote = useSelector(state => state.vote);
-    const { component, title, showModal} = vote;
+    const { background, component, title, showModal} = vote;
     const dispatch = useDispatch();
     
     return (

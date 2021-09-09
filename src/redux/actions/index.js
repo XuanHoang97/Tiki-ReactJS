@@ -10,6 +10,12 @@ export const getDataMobile = createActions({
     getDataMobileFailure: (err) => err
 })
 
+export const getDataLaptop = createActions({
+    getDataLaptopRequest: undefined,
+    getDataLaptopSuccess: (payload) => payload,
+    getDataLaptopFailure: (err) => err
+})
+
 export const getDataCatagory = createActions({
     getCatagoryRequest: undefined,
     getCatagorySuccess: (payload) => payload,
@@ -28,14 +34,46 @@ export const getDataSlide = createActions({
     getSlideFailure: (err) => err
 })
 
+export const getDataNew = createActions({
+    getNewRequest: undefined,
+    getNewSuccess: (payload) => payload,
+    getNewFailure: (err) => err
+})
+
+export const getDataSearchSpecial = createActions({
+    getSearchSpecialRequest: undefined,
+    getSearchSpecialSuccess: (payload, id) => payload,
+    getSearchSpecialFailure: (err) => err
+})
+
+
+export const getDataCatagoryMenu = createActions({
+    getCatagoryMenuRequest: undefined,
+    getCatagoryMenuSuccess: (payload) => payload,
+    getCatagoryMenuFailure: (err) => err
+})
+
+// Vote and comment product 
 export const getDataVote = createActions({
     getVoteRequest: undefined,
     getVoteSuccess: (payload) => payload,
     getVoteFailure: (err) => err
 })
 
-export const getDataCatagoryMenu = createActions({
-    getCatagoryMenuRequest: undefined,
-    getCatagoryMenuSuccess: (payload) => payload,
-    getCatagoryMenuFailure: (err) => err
+export const createDataVote = createActions({
+    createVoteRequest: (payload) => payload,
+    createVoteSuccess: (payload) => payload,
+    createVoteFailure: (err) => err
+})
+
+export const updateDataVote = createActions({
+    updateVoteRequest: (payload) => payload,
+    updateVoteSuccess: (payload) => payload,
+    updateVoteFailure: (err) => err
+})
+
+export const deleteDataVote = createActions({
+    deleteVoteRequest: (payload) => payload,
+    deleteVoteSuccess: (payload) => payload,
+    deleteVoteFailure: (err) => err
 })

@@ -1,23 +1,29 @@
 import { combineReducers } from "redux";
 import { reducer as formReducer } from 'redux-form';
 import mobiles from './mobile';
-import loading from './ui';
+import laptop from './laptop';
+import loading from './loading';
 import vote from './vote';
+import news from './new';
 import logChat from './logChat';
 import catagory from './catagory';
 import preferent from './preferent';
 import slide from './slide';
+import searchSpecial from './searchSpecial';
 import catagoryMenu from './catagoryMenu';
 import cart from './cart';
 
 export default combineReducers({
     mobiles,
+    laptop,
     loading,
     vote,
+    news,
     logChat,
     catagory,
     preferent,
     slide,
+    searchSpecial,
     catagoryMenu,
     cart,
 

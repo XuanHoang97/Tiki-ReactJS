@@ -15,33 +15,41 @@ import NotFound from "./NotFound";
 import ScrollTop from "./ScrollTop";
 import Result from "./header/search/Result";
 import GlobalLoading from "./GlobalLoading";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useSelector } from "react-redux";
 import { productsCartMenuState$ } from "redux/selectors";
 import Modals from 'components/Modal';
+import Laptop_detail from "pages/laptopProduct";
 
 console.warn = () => { };
 // SEO Web
 const TITLE = "Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh";
 
 export default function App() {
+  // Save data Cart 
   const productsCart = useSelector(productsCartMenuState$)
   const [data, setData] = useState([])
+
   useEffect(() => {
     let dataLocalStorage = JSON.parse(localStorage.getItem('dataCart')) || []
     setData(dataLocalStorage)
   }, [productsCart])
+
   return (
     <Router>
       <div>
         <ScrollToTop />
         <ScrollTop />
         <Header />
+        <ToastContainer autoClose={3000} />
         <GlobalLoading />
         <Modals/>
         <Switch>
           <Route exact path="/"> <Body /> </Route>
           <Route exact path="/Tiki-ReactJS"> <Body /> </Route>
           <Route exact path="/chi-tiet-san-pham/:slug.:id.html" component={Product_detail} />
+          <Route exact path="/laptop/:slug.:id.html" component={Laptop_detail} />
 
           <Route exact path="/gio-hang">
             {productsCart.length > 0 ? <Cart1 /> : <Cart />}
@@ -49,11 +57,11 @@ export default function App() {
 
           <Route exact path="/thanh-toan"><Payment /></Route>
           <Route exact path="/dat-hang-thanh-cong"><OrderSuccess /></Route>
-          <Route exact path="/search"><Result /></Route>
+          <Route exact path="/search/:slug.:id.html"><Result /></Route>
           <Route exact path="*"><NotFound /></Route>
         </Switch>
-        <Footer />
         <Helmet><title>{TITLE}</title></Helmet>
+        <Footer />
       </div>
     </Router>
   );

@@ -27,6 +27,7 @@ const composeEnhancer = process.env.NODE_ENV !== 'production' && typeof window =
   && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
     shouldHotReload: false
   }) : compose;
+  
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducers, composeEnhancer(applyMiddleware(sagaMiddleware)));
 sagaMiddleware.run(mySaga);

@@ -1,6 +1,9 @@
 .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0;
+    // transition: transform .5s linear !important;
+    // animation: zoom .3s linear;
+    // transform-origin: calc(100% - 60px) top;
 }
 
 ::placeholder {
@@ -18,7 +21,7 @@
     color: white;
 }
 
-.category:hover ~ .menu__item {
+.category:hover~.menu__item {
     display: flex !important;
 }
 
@@ -42,7 +45,6 @@
 
 .view--more:hover {
     i {
-        // transform: rotate(360deg);
         animation: fa-spin 1.5s infinite linear;
     }
 }
@@ -97,9 +99,11 @@
 a {
     text-decoration: none !important;
 }
+
 button:focus {
     box-shadow: none !important;
 }
+
 ::-webkit-scrollbar {
     width: 7px;
 }

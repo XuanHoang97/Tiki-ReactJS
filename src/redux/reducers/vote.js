@@ -1,10 +1,11 @@
-import { CHANGE_MODAL_CONTENT, CHANGE_MODAL_TITLE, HIDE_MODAL, SHOW_MODAL } from '../../contants/vote';
-import { HIDE_LOADING, SHOW_LOADING } from '../../contants/ui';
-import { getDataVote, getType } from 'redux/actions';
+import { CHANGE_MODAL_CONTENT, CHANGE_MODAL_TITLE, HIDE_MODAL, SHOW_MODAL, CHANGE_BG} from '../../contants/vote';
+import { HIDE_LOADING, SHOW_LOADING } from '../../contants/loading';
+import {  getType, getDataVote, createDataVote, updateDataVote, deleteDataVote } from 'redux/actions';
 
 const initialstate = {
     showModal: false,
     title: '',
+    background: '',
     component: null
 };
 
@@ -15,19 +16,30 @@ const reducer = (state = initialstate, action) => {
                 ...state,
                 showModal: true,
             };
+
         case HIDE_MODAL:
             return {
                 ...state,
                 showModal: false,
                 title: '',
+                background:'',
                 component: null
             };
+
+        case CHANGE_BG:
+            const { background } = action.payload;
+            return {
+                ...state,
+                background
+            };
+
         case CHANGE_MODAL_TITLE:
             const { title } = action.payload;
             return {
                 ...state,
                 title
             };
+
         case CHANGE_MODAL_CONTENT:
             const { component } = action.payload;
             return {
@@ -47,6 +59,26 @@ const reducer = (state = initialstate, action) => {
         case getType(getDataVote.getVoteFailure):
             return {
                 ...state,
+            }
+
+        case getType(createDataVote.createVoteSuccess):
+            return {
+                ...state,
+                data: [...state.data, action.payload]
+            }
+
+        case getType(updateDataVote.updateVoteSuccess):
+            console(action.payload)
+            return {
+                ...state,
+                data: state.data.map(vote => vote.id === action.payload.id ? action.payload:vote)
+
+            }
+        
+        case getType(deleteDataVote.deleteVoteSuccess):
+            return {
+                ...state,
+                data: state.data.map(vote => vote.id === action.payload.id ? action.payload:vote)
             }
 
         default:

@@ -117,7 +117,7 @@ img {
                                     position: absolute;
                                     z-index: 99;
                                     height: auto;
-                                    width: 560px;
+                                    width: 555px;
                                     box-shadow: rgb(121, 121, 121) 0px 6px 12px 0px;
                                     .search__items:hover {
                                         background: rgb(227, 242, 252);
@@ -293,7 +293,15 @@ img {
                                 z-index: 10;
                             }
                         }
+                        .cart:hover {
+                            .cart__info {
+                                animation: zoom .3s linear;
+                                transform-origin: calc(100% - 60px) top;
+                            }
+                        }
                         .cart {
+                            font-size: 14px;
+                            cursor: pointer;
                             @include phone {
                                 position: absolute;
                                 top: -2.2rem;
@@ -309,6 +317,43 @@ img {
                                 top: -0.35rem;
                                 right: 5.3rem;
                                 z-index: 10;
+                            }
+                            .cart__info {
+                                // display: block;
+                                box-shadow: 0 2px 10px 1px grey;
+                                width: 25rem;
+                                left: -15rem;
+                                a {}
+                                .text-left {
+                                    .info {
+                                        .content {
+                                            line-height: 0;
+                                            small {
+                                                font-size: 14px;
+                                                font-weight: 500;
+                                            }
+                                            .small,
+                                            p {
+                                                line-height: 15px;
+                                            }
+                                        }
+                                        .price {
+                                            display: grid;
+                                            text-align: end;
+                                            .price__num {
+                                                display: inline-flex;
+                                                justify-content: flex-end;
+                                                gap: 5px;
+                                                h6 {
+                                                    font-weight: bold;
+                                                }
+                                            }
+                                            .btnDelProd {
+                                                cursor: pointer;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

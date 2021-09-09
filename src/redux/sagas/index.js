@@ -1,21 +1,30 @@
-import { takeLatest, takeEvery, call, put, delay } from "redux-saga/effects";
+import { takeLatest, call, put, delay, select } from "redux-saga/effects";
 import * as api from "../../APIs";
 import * as actions from "../actions";
-import { hideLoading, showLoading } from "../actions/ui";
-import { ADD_CHAT, DELETE_CHAT, FETCH_CHAT, UPDATE_CHAT, } from "../../contants/logchat";
-import { addChat, addChatFailed, addChatSuccess } from "redux/actions/logchat";
+import { hideLoading, showLoading } from "../actions/loading";
+import { FETCH_CHAT, ADD_CHAT, UPDATE_CHAT, DELETE_CHAT } from "../../contants/logchat";
+import { addChat, fetchListChatSuccess, fetchListChatFailed, addChatFailed, addChatSuccess, updateChat, updateChatSuccess, updateChatFailed, deleteChat, deleteChatSuccess, deleteChatFailed } from "redux/actions/logchat";
 import { hideModal } from "redux/actions/vote";
 
 function* getDataMobileSaga() {
     try {
-        yield put(showLoading());
+        // yield put(showLoading());
         const mobile = yield call(api.getDataMobile);
         yield put(actions.getDataMobile.getDataMobileSuccess(mobile.data));
     } catch (error) {
         yield put(actions.getDataMobile.getDataMobileFailure(error));
     }
-    yield delay(1500);
-    yield put(hideLoading());
+    // yield delay(500);
+    // yield put(hideLoading());
+}
+
+function* getDataLaptopSaga() {
+    try {
+        const laptop = yield call(api.getDataLaptop);
+        yield put(actions.getDataLaptop.getDataLaptopSuccess(laptop.data));
+    } catch (error) {
+        yield put(actions.getDataLaptop.getDataLaptopFailure(error));
+    }
 }
 
 function* getDataCatagory() {
@@ -56,47 +65,97 @@ function* getDataSlide() {
     }
 }
 
-function* getDataVote() {
+function* getDataSearchSpecial() {
     try {
-        const vote = yield call(api.getDataVote);
-        yield put(actions.getDataVote.getVoteSuccess(vote.data));
+        const searchSpecial = yield call(api.getDataSearchSpecial);
+        yield put(actions.getDataSearchSpecial.getSearchSpecialSuccess(searchSpecial.data));
     } catch (error) {
-        yield put(actions.getDataVote.getVoteFailure(error));
+        yield put(actions.getDataSearchSpecial.getSearchSpecialFailure(error));
     }
 }
 
-function* addChatSaga({ payload }) {
-    const { info, cmt } = payload;
-    yield put(showLoading());
-    const resp = yield call(addChat, {
-        info,
-        cmt,
-    });
 
-    const { data } = resp;
+function* getDataNew() {
     try {
-        yield put(addChatSuccess(data));
+        const news = yield call(api.getDataNew);
+        yield put(actions.getDataNew.getNewSuccess(news.data));
+    } catch (error) {
+        yield put(actions.getDataNew.getNewFailure(error));
+    }
+}
+
+// vote and comment product 
+function* getDataVote() {
+    try {
+        const vote = yield call(api.getDataVote);
+        yield put(fetchListChatSuccess(vote.data));
+    } catch (error) {
+        yield put(fetchListChatFailed(error));
+    }
+}
+
+function* addChatSaga(action) {
+    try {
+        yield put(showLoading());
+        const resp = yield call(api.addChat, action.payload);
+        yield put(addChatSuccess(resp.data));
         yield put(hideModal());
     } catch (err) {
-        yield put(addChatFailed(data));
+        yield put(addChatFailed(err));
     }
+    delay(1000);
+    yield put(hideLoading());
+}
 
-    delay(1500);
+function* updateChatSaga({ payload }) {
+    try {
+        yield put(showLoading())
+        const chatEditing = yield select((state) => state.logChat.chatEditting);
+        const resp = yield call(
+            api.updateChat, payload, chatEditing.id
+        );
+        const { data } = resp;
+        yield put(updateChatSuccess(data));
+        yield put(hideModal());
+
+    } catch (err) {
+        yield put(updateChatFailed(err));
+    }
+    delay(1000);
+    yield put(hideLoading());
+
+}
+
+function* deleteChatSaga({ payload }) {
+    try {
+        yield put(showLoading());
+        const { id } = payload;
+        const resp = yield call(api.deleteChat, id);
+        yield put(deleteChatSuccess(id));
+        yield put(hideModal());
+    } catch (err) {
+        yield put(deleteChatFailed(err));
+    }
+    delay(1000);
     yield put(hideLoading());
 }
 
 
-
 function* mySaga() {
     yield takeLatest(actions.getDataMobile.getDataMobileRequest, getDataMobileSaga);
+    yield takeLatest(actions.getDataLaptop.getDataLaptopRequest, getDataLaptopSaga);
     yield takeLatest(actions.getDataCatagory.getCatagoryRequest, getDataCatagory);
     yield takeLatest(actions.getDataPreferent.getPreferentRequest, getDataPreferent);
     yield takeLatest(actions.getDataSlide.getSlideRequest, getDataSlide);
-
-    yield takeLatest(actions.getDataVote.getVoteRequest, getDataVote);
-    yield takeEvery(ADD_CHAT, addChatSaga);
-
-
+    yield takeLatest(actions.getDataNew.getNewRequest, getDataNew);
+    yield takeLatest(actions.getDataSearchSpecial.getSearchSpecialRequest, getDataSearchSpecial);
     yield takeLatest(actions.getDataCatagoryMenu.getCatagoryMenuRequest, getDataCatagoryMenu);
+
+    // vote and comment product 
+    yield takeLatest(FETCH_CHAT, getDataVote);
+    yield takeLatest(ADD_CHAT, addChatSaga);
+    yield takeLatest(UPDATE_CHAT, updateChatSaga);
+    yield takeLatest(DELETE_CHAT, deleteChatSaga);
+
 }
 export default mySaga;

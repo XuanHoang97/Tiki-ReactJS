@@ -1,4 +1,4 @@
-import { SHOW_LOADING, HIDE_LOADING } from "../../contants/ui";
+import { SHOW_LOADING, HIDE_LOADING } from "../../contants/loading";
 
 export const showLoading = () => ({
   type: SHOW_LOADING,
