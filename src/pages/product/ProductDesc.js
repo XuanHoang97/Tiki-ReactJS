@@ -30,7 +30,6 @@ function ProductDesc(props) {
                         </div>
                         : ''}
                 </div>
-
                 <News_Event />
             </div>
         </>
