@@ -2,7 +2,7 @@
     "name": "web-ecommerce",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://nothing1997.github.io/Tiki-ReactJS/",
+    "homepage": "https://nothing1997.github.io/",
     "dependencies": {
         "@material-ui/core": "^4.12.3",
         "@testing-library/jest-dom": "^5.14.1",
