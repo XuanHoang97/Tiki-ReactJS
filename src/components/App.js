@@ -37,7 +37,7 @@ export default function App() {
   }, [productsCart])
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <div>
         <ScrollToTop />
         <ScrollTop />
