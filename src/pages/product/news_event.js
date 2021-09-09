@@ -1,15 +1,15 @@
-import React, {useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux'
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
 import * as actions from '../../redux/actions'
 import { newState$ } from 'redux/selectors';
 
 function News_Event(props) {
-    const news= useSelector(newState$)
-    const dispatch=useDispatch()
+    const news = useSelector(newState$)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(actions.getDataNew.getNewRequest())
-    },[dispatch])
+    }, [dispatch])
 
     return (
         <div className="col-md-4">

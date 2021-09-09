@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import News_Event from './News_Event';
+import News_Event from './News_event';
 
 const MoreContent = () => {
     return (
@@ -10,6 +10,7 @@ const MoreContent = () => {
         </>
     );
 };
+
 function ProductDesc(props) {
     const [isShow, setShow] = useState(false);
     return (
@@ -19,17 +20,17 @@ function ProductDesc(props) {
                 <div className="description--product col-md-8 p-0 pr-2">
                     <p>Không giống bất kỳ chiếc điện thoại nào khác, Samsung Galaxy Z Fold 2 5G sở hữu màn hình gập kỳ diệu mà mỗi khi mở màn hình, bạn đã mở ra tương lai của ngành công nghiệp smartphone.</p>
                     <img className="w-100" src="https://images.fpt.shop/unsafe/fit-in/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/QuanLNH2/samsung-galaxy-zfold2-6.jpg" alt="" />
-                    
+
                     {isShow === true ? <MoreContent /> : ''}
                     {isShow === false ?
-                    <div className="text-center ShowMore">
-                        <button type="button" onClick={()=> {setShow(true);}} className="btn btn-primary btn-sm mt-3">Đọc thêm 
-                            <i className="fas fa-caret-down ml-2" />
-                        </button>
-                    </div>
-                    : ''} 
+                        <div className="text-center ShowMore">
+                            <button type="button" onClick={() => { setShow(true); }} className="btn btn-primary btn-sm mt-3">Đọc thêm
+                                <i className="fas fa-caret-down ml-2" />
+                            </button>
+                        </div>
+                        : ''}
                 </div>
-                
+
                 <News_Event />
             </div>
         </>

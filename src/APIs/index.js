@@ -8,6 +8,8 @@ export const getDataMobile = () => axios.get(`${URL2}/product_mobile/`)
 
 export const getDataLaptop = () => axios.get(`${URL3}/product_laptop/`)
 
+export const getDataProductSuggest = () => axios.get(`${URL3}/product_suggestion/`)
+
 export const getDataCatagorySpe = () => axios.get(`${URL}/category_special/`)
 
 export const getDataPreferent = () => axios.get(`${URL2}/preferent/`)

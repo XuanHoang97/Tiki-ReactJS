@@ -6,22 +6,6 @@ function MethodPayment(props) {
             <h6 className="text-dark mt-3 mb-3">2. Chọn hình thức thanh toán</h6>
 
             <div className="option_payment border border-light mt-3 p-3">
-                {/* <div className="form-check">
-                                <input type="radio" className="form-check-input" id="payment_money"  name="payment" value="option1" />
-                                <label className="custom-control-label" htmlFor="pm1">
-                                    <img className="ml-3 mr-2" src="https://st2.depositphotos.com/5266903/8036/v/950/depositphotos_80362180-stock-illustration-payment-icon-from-business-bicolor.jpg" style={{width:'4%'}} alt="" /> 
-                                    Thanh toán tiền mặt khi nhận hàng
-                                </label>
-                            </div>
-
-                            <div className="form-check">
-                                <input type="radio" className="form-check-input" id="payment_visa"  name="payment" value="option2" />
-                                <label className="custom-control-label" htmlFor="pm2">
-                                    <img className="ml-3 mr-2" src="https://p.kindpng.com/picc/s/279-2797793_transparent-payment-icon-png-credit-card-payment-icon.png" style={{width:'4%'}} alt="" />
-                                    Thanh toán bằng thẻ quốc tế Visa, Master, JCB
-                                </label>
-                            </div> */}
-
                 <div className="form-check mb-3">
                     <input className="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" defaultChecked />
                     <label className="form-check-label" htmlFor="money">
@@ -61,30 +45,6 @@ function MethodPayment(props) {
                         Thanh toán bằng ZaloPay
                     </label>
                 </div>
-
-                {/* <div className="form-check">
-                                <input type="radio" className="form-check-input" id="payment_atm"  name="payment" value="option3" />
-                                <label className="custom-control-label" htmlFor="pm3">
-                                    <img className="ml-3 mr-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwbWI8dSRiK5LXloG_F_w6nY4GURmG6l0iqA&usqp=CAU" style={{width:'4%'}} alt="" /> 
-                                    Thẻ ATM nội địa/Internet Banking (Miễn phí thanh toán)
-                                </label>
-                            </div>
-
-                            <div className="form-check">
-                                <input type="radio" className="form-check-input" id="payment_momo"  name="payment" value="option4" />
-                                <label className="custom-control-label" htmlFor="pm4">
-                                    <img className="ml-3 mr-2" src="https://developers.momo.vn/images/favicon/ms-icon-310x310.png" style={{width:'4%'}} alt="" /> 
-                                    Thanh toán bằng ví MoMo
-                                </label>
-                            </div>
-
-                            <div className="form-check">
-                                <input type="radio" className="form-check-input" id="payment_zalopay"  name="payment" value="option5" />
-                                <label className="custom-control-label" htmlFor="pm5">
-                                    <img className="ml-3 mr-2" src="https://play-lh.googleusercontent.com/F8cUV5oOLjCTMSvSRymK1154MwKalnvkepN4xGrfWBC_tcXvNTq_sEStiwCYV61lRdI" style={{width:'4%'}} alt="" /> 
-                                    Thanh toán bằng ZaloPay
-                                </label>
-                            </div> */}
             </div>
 
         </div>

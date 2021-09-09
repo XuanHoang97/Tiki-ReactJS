@@ -25,12 +25,12 @@ function LaptopProduct() {
                 <span className="text-danger ">LAPTOP NỔI BẬT</span>
             </h6>
 
-            <div className="product__detail mt-4">
+            <div className="product__detail mt-3 pb-2">
                 <div className="d-flex">
                     {
                         LaptopList.map((laptop, key)=>{
                             return (
-                                <div className="product--item col-md-3 col-6 pt-2 pb-2 p-0" key={laptop.id}>
+                                <div className="product--item col-md-3 col-6 pt-3 p-0" key={laptop.id}>
                                     <div onClick={() => handleLaptop(laptop)}>
                                         <Link to={`/laptop/` + laptop.name + "." + laptop.id + ".html"}>
                                             <div className="item--laptop">

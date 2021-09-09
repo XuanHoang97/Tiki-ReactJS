@@ -37,14 +37,14 @@ export default function App() {
   }, [productsCart])
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div>
         <ScrollToTop />
         <ScrollTop />
         <Header />
         <ToastContainer autoClose={3000} />
         <GlobalLoading />
-        <Modals/>
+        <Modals />
         <Switch>
           <Route exact path="/"> <Body /> </Route>
           <Route exact path="/Tiki-ReactJS"> <Body /> </Route>

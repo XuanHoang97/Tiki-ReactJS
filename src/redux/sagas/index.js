@@ -3,19 +3,16 @@ import * as api from "../../APIs";
 import * as actions from "../actions";
 import { hideLoading, showLoading } from "../actions/loading";
 import { FETCH_CHAT, ADD_CHAT, UPDATE_CHAT, DELETE_CHAT } from "../../contants/logchat";
-import { addChat, fetchListChatSuccess, fetchListChatFailed, addChatFailed, addChatSuccess, updateChat, updateChatSuccess, updateChatFailed, deleteChat, deleteChatSuccess, deleteChatFailed } from "redux/actions/logchat";
+import { fetchListChatSuccess, fetchListChatFailed, addChatFailed, addChatSuccess, updateChatSuccess, updateChatFailed, deleteChatSuccess, deleteChatFailed } from "redux/actions/logchat";
 import { hideModal } from "redux/actions/vote";
 
 function* getDataMobileSaga() {
     try {
-        // yield put(showLoading());
         const mobile = yield call(api.getDataMobile);
         yield put(actions.getDataMobile.getDataMobileSuccess(mobile.data));
     } catch (error) {
         yield put(actions.getDataMobile.getDataMobileFailure(error));
     }
-    // yield delay(500);
-    // yield put(hideLoading());
 }
 
 function* getDataLaptopSaga() {
@@ -24,6 +21,15 @@ function* getDataLaptopSaga() {
         yield put(actions.getDataLaptop.getDataLaptopSuccess(laptop.data));
     } catch (error) {
         yield put(actions.getDataLaptop.getDataLaptopFailure(error));
+    }
+}
+
+function* getSuggestProductSaga() {
+    try {
+        const suggest = yield call(api.getDataProductSuggest);
+        yield put(actions.getDataProductSuggest.getSuggestSuccess(suggest.data));
+    } catch (error) {
+        yield put(actions.getDataProductSuggest.getSuggestFailure(error));
     }
 }
 
@@ -73,7 +79,6 @@ function* getDataSearchSpecial() {
         yield put(actions.getDataSearchSpecial.getSearchSpecialFailure(error));
     }
 }
-
 
 function* getDataNew() {
     try {
@@ -144,6 +149,7 @@ function* deleteChatSaga({ payload }) {
 function* mySaga() {
     yield takeLatest(actions.getDataMobile.getDataMobileRequest, getDataMobileSaga);
     yield takeLatest(actions.getDataLaptop.getDataLaptopRequest, getDataLaptopSaga);
+    yield takeLatest(actions.getDataProductSuggest.getSuggestRequest, getSuggestProductSaga);
     yield takeLatest(actions.getDataCatagory.getCatagoryRequest, getDataCatagory);
     yield takeLatest(actions.getDataPreferent.getPreferentRequest, getDataPreferent);
     yield takeLatest(actions.getDataSlide.getSlideRequest, getDataSlide);
@@ -156,6 +162,5 @@ function* mySaga() {
     yield takeLatest(ADD_CHAT, addChatSaga);
     yield takeLatest(UPDATE_CHAT, updateChatSaga);
     yield takeLatest(DELETE_CHAT, deleteChatSaga);
-
 }
 export default mySaga;

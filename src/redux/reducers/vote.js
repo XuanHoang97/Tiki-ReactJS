@@ -1,11 +1,9 @@
-import { CHANGE_MODAL_CONTENT, CHANGE_MODAL_TITLE, HIDE_MODAL, SHOW_MODAL, CHANGE_BG} from '../../contants/vote';
-import { HIDE_LOADING, SHOW_LOADING } from '../../contants/loading';
-import {  getType, getDataVote, createDataVote, updateDataVote, deleteDataVote } from 'redux/actions';
+import { CHANGE_MODAL_CONTENT, CHANGE_MODAL_TITLE, HIDE_MODAL, SHOW_MODAL} from '../../contants/vote';
+import { getType, getDataVote, createDataVote, updateDataVote, deleteDataVote } from 'redux/actions';
 
 const initialstate = {
     showModal: false,
     title: '',
-    background: '',
     component: null
 };
 
@@ -22,15 +20,7 @@ const reducer = (state = initialstate, action) => {
                 ...state,
                 showModal: false,
                 title: '',
-                background:'',
                 component: null
-            };
-
-        case CHANGE_BG:
-            const { background } = action.payload;
-            return {
-                ...state,
-                background
             };
 
         case CHANGE_MODAL_TITLE:
@@ -71,14 +61,14 @@ const reducer = (state = initialstate, action) => {
             console(action.payload)
             return {
                 ...state,
-                data: state.data.map(vote => vote.id === action.payload.id ? action.payload:vote)
+                data: state.data.map(vote => vote.id === action.payload.id ? action.payload : vote)
 
             }
-        
+
         case getType(deleteDataVote.deleteVoteSuccess):
             return {
                 ...state,
-                data: state.data.map(vote => vote.id === action.payload.id ? action.payload:vote)
+                data: state.data.map(vote => vote.id === action.payload.id ? action.payload : vote)
             }
 
         default:

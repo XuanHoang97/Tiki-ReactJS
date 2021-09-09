@@ -11,7 +11,6 @@ function Payment() {
     return (
         <div className="main bg-light pt-3 pb-3">
             <div className="container">
-                {/* Payment  */}
                 <div className="row m-1 justify-content-between">
                     <div className="col-md-9 pl-0 ">
                         <div className="bg-white p-3">
@@ -25,5 +24,4 @@ function Payment() {
         </div>
     );
 }
-
 export default Payment;

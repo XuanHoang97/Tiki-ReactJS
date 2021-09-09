@@ -12,9 +12,30 @@
     .tab__product {
         background: rgb(241, 241, 241);
         padding: 5px 0;
+        display: flex;
+        gap: 5px;
         @include phone {
             overflow-x: scroll;
             height: 115px;
+        }
+        button.item__suggest {
+            border: 0px;
+            border-radius: 3px;
+            padding: 8px 20px;
+            width: 12.5%;
+            background: white;
+            outline: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: grey;
+            span {
+                font-size: 13px;
+            }
+        }
+        button.active {
+            border: 1px solid rgb(13, 92, 182);
+            color: rgb(13, 92, 182);
         }
         ul {
             gap: 7px;

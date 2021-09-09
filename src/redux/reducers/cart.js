@@ -1,5 +1,6 @@
 import { toastSuccess } from "components/helper/toastHelper";
 import * as cart from "contants/cart";
+
 let dataLocalStorage = JSON.parse(localStorage.getItem('dataCart')) || []
 const initialstate = {
     productDetail: undefined,
@@ -28,7 +29,6 @@ const productReducer = (state = initialstate, action) => {
             }
 
         case cart.UP_COUNT_PRODUCT:
-
             return {
                 ...state,
                 count: state.count + 1
@@ -42,7 +42,6 @@ const productReducer = (state = initialstate, action) => {
             if (index1 !== -1) {
                 productsCart.map(item => {
                     if (item.id === id) {
-
                         newArr = [...productsCart.slice(0, index1), {
                             ...item,
                             count: count + item.count
@@ -67,7 +66,6 @@ const productReducer = (state = initialstate, action) => {
             const index = state.productsCart.findIndex(item => item.id === action.payload)
             state.productsCart.splice(index, 1)
             localStorage.setItem('dataCart', JSON.stringify(state.productsCart))
-
             toastSuccess('Xoá sản phẩm thành công');
             return {
                 ...state,

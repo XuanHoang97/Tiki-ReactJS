@@ -12,6 +12,7 @@ const RenderMobile = (mobile) => {
     const handleMobile = (e) => {
         dispatch(addProduct(e))
     }
+    
     return (
         <div className="product mt-3 ml-0 mr-0 pb-4 p-3 bg-white text-center">
             <h6 className="text-left">
