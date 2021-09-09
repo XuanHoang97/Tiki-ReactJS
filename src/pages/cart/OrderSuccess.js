@@ -16,9 +16,9 @@ class OrderSuccess extends Component {
                             <div className="mb-5">
                                 <h5 className="text-warning">Cảm ơn bạn đã mua hàng tại Tiki.vn !</h5>
                                 <h6 className="small text-secondary">Mã số đơn hàng của bạn: </h6>
-                                <p class="badge badge-success  w-25 p-2">27101997</p>
+                                <p className="badge badge-success  w-25 p-2">27101997</p>
 
-                                <h6 class="mt-3 small">Bạn có thể xem
+                                <h6 className="mt-3 small">Bạn có thể xem
                                     <a className="text-primary"> Đơn hàng của tôi</a>
                                 </h6>
 
