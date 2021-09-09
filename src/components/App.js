@@ -30,7 +30,7 @@ export default function App() {
   // Save data Cart 
   const productsCart = useSelector(productsCartMenuState$)
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div>
         <ScrollToTop />
         <ScrollTop />
