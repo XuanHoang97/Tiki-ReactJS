@@ -29,22 +29,15 @@ const TITLE = "Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh";
 export default function App() {
   // Save data Cart 
   const productsCart = useSelector(productsCartMenuState$)
-  const [data, setData] = useState([])
-
-  useEffect(() => {
-    let dataLocalStorage = JSON.parse(localStorage.getItem('dataCart')) || []
-    setData(dataLocalStorage)
-  }, [productsCart])
-
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div>
         <ScrollToTop />
         <ScrollTop />
         <Header />
         <ToastContainer autoClose={3000} />
         <GlobalLoading />
-        <Modals/>
+        <Modals />
         <Switch>
           <Route exact path="/"> <Body /> </Route>
           <Route exact path="/Tiki-ReactJS"> <Body /> </Route>
