@@ -1,5 +1,5 @@
-import Mail from 'components/body/Mail';
 import React from 'react';
+import Mail from 'components/body/Mail';
 import { Link } from 'react-router-dom';
 
 function Cart() {

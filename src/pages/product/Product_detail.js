@@ -78,14 +78,7 @@ const Product_detail = ({ match }) => {
                     <span className="badge badge-pill badge-danger ml-3 mr-4">
                       -{prod.sale_off}%
                     </span>
-                    <strike className="small">
-                      {new Intl.NumberFormat("GB-en", {
-                        currency: "VND",
-                        style: "currency",
-                        minimumFractionDigits: 0,
-                        maximumFractionDigits: 0,
-                      }).format(prod.price_old)}
-                    </strike>
+                    <strike className="small">{numberFormat(prod.price_old)}</strike>
                   </div>
                 </div>
                 <Order

@@ -6,8 +6,8 @@ import { productsCartMenuState$ } from 'redux/selectors';
 import OrderAddr from './OrderAddr';
 
 function ContactDeliver() {
-    const sale = 10000
-    const ship = 30000
+    const discount = 10000
+    const fee = 30000
     const productsCart = useSelector(productsCartMenuState$)
 
     return (
@@ -18,7 +18,7 @@ function ContactDeliver() {
                 <div className="row  pl-3 pr-3 p-2 justify-content-between">
                     <div>
                         <h6>Đơn hàng</h6>
-                        <small>1 sản phẩm</small>
+                        <small>{productsCart.length} sản phẩm</small>
                     </div>
                     <button type="button" className="btn btn-success btn-sm" style={{ fontSize: '12px', height: '28px' }}>Thay đổi</button>
                 </div>
@@ -30,18 +30,18 @@ function ContactDeliver() {
 
                 <div className="row  pl-3 pr-3 p-2 justify-content-between">
                     <div><span>Giảm giá</span></div>
-                    <h6>-{numberFormat(sale)}</h6>
+                    <h6>-{numberFormat(discount)}</h6>
                 </div>
 
                 <div className="row  pl-3 pr-3 p-2 justify-content-between">
                     <div><span>Phí vận chuyển</span></div>
-                    <h6>{numberFormat(ship)}</h6>
+                    <h6>{numberFormat(fee)}</h6>
                 </div>
                 <hr />
 
                 <div className="row  pl-3 pr-3 p-2 justify-content-between">
                     <div><span>Thành tiền</span></div>
-                    <h5 className="text-danger">{numberFormat(totalMoney(productsCart) - sale + ship)}</h5>
+                    <h5 className="text-danger">{numberFormat(totalMoney(productsCart) - discount + fee)}</h5>
                     <div className="w-100 text-right">
                         <small className="text-secondary">(Đã bao gồm VAT nếu có)</small>
                     </div>
