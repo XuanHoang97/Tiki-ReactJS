@@ -12,7 +12,7 @@ const RenderMobile = (mobile) => {
     const handleMobile = (e) => {
         dispatch(addProduct(e))
     }
-    
+
     return (
         <div className="product mt-3 ml-0 mr-0 pb-4 p-3 bg-white text-center">
             <h6 className="text-left">
@@ -26,15 +26,15 @@ const RenderMobile = (mobile) => {
                         <React.Fragment key={key}>
                             <div className="product--item col-md-3 col-6 pt-3 p-0" >
                                 <div onClick={() => handleMobile(mobile)}>
-                                    <Link to={`/chi-tiet-san-pham/` + mobile.name + "." + mobile.id + ".html"}>
-                                        <img src={mobile.img} alt="mobile" style={{height:'200px'}} />
+                                    <Link to={`/chi-tiet-san-pham/` + mobile.name + "." + mobile._id + ".html"}>
+                                        <img src={mobile.img} alt="mobile" style={{ height: '200px' }} />
                                         <h6 className="mt-2 mb-1 text-dark">{mobile.name}</h6>
                                     </Link>
                                 </div>
                                 <Rate />
 
                                 <div className="price__prod row align-items-center justify-content-center">
-                                    <span className="font-weight-bold" style={{color:'red', fontSize:'14px'}}>
+                                    <span className="font-weight-bold" style={{ color: 'red', fontSize: '14px' }}>
                                         {new Intl.NumberFormat("GB-en", {
                                             currency: "VND",
                                             style: "currency",
@@ -54,8 +54,9 @@ const RenderMobile = (mobile) => {
                                     </strike>
                                 </div>
 
-                                <button type="button" name="" id="" class="AddCart btn btn-success btn-sm btn-block mt-4">
-                                    <img src="https://salt.tikicdn.com/ts/upload/40/44/6c/b80ad73e5e84aeb71c08e5d8d438eaa1.png" alt="" className="mr-2" style={{width: '8%' }} />
+                                <button onClick={() => handleMobile(mobile)}
+                                    type="button" name="" id="" className="AddCart btn btn-success btn-sm btn-block mt-4">
+                                    <img src="https://salt.tikicdn.com/ts/upload/40/44/6c/b80ad73e5e84aeb71c08e5d8d438eaa1.png" alt="" className="mr-2" style={{ width: '8%' }} />
                                     Mua ngay
                                 </button>
 
@@ -75,7 +76,7 @@ function Mobile() {
     const [pageNumberLimit] = useState(5);
     const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
     const [minPageNumberLimit, setminPageNumberLimit] = useState(0);
-    
+
     const dispatch = useDispatch()
     const posts = useSelector(mobilesState$)
 

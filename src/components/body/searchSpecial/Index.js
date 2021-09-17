@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { searchSpecialState$ } from "redux/selectors";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as actions from '../../../redux/actions'
 
 function Search_special(props) {
     const searchSpecial = useSelector(searchSpecialState$)
     const dispatch = useDispatch()
-    
+
     const [currentPage, setcurrentPage] = useState(1);
     const [itemsPerPage] = useState(4);
 
@@ -54,7 +54,7 @@ function Search_special(props) {
                         XEM THÊM</span>
                 </div>
             </div>
-            
+
             {RenderProduct(currentItems)}
         </div>
     );
@@ -66,9 +66,9 @@ const RenderProduct = (searchSpecial) => {
             <div className="list__search pt-0 pb-2 pl-3 pr-3 row">
                 {searchSpecial.map((search) => {
                     return (
-                        <React.Fragment key={search.id}>
+                        <React.Fragment key={search._id}>
                             <div className="card col-md-3 p-0" style={{ border: 'none', cursor: 'pointer' }}>
-                                <Link to={`/search/` + search.content + "." + search.id + ".html"}>
+                                <Link to={`/search/` + search.content + "." + search._id + ".html"}>
                                     <div className="card-body pl-0 pr-0 pt-2 pb-0" style={{ borderRadius: '5px', border: '1px solid rgb(230 230 230)', marginRight: '15px' }}>
                                         <div className="illutrator row m-1">
                                             <img className="col-md-4 col-4 p-0" src={search.img1} alt="" />

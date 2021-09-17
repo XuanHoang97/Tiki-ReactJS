@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './Context/AuthContext';
 import FormLogin from './FormLogin';
 import styled from 'styled-components'
+import { useDispatch, useSelector } from 'react-redux';
+import { getName, showModalAccount } from 'redux/actions/account';
 
 const AlertLogin = styled.div`
     display: flex;
@@ -34,40 +36,50 @@ const AlertLogin = styled.div`
 `;
 
 function Account() {
-    const { setShowModal, nameAccount, setLogin, setAccount, setNameAccount, setNumber, alert, setAlert } = useContext(AuthContext)
-
+    const { setShowModal, setLogin, setAccount, setNumber, alert, setAlert } = useContext(AuthContext)
+    const username = useSelector(state => state.account.username)
+    const dispatch = useDispatch()
     const logOut = () => {
         setAccount({
             name: '',
             password: ''
         })
         setLogin('login')
-        setNameAccount()
+        dispatch(getName())
         setNumber()
         setAlert(true)
     }
     useEffect(() => {
-        setTimeout(() => {
+        const setAlerts = setTimeout(() => {
             setAlert(false)
-        }, 2500)
+        }, 1500)
+        return () => {
+            clearTimeout(setAlerts)
+        }
     }, [alert])
+
+    const login = () => {
+        dispatch(showModalAccount())
+        setLogin('login')
+    }
+
     return (
         <>
             {alert ? <AlertLogin>
                 <div className="alerts">
                     <i className="fas fa-check-circle check"></i>
-                    <p>{nameAccount ? 'Đăng nhập thành công' : 'Đã đăng xuất'}</p>
+                    <p>{username ? 'Đăng nhập thành công' : 'Đã đăng xuất'}</p>
                 </div>
             </AlertLogin> : ''
             }
-            < li className="account nav-item dropdown ml-3 mr-2 active" style={{ fontSize: '14px' }}>
+            < li className="account nav-item dropdown ml-3 mr-2 active form-login" style={{ fontSize: '14px' }}>
                 <div className="nav-link dropdown-toggle" id="dropdownId" style={{ cursor: "pointer" }}>
                     <i className="fas fa-user-circle mr-2" style={{ fontSize: '18px' }} />
-                    <span style={{ fontSize: '14px' }}>{nameAccount ? nameAccount : 'Tài khoản'}</span>
+                    <span style={{ fontSize: '14px' }}>{username ? username : 'Tài khoản'}</span>
                 </div>
-                {nameAccount ?
+                {username ?
                     (<div className="dropdown-menu control">
-                        <button type="button" className="btn btn-warning btn-sm btn-block" onClick={logOut}>
+                        <button type="button" className="btn btn-warning btn-sm btn-block" onClick={() => logOut()}>
                             Đăng xuất
                         </button>
                     </div>) :
@@ -75,7 +87,7 @@ function Account() {
                         <>
                             <div className="dropdown-menu control">
                                 <a className="dropdown-item reg__log">
-                                    <button type="button" className="btn btn-warning btn-sm btn-block" onClick={() => (setShowModal(true))}>
+                                    <button type="button" className="btn btn-warning btn-sm btn-block" onClick={() => login()}>
                                         Đăng nhập
                                     </button>
                                 </a>

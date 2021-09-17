@@ -17,7 +17,7 @@ function News_Event(props) {
             <div className="list_news row pl-3">
                 {
                     news.map(data => (
-                        <div className="row mb-2 col-md-12 p-0">
+                        <div className="row mb-2 col-md-12 p-0" key={data._id}>
                             <img className="col-md-4" src={data.img} alt="" />
                             <small className="col-md-8 p-0">{data.content}</small>
                         </div>

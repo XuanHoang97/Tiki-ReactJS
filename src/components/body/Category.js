@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { catagoryState$ } from "redux/selectors";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as actions from '../../redux/actions'
 
 export default function Category() {
@@ -21,7 +21,7 @@ export default function Category() {
                     if (dem <= 12) {
                         dem++;
                         return (
-                            <React.Fragment key={ctg.id}>
+                            <React.Fragment key={ctg._id}>
                                 <div className="col-md-1 col-4 p-0 text-center" style={{ cursor: 'pointer' }}>
                                     <Link to="*">
                                         <img className="w-50 rounded-circle" src={ctg.img} alt="" />

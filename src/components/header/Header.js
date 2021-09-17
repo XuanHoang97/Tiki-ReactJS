@@ -2,7 +2,7 @@ import AuthContextProvider from 'components/Account/Context/AuthContext';
 import React from 'react';
 import { Link } from "react-router-dom";
 import Account from '../Account';
-import Cart from './Cart';
+import CartHeader from './cart';
 import Category from './Category';
 import MenuTop from './Menu_top';
 import Search from './Search';
@@ -32,7 +32,7 @@ function Header() {
                                     <Account />
                                 </AuthContextProvider>
 
-                                <Cart />
+                                <CartHeader />
                             </ul>
                         </div>
                     </nav>
