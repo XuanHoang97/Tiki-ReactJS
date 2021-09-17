@@ -26,8 +26,8 @@ function Offer(props) {
                 <div className="card-header font-weight-bold p-1">Phụ kiện đi kèm</div>
                 <div className="card-body m-1 pl-3 pr-3 p-0">
                     {
-                        bonus.length > 0 && bonus.map((offer, key) => (
-                            <div key={offer.id}>
+                        bonus.length > 0 && bonus.map((offer) => (
+                            <div key={offer._id}>
                                 {
                                     offer.accessories.map((test, key) =>
                                         <div className=" row p-2 p-0 justify-content-between" key={key}>

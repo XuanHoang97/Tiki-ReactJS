@@ -1,21 +1,24 @@
 import React, { useEffect } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import FormVote from "./FormVote";
 import VoteList from "./VoteList";
 import { changeModalContent, changeModalTitle, hideModal, showModal } from "redux/actions/vote";
-import { fetchListChat, setChatEditting, deleteChat } from "redux/actions/logchat";
+import { setChatEditting, deleteChat } from "redux/actions/logchat";
+import { getChat } from "redux/actions/chat";
+import { usernameState$ } from "redux/selectors/account";
+import { showModalAccount } from "redux/actions/account";
 
 function Rate(props) {
   const dispatch = useDispatch();
-
+  const username = useSelector(usernameState$)
   useEffect(() => {
-    dispatch(fetchListChat());
-  }, []);
+    dispatch(getChat.getChatRequest(props.params));
+  }, [dispatch]);
 
   const handleClickOpen = () => {
     dispatch(showModal());
     dispatch(changeModalTitle("Thêm đánh giá sản phẩm"));
-    dispatch(changeModalContent(<FormVote />));
+    dispatch(changeModalContent(<FormVote params={props.params} />));
     dispatch(setChatEditting(null));
   };
 
@@ -26,18 +29,18 @@ function Rate(props) {
     dispatch(setChatEditting(null));
   }
 
-  const handleEditVote = (chat) =>{
+  const handleEditVote = (chat) => {
     dispatch(setChatEditting(chat));
     dispatch(showModal());
     dispatch(changeModalTitle("Sửa đánh giá sản phẩm"));
     dispatch(changeModalContent(<FormVote />));
-  } 
+  }
 
-  const handleDeleteVote = (chat)=>{
+  const handleDeleteVote = (chat) => {
     dispatch(deleteChat(chat.id));
   }
 
-  const showModalDeleteVote = (chat)=>{
+  const showModalDeleteVote = (chat) => {
     dispatch(showModal());
     dispatch(changeModalTitle("Xoá đánh giá sản phẩm"));
     dispatch(changeModalContent(
@@ -49,25 +52,28 @@ function Rate(props) {
 
         <div className="row mt-3 m-0 justify-content-end">
           <div className="ml-1">
-            <button onClick={() => dispatch(hideModal())} type="button" class="btn btn-light btn-sm">HUỶ BỎ</button>
+            <button onClick={() => dispatch(hideModal())} type="button" className="btn btn-light btn-sm">HUỶ BỎ</button>
           </div>
 
           <div className="ml-1">
-            <button onClick={() => handleDeleteVote(chat)} type="button" class="btn btn-primary btn-sm">ĐỒNG Ý</button>
+            <button onClick={() => handleDeleteVote(chat)} type="button" className="btn btn-primary btn-sm">ĐỒNG Ý</button>
           </div>
         </div>
       </div>
     ));
   }
-  
+
+  const handleLogin = () => {
+    username ? handleEditVote() : dispatch(showModalAccount())
+  }
   return (
     <div className="container bg-white p-3 pl-2 mt-4">
       <div className="row">
         <div className="row align-items-center ml-3">
-          <i class="far fa-comments text-warning mr-2"></i>
+          <i className="far fa-comments text-warning mr-2"></i>
           <h5 className="text-success">ĐÁNH GIÁ và BÌNH LUẬN </h5>
           <div className="chat ml-4">
-            <button onClick={handleClickOpen} type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+            <button onClick={() => handleLogin()} type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
               <i className="fas fa-plus mr-2"></i>Thêm đánh giá sản phẩm
             </button>
           </div>

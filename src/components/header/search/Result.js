@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { searchSpecialState$ } from "redux/selectors";
@@ -7,7 +7,7 @@ import SearchProduct from 'components/body/searchSpecial/SearchProduct';
 import Filter from './Filter';
 import Sort from './Sort';
 
-function Result({props, search}) {
+function Result({ props, search }) {
     const listProdSearch = useSelector(searchSpecialState$);
     const dispatch = useDispatch();
 
@@ -15,7 +15,7 @@ function Result({props, search}) {
         dispatch(actions.getDataSearchSpecial.getSearchSpecialRequest())
     }, [dispatch])
 
-    let count=1;
+    let count = 1;
 
     return (
         <div className="Result__search bg-light pb-3">
@@ -31,9 +31,9 @@ function Result({props, search}) {
                     <div className="suggest__list">
                         <div>
                             <div >
-                                <div className="Prod__Suggest"> 
-                                    <h5 className="m-0">Kết quả tìm kiếm cho 
-                                    `Hacker IELTS`: 5k+ kết quả</h5> 
+                                <div className="Prod__Suggest">
+                                    <h5 className="m-0">Kết quả tìm kiếm cho
+                                        `Hacker IELTS`: 5k+ kết quả</h5>
                                 </div>
                                 <Sort />
                             </div>
@@ -42,19 +42,19 @@ function Result({props, search}) {
                         <div className="tab-content">
                             <div id="home" className="container tab-pane active"><br />
                                 <div className="list">
-                                {
-                                    listProdSearch.map((data, key) => {
-                                        if (count <= 4) {
-                                            count++;
-                                            return (
-                                                <SearchProduct key={data.id} img1={data.img1} content={data.content} id={data.id}/>
-                                            );
-                                        }
-                                        else{
-                                            return null;
-                                        }
-                                    })
-                                }
+                                    {
+                                        listProdSearch.map((data, key) => {
+                                            if (count <= 4) {
+                                                count++;
+                                                return (
+                                                    <SearchProduct key={data._id} img1={data.img1} content={data.content} id={data.id} />
+                                                );
+                                            }
+                                            else {
+                                                return null;
+                                            }
+                                        })
+                                    }
                                 </div>
                             </div>
 

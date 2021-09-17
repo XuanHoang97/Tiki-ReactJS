@@ -8,7 +8,6 @@ function KeyCode() {
 
     useEffect(() => {
         const codeVerify = codes.current.querySelectorAll('.code')
-
         setKeyInput((Object.values(keycode).join('')))
         // 0 for null values
         // 8 for backspace 
@@ -39,11 +38,10 @@ function KeyCode() {
 
         return () => {
         }
-    }, [keyNumber, keyBackspace, keycode])
+    })
 
     return (
         <>
-
             <div ref={codes} className="code-container">
                 <input type="tel" onChange={(e) => setKeycode({ ...keycode, one: e.target.value })} className="code" placeholder="0" maxLength="1" />
                 <input type="tel" onChange={(e) => setKeycode({ ...keycode, two: e.target.value })} className="code" placeholder="0" maxLength="1" />

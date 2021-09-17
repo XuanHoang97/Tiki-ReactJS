@@ -22,8 +22,7 @@ const Product_detail = ({ match }) => {
   const TITLE = 'Điện thoại ngon - bổ - rẻ';
   const dataProDetail = useSelector(cartProductMenuState$)
   const dispatch = useDispatch()
-
-  let count =1;
+  let count = 1;
   let number = useSelector(cartCountMenuState$)
   //tang so luong
   const handleUp = () => {
@@ -41,7 +40,7 @@ const Product_detail = ({ match }) => {
 
   useEffect(() => {
     const fetchProduct = () => {
-      axios.get(`https://61275b59c2e8920017bc0c43.mockapi.io/api/product_mobile/?id=${match.params.id}`)
+      axios.get(`https://api-tiki-clone.herokuapp.com/api/v2/product_mobile/?id=${match.params.id}`)
         .then((res) => { setData(res.data); })
         .catch((err) => console.log(err));
     };
@@ -55,9 +54,9 @@ const Product_detail = ({ match }) => {
         <h6 className="mb-2">CHI TIẾT SẢN PHẨM</h6>
         <div className="bg-white pt-4 pb-4 p-3 m-0 text-center row">
           <div className="col-md-3 p-0 text-left">
-            {(dataProDetail ? [dataProDetail] : data).map((item, key) => {
+            {(dataProDetail ? [dataProDetail] : data).map((item) => {
               return (
-                <div key={item.id}>
+                <div key={item._id}>
                   <img className="w-75" src={item.img} alt="loi" />
                   <Illutrator />
                 </div>
@@ -71,7 +70,7 @@ const Product_detail = ({ match }) => {
               <div className="col-md-6 pl-4 pr-2 text-left" key={key}>
                 <h5>{prod.name}</h5>
                 <Vote />
-                
+
                 <div className="price bg-light p-2">
                   <div className="row m-1 align-items-center">
                     <h4>{numberFormat(prod.price)}</h4>
@@ -94,25 +93,25 @@ const Product_detail = ({ match }) => {
         </div>
         <Specifications />
         <ProductDesc />
-        <Rate />
-        
+        <Rate params={match.params.id} />
+
         {/* ProductRelated  */}
         <div>
-            <h6 className="mt-4 mb-2 m-0">SẢN PHẨM TƯƠNG TỰ</h6>
-            <div className="row bg-white pt-4 pb-4 p-3 m-1">
-                {
-                  data.map((value, key) => {
-                    if(value.id != match.params.id){
-                      if(count<=4){
-                        count++;
-                        return(
-                          <ProdRelated key={key} img={value.img} name={value.name} />
-                        )
-                      }
-                    }
-                  })
+          <h6 className="mt-4 mb-2 m-0">SẢN PHẨM TƯƠNG TỰ</h6>
+          <div className="row bg-white pt-4 pb-4 p-3 m-1">
+            {
+              data.map((value, key) => {
+                if (value._id != match.params.id) {
+                  if (count <= 4) {
+                    count++;
+                    return (
+                      <ProdRelated key={value._id} img={value.img} name={value.name} />
+                    )
+                  }
                 }
-            </div>
+              })
+            }
+          </div>
         </div>
         <Mail />
       </div>

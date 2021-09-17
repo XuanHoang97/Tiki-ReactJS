@@ -1,9 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 
+const Image = styled.div`
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    background: #ccc;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold
+`
 function VoteItem(props) {
     return (
         <div className="row mb-3 ml-0">
-            <div className="avatar"><img src={props.img} alt="" /></div>
+            <Image className="avatar">{props.img}</Image>
             <div className="ml-2 account__chat">
                 <div className="title d-flex align-items-baseline">
                     <h6 className="text-capitalize mb-0">{props.name}</h6>

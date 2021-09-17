@@ -29,31 +29,31 @@ function LaptopProduct() {
             <div className="product__detail mt-3 pb-2">
                 <div className="d-flex">
                     {
-                        LaptopList.map((laptop, key)=>{
+                        LaptopList.map((laptop) => {
                             return (
-                                <div className="product--item col-md-3 col-6 pt-3 p-0" key={laptop.id}>
+                                <div className="product--item col-md-3 col-6 pt-3 p-0" key={laptop._id}>
                                     <div onClick={() => handleLaptop(laptop)}>
                                         <Link to={`/laptop/` + laptop.name + "." + laptop.id + ".html"}>
                                             <div className="item--laptop">
-                                                <img src={laptop.img} alt="laptop" className="rounded" style={{height: '150px'}} />
+                                                <img src={laptop.img} alt="laptop" className="rounded" style={{ height: '150px' }} />
                                                 <h6 className="mt-3 mb-2 text-dark">{laptop.name}</h6>
                                             </div>
                                         </Link>
                                     </div>
-                                    <Rate/>
+                                    <Rate />
 
                                     <div className="price__prod row align-items-center justify-content-center">
-                                        <span className="font-weight-bold" style={{color:'red', fontSize:'14px'}}>
+                                        <span className="font-weight-bold" style={{ color: 'red', fontSize: '14px' }}>
                                             {numberFormat(laptop.price)}
                                         </span>
                                         <span className="badge badge-pill badge-warning p-1 ml-3 mr-2">-{laptop.sale_off} %</span>
                                         <strike className="small" style={{ color: '#8a8a8a' }}>
-                                        {numberFormat(laptop.price_old)}
+                                            {numberFormat(laptop.price_old)}
                                         </strike>
                                     </div>
 
-                                    <button type="button" name="" id="" class="AddCart btn btn-success btn-sm btn-block mt-4">
-                                        <img src="https://salt.tikicdn.com/ts/upload/40/44/6c/b80ad73e5e84aeb71c08e5d8d438eaa1.png" alt="" className="mr-2" style={{width: '8%' }} />
+                                    <button type="button" name="" id="" className="AddCart btn btn-success btn-sm btn-block mt-4">
+                                        <img src="https://salt.tikicdn.com/ts/upload/40/44/6c/b80ad73e5e84aeb71c08e5d8d438eaa1.png" alt="" className="mr-2" style={{ width: '8%' }} />
                                         Mua ngay
                                     </button>
                                 </div>

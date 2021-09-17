@@ -36,7 +36,7 @@ export default function Category() {
       {hover ? <div className="dropdown-menu list__product" aria-labelledby="dropdown" style={{ top: "3.5rem", display: "block", left: "-3.5em" }}>
         {catagoryMenu.map((menu) => {
           return (
-            <React.Fragment key={menu.id} >
+            <React.Fragment key={menu._id} >
               <Link className="category" to={`/do-dung/${menu.item}.html`}
                 onMouseEnter={() => (setDetailMenu(menu.detail))}
               >

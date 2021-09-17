@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { hideModalAccount } from 'redux/actions/account';
 import styled from 'styled-components';
 import { AuthContext } from './Context/AuthContext';
-import Accounted from './formLogin/Accounted';
-import AddAccount from './formLogin/AddAccount';
-import LogIn from './formLogin/LogIn';
+import Accounted from './formLogin/Accounted/index';
+import AddAccount from './formLogin/AddAccount/index';
+import LogIn from './formLogin/LogIn/index';
 import Verify from './formLogin/Verify';
 
 const RightImg = styled.div`
@@ -14,20 +16,42 @@ const RightImg = styled.div`
     justify-content: center;
     flex-direction: column;
 `;
+
 function FormLogin() {
-    const { login, setLogin, setAccount, showModal, setShowModal, setKeyRandom, setNumber } = useContext(AuthContext)
+    const { login, setLogin, setAccount, setKeyRandom, setNumber } = useContext(AuthContext)
+    const account = useSelector(state => state.account.existed)
+
+    const showModal = useSelector(state => state.account.showModal)
+
+    const dispatch = useDispatch()
+    useEffect(() => {
+        account && (account.existed ? setLogin('accounted') : setLogin('verify'))
+    }, [account])
     const hiddenForm = () => {
         setAccount({
             name: '',
             password: ''
         })
         setLogin('login')
-        setShowModal(false)
+        dispatch(hideModalAccount())
         setNumber()
-        setKeyRandom(Math.ceil(Math.random() * 100000).toFixed(0))
+        setKeyRandom(Math.ceil(Math.random() * 1000000).toFixed(0))
         return;
     }
-
+    const handleForm = useCallback(() => {
+        switch (login) {
+            case 'login':
+                return <LogIn />
+            case 'verify':
+                return <Verify />
+            case 'addAccount':
+                return <AddAccount />
+            case 'accounted':
+                return <Accounted />
+            default:
+                return ''
+        }
+    })
 
     return (
         <>
@@ -37,10 +61,7 @@ function FormLogin() {
                 <Modal.Body className="info p-0">
                     <div className="row m-0 p-0">
                         <div className="col-md-8 p-4">
-                            {login === 'login' ? <LogIn /> : ''}
-                            {login === 'verify' ? <Verify /> : ''}
-                            {login === 'addAccount' ? <AddAccount /> : ''}
-                            {login === 'accounted' ? <Accounted /> : ''}
+                            {handleForm()}
                         </div>
                         <RightImg className="col-md-4 text-center">
                             <img className="w-75" src="https://salt.tikicdn.com/ts/upload/eb/f3/a3/25b2ccba8f33a5157f161b6a50f64a60.png" alt="tiki" />

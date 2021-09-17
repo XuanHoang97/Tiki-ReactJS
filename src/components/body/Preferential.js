@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { preferentState$ } from "redux/selectors";
 import * as actions from '../../redux/actions'
@@ -19,7 +19,7 @@ export default function Preferential() {
                 if (dem <= 12) {
                     dem++;
                     return (
-                        <React.Fragment key={pref.id}>
+                        <React.Fragment key={pref._id}>
                             <div className="col-md-1 col-3 p-1 text-center" style={{ cursor: 'pointer' }}>
                                 <Link to="*">
                                     <img className="w-50" src={pref.img} alt="" />

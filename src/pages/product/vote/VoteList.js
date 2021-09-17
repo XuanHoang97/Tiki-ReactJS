@@ -1,13 +1,13 @@
-import React, {useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { voteState$ } from 'redux/selectors';
+import { chatState$ } from 'redux/selectors';
 import * as actions from '../../../redux/actions';
-import Reply from './Reply';
+// import Reply from './Reply';
 import VotePagination from './VotePagination';
 import VoteItem from './VoteItem';
 
-function VoteList({editVote, deleteVote, replyVote}) {
-    const vote = useSelector(voteState$)
+function VoteList({ editVote, deleteVote, replyVote }) {
+    const chatUser = useSelector(chatState$)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -18,19 +18,19 @@ function VoteList({editVote, deleteVote, replyVote}) {
         <div className="users col-md-12">
             <div className="user">
                 {
-                    vote && vote.map((vote, key) => (
-                        <VoteItem key={vote.id} 
-                        img={vote.avatar} 
-                        name={vote.name} 
-                        comment={vote.comment}
-                        replyVote={()=> replyVote(vote)}
-                        editVote={()=> editVote(vote)} 
-                        deleteVote={()=> deleteVote(vote)}
+                    chatUser && chatUser.map((vote, key) => (
+                        <VoteItem key={vote._id}
+                            img={vote.name.charAt(0).toUpperCase()}
+                            name={vote.name}
+                            comment={vote.comment}
+                            replyVote={() => replyVote(vote)}
+                            editVote={() => editVote(vote)}
+                            deleteVote={() => deleteVote(vote)}
                         />
                     ))
                 }
             </div>
-            <Reply />
+            {/* <Reply /> */}
             <VotePagination />
         </div>
     );

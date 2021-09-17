@@ -13,6 +13,8 @@ import slide from './slide';
 import searchSpecial from './searchSpecial';
 import catagoryMenu from './catagoryMenu';
 import cart from './cart';
+import account from './account';
+import chat from './chat';
 
 export default combineReducers({
     mobiles,
@@ -28,6 +30,7 @@ export default combineReducers({
     searchSpecial,
     catagoryMenu,
     cart,
-
+    account,
+    chat,
     form: formReducer
 })

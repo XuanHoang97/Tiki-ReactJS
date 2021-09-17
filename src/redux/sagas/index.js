@@ -1,92 +1,59 @@
 import { takeLatest, call, put, delay, select } from "redux-saga/effects";
 import * as api from "../../APIs";
 import * as actions from "../actions";
+import * as account from "../actions/account";
 import { hideLoading, showLoading } from "../actions/loading";
 import { FETCH_CHAT, ADD_CHAT, UPDATE_CHAT, DELETE_CHAT } from "../../contants/logchat";
 import { fetchListChatSuccess, fetchListChatFailed, addChatFailed, addChatSuccess, updateChatSuccess, updateChatFailed, deleteChatSuccess, deleteChatFailed } from "redux/actions/logchat";
 import { hideModal } from "redux/actions/vote";
+import { existedAccount, loginAccount, registerAccount } from "./account";
+import { createChat, getChat } from "redux/actions/chat";
+import { createChatSaga, getChatSaga } from "./chatSaga";
+import { getDataSaga } from "./getData";
 
-function* getDataMobileSaga() {
-    try {
-        const mobile = yield call(api.getDataMobile);
-        yield put(actions.getDataMobile.getDataMobileSuccess(mobile.data));
-    } catch (error) {
-        yield put(actions.getDataMobile.getDataMobileFailure(error));
-    }
+function getDataMobileSaga() {
+    return getDataSaga(api.getDataMobile, actions.getDataMobile.getDataMobileSuccess,
+        actions.getDataMobile.getDataMobileFailure)
 }
 
-function* getDataLaptopSaga() {
-    try {
-        const laptop = yield call(api.getDataLaptop);
-        yield put(actions.getDataLaptop.getDataLaptopSuccess(laptop.data));
-    } catch (error) {
-        yield put(actions.getDataLaptop.getDataLaptopFailure(error));
-    }
+function getDataLaptopSaga() {
+    return getDataSaga(api.getDataLaptop, actions.getDataLaptop.getDataLaptopSuccess,
+        actions.getDataLaptop.getDataLaptopFailure)
 }
 
-function* getSuggestProductSaga() {
-    try {
-        const suggest = yield call(api.getDataProductSuggest);
-        yield put(actions.getDataProductSuggest.getSuggestSuccess(suggest.data));
-    } catch (error) {
-        yield put(actions.getDataProductSuggest.getSuggestFailure(error));
-    }
+function getSuggestProductSaga() {
+    return getDataSaga(api.getDataProductSuggest, actions.getDataProductSuggest.getSuggestSuccess,
+        actions.getDataProductSuggest.getSuggestFailure)
 }
 
-function* getDataCatagory() {
-    try {
-        const catagory = yield call(api.getDataCatagorySpe);
-        yield put(actions.getDataCatagory.getCatagorySuccess(catagory.data));
-    } catch (error) {
-        yield put(actions.getDataCatagory.getCatagoryFailure(error));
-    }
+function getDataCatagory() {
+    return getDataSaga(api.getDataCatagorySpe, actions.getDataCatagory.getCatagorySuccess,
+        actions.getDataCatagory.getCatagoryFailure)
 }
 
-function* getDataPreferent() {
-    try {
-        const preferent = yield call(api.getDataPreferent);
-        yield put(actions.getDataPreferent.getPreferentSuccess(preferent.data));
-    } catch (error) {
-        yield put(actions.getDataPreferent.getPreferentFailure(error));
-    }
+function getDataPreferent() {
+    return getDataSaga(api.getDataPreferent, actions.getDataPreferent.getPreferentSuccess,
+        actions.getDataPreferent.getPreferentFailure)
 }
 
-function* getDataCatagoryMenu() {
-    try {
-        const catagoryMenu = yield call(api.getDataCatagoryMenu);
-        yield put(
-            actions.getDataCatagoryMenu.getCatagoryMenuSuccess(catagoryMenu.data)
-        );
-    } catch (error) {
-        yield put(actions.getDataCatagoryMenu.getCatagoryMenuFailure(error));
-    }
+function getDataCatagoryMenu() {
+    return getDataSaga(api.getDataCatagoryMenu, actions.getDataCatagoryMenu.getCatagoryMenuSuccess,
+        actions.getDataCatagoryMenu.getCatagoryMenuFailure)
 }
 
-function* getDataSlide() {
-    try {
-        const slide = yield call(api.getDataSlide);
-        yield put(actions.getDataSlide.getSlideSuccess(slide.data));
-    } catch (error) {
-        yield put(actions.getDataSlide.getSlideFailure(error));
-    }
+function getDataSlide() {
+    return getDataSaga(api.getDataSlide, actions.getDataSlide.getSlideSuccess,
+        actions.getDataSlide.getSlideFailure)
 }
 
-function* getDataSearchSpecial() {
-    try {
-        const searchSpecial = yield call(api.getDataSearchSpecial);
-        yield put(actions.getDataSearchSpecial.getSearchSpecialSuccess(searchSpecial.data));
-    } catch (error) {
-        yield put(actions.getDataSearchSpecial.getSearchSpecialFailure(error));
-    }
+function getDataSearchSpecial() {
+    return getDataSaga(api.getDataSearchSpecial, actions.getDataSearchSpecial.getSearchSpecialSuccess,
+        actions.getDataSearchSpecial.getSearchSpecialFailure)
 }
 
-function* getDataNew() {
-    try {
-        const news = yield call(api.getDataNew);
-        yield put(actions.getDataNew.getNewSuccess(news.data));
-    } catch (error) {
-        yield put(actions.getDataNew.getNewFailure(error));
-    }
+function getDataNew() {
+    return getDataSaga(api.getDataNew, actions.getDataNew.getNewSuccess,
+        actions.getDataNew.getNewFailure)
 }
 
 // vote and comment product 
@@ -135,7 +102,6 @@ function* deleteChatSaga({ payload }) {
     try {
         yield put(showLoading());
         const { id } = payload;
-        const resp = yield call(api.deleteChat, id);
         yield put(deleteChatSuccess(id));
         yield put(hideModal());
     } catch (err) {
@@ -156,6 +122,14 @@ function* mySaga() {
     yield takeLatest(actions.getDataNew.getNewRequest, getDataNew);
     yield takeLatest(actions.getDataSearchSpecial.getSearchSpecialRequest, getDataSearchSpecial);
     yield takeLatest(actions.getDataCatagoryMenu.getCatagoryMenuRequest, getDataCatagoryMenu);
+    //account
+    yield takeLatest(account.registerUser.registerUserRequest, registerAccount);
+    yield takeLatest(account.loginUser.loginUserRequest, loginAccount);
+    yield takeLatest(account.checkExisted.checkExistedRequest, existedAccount);
+
+    //chat
+    yield takeLatest(getChat.getChatRequest, getChatSaga);
+    yield takeLatest(createChat.createChatRequest, createChatSaga);
 
     // vote and comment product 
     yield takeLatest(FETCH_CHAT, getDataVote);
