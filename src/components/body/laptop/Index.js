@@ -1,3 +1,4 @@
+import { numberFormat } from "contants/NumberFormat";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -43,22 +44,11 @@ function LaptopProduct() {
 
                                     <div className="price__prod row align-items-center justify-content-center">
                                         <span className="font-weight-bold" style={{ color: 'red', fontSize: '14px' }}>
-                                            {new Intl.NumberFormat("GB-en", {
-                                                currency: "VND",
-                                                style: "currency",
-                                                minimumFractionDigits: 0,
-                                                maximumFractionDigits: 0
-                                            }).format(laptop.price)}
-
+                                            {numberFormat(laptop.price)}
                                         </span>
                                         <span className="badge badge-pill badge-warning p-1 ml-3 mr-2">-{laptop.sale_off} %</span>
                                         <strike className="small" style={{ color: '#8a8a8a' }}>
-                                            {new Intl.NumberFormat("GB-en", {
-                                                currency: "VND",
-                                                style: "currency",
-                                                minimumFractionDigits: 0,
-                                                maximumFractionDigits: 0
-                                            }).format(laptop.price_old)}
+                                            {numberFormat(laptop.price_old)}
                                         </strike>
                                     </div>
 

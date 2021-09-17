@@ -1,3 +1,4 @@
+import { numberFormat } from "contants/NumberFormat";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -6,7 +7,6 @@ import { mobilesState$ } from "redux/selectors";
 import * as actions from '../../../redux/actions';
 import Rate from "../Rate";
 
-// Pagination
 const RenderMobile = (mobile) => {
     const dispatch = useDispatch()
     const handleMobile = (e) => {
@@ -35,22 +35,12 @@ const RenderMobile = (mobile) => {
 
                                 <div className="price__prod row align-items-center justify-content-center">
                                     <span className="font-weight-bold" style={{ color: 'red', fontSize: '14px' }}>
-                                        {new Intl.NumberFormat("GB-en", {
-                                            currency: "VND",
-                                            style: "currency",
-                                            minimumFractionDigits: 0,
-                                            maximumFractionDigits: 0
-                                        }).format(mobile.price)}
+                                        {numberFormat(mobile.price)}
                                     </span>
 
                                     <span className="badge badge-pill badge-warning p-1 ml-3 mr-2">-{mobile.sale_off}%</span>
                                     <strike className="small" style={{ color: '#8a8a8a' }}>
-                                        {new Intl.NumberFormat("GB-en", {
-                                            currency: "VND",
-                                            style: "currency",
-                                            minimumFractionDigits: 0,
-                                            maximumFractionDigits: 0
-                                        }).format(mobile.price_old)}
+                                        {numberFormat(mobile.price_old)}
                                     </strike>
                                 </div>
 

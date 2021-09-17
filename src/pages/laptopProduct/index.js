@@ -66,12 +66,7 @@ const Laptop_detail = ({ match }) => {
                         </span>
 
                         <strike className="small">
-                          {new Intl.NumberFormat("GB-en", {
-                            currency: "VND",
-                            style: "currency",
-                            minimumFractionDigits: 0,
-                            maximumFractionDigits: 0,
-                          }).format(prod.price_old)}
+                          {numberFormat(prod.price_old)}
                         </strike>
                     </div>
                 
