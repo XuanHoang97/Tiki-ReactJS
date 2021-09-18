@@ -1,6 +1,6 @@
 import * as api from "../../APIs";
-import { createChat, getChat } from "redux/actions/chat";
-import { call, put } from "@redux-saga/core/effects";
+import { createChat, deletesChat, getChat, updatesChat } from "redux/actions/chat";
+import { call, put, select } from "@redux-saga/core/effects";
 import { hideModal } from "redux/actions/vote";
 
 export function* getChatSaga(action) {
@@ -19,5 +19,27 @@ export function* createChatSaga(action) {
         yield put(hideModal())
     } catch (error) {
         yield put(createChat.createChatFailure(error));
+    }
+}
+
+export function* updateChatSaga(action) {
+    try {
+        const chatEditing = yield select((state) => state.logChat.chatEditting);
+        const get = yield call(api.updatesChat, action.payload, chatEditing._id);
+        yield put(updatesChat.updatesChatSuccess(get.data));
+        yield put(hideModal())
+    } catch (error) {
+        yield put(updatesChat.updatesChatFailure(error));
+    }
+}
+
+export function* deleteChatSaga(action) {
+    try {
+        const { _id } = action.payload
+        const get = yield call(api.deleteChat, _id);
+        yield put(deletesChat.deletesChatSuccess(get.data));
+        yield put(hideModal())
+    } catch (error) {
+        yield put(deletesChat.deletesChatFailure(error));
     }
 }

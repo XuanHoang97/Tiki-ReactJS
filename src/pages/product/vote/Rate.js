@@ -4,7 +4,7 @@ import FormVote from "./FormVote";
 import VoteList from "./VoteList";
 import { changeModalContent, changeModalTitle, hideModal, showModal } from "redux/actions/vote";
 import { setChatEditting, deleteChat } from "redux/actions/logchat";
-import { getChat } from "redux/actions/chat";
+import { deletesChat, getChat } from "redux/actions/chat";
 import { usernameState$ } from "redux/selectors/account";
 import { showModalAccount } from "redux/actions/account";
 
@@ -37,7 +37,7 @@ function Rate(props) {
   }
 
   const handleDeleteVote = (chat) => {
-    dispatch(deleteChat(chat.id));
+    dispatch(deletesChat.deletesChatRequest(chat));
   }
 
   const showModalDeleteVote = (chat) => {

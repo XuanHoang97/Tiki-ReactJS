@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { hideModal } from "redux/actions/vote";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
-import { createChat } from "redux/actions/chat";
+import { createChat, updatesChat } from "redux/actions/chat";
 import { usernameState$ } from "redux/selectors/account";
 
 const ErrorComment = styled.p`
@@ -15,15 +15,22 @@ function FormVote(props) {
 
   const { register, formState: { errors }, handleSubmit } = useForm()
   const username = useSelector(usernameState$)
+  const chatEditting = useSelector((state) => state.logChat.chatEditting)
+
   const dispatch = useDispatch();
 
   const handleSubmitForm = (e) => {
-    console.log(props.params)
-    dispatch(createChat.createChatRequest({
-      comment: e.comment,
-      productId: props.params,
-      username
-    }))
+    if (chatEditting && chatEditting._id) {
+      dispatch(updatesChat.updatesChatRequest({
+        comment: e.comment
+      }))
+    } else {
+      dispatch(createChat.createChatRequest({
+        comment: e.comment,
+        productId: props.params,
+        username
+      }))
+    }
   }
 
   return (

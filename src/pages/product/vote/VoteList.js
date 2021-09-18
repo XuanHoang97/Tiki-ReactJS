@@ -18,14 +18,15 @@ function VoteList({ editVote, deleteVote, replyVote }) {
         <div className="users col-md-12">
             <div className="user">
                 {
-                    chatUser && chatUser.reverse().map((vote, key) => (
+                    chatUser && chatUser.map((vote, key) => (
                         <VoteItem key={vote._id}
-                            img={vote.name.charAt(0).toUpperCase()}
+                            img={vote.imgUser}
                             name={vote.name}
                             comment={vote.comment}
                             replyVote={() => replyVote(vote)}
                             editVote={() => editVote(vote)}
                             deleteVote={() => deleteVote(vote)}
+                            time={vote.updatedAt}
                         />
                     ))
                 }
