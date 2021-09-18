@@ -9,18 +9,18 @@ import Cart1 from "../pages/cart/Cart1";
 import Payment from "../pages/payment/Payment";
 import OrderSuccess from "../pages/cart/OrderSuccess";
 import Footer from "./footer/Footer";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from "../router/scrollToTop";
 import NotFound from "./NotFound";
 import ScrollTop from "./ScrollTop";
 import Result from "./header/search/Result";
 import GlobalLoading from "./GlobalLoading";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { useSelector } from "react-redux";
-import { productsCartMenuState$ } from "redux/selectors";
 import Modals from 'components/Modal';
 import Laptop_detail from "pages/laptopProduct";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { productsCartMenuState$ } from "redux/selectors";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 console.warn = () => { };
 // SEO Web
@@ -29,6 +29,7 @@ const TITLE = "Tiki - Mua hàng online giá tốt, hàng chuẩn, ship nhanh";
 export default function App() {
   // Save data Cart 
   const productsCart = useSelector(productsCartMenuState$)
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div>

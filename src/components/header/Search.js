@@ -5,8 +5,8 @@ import SearchSuggest from './SearchSuggest';
 
 export default function Search() {
     const [suggest, setSuggest] = useState(false);
-    const [mobile, setMobile] = useState([])
     const [search, setSearch] = useState('')
+    const [mobile, setMobile] = useState([])
     const [allData, setAllData] = useState(['product_mobile'])
     const inputSearch = useRef(null)
 
@@ -25,8 +25,6 @@ export default function Search() {
             setAllData(mobile.filter(items => items.name ? items.name.toLowerCase().includes(search.toLowerCase()) : ''))
         }
     }, [search])
-
-
 
     const handleClickSearch = () => {
         setSuggest(false)

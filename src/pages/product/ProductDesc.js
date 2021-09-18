@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import News_Event from './News_event';
+import News_Event from './news_event';
 
 const MoreContent = () => {
     return (

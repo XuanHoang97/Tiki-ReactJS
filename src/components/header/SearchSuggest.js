@@ -12,6 +12,7 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
             setShowData(false)
         }
     }, [search])
+    
     return (
         <div className="search-form" style={{ display: (show ? 'block' : 'none') }}>
             {showData ? (<div className="search__info" >
