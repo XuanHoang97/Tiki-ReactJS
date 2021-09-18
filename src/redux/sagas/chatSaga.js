@@ -15,7 +15,6 @@ export function* getChatSaga(action) {
 export function* createChatSaga(action) {
     try {
         const get = yield call(api.postChat, action.payload);
-        console.log(get)
         yield put(createChat.createChatSuccess(get.data));
         yield put(hideModal())
     } catch (error) {

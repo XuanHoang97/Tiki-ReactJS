@@ -18,7 +18,7 @@ function FormVote(props) {
   const dispatch = useDispatch();
 
   const handleSubmitForm = (e) => {
-    console.log(1)
+    console.log(props.params)
     dispatch(createChat.createChatRequest({
       comment: e.comment,
       productId: props.params,

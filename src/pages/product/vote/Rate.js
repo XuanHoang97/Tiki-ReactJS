@@ -64,7 +64,7 @@ function Rate(props) {
   }
 
   const handleLogin = () => {
-    username ? handleEditVote() : dispatch(showModalAccount())
+    username ? handleClickOpen() : dispatch(showModalAccount())
   }
   return (
     <div className="container bg-white p-3 pl-2 mt-4">
