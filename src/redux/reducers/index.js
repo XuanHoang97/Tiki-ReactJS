@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { reducer as formReducer } from 'redux-form';
+// import { reducer as formReducer } from 'redux-form'; 
 import mobiles from './mobile';
 import laptop from './laptop';
 import prodSuggest from './productSuggest';
@@ -32,5 +32,5 @@ export default combineReducers({
     cart,
     account,
     chat,
-    form: formReducer
+    // form: formReducer
 })
