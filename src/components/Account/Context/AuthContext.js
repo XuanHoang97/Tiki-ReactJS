@@ -5,8 +5,6 @@ export const AuthContext = createContext()
 function AuthContextProvider({ children }) {
     const [login, setLogin] = useState('login')
     const [number, setNumber] = useState()
-    const [showModal, setShowModal] = useState(false);
-    const [nameAccount, setNameAccount] = useState(false);
     const [alert, setAlert] = useState(false)
     const [account, setAccount] = useState({
         name: '',
@@ -28,8 +26,6 @@ function AuthContextProvider({ children }) {
         login, setLogin,
         number, setNumber,
         account, setAccount,
-        showModal, setShowModal,
-        nameAccount, setNameAccount,
         alert, setAlert,
         keycode, setKeycode,
         keyRandom, setKeyRandom,

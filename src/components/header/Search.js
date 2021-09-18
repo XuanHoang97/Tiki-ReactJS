@@ -13,7 +13,7 @@ export default function Search() {
     useEffect(() => {
         const fetchProducts = () => {
             allData.map(item => axios
-                .get(`https://61275b59c2e8920017bc0c43.mockapi.io/api/${item}/`)
+                .get(`https://api-tiki-clone.herokuapp.com/api/v2/${item}/`)
                 .then(res => { setMobile(mobile => [...mobile, ...res.data]); })
                 .catch((err) => { console.log(err); }))
         };

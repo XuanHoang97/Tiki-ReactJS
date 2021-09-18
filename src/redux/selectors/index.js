@@ -30,3 +30,6 @@ export const productsCartMenuState$ = (state) => state.cart.productsCart
 
 // vote and comment 
 export const voteState$ = (state) => state.logChat.listChat
+
+//chat 
+export const chatState$ = (state) => state.chat.data

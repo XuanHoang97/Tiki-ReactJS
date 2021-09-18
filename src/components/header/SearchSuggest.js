@@ -159,7 +159,7 @@ function SearchSuggest({ dataSearch, show, blur, search }) {
                 (<div className="search__info">
                     {dataSearch.length !== 0 && dataSearch ? dataSearch.map((item, i) =>
                     (
-                        <div className="search__items" key={i}>
+                        <div className="search__items" key={item._id}>
                             <small style={{ fontWeight: '500' }}>
                                 <img src="https://salt.tikicdn.com/ts/upload/e8/aa/26/42a11360f906c4e769a0ff144d04bfe1.png" alt="" style={{ width: '6%' }} />
                                 {item.name}

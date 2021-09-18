@@ -3,7 +3,7 @@
         .col-md-1:hover {
             color: blue important;
             transform: scale(1.1);
-            transition: transform .3s linear;
+            transition: transform 0.3s linear;
         }
     }
 }
@@ -12,7 +12,7 @@
     .col-md-1:hover {
         color: blue !important;
         transform: scale(1.1);
-        transition: transform .3s linear;
+        transition: transform 0.3s linear;
     }
 }
 
@@ -25,7 +25,7 @@
             .card-body:hover {
                 border: 1px solid rgb(85, 85, 255) !important;
                 transform: scale(1.1);
-                transition: transform .5s linear;
+                transition: transform 0.2s linear;
             }
         }
     }
@@ -42,11 +42,12 @@
             box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px !important;
             color: rgb(0, 47, 255) !important;
             transform: scale(1.05);
-            transition: transform .4s linear;
+            transition: transform 0.2s linear;
             border-radius: 5px;
             div {
                 a {
-                    img {}
+                    img {
+                    }
                 }
             }
             .AddCart {
@@ -69,7 +70,7 @@
     }
     img:hover {
         transform: scale(1.3);
-        transition: transform .4s linear;
+        transition: transform 0.2s linear;
     }
 }
 
@@ -79,7 +80,7 @@
     border-right: 0.35rem solid transparent;
     border-left: 0.35rem solid transparent;
     position: absolute;
-    transform: rotate( 90deg);
+    transform: rotate(90deg);
     bottom: 4.5rem;
     right: -0.7rem;
     z-index: 10;
@@ -96,7 +97,8 @@
         width: 450px;
         .react-chatbot-kit-chat-inner-container {
             margin-bottom: 0;
-            .react-chatbot-kit-chat-header {}
+            .react-chatbot-kit-chat-header {
+            }
             .react-chatbot-kit-chat-message-container {
                 background: white;
                 .react-chatbot-kit-chat-bot-message-container {
@@ -114,7 +116,7 @@
                             height: 40px;
                             border-radius: 50%;
                             position: relative;
-                            background: url('../../assets/img/hotgirl.png') !important;
+                            background: url("../../assets/img/hotgirl.png") !important;
                             background-repeat: no-repeat;
                         }
                     }
@@ -168,7 +170,7 @@
                             height: 50px;
                             border-radius: 50%;
                             position: relative;
-                            background: url('../../assets/img/fun.png') !important;
+                            background: url("../../assets/img/fun.png") !important;
                             background-repeat: no-repeat;
                         }
                     }
