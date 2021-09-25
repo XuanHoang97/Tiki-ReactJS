@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import * as actions from '../../redux/actions'
 import { newState$ } from 'redux/selectors';
 
-function News_Event(props) {
+function NewsEvent(props) {
     const news = useSelector(newState$)
     const dispatch = useDispatch()
 
@@ -28,4 +28,4 @@ function News_Event(props) {
     );
 }
 
-export default News_Event;
+export default NewsEvent;

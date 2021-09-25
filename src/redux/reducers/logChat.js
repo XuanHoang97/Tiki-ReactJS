@@ -61,7 +61,7 @@ const reducer = (state = initialstate, action) => {
                     ...state,
                 };
             }
-        
+
         case SET_CHAT_EDITTING:
             {
                 const { chat } = action.payload;
@@ -70,7 +70,7 @@ const reducer = (state = initialstate, action) => {
                     chatEditting: chat,
                 };
             }
-        
+
         case UPDATE_CHAT: {
             return {
                 ...state,
@@ -78,15 +78,15 @@ const reducer = (state = initialstate, action) => {
         }
 
         case UPDATE_CHAT_SUCCESS: {
-            const {data}= action.payload;
-            const {listChat} = state;
+            const { data } = action.payload;
+            const { listChat } = state;
             const index = listChat.findIndex(item => item.id === data.id);
             console.log(listChat)
-            if( index !== -1){
+            if (index !== -1) {
                 const newList = [
                     ...listChat.slice(0, index),
                     data,
-                    ...listChat.slice(index+1)
+                    ...listChat.slice(index + 1)
                 ];
                 toastSuccess('Sửa đánh giá sản phẩm thành công');
                 console.log(newList)
@@ -101,7 +101,7 @@ const reducer = (state = initialstate, action) => {
         }
 
         case UPDATE_CHAT_FAILED: {
-            const { error } =action.payload;
+            const { error } = action.payload;
             toastError(error);
             return {
                 ...state,
@@ -114,15 +114,14 @@ const reducer = (state = initialstate, action) => {
             };
         }
         case DELETE_CHAT_SUCCESS: {
-            const {data:chatId}= action.payload;
-            toastSuccess('Xóa đánh giá thành công');
+            const { data: chatId } = action.payload;
             return {
                 ...state,
                 listChat: state.listChat.filter(item => item.id !== chatId)
             };
         }
         case DELETE_CHAT_FAILED: {
-            const { error } =action.payload;
+            const { error } = action.payload;
             toastError(error);
             return {
                 ...state,

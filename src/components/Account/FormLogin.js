@@ -26,7 +26,7 @@ function FormLogin() {
     const dispatch = useDispatch()
     useEffect(() => {
         account && (account.existed ? setLogin('accounted') : setLogin('verify'))
-    }, [account])
+    }, [account, setLogin])
     const hiddenForm = () => {
         setAccount({
             name: '',
@@ -51,7 +51,7 @@ function FormLogin() {
             default:
                 return ''
         }
-    })
+    }, [login])
 
     return (
         <>

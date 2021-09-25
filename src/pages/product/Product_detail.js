@@ -16,6 +16,7 @@ import Illutrator from "./Illutrator";
 import Rate from "./vote/Rate";
 import Vote from "./Vote";
 import ProdRelated from "./ProdRelated";
+import { addParmas } from "redux/actions/chat";
 
 const Product_detail = ({ match }) => {
   const [data, setData] = useState([]);
@@ -39,13 +40,24 @@ const Product_detail = ({ match }) => {
   }, [data, dispatch])
 
   useEffect(() => {
-    const fetchProduct = () => {
+    let isSubscribe = true
+    function fetchProduct() {
       axios.get(`https://api-tiki-clone.herokuapp.com/api/v2/product_mobile/?id=${match.params.id}`)
-        .then((res) => { setData(res.data); })
-        .catch((err) => console.log(err));
+        .then((res) => {
+          if (isSubscribe && res.status === 200) {
+            const { data = null } = res;
+            setData(data)
+          }
+        })
+        .catch((err) => console.log(err))
     };
     !dataProDetail && fetchProduct();
-  }, [dataProDetail, match.params.id]);
+    dispatch(addParmas(match.params.id))
+
+    return () => {
+      isSubscribe = false
+    }
+  }, [dataProDetail, match.params.id, dispatch]);
 
   return (
     <div className="main bg-light pt-3 pb-3">
@@ -100,14 +112,19 @@ const Product_detail = ({ match }) => {
           <h6 className="mt-4 mb-2 m-0">SẢN PHẨM TƯƠNG TỰ</h6>
           <div className="row bg-white pt-4 pb-4 p-3 m-1">
             {
-              data.map((value, key) => {
-                if (value._id != match.params.id) {
+              data.map((value) => {
+                if (value._id !== match.params.id) {
                   if (count <= 4) {
                     count++;
                     return (
                       <ProdRelated key={value._id} img={value.img} name={value.name} />
                     )
                   }
+                  else {
+                    return '';
+                  }
+                } else {
+                  return '';
                 }
               })
             }

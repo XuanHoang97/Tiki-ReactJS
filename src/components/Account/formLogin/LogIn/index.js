@@ -37,21 +37,21 @@ function LogIn() {
                         className="btn btn-danger mt-3 btn-smd btn-block"
                     >Tiếp tục</ButtonSubmit>
                 </form>
-                <div className="text-center small mt-2 mb-5"><a className="text-center">Đăng nhập bằng email</a></div>
+                <div className="text-center small mt-2 mb-5"><a href='/#' className="text-center">Đăng nhập bằng email</a></div>
                 <div className="text-center mb-3 small">Hoặc Tiếp tục bằng</div>
 
                 <div className="row justify-content-center">
                     <div className="col-md-2 col-3">
-                        <a><img className="w-75" src="https://salt.tikicdn.com/ts/upload/3a/22/45/0f04dc6e4ed55fa62dcb305fd337db6c.png" alt="facebook" /></a>
+                        <a href='/#'><img className="w-75" src="https://salt.tikicdn.com/ts/upload/3a/22/45/0f04dc6e4ed55fa62dcb305fd337db6c.png" alt="facebook" /></a>
                     </div>
 
                     <div className="col-md-2 col-3">
-                        <a><img className="w-75" src="https://salt.tikicdn.com/ts/upload/1c/ac/e8/141c68302262747f5988df2aae7eb161.png" alt="gg" /></a>
+                        <a href='/#'><img className="w-75" src="https://salt.tikicdn.com/ts/upload/1c/ac/e8/141c68302262747f5988df2aae7eb161.png" alt="gg" /></a>
                     </div>
                     <div className="col-md-2 col-3">
-                        <a><img className="w-75" src="https://salt.tikicdn.com/ts/upload/98/37/86/517cfc05f04466b3118357a1fb4182c8.png" alt="zalo" /></a>
+                        <a href='/#'><img className="w-75" src="https://salt.tikicdn.com/ts/upload/98/37/86/517cfc05f04466b3118357a1fb4182c8.png" alt="zalo" /></a>
                     </div>
-                    <div className="small mt-2 m-3">Bằng việc tiếp tục, bạn đã chấp nhận <a className="text-primary">điều khoản sử dụng</a> </div>
+                    <div className="small mt-2 m-3">Bằng việc tiếp tục, bạn đã chấp nhận <a href='/#' className="text-primary">điều khoản sử dụng</a> </div>
                 </div>
             </div>
         </>

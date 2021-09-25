@@ -10,7 +10,7 @@ export default function Preferential() {
 
     useEffect(() => {
         dispatch(actions.getDataPreferent.getPreferentRequest())
-    }, [])
+    }, [dispatch])
 
     let dem = 1;
     return (

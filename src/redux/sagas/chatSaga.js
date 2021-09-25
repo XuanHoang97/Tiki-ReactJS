@@ -1,10 +1,24 @@
 import * as api from "../../APIs";
 import { createChat, deletesChat, getChat, updatesChat } from "redux/actions/chat";
-import { call, put, select } from "@redux-saga/core/effects";
+import { call, put } from "@redux-saga/core/effects";
 import { hideModal } from "redux/actions/vote";
+import io from 'socket.io-client'
+import { eventChannel } from "@redux-saga/core";
 
+export const socket = io('http://localhost:5000/');
+
+export function connectSocket() {
+    return new Promise(resolve => {
+        socket.on('connect', () => {
+            resolve(socket);
+            socket.emit('join', 'Hello server from client')
+        });
+
+    });
+}
 export function* getChatSaga(action) {
     try {
+
         const get = yield call(api.getChats, action.payload);
         yield put(getChat.getChatSuccess(get.data));
     } catch (error) {
@@ -14,8 +28,8 @@ export function* getChatSaga(action) {
 
 export function* createChatSaga(action) {
     try {
-        const get = yield call(api.postChat, action.payload);
-        yield put(createChat.createChatSuccess(get.data));
+        yield call(api.postChat, action.payload);
+
         yield put(hideModal())
     } catch (error) {
         yield put(createChat.createChatFailure(error));
@@ -24,9 +38,9 @@ export function* createChatSaga(action) {
 
 export function* updateChatSaga(action) {
     try {
-        const chatEditing = yield select((state) => state.logChat.chatEditting);
-        const get = yield call(api.updatesChat, action.payload, chatEditing._id);
-        yield put(updatesChat.updatesChatSuccess(get.data));
+        yield call(api.updatesChat, action.payload, action.payload._id);
+        // yield put(updatesChat.updatesChatSuccess(get.data))
+
         yield put(hideModal())
     } catch (error) {
         yield put(updatesChat.updatesChatFailure(error));
@@ -35,11 +49,25 @@ export function* updateChatSaga(action) {
 
 export function* deleteChatSaga(action) {
     try {
-        const { _id } = action.payload
-        const get = yield call(api.deleteChat, _id);
-        yield put(deletesChat.deletesChatSuccess(get.data));
+        const { username, _id } = action.payload
+        yield call(api.deleteChat, { username }, _id);
+        // yield put(deletesChat.deletesChatSuccess(get.data))
         yield put(hideModal())
     } catch (error) {
         yield put(deletesChat.deletesChatFailure(error));
     }
+}
+
+export function subscribe(socket) {
+    return eventChannel(emit => {
+
+        socket.on("updatemessage", data => {
+            emit(updatesChat.updatesChatSuccess(data))
+        })
+        socket.on("deletemessage", data => {
+            emit(deletesChat.deletesChatSuccess(data))
+        })
+        return () => { };
+
+    })
 }

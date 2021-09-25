@@ -4,7 +4,7 @@ import KeyCode from './verify/KeyCode';
 import TimeVerify from './verify/TimeVerify';
 
 function Verify() {
-    const { setLogin, number, setNumber, keyRandom, keyInput, setKeycode, keyNumber, keyBackspace } = useContext(AuthContext)
+    const { setLogin, number, setNumber, keyRandom, keyInput, setKeycode } = useContext(AuthContext)
     const [otp, setOtp] = useState(false)
 
     const handleVerify = () => {
@@ -12,12 +12,15 @@ function Verify() {
             setOtp(false)
             setLogin('addAccount')
             setKeycode('')
-            clearTimeout(keyNumber)
-            clearTimeout(keyBackspace)
         } else {
             setOtp(true)
             return;
         }
+    }
+
+    const handleBack = () => {
+        setLogin('login')
+        setNumber()
     }
     return (
         <>
@@ -27,7 +30,7 @@ function Verify() {
                     color: '#ccc',
                     cursor: 'pointer'
                 }}
-                onClick={() => (setLogin('login'), setNumber())}
+                onClick={() => handleBack()}
             ></i>
             <h3 className="mt-8">Nhập mã xác minh</h3>
             <div className="form-group">

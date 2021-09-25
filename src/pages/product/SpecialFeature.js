@@ -5,15 +5,22 @@ function SpecialFeature(props) {
     const [feature, setFeature] = useState([]);
 
     useEffect(() => {
+        let isSubcribe = true
+        const fetchFeature = () => {
+            axios.get(`https://61275b59c2e8920017bc0c43.mockapi.io/api/feature_special`)
+                .then((res) => {
+                    if (isSubcribe && res.status === 200) {
+                        const { data = null } = res;
+                        setFeature(data)
+                    }
+                })
+                .catch((err) => console.log(err));
+        };
         fetchFeature();
-
+        return () => {
+            isSubcribe = false
+        }
     }, []);
-
-    const fetchFeature = () => {
-        axios.get(`https://61275b59c2e8920017bc0c43.mockapi.io/api/feature_special`)
-            .then((res) => { setFeature(res.data); })
-            .catch((err) => console.log(err));
-    };
 
     return (
         <div>
