@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import News_Event from './news_event';
+import NewsEvent from './NewsEvent';
 
 const MoreContent = () => {
     return (
@@ -30,7 +32,7 @@ function ProductDesc(props) {
                         </div>
                         : ''}
                 </div>
-                <News_Event />
+                <NewsEvent />
             </div>
         </>
     );

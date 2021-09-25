@@ -1,5 +1,5 @@
 import { numberFormat } from "contants/NumberFormat";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addLaptop } from "redux/actions/cart";
@@ -17,7 +17,7 @@ function LaptopProduct() {
 
     useEffect(() => {
         dispatch(actions.getDataLaptop.getDataLaptopRequest())
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className="product mt-3 mb-3 ml-0 mr-0 p-3 bg-white text-center">

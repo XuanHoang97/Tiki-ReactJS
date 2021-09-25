@@ -102,7 +102,7 @@ function Mobile() {
 
     useEffect(() => {
         dispatch(actions.getDataMobile.getDataMobileRequest())
-    }, []);
+    }, [dispatch]);
 
     const handleNextbtn = () => {
         setcurrentPage(currentPage + 1);

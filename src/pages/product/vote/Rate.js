@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import FormVote from "./FormVote";
 import VoteList from "./VoteList";
 import { changeModalContent, changeModalTitle, hideModal, showModal } from "redux/actions/vote";
-import { setChatEditting, deleteChat } from "redux/actions/logchat";
+import { setChatEditting } from "redux/actions/logchat";
 import { deletesChat, getChat } from "redux/actions/chat";
 import { usernameState$ } from "redux/selectors/account";
 import { showModalAccount } from "redux/actions/account";
@@ -13,7 +13,7 @@ function Rate(props) {
   const username = useSelector(usernameState$)
   useEffect(() => {
     dispatch(getChat.getChatRequest(props.params));
-  }, [dispatch]);
+  }, [dispatch, props.params]);
 
   const handleClickOpen = () => {
     dispatch(showModal());
@@ -37,7 +37,10 @@ function Rate(props) {
   }
 
   const handleDeleteVote = (chat) => {
-    dispatch(deletesChat.deletesChatRequest(chat));
+    dispatch(deletesChat.deletesChatRequest({
+      _id: chat._id,
+      username: chat.name
+    }));
   }
 
   const showModalDeleteVote = (chat) => {

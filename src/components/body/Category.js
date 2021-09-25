@@ -10,7 +10,7 @@ export default function Category() {
 
     useEffect(() => {
         dispatch(actions.getDataCatagory.getCatagoryRequest())
-    }, [])
+    }, [dispatch])
 
     let dem = 1;
     return (

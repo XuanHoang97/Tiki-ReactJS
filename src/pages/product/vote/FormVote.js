@@ -5,24 +5,24 @@ import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { createChat, updatesChat } from "redux/actions/chat";
 import { usernameState$ } from "redux/selectors/account";
-
 const ErrorComment = styled.p`
   margin-top: 10px;
   color: red
 `
 
 function FormVote(props) {
+  const dispatch = useDispatch()
 
   const { register, formState: { errors }, handleSubmit } = useForm()
   const username = useSelector(usernameState$)
   const chatEditting = useSelector((state) => state.logChat.chatEditting)
 
-  const dispatch = useDispatch();
-
   const handleSubmitForm = (e) => {
     if (chatEditting && chatEditting._id) {
       dispatch(updatesChat.updatesChatRequest({
-        comment: e.comment
+        comment: e.comment,
+        username: username,
+        _id: chatEditting._id
       }))
     } else {
       dispatch(createChat.createChatRequest({
@@ -30,6 +30,7 @@ function FormVote(props) {
         productId: props.params,
         username
       }))
+
     }
   }
 
@@ -38,6 +39,7 @@ function FormVote(props) {
       <div className="vote" onClose={() => dispatch(hideModal())}>
         <input
           className='name'
+          defaultValue={chatEditting?.comment}
           {...register('comment', { required: "This input is required." })}
         />
         <ErrorComment>{errors.comment?.type === 'required' && "First name is required"}</ErrorComment>
@@ -50,4 +52,4 @@ function FormVote(props) {
   );
 }
 
-export default FormVote;
+export default React.memo(FormVote);

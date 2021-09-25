@@ -46,14 +46,14 @@ function Cart1() {
 
                     <div className="input-group col-md-2 col-6" style={{ height: '31px' }}>
                         <div className="input-group-prepend"
-                            onClick={(e) => (item.count > 1 && --item.count, handleCountDown(item.count))}>
+                            onClick={() => { item.count > 1 && --item.count; handleCountDown(item.count) }}>
                             <button className="btn btn-light btn-sm"><i className="fas fa-minus small" /></button>
                         </div>
 
                         <input type="text" className="form-control text-center" readOnly value={item.count} style={{ height: '31px' }} />
-                        
+
                         <div className="input-group-append"
-                            onClick={(e) => (++item.count, handleCountUp(item.count))}>
+                            onClick={() => { ++item.count; handleCountUp(item.count) }}>
                             <button className="btn btn-light btn-sm" type="submit"><i className="fas fa-plus small" /></button>
                         </div>
                     </div>
@@ -67,11 +67,11 @@ function Cart1() {
                         </strike>
                         <span className="text-danger small">-{item.sale_off}%</span>
                     </div>
-                </div>
+                </div >
             )
         })
     }
-    
+
     return (
         <div className="main bg-light pt-3 pb-3">
             <div className="container">

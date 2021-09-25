@@ -1,3 +1,4 @@
+import { ADD_PARAMS } from "contants/logchat";
 import { createActions } from "redux-actions";
 
 export const getChat = createActions({
@@ -22,4 +23,9 @@ export const deletesChat = createActions({
     deletesChatRequest: (payload) => payload,
     deletesChatSuccess: (payload) => payload,
     deletesChatFailure: (err) => err
+})
+
+export const addParmas = (payload) => ({
+    type: ADD_PARAMS,
+    payload
 })

@@ -1,23 +1,33 @@
-import { toastSuccess } from "components/helper/toastHelper";
+import { ADD_PARAMS } from "contants/logchat";
 
 const { getType } = require("redux/actions");
 const { getChat, createChat, updatesChat, deletesChat } = require("redux/actions/chat");
 
 const initialstate = {
-    data: []
+    data: [],
+    params: ''
 }
 
 const chatReducer = (state = initialstate, action) => {
     switch (action.type) {
+        case ADD_PARAMS:
+            return {
+                ...state,
+                params: action.payload
+            }
         case getType(getChat.getChatSuccess):
             return {
                 ...state,
                 data: action.payload
             }
         case getType(createChat.createChatSuccess):
+            let product = [...state.data]
+            if (action.payload.productId === state?.params) {
+                product = [action.payload, ...state.data]
+            }
             return {
                 ...state,
-                data: [action.payload, ...state.data]
+                data: [...product]
             }
         case getType(updatesChat.updatesChatSuccess):
             const { data } = state;
@@ -28,7 +38,6 @@ const chatReducer = (state = initialstate, action) => {
                     action.payload,
                     ...data.slice(index + 1)
                 ]
-                toastSuccess('Sửa đánh giá sản phẩm thành công');
                 return {
                     ...state,
                     data: newChat
@@ -38,7 +47,6 @@ const chatReducer = (state = initialstate, action) => {
                 ...state
             }
         case getType(deletesChat.deletesChatSuccess):
-            toastSuccess('Xóa đánh giá thành công');
             return {
                 ...state,
                 data: state.data.filter(chat => chat._id !== action.payload._id)

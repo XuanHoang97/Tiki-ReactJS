@@ -34,7 +34,7 @@ export const addChat = (name, comment) => {
         payload: {
             name,
             comment,
-            avatar:'https://cellphones.com.vn/sforum/wp-content/uploads/2020/04/LR-29-scaled.jpg',
+            avatar: 'https://cellphones.com.vn/sforum/wp-content/uploads/2020/04/LR-29-scaled.jpg',
         }
     };
 };
@@ -67,7 +67,7 @@ export const setChatEditting = (chat) => {
     };
 };
 
-export const updateChat = (name, comment,avatar) => {
+export const updateChat = (name, comment, avatar) => {
     return {
         type: UPDATE_CHAT,
         payload: {

@@ -48,7 +48,7 @@ export default function Body() {
         {/* Lucky Wheel */}
         <div
           className="LuckyWheel" onClick={() => { setLucky(!lucky); }} >
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCoasT2bQThAGlar2I5RrPEFYZba00VUDBMN0FFz6mwJTk73Oo2lRxuAEuY3-AJGQuqt0&usqp=CAU" className="lucky" />
+          <img alt='a' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCoasT2bQThAGlar2I5RrPEFYZba00VUDBMN0FFz6mwJTk73Oo2lRxuAEuY3-AJGQuqt0&usqp=CAU" className="lucky" />
         </div>
 
         <div className="spin">
@@ -59,7 +59,7 @@ export default function Body() {
 
         {/* Build Chatbot */}
         <div
-          className="chatbotTest" onClick={() => { setChatbot(!chatbot);}} >
+          className="chatbotTest" onClick={() => { setChatbot(!chatbot); }} >
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE5LV5FEwLk2UGd5-UApCpu7yuOMV7cAKDFKTofRzlzxdT3wKd3pAPBc_KzhnWFuhowFI&usqp=CAU"
             alt="ko hien anh"

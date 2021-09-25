@@ -11,20 +11,17 @@ export default function Search() {
     const inputSearch = useRef(null)
 
     useEffect(() => {
-        const fetchProducts = () => {
-            allData.map(item => axios
-                .get(`https://api-tiki-clone.herokuapp.com/api/v2/${item}/`)
-                .then(res => { setMobile(mobile => [...mobile, ...res.data]); })
-                .catch((err) => { console.log(err); }))
-        };
-        fetchProducts();
+        axios
+            .get(`https://api-tiki-clone.herokuapp.com/api/v2/product_mobile/`)
+            .then(res => { setMobile(mobile => [...mobile, ...res.data]); })
+            .catch((err) => { console.log(err); })
     }, []);
 
     useEffect(() => {
         if (mobile) {
             setAllData(mobile.filter(items => items.name ? items.name.toLowerCase().includes(search.toLowerCase()) : ''))
         }
-    }, [search])
+    }, [search, mobile])
 
     const handleClickSearch = () => {
         setSuggest(false)
