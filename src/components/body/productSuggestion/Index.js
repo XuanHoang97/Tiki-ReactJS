@@ -1,17 +1,15 @@
-import React, {useState, useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
-import { suggestState$ } from 'redux/selectors';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import * as actions from '../../../redux/actions'
 
 import TabContent from './TabContent';
 import TabProduct from "./TabProduct"
 
 function ProductSuggestion() {
-  const prodSuggest = useSelector(suggestState$)
   const dispatch = useDispatch()
 
   useEffect(() => {
-      dispatch(actions.getDataProductSuggest.getSuggestRequest())
+    dispatch(actions.getDataProductSuggest.getSuggestRequest())
   }, [dispatch])
 
   // const [currentTab, setCurrentTab] = useState('tab1');
@@ -99,44 +97,44 @@ function ProductSuggestion() {
   // ];
 
   return (
-      // <div className="suggest__list">
-        /* <div className="tab__product">
-          {
-            prodSuggest && prodSuggest.map((tab, key) => (
-              <button 
-                key={tab.id}
-                onClick={() => setCurrentTab(tab.name)} 
-                className={(tab.name === currentTab) ? 'item__suggest active' : 'item__suggest'}
-                >
-                  <img src={tab.img} alt="error" style={{width: '42px', height: '42px'}}/>
-                  <span>{tab.label}</span>
-              </button>
-            ))
-          }
-        </div> */
-        
-        /* {
-          prodSuggest && prodSuggest.map((tab, key) => {
-            if(tab.name === currentTab) {
-              return <div key={key.id}>{tab.label}</div>;
-            } else {
-              return null;
-            }
-          })
-        } */
-      // </div>
+    // <div className="suggest__list">
+    /* <div className="tab__product">
+      {
+        prodSuggest && prodSuggest.map((tab, key) => (
+          <button 
+            key={tab.id}
+            onClick={() => setCurrentTab(tab.name)} 
+            className={(tab.name === currentTab) ? 'item__suggest active' : 'item__suggest'}
+            >
+              <img src={tab.img} alt="error" style={{width: '42px', height: '42px'}}/>
+              <span>{tab.label}</span>
+          </button>
+        ))
+      }
+    </div> */
 
-      <div className="suggest__list">
-        <div style={{ position: 'sticky', top: '0' }}>
-          <div >
-            <div className="Prod__Suggest"> <h5 className="m-0">Gợi Ý Hôm Nay</h5> </div>
-              <TabProduct />
-            </div>
+    /* {
+      prodSuggest && prodSuggest.map((tab, key) => {
+        if(tab.name === currentTab) {
+          return <div key={key.id}>{tab.label}</div>;
+        } else {
+          return null;
+        }
+      })
+    } */
+    // </div>
+
+    <div className="suggest__list">
+      <div style={{ position: 'sticky', top: '0' }}>
+        <div >
+          <div className="Prod__Suggest"> <h5 className="m-0">Gợi Ý Hôm Nay</h5> </div>
+          <TabProduct />
         </div>
-
-        <TabContent  />
       </div>
-    
+
+      <TabContent />
+    </div>
+
   );
 }
 

@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const URL = `https://api-tiki-clone.herokuapp.com/api/v2`
 // const URL = `http://localhost:5000/api/v2`
-const URL3 = `https://y6896.sse.codesandbox.io` //All
+// const URL3 = `https://y6896.sse.codesandbox.io` //All
 
 export const getDataMobile = () => axios.get(`${URL}/product_mobile/`)
 
@@ -58,8 +58,9 @@ export const updatesChat = (data, chatId) => {
     })
 }
 
-export const deleteChat = (chatId) => {
+export const deleteChat = (data, chatId) => {
     return axios.delete(`${URL}/chat/${chatId}`, {
+        data,
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${JSON.parse(localStorage.getItem('accessToken')) || ''}`
@@ -67,17 +68,3 @@ export const deleteChat = (chatId) => {
     })
 }
 
-// CRUD Vote and Comment product 
-export const getDataVote = () => axios.get(`${URL3}/vote/`)
-
-export const addChat = (data) => {
-    return axios.post(`${URL3}/vote`, data);
-};
-
-// export const updateChat = (data, chatId) => {
-//     return axios.put(`${URL3}/vote/${chatId}`, data);
-// };
-
-// export const deleteChat = (chatId) => {
-//     return axios.delete(`${URL3}/vote/${chatId}`);
-// };

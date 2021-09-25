@@ -15,7 +15,7 @@ function Accounted() {
         if (user.dataLogin) {
             setAlert(true)
         }
-    }, [user.dataLogin])
+    }, [user.dataLogin, setAlert])
 
     const handlePassword = (e) => {
         dispatch(loginUser.loginUserRequest({ phoneNumber: number, password: e.password }))

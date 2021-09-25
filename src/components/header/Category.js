@@ -14,7 +14,7 @@ export default function Category() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(actions.getDataCatagoryMenu.getCatagoryMenuRequest())
-  }, []);
+  }, [dispatch]);
 
   const offPreDefault = () => {
     setHover(false)
@@ -25,7 +25,7 @@ export default function Category() {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => (setHover(false))}
     >
-      <a className="category nav-link dropdown-toggle" href="/" id="dropdownId" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false"
+      <a className="category nav-link dropdown-toggle" href="/" id="dropdownId" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false"
         style={{ padding: '10px 15px' }}>
         <i className="fas fa-bars mr-2" />
         <small>Danh mục</small>

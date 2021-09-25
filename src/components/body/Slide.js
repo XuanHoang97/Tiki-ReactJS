@@ -17,7 +17,7 @@ function Slide() {
 
     useEffect(() => {
         dispatch(actions.getDataSlide.getSlideRequest())
-    }, [])
+    }, [dispatch])
 
     return (
         <div className="slide row">

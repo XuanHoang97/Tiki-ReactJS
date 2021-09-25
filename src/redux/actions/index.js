@@ -60,26 +60,3 @@ export const getDataCatagoryMenu = createActions({
 })
 
 // Vote and comment product 
-export const getDataVote = createActions({
-    getVoteRequest: undefined,
-    getVoteSuccess: (payload) => payload,
-    getVoteFailure: (err) => err
-})
-
-export const createDataVote = createActions({
-    createVoteRequest: (payload) => payload,
-    createVoteSuccess: (payload) => payload,
-    createVoteFailure: (err) => err
-})
-
-export const updateDataVote = createActions({
-    updateVoteRequest: (payload) => payload,
-    updateVoteSuccess: (payload) => payload,
-    updateVoteFailure: (err) => err
-})
-
-export const deleteDataVote = createActions({
-    deleteVoteRequest: (payload) => payload,
-    deleteVoteSuccess: (payload) => payload,
-    deleteVoteFailure: (err) => err
-})

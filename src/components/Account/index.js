@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AuthContext } from './Context/AuthContext';
 import FormLogin from './FormLogin';
 import styled from 'styled-components'
@@ -56,7 +56,7 @@ function Account() {
         return () => {
             clearTimeout(setAlerts)
         }
-    }, [alert])
+    }, [alert, setAlert])
 
     const login = () => {
         dispatch(showModalAccount())
@@ -86,27 +86,27 @@ function Account() {
                     (
                         <>
                             <div className="dropdown-menu control">
-                                <a className="dropdown-item reg__log">
+                                <a href='/#' className="dropdown-item reg__log">
                                     <button type="button" className="btn btn-warning btn-sm btn-block" onClick={() => login()}>
                                         Đăng nhập
                                     </button>
                                 </a>
-                                <a className="dropdown-item reg__log">
+                                <a href='/#' className="dropdown-item reg__log">
                                     <button type="button" className="btn btn-warning btn-sm btn-block" onClick={() => setShowModal(true)}>
                                         Tạo tài khoản
                                     </button>
                                 </a>
-                                <a className="dropdown-item reg__log" href="/">
+                                <a className="dropdown-item reg__log" href="/#">
                                     <button type="button" className="btn btn-primary btn-sm btn-block">
                                         <i className="fab fa-facebook-f mr-4" /> <span>Đăng nhập bằng Facebook</span>
                                     </button>
                                 </a>
-                                <a className="dropdown-item reg__log" href="/">
+                                <a className="dropdown-item reg__log" href="/#">
                                     <button type="button" className="btn btn-danger btn-sm btn-block">
                                         <i className="fab fa-google-plus-g mr-3" /> <span>Đăng nhập bằng Google</span>
                                     </button>
                                 </a>
-                                <a className="dropdown-item reg__log" href="/">
+                                <a className="dropdown-item reg__log" href="/#">
                                     <button type="button" className="btn btn-info btn-sm btn-block">
                                         <i className="far fa-comment-dots mr-4" /> <span>Đăng nhập bằng Zalo</span>
                                     </button>

@@ -16,6 +16,10 @@ function TimeVerify() {
         }
     }, [count])
 
+    const handleCallback = () => {
+        setCount(count => count + 30);
+        setKeyRandom(Math.ceil(Math.random() * 1000000).toFixed(0))
+    }
     return (
         <>
             <div style={{ display: (count <= 0 ? 'none' : 'block') }}
@@ -28,7 +32,7 @@ function TimeVerify() {
                 <span style={{
                     color: 'rgb(13, 92, 182)', cursor: 'pointer',
                 }}
-                    onClick={() => (setCount(count => count + 30), setKeyRandom(Math.ceil(Math.random() * 1000000).toFixed(0)))}
+                    onClick={() => handleCallback()}
                 > Gửi lại mã</span>
             </div>
             <div className="small mt-2 mb-2" style={{ display: (count > 0 ? 'block' : 'none') }}>

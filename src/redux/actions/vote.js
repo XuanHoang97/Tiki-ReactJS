@@ -1,4 +1,4 @@
-import { CHANGE_MODAL_CONTENT, CHANGE_MODAL_TITLE, HIDE_MODAL, SHOW_MODAL} from '../../contants/vote';
+import { CHANGE_MODAL_CONTENT, CHANGE_MODAL_TITLE, HIDE_MODAL, SHOW_MODAL } from '../../contants/vote';
 
 export const showModal = () => ({
     type: SHOW_MODAL
