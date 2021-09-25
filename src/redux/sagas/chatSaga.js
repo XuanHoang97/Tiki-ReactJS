@@ -5,7 +5,7 @@ import { hideModal } from "redux/actions/vote";
 import io from 'socket.io-client'
 import { eventChannel } from "@redux-saga/core";
 
-export const socket = io('http://localhost:5000/');
+export const socket = io('https://api-tiki-clone.herokuapp.com');
 
 export function connectSocket() {
     return new Promise(resolve => {

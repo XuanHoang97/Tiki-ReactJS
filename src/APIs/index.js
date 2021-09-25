@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URL = `https://api-tiki-clone.herokuapp.com/api/v2`
+export const URL = `https://api-tiki-clone.herokuapp.com/api/v2`
 // const URL = `http://localhost:5000/api/v2`
 // const URL3 = `https://y6896.sse.codesandbox.io` //All
 
