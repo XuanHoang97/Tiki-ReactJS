@@ -11,3 +11,15 @@ export const createChat = createActions({
     createChatSuccess: (payload) => payload,
     createChatFailure: (err) => err
 })
+
+export const updatesChat = createActions({
+    updatesChatRequest: (payload) => payload,
+    updatesChatSuccess: (payload) => payload,
+    updatesChatFailure: (err) => err
+})
+
+export const deletesChat = createActions({
+    deletesChatRequest: (payload) => payload,
+    deletesChatSuccess: (payload) => payload,
+    deletesChatFailure: (err) => err
+})

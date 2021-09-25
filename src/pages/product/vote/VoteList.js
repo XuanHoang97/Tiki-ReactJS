@@ -20,12 +20,13 @@ function VoteList({ editVote, deleteVote, replyVote }) {
                 {
                     chatUser && chatUser.map((vote, key) => (
                         <VoteItem key={vote._id}
-                            img={vote.name.charAt(0).toUpperCase()}
+                            img={vote.imgUser}
                             name={vote.name}
                             comment={vote.comment}
                             replyVote={() => replyVote(vote)}
                             editVote={() => editVote(vote)}
                             deleteVote={() => deleteVote(vote)}
+                            time={vote.updatedAt}
                         />
                     ))
                 }
